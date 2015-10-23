@@ -1,0 +1,46 @@
+{
+  "name": "$VERTICAL-$MICROSERVICE",
+  "version": "$VERSION",
+  "private": true,
+  "author": "Benedikt Stemmildt",
+  "main": "server.js",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "body-parser": "1.14.1",
+    "compression": "1.6.0",
+    "consolidate": "0.13.1",
+    "cookie-parser": "1.4.0",
+    "debug": "2.2.0",
+    "express": "4.13.3",
+    "morgan": "1.6.1",
+    "swig": "1.4.2"
+  },
+  "devDependencies": {
+    "babel": "5.8.23",
+    "chai": "3.4.0",
+    "del": "2.0.2",
+    "gulp": "3.9.0",
+    "gulp-babel": "5.3.0",
+    "gulp-eslint": "1.0.0",
+    "gulp-mocha": "2.1.3",
+    "gulp-param": "0.6.4",
+    "gulp-sass": "2.0.4",
+    "karma": "0.13.14",
+    "karma-babel-preprocessor": "5.2.2",
+    "karma-chai-sinon": "0.1.5",
+    "karma-fixture": "0.2.5",
+    "karma-html2js-preprocessor": "0.1.0",
+    "karma-mocha": "0.2.0",
+    "karma-phantomjs-launcher": "0.2.1",
+    "phantomjs": "1.9.18",
+    "sinon": "1.17.2",
+    "sinon-chai": "2.8.0",
+    "supertest": "1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/$VERTICAL-$MICROSERVICE.git"
+  }
+}

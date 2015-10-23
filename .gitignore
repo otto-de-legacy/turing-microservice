@@ -1,0 +1,7 @@
+/.idea/
+/bower_components/
+/node_modules/
+/target/
+/bower.json
+/package.json
+/turing-microservice.i*
