@@ -20,7 +20,7 @@
     "swig": "1.4.2"
   },
   "devDependencies": {
-    "babel-core": "5.8.25",
+    "babel-core": "5.8.29",
     "chai": "3.4.0",
     "coveralls": "2.11.4",
     "del": "2.0.2",
