@@ -1,6 +1,6 @@
-#turing-microservice
+# turing-microservice
 
-> "quote here" - Some Guy
+> "We can only see a short distance ahead, but we can see plenty there that needs to be done." - Alan Turing
 
 This is the common basis for some of otto.de's microservices. It is written in Node.js using the [express framework](https://github.com/strongloop/express).
 
@@ -27,6 +27,43 @@ _turing-microservice_ is used for a number of different services now. Still it i
   * Veryfy code quality with eslint
   * Execute server tests with mocha
   * Execute fronend tests with karma
+
+## Setup
+
+Install global dependencies:
+
+    $ npm install -g babel bower
+
+Install dependencies:
+
+    $ VERTICAL=turing MICROSERVICE=microservice VERSION=1.0.0 ./install.sh
+
+### Optional
+
+To make IntelliJ development features work properly. (You still have to configure them!)
+
+    $ npm install -g eslint gulp
+
+## Startup
+  
+Start the server:
+
+    $ SERVER_PORT=8080 node server.js
+    
+Then open a browser and visit:
+
+    http://localhost:8080/turing-microservice/internal/status
+    
+## Testing
+  
+    $ gulp test
+
+This also:
+
+* builds css files from scss
+* builds public es5 js from public es6 js
+* runs eslint
+* creates a coverage report
 
 ## Initial Contributors
 

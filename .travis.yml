@@ -2,5 +2,4 @@ language: node_js
 node_js:
   - "4.2.1"
 before_install:
-  - npm install -g bower
-  - npm install -g babel
+  - npm install -g babel bower
