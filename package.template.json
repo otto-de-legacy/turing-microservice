@@ -19,7 +19,7 @@
     "swig": "1.4.2"
   },
   "devDependencies": {
-    "babel": "5.8.23",
+    "babel-core": "5.8.23",
     "chai": "3.4.0",
     "del": "2.0.2",
     "gulp": "3.9.0",
