@@ -12,7 +12,7 @@ const sourceAssetsDir = 'public/assets/';
 
 gulp.task('default', ['test']);
 
-gulp.task('test', ['testPublic:testServer:eslint:babel:sass']);
+gulp.task('test', ['testServer:eslint:babel:sass']);
 
 gulp.task('sass', () => {
   'use strict';
