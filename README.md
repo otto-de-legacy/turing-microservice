@@ -6,7 +6,8 @@
 [![dependencies](https://img.shields.io/david/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice)
 [![devDependencies](https://img.shields.io/david/dev/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice#info=devDependencies)
 
-> "We can only see a short distance ahead, but we can see plenty there that needs to be done." - Alan Turing
+> "We can only see a short distance ahead, but we can see plenty there that needs to be done."
+- Alan Turing
 
 This is the common basis for some of otto.de's microservices. It is written in Node.js using the [express framework](https://github.com/strongloop/express).
 
