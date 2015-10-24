@@ -7,8 +7,8 @@ This is the common basis for some of otto.de's microservices. It is written in N
 `[de.otto/turing-microservice "version here"]`
 
 [![build](https://travis-ci.org/otto-de/turing-microservice.svg)](https://travis-ci.org/otto-de/turing-microservice)
-[![dependencies](https://img.shields.io/david/otto-de/turing-microservice.svg?style=flat-square)](https://david-dm.org/otto-de/turing-microservice)
-[![devDependencies](https://img.shields.io/david/dev/otto-de/turing-microservice.svg?style=flat-square)](https://david-dm.org/otto-de/turing-microservice#info=devDependencies)
+[![dependencies](https://img.shields.io/david/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice)
+[![devDependencies](https://img.shields.io/david/dev/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice#info=devDependencies)
 
 ## Breaking changes
 
