@@ -5,7 +5,8 @@
   "author": "Benedikt Stemmildt",
   "main": "server.js",
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "test": "gulp test"
   },
   "dependencies": {
     "body-parser": "1.14.1",
@@ -39,6 +40,11 @@
     "sinon-chai": "2.8.0",
     "supertest": "1.1.0"
   },
+  "engines": {
+    "node": "4.2.1",
+    "npm": "3.3.8"
+  },
+  "license": "APACHE",
   "repository": {
     "type": "git",
     "url": "git@github.com:otto-de/$VERTICAL-$MICROSERVICE.git"
