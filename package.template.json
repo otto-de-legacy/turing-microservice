@@ -42,8 +42,7 @@
     "supertest": "1.1.0"
   },
   "engines": {
-    "node": "4.2.1",
-    "npm": "3.3.8"
+    "node": "4.2.1"
   },
   "license": "APACHE",
   "repository": {

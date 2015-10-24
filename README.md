@@ -16,9 +16,15 @@ _turing-microservice_ is used for a number of different services now. Still it i
 
 ## Features included
 
-* Aggregate a status.
 * Reply to a health check.
+* Aggregate a status.
 * Deliver a json status report.
+* Provide Gulp tasks for:
+  * Transpiling fronend js code to es5 with babel
+  * Compile sass to css
+  * Veryfy code quality with eslint
+  * Execute server tests with mocha
+  * Execute fronend tests with karma
 
 ## Initial Contributors
 
