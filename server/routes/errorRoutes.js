@@ -2,6 +2,5 @@ const errorController = require(require('path').join(__dirname, '..', 'controlle
 const router = require('express').Router();
 
 router.use(errorController.notFound);
-router.use(errorController.error);
 
 module.exports = router;

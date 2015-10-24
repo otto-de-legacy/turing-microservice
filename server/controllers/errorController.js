@@ -8,12 +8,7 @@ module.exports = (() => {
     next(err);
   }
 
-  function error(err, request, response) {
-    response.status(err.status || 500).end();
-  }
-
   return {
-    notFound,
-    error
+    notFound
   };
 })();
