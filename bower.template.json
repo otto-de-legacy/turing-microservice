@@ -1,7 +1,7 @@
 {
   "name": "$VERTICAL-$MICROSERVICE",
   "version": "$VERSION",
-  "private": true,
+  "private": false,
   "author": "Benedikt Stemmildt",
   "dependencies": {
     "susy": "2.2.6"
