@@ -1,16 +1,14 @@
 # turing-microservice
 
-> "We can only see a short distance ahead, but we can see plenty there that needs to be done." - Alan Turing
-
-This is the common basis for some of otto.de's microservices. It is written in Node.js using the [express framework](https://github.com/strongloop/express).
-
-`[de.otto/turing-microservice "version here"]`
-
 [![build](https://travis-ci.org/otto-de/turing-microservice.svg)](https://travis-ci.org/otto-de/turing-microservice)
 [![coverage](https://coveralls.io/repos/otto-de/turing-microservice/badge.svg?branch=master&service=github)](https://coveralls.io/github/otto-de/turing-microservice?branch=master)
 [![bitHound](https://www.bithound.io/github/otto-de/turing-microservice/badges/score.svg)](https://www.bithound.io/github/otto-de/turing-microservice)
 [![dependencies](https://img.shields.io/david/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice)
 [![devDependencies](https://img.shields.io/david/dev/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice#info=devDependencies)
+
+> "We can only see a short distance ahead, but we can see plenty there that needs to be done." - Alan Turing
+
+This is the common basis for some of otto.de's microservices. It is written in Node.js using the [express framework](https://github.com/strongloop/express).
 
 ## Breaking changes
 
