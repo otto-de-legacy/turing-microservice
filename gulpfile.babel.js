@@ -2,6 +2,7 @@ const babel = require('gulp-babel');
 const del = require('del');
 const eslint = require('gulp-eslint');
 const gulp = require('gulp-param')(require('gulp'), process.argv);
+const istanbul = require('gulp-istanbul');
 const KarmaServer = require('karma').Server;
 const mocha = require('gulp-mocha');
 const path = require('path');
@@ -12,7 +13,7 @@ const sourceAssetsDir = 'public/assets/';
 
 gulp.task('default', ['test']);
 
-gulp.task('test', ['testServer:eslint:babel:sass']);
+gulp.task('test', ['testServer:istanbul:eslint:babel:sass']);
 
 gulp.task('sass', () => {
   'use strict';
@@ -58,14 +59,26 @@ gulp.task('eslint:babel:sass', ['babel:sass'], () => {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('testServer:eslint:babel:sass', ['eslint:babel:sass'], () => {
+gulp.task('istanbul:eslint:babel:sass', ['eslint:babel:sass'], () => {
+  'use strict';
+
+  return gulp.src(['server/**/*.js'])
+    .pipe(istanbul())
+    .pipe(istanbul.hookRequire());
+});
+
+gulp.task('testServer:istanbul:eslint:babel:sass', ['istanbul:eslint:babel:sass'], () => {
   'use strict';
 
   return gulp.src('tests/server/**/*Spec.js')
-    .pipe(mocha({reporter: 'spec'}));
+    .pipe(mocha({reporter: 'spec'}))
+    .pipe(istanbul.writeReports({
+      dir: 'target/coverage/server',
+      reporters: ['lcov']
+    }));
 });
 
-gulp.task('testPublic:testServer:eslint:babel:sass', ['testServer:eslint:babel:sass'], (done) => {
+gulp.task('testPublic:testServer:istanbul:eslint:babel:sass', ['testServer:istanbul:eslint:babel:sass'], (done) => {
   'use strict';
 
   new KarmaServer({

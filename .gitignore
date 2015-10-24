@@ -2,4 +2,5 @@
 /bower_components/
 /node_modules/
 /target/
+/.coveralls.yml
 /turing-microservice.i*

@@ -27,11 +27,21 @@ module.exports = (config) => {
     ],
     exclude: [],
     preprocessors: {
-      [`${sourceJsAssetsDir}**/*.js`]: ['babel'],
+      [`${sourceJsAssetsDir}**/*.js`]: [
+        'babel',
+        'coverage'
+      ],
       [`${testJsAssetsDir}**/*.js`]: ['babel'],
       '**/*.html': ['html2js']
     },
-    reporters: ['progress'],
+    reporters: [
+      'progress',
+      'coverage'
+    ],
+    coverageReporter: {
+      type: 'lcov',
+      dir: '../../target/coverage/public'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
