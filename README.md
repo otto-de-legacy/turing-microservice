@@ -20,11 +20,12 @@ _turing-microservice_ is used for a number of different services now. Still it i
 * Aggregate a status.
 * Deliver a json status report.
 * Provide Gulp tasks for:
-  * Transpiling fronend js code to es5 with babel
+  * Transpiling fronend js code from es6 to es5 with babel
   * Compile sass to css
   * Veryfy code quality with eslint
   * Execute server tests with mocha
-  * Execute fronend tests with karma
+  * Execute public tests with karma
+  * Create coverage reports for server and public tests
 
 ## Setup
 
@@ -61,7 +62,7 @@ This also:
 * builds css files from scss
 * builds public es5 js from public es6 js
 * runs eslint
-* creates a coverage report
+* creates coverage reports
 
 ## Initial Contributors
 
