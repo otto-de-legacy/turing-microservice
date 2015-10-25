@@ -5,7 +5,8 @@
 [![bitHound](https://www.bithound.io/github/otto-de/turing-microservice/badges/score.svg)](https://www.bithound.io/github/otto-de/turing-microservice)
 [![dependencies](https://img.shields.io/david/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice)
 [![devDependencies](https://img.shields.io/david/dev/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice#info=devDependencies)
-[![license](https://img.shields.io/npm/l/express.svg)](./LICENSE)
+[![version](https://img.shields.io/npm/v/turing-microservice.svg)](https://www.npmjs.com/package/turing-microservice)
+[![license](https://img.shields.io/npm/l/turing-microservice.svg)](./LICENSE)
 
 > "We can only see a short distance ahead, but we can see plenty there that needs to be done."<br/>- Alan Turing
 
