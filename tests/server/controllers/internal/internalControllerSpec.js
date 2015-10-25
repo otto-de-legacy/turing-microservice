@@ -2,8 +2,8 @@ const chai = require('chai');
 const sinon = require('sinon');
 const expect = chai.expect;
 chai.use(require('sinon-chai'));
-const request = require('supertest');
 
+const request = require('supertest');
 const app = require('../../../../server/app');
 const statusService = require('../../../../server/services/internal/statusService');
 
