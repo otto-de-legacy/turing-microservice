@@ -72,7 +72,7 @@ gulp.task('testServer:istanbul:eslint:babel:sass', ['istanbul:eslint:babel:sass'
   return gulp.src('./tests/server/**/*Spec.js')
     .pipe(mocha({reporter: 'spec'}))
     .pipe(istanbul.writeReports({
-      dir: 'target/coverage/server',
+      dir: './target/coverage/server',
       reporters: ['lcov']
     }));
 });
