@@ -36,8 +36,7 @@ Install global dependencies:
 
 Install dependencies:
 
-    $ VERTICAL=turing MICROSERVICE=microservice VERSION=1.0.0 ./setup.sh
-    $ npm install
+    $ VERTICAL=turing MICROSERVICE=microservice VERSION=0.1.0 ./install.sh
 
 ### Optional
 
