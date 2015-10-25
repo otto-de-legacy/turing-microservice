@@ -1,6 +1,6 @@
 {
   "name": "turing-microservice",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": false,
   "author": "Benedikt Stemmildt",
   "dependencies": {
