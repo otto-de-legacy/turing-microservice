@@ -1,7 +1,6 @@
 const expect = require('chai').expect;
 
-const statusService = require(
-  require('path').join(__dirname, '..', '..', '..', '..', 'server', 'services', 'internal', 'statusService'));
+const statusService = require('../../../../server/services/internal/statusService');
 
 describe('aggregatedStatusHelperSpec', () => {
   'use strict';

@@ -1,11 +1,6 @@
-const path = require('path');
-const serverRootPath = path.join(__dirname, '..', '..');
-const helperPath = path.join(serverRootPath, 'helper');
-
 const os = require('os');
-const packageJson = require(path.join(serverRootPath, '..', 'package.json'));
-
-const aggregatedStatusHelper = require(path.join(helperPath, 'aggregatedStatusHelper'));
+const packageJson = require('../../../package.json');
+const aggregatedStatusHelper = require('../../helper/aggregatedStatusHelper');
 
 module.exports = (() => {
   'use strict';

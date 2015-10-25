@@ -3,7 +3,7 @@ let sandbox;
 before(() => {
   'use strict';
 
-  fixture.setBase('assets/js/fixtures');
+  fixture.setBase('./assets/js/fixtures');
 });
 
 beforeEach(() => {

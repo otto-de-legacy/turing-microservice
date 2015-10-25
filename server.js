@@ -10,7 +10,7 @@ function normalizePort(val) {
   return port;
 }
 
-const app = require(require('path').join(__dirname, 'server', 'app'));
+const app = require('./server/app');
 const port = normalizePort(process.env.SERVER_PORT);
 
 app.set('port', port);

@@ -1,4 +1,4 @@
-const statusService = require(require('path').join(__dirname, '..', '..', 'services', 'internal', 'statusService'));
+const statusService = require('../../services/internal/statusService');
 
 module.exports = (() => {
   'use strict';

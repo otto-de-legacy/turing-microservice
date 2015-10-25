@@ -4,9 +4,8 @@ const expect = chai.expect;
 chai.use(require('sinon-chai'));
 const request = require('supertest');
 
-const app = require(require('path').join(__dirname, '..', '..', '..', '..', 'server', 'app'));
-const statusService = require(
-  require('path').join(__dirname, '..', '..', '..', '..', 'server', 'services', 'internal', 'statusService'));
+const app = require('../../../../server/app');
+const statusService = require('../../../../server/services/internal/statusService');
 
 describe('internalController', () => {
   'use strict';

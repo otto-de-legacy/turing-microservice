@@ -1,7 +1,6 @@
 const expect = require('chai').expect;
 
-const aggregatedStatusHelper = require(
-  require('path').join(__dirname, '..', '..', '..', 'server', 'helper', 'aggregatedStatusHelper'));
+const aggregatedStatusHelper = require('../../../server/helper/aggregatedStatusHelper');
 
 describe('aggregatedStatusHelperSpec', () => {
   'use strict';

@@ -1,4 +1,4 @@
-const internalController = require(require('path').join(__dirname, '..', '..', 'controllers', 'internal', 'internalController'));
+const internalController = require('../../controllers/internal/internalController');
 const router = require('express').Router();
 
 router.get('/health', internalController.health);
