@@ -1,9 +1,0 @@
-{
-  "name": "turing-microservice",
-  "version": "1.0.0",
-  "private": false,
-  "author": "Benedikt Stemmildt",
-  "dependencies": {
-    "susy": "2.2.6"
-  }
-}
