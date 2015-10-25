@@ -17,6 +17,6 @@ addons:
       name: "otto-de/turing-microservice"
       description: "Build submitted via Travis CI"
     notification_email: benedikt@stemmildt.com
-    build_command_prepend: "npm install -g babel bower"
+    build_command_prepend: "npm install -g bower"
     build_command:   "npm install"
     branch_pattern: coverity_scan
