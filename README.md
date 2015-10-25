@@ -36,7 +36,7 @@ Install global dependencies:
 
 Install dependencies:
 
-    $ VERTICAL=turing MICROSERVICE=microservice VERSION=0.1.1 ./install.sh
+    $ VERTICAL=turing MICROSERVICE=microservice VERSION=0.1.2 ./install.sh
 
 ### Optional
 
