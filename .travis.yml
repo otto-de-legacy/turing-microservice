@@ -1,6 +1,22 @@
 language: node_js
 node_js:
   - "4.2.1"
+
 before_install:
   - npm install -g babel bower
+
 after_script: "npm install coveralls@2.11.4 && cat ./target/coverage/server/lcov.info ./target/coverage/public/**/lcov.info | coveralls"
+
+env:
+  global:
+   - secure: "TchdXEdWclCOHBm8ta1rbDU0Um9lp8fT/yYaOCd4+r49X6plRumqFuWgaueqxt14Yz0v4+u9ldujjIdOU9czcbe10ylVyloToZKrYw2fj2vEWCYoZigbiLAGI9QgH+dciRSAOnsHxqUxqAeqo5pz4QT1hRMUiPQMuHCFgz8E2ypzLvz6Yg8eldqQZNtiwzmncXsnf7dQmo1bic7fu6cOzIvqpZ2XjGVZXl11Agd9hq/Dm9lSbKUooBpT7X6VXVq19PZStkTuVLiZHFOsysmboJUGU4EY43JqlPLll35zlHZImYyxW/1QKORi6OJ4Z1iVfp9Jph1QBOm4pW6DIGADL/7Vdagm/EkJnjh+shncRhpxCg2h/icTknXvxE6f/xx5//EWJ1aqMsrOQmc1kRhqS914XmZwpGZAkx76nvjqYtw7voXTKefZpWXmwUgLP1RNgTdd0bum6p2LnPRqck0suabsWxYc8kWif6oWjn6BjmLqiV7kk3UMr3zZOxj89JMJCZhHx9k7pU0dX/UpZZeqr6P1Wcr5+G+EUM/AmQz9cI2RmXxC3vNdlbiP3U2/Jha+ES5Qe27U3t4wE4vKJF7H92xF4WdlrHHtq1mMCftxZW2xP9XQQHPLIoFCBtfn7FXwFxU5QwG78ltYnPYIkBZJnJ3tNfhY54l77VXIaWSQ1qY="
+
+addons:
+  coverity_scan:
+    project:
+      name: "otto-de/turing-microservice"
+      description: "Build submitted via Travis CI"
+    notification_email: benedikt@stemmildt.com
+    build_command_prepend: "npm install -g babel bower"
+    build_command:   "npm install"
+    branch_pattern: coverity_scan
