@@ -2,7 +2,11 @@
   "name": "turing-microservice",
   "version": "1.0.0",
   "private": false,
-  "author": "Benedikt Stemmildt",
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
   "main": "server.js",
   "scripts": {
     "postinstall": "bower install",
@@ -46,9 +50,13 @@
   "engines": {
     "node": "4.2.1"
   },
+  "homepage": "https://github.com/otto-de/turing-microservice#readme",
   "repository": {
     "type": "git",
     "url": "git@github.com:otto-de/turing-microservice.git"
   },
-  "license": "APACHE"
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "license": "MIT"
 }

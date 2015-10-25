@@ -2,7 +2,11 @@
   "name": "$VERTICAL-$MICROSERVICE",
   "version": "$VERSION",
   "private": false,
-  "author": "Benedikt Stemmildt",
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
   "main": "server.js",
   "scripts": {
     "postinstall": "bower install",
@@ -46,9 +50,13 @@
   "engines": {
     "node": "4.2.1"
   },
+  "homepage": "https://github.com/otto-de/$VERTICAL-$MICROSERVICE#readme",
   "repository": {
     "type": "git",
     "url": "git@github.com:otto-de/$VERTICAL-$MICROSERVICE.git"
   },
-  "license": "APACHE"
+  "bugs": {
+    "url": "https://github.com/otto-de/$VERTICAL-$MICROSERVICE/issues"
+  },
+  "license": "MIT"
 }
