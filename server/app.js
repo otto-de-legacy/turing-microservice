@@ -12,7 +12,7 @@ app.locals.cache = 'memory';
 app.use(require('compression')({level: 9}));
 
 app.engine('html', require('consolidate').swig);
-app.set('views', './views');
+app.set('views', `${__dirname}/views`);
 app.set('view engine', 'html');
 
 app.use(require('morgan')('dev'));

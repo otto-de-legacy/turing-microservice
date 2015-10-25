@@ -1,5 +1,11 @@
 module.exports = (() => {
   'use strict';
 
-  return {};
+  function index(request, response) {
+    response.render('index', {title: 'turing-microservice'});
+  }
+
+  return {
+    index
+  };
 })();
