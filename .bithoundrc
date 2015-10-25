@@ -1,15 +1,7 @@
 {
-  "ignore": [
-    "**/bower_components/**",
-    "**/node_modules/**",
-    "**/target/**"
-  ],
-  "test": [
-    "**/tests/**"
-  ],
   "dependencies": {
-    "mute": [
-      "susy"
+    "unused-ignores": [
+      "swig"
     ]
   }
 }
