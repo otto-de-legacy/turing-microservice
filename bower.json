@@ -1,5 +1,6 @@
 {
   "name": "turing-microservice",
+  "description": "Node.js microservice template",
   "version": "0.1.1",
   "private": false,
   "author": {
