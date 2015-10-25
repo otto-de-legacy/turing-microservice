@@ -81,7 +81,7 @@ gulp.task('testPublic:testServer:istanbul:eslint:babel:sass', ['testServer:istan
   'use strict';
 
   new KarmaServer({
-    configFile: './tests/public/karma.conf.js',
+    configFile: `${__dirname}/tests/public/karma.conf.js`,
     singleRun: true
   }, done).start();
 });
