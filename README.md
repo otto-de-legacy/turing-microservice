@@ -2,7 +2,7 @@
 
 [![build](https://travis-ci.org/otto-de/turing-microservice.svg)](https://travis-ci.org/otto-de/turing-microservice)
 [![coverage](https://coveralls.io/repos/otto-de/turing-microservice/badge.svg?branch=master&service=github)](https://coveralls.io/github/otto-de/turing-microservice?branch=master)
-[![coverty](https://scan.coverity.com/projects/6764/badge.svg)](https://scan.coverity.com/projects/otto-de-turing-microservice)
+[![coverity](https://scan.coverity.com/projects/6764/badge.svg)](https://scan.coverity.com/projects/otto-de-turing-microservice)
 <br/>
 [![bitHound](https://www.bithound.io/github/otto-de/turing-microservice/badges/score.svg)](https://www.bithound.io/github/otto-de/turing-microservice)
 [![dependencies](https://img.shields.io/david/otto-de/turing-microservice.svg)](https://david-dm.org/otto-de/turing-microservice)
