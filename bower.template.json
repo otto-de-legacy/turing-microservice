@@ -2,7 +2,11 @@
   "name": "$VERTICAL-$MICROSERVICE",
   "version": "$VERSION",
   "private": false,
-  "author": "Benedikt Stemmildt",
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
   "dependencies": {
     "susy": "2.2.6"
   }
