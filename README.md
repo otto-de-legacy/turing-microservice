@@ -47,7 +47,9 @@ Start the server:
     
 Then open a browser and visit:
 
-    http://localhost:8080/turing-microservice/internal/status
+* Demo Index Page - http://localhost:8080/turing-microservice/
+* Status Page - http://localhost:8080/turing-microservice/internal/status    
+* Health Check - http://localhost:8080/turing-microservice/internal/health
     
 ## Testing
   
