@@ -8,7 +8,7 @@ describe('publicController', () => {
     request(app)
       .get('/turing-microservice/')
       .expect(
-        '<html>\n<head>\n  <title>turing-microservice</title>\n</head>\n<body>\n<h1>turing-microservice</h1>\n</body>\n</html>')
+        '<html>\n<head>\n  <title>turing-microservice</title>\n</head>\n<body>\n<h1>turing-microservice</h1>\n<img src="/turing-microservice/assets/img/turing.jpg"/>\n</body>\n</html>')
       .expect(200, done);
   });
 });
