@@ -27,7 +27,7 @@ _turing-microservice_ is used for a number of different services now. Still it i
 
 Install global dependencies:
 
-    $ npm install -g babel bower
+    $ npm install -g bower
 
 Install dependencies:
 
@@ -37,7 +37,7 @@ Install dependencies:
 
 To make IntelliJ development features work properly. (You still have to configure them!)
 
-    $ npm install -g eslint gulp
+    $ npm install -g babel eslint gulp
 
 ## Startup
   
@@ -53,7 +53,7 @@ Then open a browser and visit:
     
 ## Testing
   
-    $ gulp test
+    $ npm test
 
 This also:
 

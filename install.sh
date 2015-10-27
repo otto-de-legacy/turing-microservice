@@ -24,4 +24,4 @@ sed -e "s/\$VERTICAL/${VERTICAL}/g" \
     -e "s/\$VERSION/${VERSION}/g" \
     bower.template.json > bower.json
 
-rm -rf node_modules bower_components target && npm install && gulp test
+rm -rf node_modules bower_components target && npm install && npm test
