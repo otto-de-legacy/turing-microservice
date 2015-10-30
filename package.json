@@ -1,7 +1,7 @@
 {
   "name": "turing-microservice",
   "description": "Node.js microservice template",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
   "author": {
     "name": "Benedikt Stemmildt",
@@ -28,7 +28,7 @@
     "chai": "3.4.0",
     "del": "2.0.2",
     "gulp": "3.9.0",
-    "gulp-babel": "6.0.0",
+    "gulp-babel": "5.3.0",
     "gulp-eslint": "1.0.0",
     "gulp-istanbul": "0.10.2",
     "gulp-mocha": "2.1.3",
