@@ -1,7 +1,7 @@
 {
   "name": "turing-microservice",
   "description": "Node.js microservice template",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": false,
   "author": {
     "name": "Benedikt Stemmildt",
@@ -35,7 +35,7 @@
     "gulp-param": "0.6.4",
     "gulp-sass": "2.1.0",
     "karma": "0.13.14",
-    "karma-babel-preprocessor": "git://github.com/benestem/karma-babel-preprocessor.git",
+    "karma-babel-preprocessor": "6.0.1",
     "karma-chai-sinon": "0.1.5",
     "karma-coverage": "0.5.3",
     "karma-fixture": "0.2.5",

@@ -31,13 +31,13 @@ Install global dependencies:
 
 Install dependencies:
 
-    $ VERTICAL=turing MICROSERVICE=microservice VERSION=0.1.8 ./install.sh
+    $ VERTICAL=turing MICROSERVICE=microservice VERSION=0.1.9 ./install.sh
 
 ### Optional
 
 To make IntelliJ development features work properly. (You still have to configure them!)
 
-    $ npm install -g babel eslint gulp
+    $ npm install -g eslint gulp
 
 ## Startup
   
