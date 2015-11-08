@@ -9,6 +9,7 @@
     "url": "https://github.com/benestem"
   },
   "dependencies": {
+    "compass-mixins": "0.12.7",
     "susy": "2.2.6"
   }
 }
