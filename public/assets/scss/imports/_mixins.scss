@@ -1,0 +1,7 @@
+@mixin font-size($font, $line-height: true) {
+  font-size: (map-get($font, font-size));
+  font-size: (map-get($font, font-size)/16px + rem);
+  @if $line-height == true and map-get($font, line-height) != "" {
+    line-height: map-get($font, line-height)/map-get($font, font-size) + em;
+  }
+}
