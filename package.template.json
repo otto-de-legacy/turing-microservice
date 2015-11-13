@@ -24,12 +24,12 @@
     "swig": "1.4.2"
   },
   "devDependencies": {
-    "babel-preset-es2015": "6.1.2",
+    "babel-preset-es2015": "6.1.18",
     "chai": "3.4.1",
     "del": "2.0.2",
     "gulp": "3.9.0",
     "gulp-babel": "6.1.0",
-    "gulp-eslint": "1.0.0",
+    "gulp-eslint": "1.1.0",
     "gulp-istanbul": "0.10.2",
     "gulp-mocha": "2.1.3",
     "gulp-param": "0.6.4",

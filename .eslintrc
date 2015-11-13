@@ -14,8 +14,10 @@
   "rules": {
     "no-alert": 2,
     "no-array-constructor": 2,
+    "no-arrow-condition": 2,
     "no-bitwise": 2,
     "no-caller": 2,
+    "no-case-declarations": 2,
     "no-catch-shadow": 2,
     "no-class-assign": 2,
     "no-cond-assign": [
@@ -38,6 +40,7 @@
     "no-empty": 2,
     "no-empty-character-class": 2,
     "no-empty-label": 2,
+    "no-empty-pattern": 2,
     "no-eq-null": 2,
     "no-eval": 2,
     "no-ex-assign": 2,
@@ -65,6 +68,7 @@
     "no-lone-blocks": 2,
     "no-lonely-if": 2,
     "no-loop-func": 2,
+    "no-magic-numbers": 2,
     "no-mixed-requires": [
       2,
       false
@@ -155,6 +159,10 @@
       }
     ],
     "no-with": 2,
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
     "array-bracket-spacing": [
       2,
       "never"

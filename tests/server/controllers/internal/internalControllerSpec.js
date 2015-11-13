@@ -6,6 +6,7 @@ chai.use(require('sinon-chai'));
 const request = require('supertest');
 const app = require('../../../../server/app');
 const statusService = require('../../../../server/services/internal/statusService');
+const httpStatusHelper = require('../../../../server/helper/httpStatusHelper');
 
 describe('internalController', () => {
   'use strict';
@@ -14,7 +15,7 @@ describe('internalController', () => {
     request(app)
       .get('/turing-microservice/internal/health')
       .expect('')
-      .expect(200, done);
+      .expect(httpStatusHelper.OK, done);
   });
 
   it('GET /turing-microservice/internal/status', (done) => {
@@ -22,7 +23,7 @@ describe('internalController', () => {
     request(app)
       .get('/turing-microservice/internal/status')
       .expect('Content-Type', 'application/json; charset=utf-8')
-      .expect(200)
+      .expect(httpStatusHelper.OK)
       .end((err) => {
         if (err) {
           done(err);
