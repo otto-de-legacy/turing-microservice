@@ -3,7 +3,7 @@
 function normalizePort(val) {
   'use strict';
 
-  const port = parseInt(val, 10);
+  const port = parseInt(val);
   if (isNaN(port) || port < 0) {
     throw new Error(`Port ${val} is not a valid port`);
   }

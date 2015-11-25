@@ -334,7 +334,10 @@
       "single",
       "avoid-escape"
     ],
-    "radix": 2,
+    "radix": [
+      2,
+      "as-needed"
+    ],
     "id-match": 0,
     "require-jsdoc": 0,
     "require-yield": 2,
