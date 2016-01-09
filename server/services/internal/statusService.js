@@ -3,8 +3,6 @@ const packageJson = require('../../../package.json');
 const aggregatedStatusHelper = require('../../helper/aggregatedStatusHelper');
 
 module.exports = (() => {
-  'use strict';
-
   function getStatusDetails() {
     return {};
   }

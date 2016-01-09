@@ -3,8 +3,6 @@ const app = require('../../../../server/app');
 const httpStatusHelper = require('../../../../server/helper/httpStatusHelper');
 
 describe('publicController', () => {
-  'use strict';
-
   it('GET /turing-microservice/', (done) => {
     request(app)
       .get('/turing-microservice/')

@@ -9,8 +9,6 @@ const statusService = require('../../../../server/services/internal/statusServic
 const httpStatusHelper = require('../../../../server/helper/httpStatusHelper');
 
 describe('internalController', () => {
-  'use strict';
-
   it('GET /turing-microservice/internal/health', (done) => {
     request(app)
       .get('/turing-microservice/internal/health')

@@ -3,8 +3,6 @@ const expect = require('chai').expect;
 const statusService = require('../../../../server/services/internal/statusService');
 
 describe('aggregatedStatusHelperSpec', () => {
-  'use strict';
-
   it('expect to get aggregated status ok for empty status details', () => {
     // given
 

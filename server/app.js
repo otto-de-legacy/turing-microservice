@@ -19,7 +19,7 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(require('cookie-parser')());
-app.use('/turing-microservice', express.static(`${__dirname}/../public`));
+app.use('/turing-microservice/img', express.static(`${__dirname}/../public/assets/img`));
 app.use('/turing-microservice', express.static(`${__dirname}/../target/assets`));
 
 app.use('/turing-microservice', require('./routes/public/publicRoutes'));

@@ -1,6 +1,4 @@
 module.exports = (() => {
-  'use strict';
-
   const scoring = {
     OK: 0,
     WARNING: 1,

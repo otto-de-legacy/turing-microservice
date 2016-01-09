@@ -1,6 +1,4 @@
 module.exports = (config) => {
-  'use strict';
-
   const sourceJsAssetsDir = '../../public/assets/js/';
   const testJsAssetsDir = './assets/js/';
 

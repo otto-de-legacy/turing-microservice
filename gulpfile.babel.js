@@ -1,22 +1,21 @@
-const babel = require('gulp-babel');
-const del = require('del');
-const eslint = require('gulp-eslint');
-const gulp = require('gulp-param')(require('gulp'), process.argv);
-const istanbul = require('gulp-istanbul');
-const KarmaServer = require('karma').Server;
-const mocha = require('gulp-mocha');
-const sass = require('gulp-sass');
+import babelify from 'babelify';
+import browserify from 'browserify';
+import buffer from 'vinyl-buffer';
+import del from 'del';
+import eslint from 'gulp-eslint';
+import gulp from 'gulp';
+import istanbul from 'gulp-istanbul';
+import {Server as KarmaServer} from 'karma';
+import mocha from 'gulp-mocha';
+import runSequence from 'run-sequence';
+import sass from 'gulp-sass';
+import source from 'vinyl-source-stream';
+import uglify from 'gulp-uglify';
 
 const targetAssetsDir = './target/assets/';
 const sourceAssetsDir = './public/assets/';
 
-gulp.task('default', ['test']);
-
-gulp.task('test', ['testServer:istanbul:eslint:babel:sass']);
-
 gulp.task('sass', () => {
-  'use strict';
-
   const targetCssAssetsDir = `${targetAssetsDir}css/`;
 
   del.sync(targetCssAssetsDir);
@@ -31,21 +30,24 @@ gulp.task('sass', () => {
     .pipe(gulp.dest(targetCssAssetsDir));
 });
 
-gulp.task('babel:sass', ['sass'], () => {
-  'use strict';
-
+gulp.task('browserify', () => {
   const targetJsAssetsDir = `${targetAssetsDir}js/`;
 
   del.sync(targetJsAssetsDir);
 
-  return gulp.src(`${sourceAssetsDir}js/**/*.js`)
-    .pipe(babel())
+  const browserified = browserify(`${sourceAssetsDir}js/critical/public/index.jsx`, {
+    extensions: ['.jsx'],
+    debug: true,
+    transform: [babelify]
+  });
+  return browserified.bundle()
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(uglify())
     .pipe(gulp.dest(targetJsAssetsDir));
 });
 
-gulp.task('eslint:babel:sass', ['babel:sass'], () => {
-  'use strict';
-
+gulp.task('eslint', () => {
   const jsFiles = [
     './**/*.js',
     '!./node_modules/**/*.js',
@@ -57,16 +59,10 @@ gulp.task('eslint:babel:sass', ['babel:sass'], () => {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('istanbul:eslint:babel:sass', ['eslint:babel:sass'], () => {
-  'use strict';
-
-  return gulp.src(['./server/**/*.js'])
+gulp.task('testServer', () => {
+  gulp.src(['./server/**/*.js'])
     .pipe(istanbul())
     .pipe(istanbul.hookRequire());
-});
-
-gulp.task('testServer:istanbul:eslint:babel:sass', ['istanbul:eslint:babel:sass'], () => {
-  'use strict';
 
   return gulp.src('./tests/server/**/*Spec.js')
     .pipe(mocha({reporter: 'spec'}))
@@ -76,11 +72,21 @@ gulp.task('testServer:istanbul:eslint:babel:sass', ['istanbul:eslint:babel:sass'
     }));
 });
 
-gulp.task('testPublic:testServer:istanbul:eslint:babel:sass', ['testServer:istanbul:eslint:babel:sass'], (done) => {
-  'use strict';
-
+gulp.task('testPublic', (done) => {
   new KarmaServer({
     configFile: `${__dirname}/tests/public/karma.conf.js`,
     singleRun: true
   }, done).start();
+});
+
+gulp.task('test', (callback) => {
+  runSequence('eslint', 'testServer', 'testPublic', callback);
+});
+
+gulp.task('build', (callback) => {
+  process.env.NODE_ENV = 'production';
+  runSequence([
+    'sass',
+    'browserify'
+  ], callback);
 });

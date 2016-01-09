@@ -33,7 +33,7 @@ Install dependencies:
 
 To make IntelliJ development features work properly. (You still have to configure them!)
 
-    $ npm install -g eslint gulp
+    $ npm install -g eslint eslint-plugin-react gulp
 
 ## Startup
   
