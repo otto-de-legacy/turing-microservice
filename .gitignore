@@ -1,6 +1,5 @@
 /.idea/
 /.sass-cache/
-/bower_components/
 /node_modules/
 /target/
 /turing-microservice.i*

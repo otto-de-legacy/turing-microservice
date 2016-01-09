@@ -48,7 +48,6 @@ gulp.task('eslint:babel:sass', ['babel:sass'], () => {
 
   const jsFiles = [
     './**/*.js',
-    '!./bower_components/**/*.js',
     '!./node_modules/**/*.js',
     '!./target/**/*.js'
   ];

@@ -25,10 +25,6 @@ _turing-microservice_ is used for a number of different services now. Still it i
 
 ## Setup
 
-Install global dependencies:
-
-    $ npm install -g bower
-
 Install dependencies:
 
     $ VERTICAL=turing MICROSERVICE=microservice VERSION=0.1.9 ./install.sh

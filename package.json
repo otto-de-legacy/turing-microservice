@@ -1,7 +1,7 @@
 {
   "name": "turing-microservice",
   "description": "Node.js microservice template",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "private": false,
   "author": {
     "name": "Benedikt Stemmildt",
@@ -10,7 +10,6 @@
   },
   "main": "server.js",
   "scripts": {
-    "postinstall": "bower install",
     "test": "gulp test"
   },
   "dependencies": {
@@ -24,6 +23,7 @@
     "swig": "1.4.2"
   },
   "devDependencies": {
+    "compass-mixins": "0.12.7",
     "babel-preset-es2015": "6.3.13",
     "chai": "3.4.1",
     "del": "2.2.0",
@@ -46,7 +46,8 @@
     "phantomjs": "1.9.19",
     "sinon": "1.17.2",
     "sinon-chai": "2.8.0",
-    "supertest": "1.1.0"
+    "supertest": "1.1.0",
+    "susy": "2.2.10"
   },
   "engines": {
     "node": "5.0.0"
