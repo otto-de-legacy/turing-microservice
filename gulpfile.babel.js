@@ -80,7 +80,7 @@ gulp.task('testPublic', (done) => {
 });
 
 gulp.task('test', (callback) => {
-  runSequence('eslint', 'testServer', 'testPublic', callback);
+  runSequence('eslint', 'testServer', callback);
 });
 
 gulp.task('build', (callback) => {
