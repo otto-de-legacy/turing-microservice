@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 
 const aggregatedStatusHelper = require('../../../src/server/helper/aggregatedStatusHelper');
 
-describe('aggregatedStatusHelperSpec', () => {
+describe('aggregatedStatusHelper', () => {
   it('expect to get aggregated status ok for empty status details', () => {
     // given
     const statusDetails = {};
