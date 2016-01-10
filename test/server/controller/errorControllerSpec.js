@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../../../src/server/app');
 const httpStatusHelper = require('../../../src/server/helper/httpStatusHelper');
 
-describe('errorControllerSpec', () => {
+describe('errorController', () => {
   it('GET /turing-microservice/internal/not-found', (done) => {
     request(app)
       .get('/turing-microservice/internal/not-found')
