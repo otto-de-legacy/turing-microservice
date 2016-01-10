@@ -1,0 +1,47 @@
+@import "../../../node_modules/compass-mixins/lib/compass";
+@import "import/grid";
+
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  background: #ECE9E2;
+  margin: 0;
+}
+
+.grid {
+  height: 100%;
+  @include susy-breakpoint($breakpoint-info-extra-large...) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1342px;
+  }
+}
+
+.grid__container {
+  background: #FFFFFF;
+  max-width: 1152px;
+  min-width: 320px;
+  @include susy-breakpoint($breakpoint-large...) {
+    padding: 0 8px;
+  }
+  @include susy-breakpoint($breakpoint-info-large...) {
+    float: left;
+    min-width: 1025px;
+    padding: 0 32px;
+    width: 84%;
+  }
+  @include susy-breakpoint($breakpoint-info-extra-large...) {
+    width: 1152px;
+  }
+}
+
+.grid__info {
+  display: none;
+  @include susy-breakpoint($breakpoint-info-large...) {
+    display: inline-block;
+    margin: 214px 6px 0 24px;
+    width: 160px;
+  }
+}

@@ -35,6 +35,7 @@
     "browserify": "13.0.0",
     "chai": "3.4.1",
     "compass-mixins": "0.12.7",
+    "core-js": "2.0.2",
     "del": "2.2.0",
     "eslint-plugin-react": "3.14.0",
     "gulp": "3.9.0",

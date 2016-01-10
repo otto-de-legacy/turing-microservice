@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "5.4.0"
 after_script:
-  - "npm install coveralls@2.11.6 && cat ./target/coverage/server/lcov.info ./target/coverage/public/**/lcov.info | coveralls"
+  - "npm install coveralls@2.11.6 && cat ./target/coverage/server/lcov.info ./target/coverage/client/**/lcov.info | coveralls"

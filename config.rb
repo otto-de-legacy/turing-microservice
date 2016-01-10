@@ -4,9 +4,9 @@ require 'susy'
 
 # Set this to the root of your project when deployed:
 http_path = "/turing-microservice"
-sass_dir = "public/assets/scss"
-css_dir = "target/assets/css"
-javascripts_dir = "target/assets/js"
+sass_dir = "src/client/styles"
+css_dir = "src/server/public/css"
+javascripts_dir = "src/server/public/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

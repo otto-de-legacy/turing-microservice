@@ -12,15 +12,15 @@ import sass from 'gulp-sass';
 import source from 'vinyl-source-stream';
 import uglify from 'gulp-uglify';
 
-const targetAssetsDir = './target/assets/';
-const sourceAssetsDir = './public/assets/';
+const sourceAssetsDir = './src/client/';
+const targetAssetsDir = './src/server/public/';
 
 gulp.task('sass', () => {
   const targetCssAssetsDir = `${targetAssetsDir}css/`;
 
   del.sync(targetCssAssetsDir);
 
-  return gulp.src(`${sourceAssetsDir}scss/**/*.scss`)
+  return gulp.src(`${sourceAssetsDir}styles/**/*.scss`)
     .pipe(sass({
       outputStyle: 'compressed',
       relativeAssets: true,
@@ -35,13 +35,13 @@ gulp.task('browserify', () => {
 
   del.sync(targetJsAssetsDir);
 
-  const browserified = browserify(`${sourceAssetsDir}js/critical/public/index.jsx`, {
+  const browserified = browserify(`${sourceAssetsDir}app.jsx`, {
     extensions: ['.jsx'],
     debug: true,
     transform: [babelify]
   });
   return browserified.bundle()
-    .pipe(source('bundle.js'))
+    .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest(targetJsAssetsDir));
@@ -51,6 +51,7 @@ gulp.task('eslint', () => {
   const jsFiles = [
     './**/*.js',
     '!./node_modules/**/*.js',
+    '!./src/server/public/**/*.js',
     '!./target/**/*.js'
   ];
   return gulp.src(jsFiles)
@@ -60,11 +61,16 @@ gulp.task('eslint', () => {
 });
 
 gulp.task('testServer', () => {
-  gulp.src(['./server/**/*.js'])
+  const jsFiles = [
+    './src/server/**/*.js',
+    '!./src/server/public/**/*.js'
+  ];
+
+  gulp.src(jsFiles)
     .pipe(istanbul())
     .pipe(istanbul.hookRequire());
 
-  return gulp.src('./tests/server/**/*Spec.js')
+  return gulp.src('./test/server/**/*Spec.js')
     .pipe(mocha({reporter: 'spec'}))
     .pipe(istanbul.writeReports({
       dir: './target/coverage/server',
@@ -74,7 +80,7 @@ gulp.task('testServer', () => {
 
 gulp.task('testPublic', (done) => {
   new KarmaServer({
-    configFile: `${__dirname}/tests/public/karma.conf.js`,
+    configFile: `${__dirname}/test/client/karma.conf.js`,
     singleRun: true
   }, done).start();
 });
@@ -88,5 +94,5 @@ gulp.task('build', (callback) => {
 });
 
 gulp.task('test', (callback) => {
-  runSequence('eslint', 'testServer', callback);
+  runSequence('eslint', 'testServer', 'testPublic', callback);
 });
