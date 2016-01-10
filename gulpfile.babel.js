@@ -79,14 +79,14 @@ gulp.task('testPublic', (done) => {
   }, done).start();
 });
 
-gulp.task('test', (callback) => {
-  runSequence('eslint', 'testServer', callback);
-});
-
 gulp.task('build', (callback) => {
   process.env.NODE_ENV = 'production';
   runSequence([
     'sass',
     'browserify'
   ], callback);
+});
+
+gulp.task('test', (callback) => {
+  runSequence('eslint', 'testServer', callback);
 });

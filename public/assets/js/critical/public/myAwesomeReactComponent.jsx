@@ -1,9 +1,16 @@
 import React from 'react';
-import RaisedButton from 'material-ui/lib/raised-button';
+import DatePicker from 'material-ui/lib/date-picker/date-picker';
 
 class MyAwesomeReactComponent extends React.Component {
   render() {
-    return <RaisedButton label='Default'/>;
+    return (
+      <div>
+        <DatePicker
+          hintText='Inline'
+          container='inline'
+        />
+      </div>
+    );
   }
 }
 

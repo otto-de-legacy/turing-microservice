@@ -9,7 +9,8 @@ function normalizePort(val) {
 }
 
 const app = require('./server/app');
-const port = normalizePort(process.env.SERVER_PORT);
+const PORT = 8080;
+const port = normalizePort(process.env.PORT || PORT);
 
 app.set('port', port);
 
