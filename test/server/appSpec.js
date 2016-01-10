@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../../src/server/app');
 const httpStatusHelper = require('../../src/server/helper/httpStatusHelper');
 
-describe('appSpec', () => {
+describe('app', () => {
   it('GET /turing-microservice/img/turing.jpg', (done) => {
     request(app)
       .get('/turing-microservice/img/turing.jpg')
