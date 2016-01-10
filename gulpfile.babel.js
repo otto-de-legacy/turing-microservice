@@ -20,7 +20,7 @@ gulp.task('sass', () => {
 
   del.sync(targetCssAssetsDir);
 
-  return gulp.src(`${sourceAssetsDir}styles/**/*.scss`)
+  return gulp.src(`${sourceAssetsDir}style/**/*.scss`)
     .pipe(sass({
       outputStyle: 'compressed',
       relativeAssets: true,
