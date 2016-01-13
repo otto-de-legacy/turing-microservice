@@ -2,8 +2,9 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyAwesomeReactComponent from './component/myAwesomeReactComponent';
+import TalkDatePicker from './component/TalkDatePicker';
+import TopAppBar from './component/TopAppBar';
 
 injectTapEventPlugin();
 
-ReactDOM.render(<MyAwesomeReactComponent />, document.body);
+ReactDOM.render(<div><TopAppBar /><TalkDatePicker /></div>, document.body);

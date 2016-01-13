@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
 
-class MyAwesomeReactComponent extends React.Component {
+class TalkDatePicker extends React.Component {
   render() {
     return (
       <div>
@@ -14,4 +14,4 @@ class MyAwesomeReactComponent extends React.Component {
   }
 }
 
-export default MyAwesomeReactComponent;
+export default TalkDatePicker;
