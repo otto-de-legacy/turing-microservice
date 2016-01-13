@@ -1,51 +1,9 @@
-import babelify from 'babelify';
-import browserify from 'browserify';
-import buffer from 'vinyl-buffer';
-import del from 'del';
 import eslint from 'gulp-eslint';
 import gulp from 'gulp';
 import istanbul from 'gulp-istanbul';
 import {Server as KarmaServer} from 'karma';
 import mocha from 'gulp-mocha';
 import runSequence from 'run-sequence';
-import sass from 'gulp-sass';
-import source from 'vinyl-source-stream';
-import uglify from 'gulp-uglify';
-
-const sourceAssetsDir = './src/client/';
-const targetAssetsDir = './src/server/public/';
-
-gulp.task('sass', () => {
-  const targetCssAssetsDir = `${targetAssetsDir}css/`;
-
-  del.sync(targetCssAssetsDir);
-
-  return gulp.src(`${sourceAssetsDir}style/**/*.scss`)
-    .pipe(sass({
-      outputStyle: 'compressed',
-      relativeAssets: true,
-      lineComments: false,
-      errLogToConsole: true
-    }))
-    .pipe(gulp.dest(targetCssAssetsDir));
-});
-
-gulp.task('browserify', () => {
-  const targetJsAssetsDir = `${targetAssetsDir}js/`;
-
-  del.sync(targetJsAssetsDir);
-
-  const browserified = browserify(`${sourceAssetsDir}app.jsx`, {
-    extensions: ['.jsx'],
-    debug: true,
-    transform: [babelify]
-  });
-  return browserified.bundle()
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest(targetJsAssetsDir));
-});
 
 gulp.task('eslint', () => {
   const jsFiles = [
@@ -83,14 +41,6 @@ gulp.task('testPublic', (done) => {
     configFile: `${__dirname}/test/client/karma.conf.js`,
     singleRun: true
   }, done).start();
-});
-
-gulp.task('build', (callback) => {
-  process.env.NODE_ENV = 'production';
-  runSequence([
-    'sass',
-    'browserify'
-  ], callback);
 });
 
 gulp.task('test', (callback) => {
