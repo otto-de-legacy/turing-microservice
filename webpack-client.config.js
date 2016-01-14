@@ -8,7 +8,7 @@ module.exports = {
   target: 'web',
   cache: false,
   debug: false,
-  devtool: 'source-map',
+  devtool: false,
   entry: [path.join(__dirname, 'src/client/app.jsx')],
   output: {
     path: path.join(__dirname, 'src/server/public'),
