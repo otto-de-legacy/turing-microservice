@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import path from 'path';
 const nodeModulesPath = path.resolve(__dirname, '../../node_modules');
 
-module.exports = {
+export default {
   target: 'web',
   cache: true,
   debug: true,

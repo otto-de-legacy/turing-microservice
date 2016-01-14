@@ -1,7 +1,8 @@
-const internalController = require('../../controller/internal/internalController');
-const router = require('express').Router();
+import internalController from '../../controller/internal/internalController';
+import express from 'express';
+const Router = express.Router();
 
-router.get('/health', internalController.health);
-router.get('/status', internalController.status);
+Router.get('/health', internalController.health);
+Router.get('/status', internalController.status);
 
-module.exports = router;
+export default Router;

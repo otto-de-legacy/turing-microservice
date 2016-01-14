@@ -1,4 +1,4 @@
-module.exports = (() => {
+export default (() => {
   const scoring = {
     OK: 0,
     WARNING: 1,

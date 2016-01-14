@@ -1,3 +1,5 @@
+import debug from 'debug';
+
 function normalizePort(val) {
   const port = parseInt(val);
   if (isNaN(port) || port < 0) {
@@ -6,13 +8,14 @@ function normalizePort(val) {
   return port;
 }
 
-const app = require('./app');
+import app from './app';
 const PORT = 8080;
 const port = normalizePort(process.env.PORT || PORT);
 
 app.set('port', port);
 
-const server = require('http').createServer(app);
+import http from 'http';
+const server = http.createServer(app);
 server.listen(port);
 server.on('error', (error) => {
   if (error.syscall !== 'listen') {
@@ -28,5 +31,5 @@ server.on('error', (error) => {
   }
 });
 server.on('listening', () => {
-  require('debug')('turing-microservice:server')(`Listening on port ${server.address().port}`);
+  debug('turing-microservice:server')(`Listening on port ${server.address().port}`);
 });

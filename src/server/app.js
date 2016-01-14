@@ -1,10 +1,17 @@
-const bodyParser = require('body-parser');
-const express = require('express');
+import bodyParser from 'body-parser';
+import express from 'express';
+import compression from 'compression';
+import consolidate from 'consolidate';
+import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
+import publicRoutes from './routes/public/publicRoutes';
+import internalRoutes from './routes/internal/internalRoutes';
+import errorRoutes from './routes/errorRoutes';
 
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackClientDevConfig = require('../../resources/webpack/webpack-client-dev.config.js');
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+import webpackClientDevConfig from '../../resources/webpack/webpack-client-dev.config.js';
 
 const app = express();
 
@@ -14,16 +21,16 @@ app.locals.pretty = true;
 
 app.locals.cache = 'memory';
 
-app.use(require('compression')({level: 9}));
+app.use(compression({level: 9}));
 
-app.engine('html', require('consolidate').swig);
+app.engine('html', consolidate.swig);
 app.set('views', `${__dirname}/view`);
 app.set('view engine', 'html');
 
-app.use(require('morgan')('dev'));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(require('cookie-parser')());
+app.use(cookieParser());
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/turing-microservice', express.static(`${__dirname}/public`));
@@ -41,9 +48,9 @@ if (process.env.NODE_ENV === 'production') {
   app.use(webpackHotMiddleware(compiler));
 }
 
-app.use('/turing-microservice', require('./routes/public/publicRoutes'));
-app.use('/turing-microservice/internal', require('./routes/internal/internalRoutes'));
+app.use('/turing-microservice', publicRoutes);
+app.use('/turing-microservice/internal', internalRoutes);
 
-app.use(require('./routes/errorRoutes'));
+app.use(errorRoutes);
 
-module.exports = app;
+export default app;

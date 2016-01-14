@@ -1,6 +1,7 @@
-const publicController = require('../../controller/public/publicController');
-const router = require('express').Router();
+import publicController from '../../controller/public/publicController';
+import express from 'express';
+const Router = express.Router();
 
-router.get('/', publicController.index);
+Router.get('/', publicController.index);
 
-module.exports = router;
+export default Router;

@@ -11,7 +11,7 @@ fs.readdirSync(nodeModulesPath)
     nodeModules[module] = `commonjs ${module}`;
   });
 
-module.exports = {
+export default {
   target: 'node',
   cache: false,
   debug: false,
