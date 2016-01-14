@@ -39,7 +39,7 @@ To make IntelliJ development features work properly. (You still have to configur
   
 Start the server:
 
-    $ PORT=8080 node src/server/server.js
+    $ PORT=8080 node target/server/server.js
     
 Then open a browser and visit:
 

@@ -1,4 +1,4 @@
-require('./style/main');
+require('./style/main.scss');
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 

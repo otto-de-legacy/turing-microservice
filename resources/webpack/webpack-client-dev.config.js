@@ -11,10 +11,10 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join(__dirname, '../../src/client/app.jsx')
+    path.resolve(__dirname, '../../src/client/app.jsx')
   ],
   output: {
-    path: path.join(__dirname, '../../src/server/public'),
+    path: path.resolve(__dirname, '../../src/server/public'),
     filename: 'js/app.js',
     publicPath: '/turing-microservice'
   },
@@ -27,7 +27,7 @@ module.exports = {
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        loaders: ['babel?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=react-hmre'],
+        loaders: ['babel-loader?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=react-hmre'],
         exclude: nodeModulesPath
       },
       {
@@ -43,8 +43,7 @@ module.exports = {
     extensions: [
       '',
       '.js',
-      '.jsx',
-      '.scss'
+      '.jsx'
     ]
   }
 };

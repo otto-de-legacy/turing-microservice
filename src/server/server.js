@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 function normalizePort(val) {
   const port = parseInt(val);
   if (isNaN(port) || port < 0) {
