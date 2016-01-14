@@ -19,6 +19,8 @@ gulp.task('eslint', () => {
 });
 
 gulp.task('testServer', () => {
+  process.env.NODE_ENV = 'production';
+
   const jsFiles = [
     './src/server/**/*.js',
     '!./src/server/public/**/*.js'
