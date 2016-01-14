@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-const path = require('path');
+import path from 'path';
 const nodeModulesPath = path.resolve(__dirname, '../../node_modules');
 
 const nodeModules = {};
