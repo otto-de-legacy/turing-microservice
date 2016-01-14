@@ -16,12 +16,12 @@ _turing-microservice_ is used for a number of different services now. Still it i
 * Aggregate a status.
 * Deliver a json status report.
 * Provide Gulp tasks for:
-    * Transpiling fronend js code from es6 to es5 with babel
-    * Compile sass to css
-    * Veryfy code quality with eslint
+    * Verifying code quality with eslint
     * Execute server tests with mocha
     * Execute public tests with karma
     * Create coverage reports for server and public tests
+* Webpack configurations for production and development
+* Live reloading of code during development
 
 ## Setup
 
@@ -39,7 +39,7 @@ To make IntelliJ development features work properly. (You still have to configur
   
 Start the server:
 
-    $ PORT=8080 node server.js
+    $ PORT=8080 node src/server/server.js
     
 Then open a browser and visit:
 
@@ -53,8 +53,6 @@ Then open a browser and visit:
 
 This also:
 
-* builds css files from scss
-* builds public es5 js from public es6 js
 * runs eslint
 * creates coverage reports
 
