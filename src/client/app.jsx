@@ -9,4 +9,4 @@ import TopAppBar from './component/TopAppBar';
 
 injectTapEventPlugin();
 
-ReactDOM.render(<div><TopAppBar /><TalkDatePicker /></div>, document.body);
+ReactDOM.render(<div><TopAppBar /><TalkDatePicker /></div>, document.getElementById('app'));

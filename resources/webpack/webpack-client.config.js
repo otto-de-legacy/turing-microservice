@@ -2,16 +2,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 const path = require('path');
-const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+const nodeModulesPath = path.resolve(__dirname, '../../node_modules');
 
 module.exports = {
   target: 'web',
   cache: false,
   debug: false,
   devtool: false,
-  entry: [path.join(__dirname, 'src/client/app.jsx')],
+  entry: [path.join(__dirname, '../../src/client/app.jsx')],
   output: {
-    path: path.join(__dirname, 'src/server/public'),
+    path: path.join(__dirname, '../../src/server/public'),
     filename: 'js/app.js'
   },
   plugins: [
@@ -25,7 +25,7 @@ module.exports = {
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        loaders: ['babel'],
+        loaders: ['babel?presets[]=es2015&presets[]=react'],
         exclude: nodeModulesPath
       },
       {
