@@ -8,10 +8,15 @@
     "email": "benedikt.stemmildt@otto.de",
     "url": "https://github.com/benestem"
   },
-  "main": "src/server/server.js",
+  "main": "target/server/server.js",
   "scripts": {
-    "postinstall": "gulp build",
-    "test": "gulp test"
+    "build-client": "webpack --config resources/webpack/webpack-client.config.js --progress",
+    "build-server": "webpack --config resources/webpack/webpack-server.config.js --progress",
+    "build": "npm run build-client && npm run build-server",
+    "postinstall": "npm run build",
+    "test": "gulp test",
+    "watch": "webpack --config resources/webpack/webpack-server-dev.config.js --progress",
+    "start-dev": "npm run watch & nodemon --ext html,json,js,css"
   },
   "babel": {
     "presets": [
@@ -23,7 +28,7 @@
     "body-parser": "1.14.2",
     "compression": "1.6.0",
     "consolidate": "0.13.1",
-    "cookie-parser": "1.4.0",
+    "cookie-parser": "1.4.1",
     "debug": "2.2.0",
     "express": "4.13.3",
     "morgan": "1.6.1",
@@ -38,9 +43,9 @@
     "babel-preset-react": "6.3.13",
     "babel-preset-react-hmre": "1.0.1",
     "chai": "3.4.1",
-    "core-js": "2.0.2",
+    "core-js": "2.0.3",
     "css-loader": "0.23.1",
-    "eslint-plugin-react": "3.14.0",
+    "eslint-plugin-react": "3.15.0",
     "extract-text-webpack-plugin": "1.0.1",
     "gulp": "3.9.0",
     "gulp-eslint": "1.1.1",
@@ -58,6 +63,7 @@
     "material-ui": "0.14.2",
     "mocha": "2.3.4",
     "node-sass": "3.4.2",
+    "nodemon": "1.8.1",
     "phantomjs": "1.9.19",
     "react": "0.14.6",
     "react-dom": "0.14.6",
@@ -66,11 +72,10 @@
     "sass-loader": "3.1.2",
     "sinon": "1.17.2",
     "sinon-chai": "2.8.0",
-    "supertest": "1.1.0",
-    "webpack-stream": "3.1.0"
+    "supertest": "1.1.0"
   },
   "engines": {
-    "node": "5.4.0"
+    "node": "5.4.1"
   },
   "homepage": "https://github.com/otto-de/turing-microservice#readme",
   "repository": {

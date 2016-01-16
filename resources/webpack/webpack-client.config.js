@@ -23,8 +23,8 @@ export default {
   module: {
     loaders: [
       {
-        test: /\.(js|jsx)$/,
-        loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
+        test: /\.jsx$/,
+        loaders: ['babel-loader'],
         exclude: nodeModulesPath
       },
       {

@@ -13,8 +13,9 @@ fs.readdirSync(nodeModulesPath)
 
 export default {
   target: 'node',
-  cache: false,
-  debug: false,
+  watch: true,
+  cache: true,
+  debug: true,
   devtool: 'source-map',
   entry: [path.resolve(__dirname, '../../src/server/server.js')],
   output: {
@@ -27,7 +28,7 @@ export default {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel-loader'],
+        loaders: ['babel-loader?cacheDirectory'],
         exclude: nodeModulesPath
       },
       {

@@ -19,6 +19,7 @@ export default {
     publicPath: '/turing-microservice'
   },
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin('css/main.css')
@@ -26,8 +27,8 @@ export default {
   module: {
     loaders: [
       {
-        test: /\.(js|jsx)$/,
-        loaders: ['babel-loader?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=react-hmre'],
+        test: /\.jsx$/,
+        loaders: ['babel-loader?cacheDirectory&presets[]=react-hmre'],
         exclude: nodeModulesPath
       },
       {
