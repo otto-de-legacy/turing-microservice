@@ -1,7 +1,5 @@
 /.idea/
-/.sass-cache/
 /node_modules/
 /src/server/public/css/
 /src/server/public/js/
 /target/
-/turing-microservice.i*

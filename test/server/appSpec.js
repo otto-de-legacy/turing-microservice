@@ -1,6 +1,6 @@
-const request = require('supertest');
-const app = require('../../src/server/app');
-const httpStatusHelper = require('../../src/server/helper/httpStatusHelper');
+import request from 'supertest';
+import app from '../../src/server/app';
+import httpStatusHelper from '../../src/server/helper/httpStatusHelper';
 
 describe('app', () => {
   it('GET /turing-microservice/img/turing.jpg', (done) => {

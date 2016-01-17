@@ -27,13 +27,8 @@ module.exports = (config) => {
       '**/*.html': ['html2js']
     },
     reporters: [
-      'progress',
-      'coverage'
+      'progress'
     ],
-    coverageReporter: {
-      type: 'lcov',
-      dir: '../../target/coverage/client'
-    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
