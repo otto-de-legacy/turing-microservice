@@ -10,7 +10,7 @@
   },
   "main": "target/server/server.js",
   "scripts": {
-    "postinstall": "gulp build",
+    "build": "gulp build",
     "test": "gulp test",
     "start-dev": "gulp watch & nodemon --ext html,js"
   },
@@ -27,8 +27,12 @@
     "cookie-parser": "1.4.1",
     "debug": "2.2.0",
     "express": "4.13.3",
+    "extract-text-webpack-plugin": "1.0.1",
     "morgan": "1.6.1",
-    "swig": "1.4.2"
+    "swig": "1.4.2",
+    "webpack": "1.12.11",
+    "webpack-dev-middleware": "1.4.0",
+    "webpack-hot-middleware": "2.6.0"
   },
   "devDependencies": {
     "babel-loader": "6.2.1",
@@ -39,7 +43,6 @@
     "core-js": "2.0.3",
     "css-loader": "0.23.1",
     "eslint-plugin-react": "3.15.0",
-    "extract-text-webpack-plugin": "1.0.1",
     "gulp": "3.9.0",
     "gulp-eslint": "1.1.1",
     "gulp-mocha": "2.2.0",
@@ -64,9 +67,6 @@
     "sinon": "1.17.2",
     "sinon-chai": "2.8.0",
     "supertest": "1.1.0",
-    "webpack": "1.12.11",
-    "webpack-dev-middleware": "1.4.0",
-    "webpack-hot-middleware": "2.6.0",
     "webpack-stream": "^3.1.0"
   },
   "engines": {
