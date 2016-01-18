@@ -1,3 +1,6 @@
+// its a demo for webpacked karma tests
+require('../../../src/client/app');
+
 describe('myAwesomeReactComponent', () => {
   it('expect to convert a given string to a url', () => {
     // given

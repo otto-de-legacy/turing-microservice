@@ -1,7 +1,4 @@
 module.exports = (config) => {
-  const sourceJsAssetsDir = '../../resources/server/public/';
-  const testJsAssetsDir = '../../test/client/';
-
   config.set({
     basePath: '',
     frameworks: [
@@ -12,23 +9,59 @@ module.exports = (config) => {
     files: [
       // phantomjs es5 shim
       '../../node_modules/core-js/client/shim.min.js',
-      // js
-      `${sourceJsAssetsDir}**/*.js`,
       // fixtures
       './fixture/**/*.html',
       // testHelper
-      `${testJsAssetsDir}testHelper.js`,
+      '../../test/client/testHelper.js',
       // specs
-      `${testJsAssetsDir}component/**/*Spec.js`
+      '../../test/client/specsContext.js'
     ],
     exclude: [],
     preprocessors: {
-      [`${testJsAssetsDir}**/*.js`]: ['babel'],
+      '../../test/client/testHelper.js': ['babel'],
+      '../../test/client/specsContext.js': ['webpack'],
       './fixture/**/*.html': ['html2js']
     },
     reporters: [
-      'progress'
+      'progress',
+      'coverage'
     ],
+    coverageReporter: {
+      type: 'lcov',
+      dir: '../../target/coverage/client'
+    },
+    webpack: {
+      module: {
+        loaders: [
+          {
+            test: /\.(js|jsx)$/,
+            loaders: ['babel-loader'],
+            exclude: /node_modules\//
+          },
+          {
+            test: /\.scss$/,
+            loader: 'css-loader!sass-loader'
+          }
+        ],
+        postLoaders: [
+          {
+            test: /\.(js|jsx)$/,
+            loader: 'istanbul-instrumenter',
+            exclude: /(test|node_modules)\//
+          }
+        ]
+      },
+      sassLoader: {
+        outputStyle: 'compressed'
+      },
+      resolve: {
+        extensions: [
+          '',
+          '.js',
+          '.jsx'
+        ]
+      }
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
