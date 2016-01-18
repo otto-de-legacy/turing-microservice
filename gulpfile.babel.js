@@ -1,39 +1,28 @@
-import eslint from 'gulp-eslint';
-import gulp from 'gulp';
-import {Server as KarmaServer} from 'karma';
-import mocha from 'gulp-mocha';
-import runSequence from 'run-sequence';
-import webpack from 'webpack-stream';
+const eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const istanbul = require('gulp-istanbul');
+const KarmaServer = require('karma').Server;
+const mocha = require('gulp-mocha');
+const runSequence = require('run-sequence');
+const webpack = require('webpack-stream');
 
-import webpackClientConfig from './resources/webpack/webpack-client.config';
-import webpackServerConfig from './resources/webpack/webpack-server.config';
-import webpackServerDevConfig from './resources/webpack/webpack-server-dev.config';
+const webpackClientConfig = require('./resources/client/webpack/webpack-client.config.js');
 
 gulp.task('build-client', () =>
   gulp.src('./src/client/app.jsx')
     .pipe(webpack(webpackClientConfig))
-    .pipe(gulp.dest('./src/server/public')));
-
-gulp.task('build-server', () =>
-  gulp.src('./src/server/server.js')
-    .pipe(webpack(webpackServerConfig))
-    .pipe(gulp.dest('./target/server')));
+    .pipe(gulp.dest('./resources/server/public')));
 
 gulp.task('build', (callback) => {
-  runSequence('build-client', 'build-server', callback);
+  runSequence('build-client', callback);
 });
-
-gulp.task('watch', () =>
-  gulp.src('./src/server/server.js')
-    .pipe(webpack(webpackServerDevConfig))
-    .pipe(gulp.dest('./target/server')));
 
 gulp.task('eslint', () => {
   const jsFiles = [
     './**/*.js',
     './**/*.jsx',
     '!./node_modules/**/*.js',
-    '!./src/server/public/**/*.js',
+    '!./resources/server/public/**/*.js',
     '!./target/**/*.js'
   ];
   return gulp.src(jsFiles)
@@ -45,13 +34,21 @@ gulp.task('eslint', () => {
 gulp.task('testServer', () => {
   process.env.NODE_ENV = 'production';
 
+  gulp.src('./src/server/**/*.js')
+    .pipe(istanbul())
+    .pipe(istanbul.hookRequire());
+
   return gulp.src('./test/server/**/*Spec.js')
-    .pipe(mocha({reporter: 'spec'}));
+    .pipe(mocha({reporter: 'spec'}))
+    .pipe(istanbul.writeReports({
+      dir: './target/coverage/server',
+      reporters: ['lcov']
+    }));
 });
 
 gulp.task('testPublic', (done) => {
   new KarmaServer({
-    configFile: `${__dirname}/test/client/karma.conf.js`,
+    configFile: `${__dirname}/test-resources/client/karma.conf.js`,
     singleRun: true
   }, done).start();
 });

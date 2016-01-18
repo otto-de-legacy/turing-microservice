@@ -1,4 +1,4 @@
-export default (() => {
+module.exports = (() => {
   function notFound(request, response, next) {
     response.set('Surrogate-Control', 'max-age=60');
     const err = new Error('Not Found');

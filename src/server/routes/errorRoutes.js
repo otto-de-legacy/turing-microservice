@@ -1,7 +1,6 @@
-import errorController from '../controller/errorController';
-import express from 'express';
-const Router = express.Router();
+const errorController = require('../controller/errorController');
+const router = require('express').Router();
 
-Router.use(errorController.notFound);
+router.use(errorController.notFound);
 
-export default Router;
+module.exports = router;

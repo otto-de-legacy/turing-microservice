@@ -35,11 +35,21 @@ To make IntelliJ development features work properly. (You still have to configur
 
     $ npm install -g eslint eslint-plugin-react gulp
 
+## Build
+
+Build client:
+
+    $ npm run build
+
 ## Startup
   
-Start the server:
+Start the dev-server:
 
-    $ npm run start-dev
+    $ PORT=8080 npm run start-dev
+
+Or start the live-server:
+
+    $ PORT=8080 npm run start
     
 Then open a browser and visit:
 

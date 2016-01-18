@@ -1,7 +1,7 @@
 let sandbox;
 
 before(() => {
-  fixture.setBase('component/fixture');
+  fixture.setBase('fixture');
 });
 
 beforeEach(() => {

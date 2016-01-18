@@ -1,4 +1,5 @@
-import debug from 'debug';
+#!/usr/bin/env node
+const debug = require('debug');
 
 function normalizePort(val) {
   const port = parseInt(val);
@@ -8,14 +9,12 @@ function normalizePort(val) {
   return port;
 }
 
-import app from './app';
-const PORT = 8080;
-const port = normalizePort(process.env.PORT || PORT);
+const app = require('../src/server/app');
+const port = normalizePort(process.env.PORT);
 
 app.set('port', port);
 
-import http from 'http';
-const server = http.createServer(app);
+const server = require('http').createServer(app);
 server.listen(port);
 server.on('error', (error) => {
   if (error.syscall !== 'listen') {

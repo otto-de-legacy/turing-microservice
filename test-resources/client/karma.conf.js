@@ -1,6 +1,6 @@
 module.exports = (config) => {
-  const sourceJsAssetsDir = '../../src/server/public/';
-  const testJsAssetsDir = './component/';
+  const sourceJsAssetsDir = '../../resources/server/public/';
+  const testJsAssetsDir = '../../test/client/';
 
   config.set({
     basePath: '',
@@ -15,16 +15,16 @@ module.exports = (config) => {
       // js
       `${sourceJsAssetsDir}**/*.js`,
       // fixtures
-      `${testJsAssetsDir}fixture/**/*.html`,
+      './fixture/**/*.html',
       // testHelper
       `${testJsAssetsDir}testHelper.js`,
       // specs
-      `${testJsAssetsDir}spec/**/*Spec.js`
+      `${testJsAssetsDir}component/**/*Spec.js`
     ],
     exclude: [],
     preprocessors: {
       [`${testJsAssetsDir}**/*.js`]: ['babel'],
-      '**/*.html': ['html2js']
+      './fixture/**/*.html': ['html2js']
     },
     reporters: [
       'progress'

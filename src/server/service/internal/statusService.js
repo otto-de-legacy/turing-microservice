@@ -1,8 +1,8 @@
-import os from 'os';
-import packageJson from '../../../../package.json';
-import aggregatedStatusHelper from '../../helper/aggregatedStatusHelper';
+const os = require('os');
+const packageJson = require('../../../../package.json');
+const aggregatedStatusHelper = require('../../helper/aggregatedStatusHelper');
 
-export default (() => {
+module.exports = (() => {
   function getStatusDetails() {
     return {};
   }

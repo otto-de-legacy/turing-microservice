@@ -1,6 +1,6 @@
-import {expect} from 'chai';
+const expect = require('chai').expect;
 
-import aggregatedStatusHelper from '../../../src/server/helper/aggregatedStatusHelper';
+const aggregatedStatusHelper = require('../../../src/server/helper/aggregatedStatusHelper');
 
 describe('aggregatedStatusHelper', () => {
   it('expect to get aggregated status ok for empty status details', () => {

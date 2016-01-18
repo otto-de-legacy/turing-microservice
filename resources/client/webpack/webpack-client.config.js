@@ -1,17 +1,15 @@
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import webpack from 'webpack';
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
 
-import path from 'path';
-const nodeModulesPath = path.resolve(__dirname, '../../node_modules');
-
-export default {
+module.exports = {
   target: 'web',
   cache: false,
   debug: false,
   devtool: false,
-  entry: [path.resolve(__dirname, '../../src/client/app.jsx')],
+  entry: path.resolve(__dirname, '../../../src/client/app.jsx'),
   output: {
-    path: path.resolve(__dirname, '../../src/server/public'),
+    path: path.resolve(__dirname, '../../server/public'),
     filename: 'js/app.js'
   },
   plugins: [
@@ -25,7 +23,7 @@ export default {
       {
         test: /\.jsx$/,
         loaders: ['babel-loader'],
-        exclude: nodeModulesPath
+        exclude: /node_modules\//
       },
       {
         test: /\.scss$/,

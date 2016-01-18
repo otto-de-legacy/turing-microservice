@@ -1,6 +1,6 @@
-import statusService from '../../service/internal/statusService';
+const statusService = require('../../service/internal/statusService');
 
-export default (() => {
+module.exports = (() => {
   function health(request, response) {
     response.end();
   }

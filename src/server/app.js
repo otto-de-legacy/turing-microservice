@@ -1,17 +1,17 @@
-import bodyParser from 'body-parser';
-import express from 'express';
-import compression from 'compression';
-import consolidate from 'consolidate';
-import morgan from 'morgan';
-import cookieParser from 'cookie-parser';
-import publicRoutes from './routes/public/publicRoutes';
-import internalRoutes from './routes/internal/internalRoutes';
-import errorRoutes from './routes/errorRoutes';
+const bodyParser = require('body-parser');
+const express = require('express');
+const compression = require('compression');
+const consolidate = require('consolidate');
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const publicRoutes = require('./routes/public/publicRoutes');
+const internalRoutes = require('./routes/internal/internalRoutes');
+const errorRoutes = require('./routes/errorRoutes');
 
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import webpackClientDevConfig from '../../resources/webpack/webpack-client-dev.config.js';
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackClientDevConfig = require('../../resources/client/webpack/webpack-client-dev.config.js');
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.locals.cache = 'memory';
 app.use(compression({level: 9}));
 
 app.engine('html', consolidate.swig);
-app.set('views', `${__dirname}/view`);
+app.set('views', `${__dirname}/../../resources/server/view`);
 app.set('view engine', 'html');
 
 app.use(morgan('dev'));
@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 if (process.env.NODE_ENV === 'production') {
-  app.use('/turing-microservice', express.static(`${__dirname}/public`));
+  app.use('/turing-microservice', express.static(`${__dirname}/../../resources/server/public`));
 } else {
   const compiler = webpack(webpackClientDevConfig);
   const publicWebpackDevMiddleware = webpackDevMiddleware(compiler, {
@@ -53,4 +53,4 @@ app.use('/turing-microservice/internal', internalRoutes);
 
 app.use(errorRoutes);
 
-export default app;
+module.exports = app;

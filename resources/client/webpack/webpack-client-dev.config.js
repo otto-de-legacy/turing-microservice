@@ -1,20 +1,18 @@
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import webpack from 'webpack';
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
 
-import path from 'path';
-const nodeModulesPath = path.resolve(__dirname, '../../node_modules');
-
-export default {
+module.exports = {
   target: 'web',
   cache: true,
   debug: true,
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.resolve(__dirname, '../../src/client/app.jsx')
+    path.resolve(__dirname, '../../../src/client/app.jsx')
   ],
   output: {
-    path: path.resolve(__dirname, '../../src/server/public'),
+    path: path.resolve(__dirname, '../../server/public'),
     filename: 'js/app.js',
     publicPath: '/turing-microservice'
   },
@@ -29,7 +27,7 @@ export default {
       {
         test: /\.jsx$/,
         loaders: ['babel-loader?cacheDirectory&presets[]=react-hmre'],
-        exclude: nodeModulesPath
+        exclude: /node_modules\//
       },
       {
         test: /\.scss$/,

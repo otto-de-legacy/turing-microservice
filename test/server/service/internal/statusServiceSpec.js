@@ -1,6 +1,6 @@
-import {expect} from 'chai';
+const expect = require('chai').expect;
 
-import statusService from '../../../../src/server/service/internal/statusService';
+const statusService = require('../../../../src/server/service/internal/statusService');
 
 describe('statusService', () => {
   it('expect to get aggregated status ok for empty status details', () => {

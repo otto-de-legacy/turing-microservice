@@ -1,13 +1,13 @@
-import chai from 'chai';
-import {expect} from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
+const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+const expect = chai.expect;
 chai.use(sinonChai);
 
-import request from 'supertest';
-import app from '../../../../src/server/app';
-import statusService from '../../../../src/server/service/internal/statusService';
-import httpStatusHelper from '../../../../src/server/helper/httpStatusHelper';
+const request = require('supertest');
+const app = require('../../../../src/server/app');
+const statusService = require('../../../../src/server/service/internal/statusService');
+const httpStatusHelper = require('../../../../src/server/helper/httpStatusHelper');
 
 describe('internalController', () => {
   it('GET /turing-microservice/internal/health', (done) => {
