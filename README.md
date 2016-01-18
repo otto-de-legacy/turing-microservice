@@ -49,7 +49,7 @@ Start the dev-server:
 
 Or start the live-server:
 
-    $ PORT=8080 npm run start
+    $ NODE_ENV=production PORT=8080 npm run start
     
 Then open a browser and visit:
 
