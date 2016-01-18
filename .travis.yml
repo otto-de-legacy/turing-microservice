@@ -3,3 +3,5 @@ node_js:
   - "5.4.1"
 before_script:
   - npm run build
+after_script:
+  - "npm install coveralls@2.11.6 && cat ./target/coverage/server/lcov.info ./target/coverage/client/**/lcov.info | coveralls"
