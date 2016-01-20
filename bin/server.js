@@ -1,34 +1,26 @@
 #!/usr/bin/env node
+const config = require('../resources/server/config');
 const debug = require('debug');
 
-function normalizePort(val) {
-  const port = parseInt(val);
-  if (isNaN(port) || port < 0) {
-    throw new Error(`Port ${val} is not a valid port`);
-  }
-  return port;
-}
-
 const app = require('../src/server/app');
-const port = normalizePort(process.env.PORT);
-
-app.set('port', port);
+app.set('port', config.port);
 
 const server = require('http').createServer(app);
-server.listen(port);
+server.listen(config.port);
 server.on('error', (error) => {
   if (error.syscall !== 'listen') {
     throw error;
   }
   switch (error.code) {
     case 'EACCES':
-      throw new Error(`Port ${port} requires elevated privileges`);
+      throw new Error(`Port ${config.port} requires elevated privileges`);
     case 'EADDRINUSE':
-      throw new Error(`Port ${port} is already in use`);
+      throw new Error(`Port ${config.port} is already in use`);
     default:
       throw error;
   }
 });
 server.on('listening', () => {
+  // TODO get this value from ${config.rootPath}
   debug('turing-microservice:server')(`Listening on port ${server.address().port}`);
 });

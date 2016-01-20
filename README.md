@@ -42,15 +42,19 @@ Build client:
     $ npm run build
 
 ## Startup
-  
+
 Start the dev-server:
 
-    $ PORT=8080 npm run start-dev
+    $ GROUP=example npm run start-dev
 
 Or start the live-server:
 
-    $ NODE_ENV=production PORT=8080 npm run start
-    
+    $ NODE_ENV=production GROUP=example npm run start
+
+For debug information following environment parameter before the npm run command:
+
+    $ DEBUG=turing-microservice:*
+
 Then open a browser and visit:
 
 * Demo Index Page - http://localhost:8080/turing-microservice/

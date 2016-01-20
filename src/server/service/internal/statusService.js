@@ -1,3 +1,4 @@
+const config = require('../../../../resources/server/config');
 const os = require('os');
 const packageJson = require('../../../../package.json');
 const aggregatedStatusHelper = require('../../helper/aggregatedStatusHelper');
@@ -14,6 +15,7 @@ module.exports = (() => {
       name: packageJson.name,
       version: packageJson.version,
       git: packageJson.repository.url,
+      config,
       status: aggregatedStatus.status,
       message: aggregatedStatus.message,
       statusDetails,
@@ -30,7 +32,7 @@ module.exports = (() => {
   function getSystemStatus() {
     return {
       hostname: os.hostname(),
-      port: process.env.SERVER_PORT,
+      port: config.port,
       platform: os.platform(),
       arch: os.arch(),
       release: os.release(),

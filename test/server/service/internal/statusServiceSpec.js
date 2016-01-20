@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 const statusService = require('../../../../src/server/service/internal/statusService');
 
 describe('statusService', () => {
-  it('expect to get aggregated status ok for empty status details', () => {
+  it('expect to get status page with all details', () => {
     // given
 
     // when
@@ -19,6 +19,7 @@ describe('statusService', () => {
       'name',
       'version',
       'git',
+      'config',
       'status',
       'message',
       'statusDetails',

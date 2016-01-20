@@ -3,24 +3,25 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const expect = chai.expect;
 chai.use(sinonChai);
-
 const request = require('supertest');
+
 const app = require('../../../../src/server/app');
+const config = require('../../../../resources/server/config');
 const statusService = require('../../../../src/server/service/internal/statusService');
 const httpStatusHelper = require('../../../../src/server/helper/httpStatusHelper');
 
 describe('internalController', () => {
-  it('GET /turing-microservice/internal/health', (done) => {
+  it(`GET ${config.rootPath}/internal/health`, (done) => {
     request(app)
-      .get('/turing-microservice/internal/health')
+      .get(`${config.rootPath}/internal/health`)
       .expect('')
       .expect(httpStatusHelper.OK, done);
   });
 
-  it('GET /turing-microservice/internal/status', (done) => {
+  it(`GET ${config.rootPath}/internal/status`, (done) => {
     const getStatusSpy = sinon.spy(statusService, 'getStatus');
     request(app)
-      .get('/turing-microservice/internal/status')
+      .get(`${config.rootPath}/internal/status`)
       .expect('Content-Type', 'application/json; charset=utf-8')
       .expect(httpStatusHelper.OK)
       .end((err) => {

@@ -13,8 +13,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, '../../server/public'),
-    filename: 'js/app.js',
-    publicPath: '/turing-microservice'
+    filename: 'js/app.js'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),

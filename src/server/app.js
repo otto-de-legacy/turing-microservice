@@ -1,3 +1,4 @@
+const config = require('../../resources/server/config');
 const bodyParser = require('body-parser');
 const express = require('express');
 const compression = require('compression');
@@ -32,9 +33,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
-if (process.env.NODE_ENV === 'production') {
-  app.use('/turing-microservice', express.static(`${__dirname}/../../resources/server/public`));
+if (config.env === 'production') {
+  app.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
 } else {
+  webpackClientDevConfig.output.publicPath = config.rootPath;
   const compiler = webpack(webpackClientDevConfig);
   const publicWebpackDevMiddleware = webpackDevMiddleware(compiler, {
     publicPath: webpackClientDevConfig.output.publicPath,
@@ -48,8 +50,8 @@ if (process.env.NODE_ENV === 'production') {
   app.use(webpackHotMiddleware(compiler));
 }
 
-app.use('/turing-microservice', publicRoutes);
-app.use('/turing-microservice/internal', internalRoutes);
+app.use(config.rootPath, publicRoutes);
+app.use(`${config.rootPath}/internal`, internalRoutes);
 
 app.use(errorRoutes);
 
