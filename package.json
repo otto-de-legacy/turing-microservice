@@ -1,7 +1,7 @@
 {
   "name": "turing-microservice",
   "description": "Node.js microservice template",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "author": {
     "name": "Benedikt Stemmildt",

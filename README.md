@@ -51,7 +51,7 @@ Or start the live-server:
 
     $ NODE_ENV=production GROUP=example npm run start
 
-For debug information following environment parameter before the npm run command:
+For debug information add following environment parameter before the npm run command:
 
     $ DEBUG=turing-microservice:*
 
