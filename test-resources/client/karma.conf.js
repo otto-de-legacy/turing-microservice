@@ -7,8 +7,6 @@ module.exports = (config) => {
       'fixture'
     ],
     files: [
-      // phantomjs es5 shim
-      '../../node_modules/core-js/client/shim.min.js',
       // fixtures
       './fixture/**/*.html',
       // testHelper
