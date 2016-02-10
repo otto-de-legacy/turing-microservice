@@ -33,7 +33,7 @@
     "swig": "1.4.2",
     "webpack": "1.12.13",
     "webpack-dev-middleware": "1.5.1",
-    "webpack-hot-middleware": "2.7.0"
+    "webpack-hot-middleware": "2.7.1"
   },
   "devDependencies": {
     "babel-loader": "6.2.2",
