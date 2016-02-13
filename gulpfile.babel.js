@@ -13,8 +13,8 @@ gulp.task('build-client', () =>
     .pipe(webpack(webpackClientConfig))
     .pipe(gulp.dest('./resources/server/public')));
 
-gulp.task('build', (callback) => {
-  runSequence('build-client', callback);
+gulp.task('build', (done) => {
+  runSequence('build-client', done);
 });
 
 gulp.task('eslint', () => {
@@ -54,6 +54,6 @@ gulp.task('testPublic', (done) => {
   }, done).start();
 });
 
-gulp.task('test', (callback) => {
-  runSequence('eslint', 'testServer', 'testPublic', callback);
+gulp.task('test', (done) => {
+  runSequence('eslint', 'testServer', 'testPublic', done);
 });

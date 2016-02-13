@@ -22,7 +22,7 @@
     ]
   },
   "dependencies": {
-    "body-parser": "1.14.2",
+    "body-parser": "1.15.0",
     "compression": "1.6.1",
     "consolidate": "0.14.0",
     "cookie-parser": "1.4.1",
@@ -44,11 +44,11 @@
     "css-loader": "0.23.1",
     "eslint-plugin-react": "3.16.1",
     "gulp": "3.9.1",
-    "gulp-eslint": "1.1.1",
+    "gulp-eslint": "2.0.0",
     "gulp-istanbul": "0.10.3",
     "gulp-mocha": "2.2.0",
     "istanbul-instrumenter-loader": "0.1.3",
-    "karma": "0.13.19",
+    "karma": "0.13.21",
     "karma-babel-preprocessor": "6.0.1",
     "karma-chai-sinon": "0.1.5",
     "karma-coverage": "0.5.3",
@@ -69,7 +69,7 @@
     "sass-loader": "3.1.2",
     "sinon": "1.17.3",
     "sinon-chai": "2.8.0",
-    "supertest": "1.1.0",
+    "supertest": "1.2.0",
     "webpack-stream": "3.1.0"
   },
   "engines": {
