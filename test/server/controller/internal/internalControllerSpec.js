@@ -24,9 +24,9 @@ describe('internalController', () => {
       .get(`${config.rootPath}/internal/status`)
       .expect('Content-Type', 'application/json; charset=utf-8')
       .expect(httpStatusHelper.OK)
-        .end((error) => {
-            if (error) {
-                done(error);
+      .end((error) => {
+        if (error) {
+          done(error);
         } else {
           expect(getStatusSpy).to.have.callCount(1);
           done();
