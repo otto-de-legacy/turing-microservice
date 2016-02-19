@@ -1,4 +1,4 @@
-const config = require('../../../../resources/server/config');
+const config = require('config');
 
 module.exports = (() => {
   function index(request, response) {

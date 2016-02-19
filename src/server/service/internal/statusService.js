@@ -1,4 +1,4 @@
-const config = require('../../../../resources/server/config');
+const config = require('config');
 const os = require('os');
 const packageJson = require('../../../../package.json');
 const aggregatedStatusHelper = require('../../helper/aggregatedStatusHelper');

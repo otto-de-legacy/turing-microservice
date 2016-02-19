@@ -1,0 +1,5 @@
+{
+  "port": 8989,
+  "env": "test",
+  "rootPath": "/turing-microservice"
+}

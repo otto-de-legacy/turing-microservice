@@ -32,8 +32,7 @@ gulp.task('eslint', () => {
 });
 
 gulp.task('testServer', () => {
-  process.env.NODE_ENV = 'production';
-  process.env.GROUP = 'example';
+  process.env.NODE_CONFIG_DIR = './test-resources/server/config';
 
   gulp.src('./src/server/**/*.js')
     .pipe(istanbul())

@@ -1,4 +1,4 @@
-const config = require('../../resources/server/config');
+const config = require('config');
 const bodyParser = require('body-parser');
 const express = require('express');
 const compression = require('compression');
@@ -33,9 +33,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
-if (config.env === 'production') {
-  app.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
-} else {
+if (config.get('env') === 'local') {
   webpackClientDevConfig.output.publicPath = config.rootPath;
   const compiler = webpack(webpackClientDevConfig);
   const publicWebpackDevMiddleware = webpackDevMiddleware(compiler, {
@@ -48,6 +46,8 @@ if (config.env === 'production') {
 
   app.use(publicWebpackDevMiddleware);
   app.use(webpackHotMiddleware(compiler));
+} else {
+  app.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
 }
 
 app.use(config.rootPath, publicRoutes);

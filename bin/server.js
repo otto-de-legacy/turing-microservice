@@ -1,21 +1,21 @@
 #!/usr/bin/env node
-const config = require('../resources/server/config');
+const config = require('config');
 const debug = require('debug');
 
 const app = require('../src/server/app');
-app.set('port', config.port);
+app.set('port', config.get('port'));
 
 const server = require('http').createServer(app);
-server.listen(config.port);
+server.listen(config.get('port'));
 server.on('error', (error) => {
   if (error.syscall !== 'listen') {
     throw error;
   }
   switch (error.code) {
     case 'EACCES':
-      throw new Error(`Port ${config.port} requires elevated privileges`);
+      throw new Error(`Port ${config.get('port')} requires elevated privileges`);
     case 'EADDRINUSE':
-      throw new Error(`Port ${config.port} is already in use`);
+      throw new Error(`Port ${config.get('port')} is already in use`);
     default:
       throw error;
   }

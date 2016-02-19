@@ -6,7 +6,7 @@ chai.use(sinonChai);
 const request = require('supertest');
 
 const app = require('../../../../src/server/app');
-const config = require('../../../../resources/server/config');
+const config = require('config');
 const statusService = require('../../../../src/server/service/internal/statusService');
 const httpStatusHelper = require('../../../../src/server/helper/httpStatusHelper');
 
