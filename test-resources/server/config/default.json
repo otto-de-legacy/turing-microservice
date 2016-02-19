@@ -1,5 +1,6 @@
 {
   "port": 8989,
   "env": "test",
-  "rootPath": "/turing-microservice"
+  "rootPath": "/turing-microservice",
+  "db-url": "mongodb://localhost:27017/turing-test"
 }

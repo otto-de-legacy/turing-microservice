@@ -4,8 +4,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TalkDatePicker from './component/TalkDatePicker';
-import TopAppBar from './component/TopAppBar';
+import ProductList from './component/ProductList';
 
 injectTapEventPlugin();
 
@@ -14,4 +13,4 @@ if (!root) {
   root = document.body;
 }
 
-ReactDOM.render(<div><TopAppBar /><TalkDatePicker /></div>, root);
+ReactDOM.render(<ProductList />, root);

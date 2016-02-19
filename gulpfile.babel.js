@@ -8,10 +8,9 @@ const webpack = require('webpack-stream');
 
 const webpackClientConfig = require('./resources/client/webpack/webpack-client.config.js');
 
-gulp.task('build-client', () =>
-  gulp.src('./src/client/app.jsx')
-    .pipe(webpack(webpackClientConfig))
-    .pipe(gulp.dest('./resources/server/public')));
+gulp.task('build-client', () => gulp.src('./src/client/app.jsx')
+  .pipe(webpack(webpackClientConfig))
+  .pipe(gulp.dest('./resources/server/public')));
 
 gulp.task('build', (done) => {
   runSequence('build-client', done);
@@ -22,6 +21,8 @@ gulp.task('eslint', () => {
     './**/*.js',
     './**/*.jsx',
     '!./node_modules/**/*.js',
+    '!./out/**/*.js',
+    '!./out/**/*.jsx',
     '!./resources/server/public/**/*.js',
     '!./target/**/*.js'
   ];

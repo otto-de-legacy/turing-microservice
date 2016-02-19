@@ -5,9 +5,6 @@ const compression = require('compression');
 const consolidate = require('consolidate');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const publicRoutes = require('./routes/public/publicRoutes');
-const internalRoutes = require('./routes/internal/internalRoutes');
-const errorRoutes = require('./routes/errorRoutes');
 
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -50,9 +47,13 @@ if (config.get('env') === 'local') {
   app.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
 }
 
-app.use(config.rootPath, publicRoutes);
-app.use(`${config.rootPath}/internal`, internalRoutes);
+require('mongoose').connect(config.get('db-url'));
+require('./model/productModel');
 
-app.use(errorRoutes);
+app.use(config.rootPath, require('./routes/public/publicRoutes'));
+app.use(`${config.rootPath}/api`, require('./routes/api/apiRoutes'));
+app.use(`${config.rootPath}/internal`, require('./routes/internal/internalRoutes'));
+
+app.use(require('./routes/errorRoutes'));
 
 module.exports = app;
