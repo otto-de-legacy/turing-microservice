@@ -37,23 +37,23 @@ To make IntelliJ development features work properly. (You still have to configur
 
 ## Build
 
-Build client:
+For compiling the assets (js and css):
 
     $ npm run build
 
 ## Startup
 
-Start the dev-server:
+Start the server:
 
-    $ GROUP=example npm run start-dev
-
-Or start the live-server:
-
-    $ NODE_ENV=production GROUP=example npm run start
+    $ npm start
 
 For debug information add following environment parameter before the npm run command:
 
     $ DEBUG=turing-microservice:*
+
+For starting the server with debug information in dev mode:
+
+    $ npm run watch
 
 Then open a browser and visit:
 

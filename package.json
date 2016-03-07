@@ -1,7 +1,7 @@
 {
   "name": "turing-microservice",
   "description": "Node.js microservice template",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": false,
   "author": {
     "name": "Benedikt Stemmildt",
@@ -11,9 +11,9 @@
   "main": "bin/server.js",
   "scripts": {
     "build": "gulp build",
-    "test": "gulp test",
-    "watch": "DEBUG=turing-microservice:* NODE_CONFIG_DIR=./resources/server/config nodemon --ext html,js",
-    "start": "NODE_CONFIG_DIR=./resources/server/config NODE_ENV=production node bin/server.js"
+    "test": "NODE_CONFIG_DIR=./test-resources/server/config gulp test",
+    "start": "NODE_CONFIG_DIR=./resources/server/config node bin/server.js",
+    "watch": "gulp watch"
   },
   "babel": {
     "presets": [
@@ -49,12 +49,13 @@
     "gulp-eslint": "2.0.0",
     "gulp-istanbul": "0.10.3",
     "gulp-mocha": "2.2.0",
+    "gulp-nodemon": "2.0.6",
     "istanbul-instrumenter-loader": "0.2.0",
     "jquery": "2.2.1",
     "karma": "0.13.21",
     "karma-babel-preprocessor": "6.0.1",
     "karma-chai-sinon": "0.1.5",
-    "karma-coverage": "0.5.4",
+    "karma-coverage": "0.5.5",
     "karma-fixture": "0.2.6",
     "karma-html2js-preprocessor": "0.1.0",
     "karma-mocha": "0.2.2",
@@ -63,7 +64,6 @@
     "material-ui": "0.14.4",
     "mocha": "2.4.5",
     "node-sass": "3.4.2",
-    "nodemon": "1.9.1",
     "phantomjs-prebuilt": "2.1.4",
     "react": "0.14.7",
     "react-dom": "0.14.7",
