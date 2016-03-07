@@ -31,7 +31,6 @@ module.exports = (() => {
   function getAggregatedStatus(statusDetails) {
     const worstScore = Object.keys(statusDetails)
       .reduce((reducedScore, statusDetailKey) => reduceToWorstScore(reducedScore, statusDetails[statusDetailKey]), 0);
-
     return statuses[worstScore];
   }
 

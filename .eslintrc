@@ -22,7 +22,7 @@
   "rules": {
     "react/prefer-stateless-function": 2,
     "react/jsx-space-before-closing": 2,
-    "newline-before-return": 2,
+    "newline-before-return": 0,
     "no-restricted-globals": [
       2,
       "event"
