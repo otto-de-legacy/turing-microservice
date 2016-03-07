@@ -11,6 +11,7 @@ module.exports = (() => {
   function getApplicationStatus() {
     const statusDetails = getStatusDetails();
     const aggregatedStatus = aggregatedStatusHelper.getAggregatedStatus(statusDetails);
+
     return {
       name: packageJson.name,
       version: packageJson.version,

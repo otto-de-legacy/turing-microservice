@@ -12,7 +12,7 @@ class ProductList extends React.Component {
   }
 
   loadProducts() {
-    $.getJSON('api/product/', (products) => {
+    $.getJSON('api/products/', (products) => {
       this.setState({
         products
       });

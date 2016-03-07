@@ -47,7 +47,10 @@ if (config.get('env') === 'local') {
   app.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
 }
 
-require('mongoose').connect(config.get('db-url'));
+const dbUrl = config.get('db-url');
+if (dbUrl) {
+  require('mongoose').connect(dbUrl);
+}
 require('./model/productModel');
 
 app.use(config.rootPath, require('./routes/public/publicRoutes'));

@@ -26,6 +26,7 @@ gulp.task('eslint', () => {
     '!./resources/server/public/**/*.js',
     '!./target/**/*.js'
   ];
+
   return gulp.src(jsFiles)
     .pipe(eslint())
     .pipe(eslint.format())

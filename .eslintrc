@@ -20,6 +20,13 @@
     "react"
   ],
   "rules": {
+    "react/prefer-stateless-function": 2,
+    "react/jsx-space-before-closing": 2,
+    "newline-before-return": 2,
+    "no-restricted-globals": [
+      2,
+      "event"
+    ],
     "accessor-pairs": 2,
     "array-bracket-spacing": [
       2,
@@ -89,7 +96,7 @@
       "declaration"
     ],
     "generator-star-spacing": 2,
-    "global-require": 2,
+    "global-require": 1,
     "guard-for-in": 2,
     "handle-callback-err": 2,
     "id-blacklist": [
