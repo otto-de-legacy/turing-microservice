@@ -26,6 +26,7 @@
   "dependencies": {
     "body-parser": "1.15.0",
     "compression": "1.6.1",
+    "turing-config": "0.0.6",
     "turing-health": "0.0.6",
     "turing-logging": "0.0.1",
     "turing-server": "0.0.1",

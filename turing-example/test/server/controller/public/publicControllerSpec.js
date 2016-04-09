@@ -1,7 +1,7 @@
 const request = require('supertest');
 
 const app = require('../../../../src/server/app');
-const config = require('config');
+const config = require('turing-config');
 const httpStatusHelper = require('../../../../src/server/helper/httpStatusHelper');
 
 describe('publicController', () => {

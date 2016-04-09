@@ -2,6 +2,7 @@
   "appName": "turing-example-test",
   "turing": {
     "logging": {
+      "namespace": "turing-example-test",
       "meta": {
         "type": "turing-example-test"
       },

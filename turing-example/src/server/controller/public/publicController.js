@@ -1,4 +1,4 @@
-const config = require('config');
+const config = require('turing-config');
 
 module.exports = (() => {
   function index(request, response) {

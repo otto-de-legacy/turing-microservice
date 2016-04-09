@@ -1,2 +1,5 @@
 /.idea/
 node_modules/
+/turing-example/resources/server/public/css/
+/turing-example/resources/server/public/js/
+/turing-example/target/
