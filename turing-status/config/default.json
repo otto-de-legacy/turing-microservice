@@ -1,0 +1,7 @@
+{
+  "turing": {
+    "status": {
+      "route": "/status"
+    }
+  }
+}

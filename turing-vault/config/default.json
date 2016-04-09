@@ -1,0 +1,10 @@
+{
+  "turing": {
+    "vault": {
+      "endpoint": "localhost",
+      "token": "",
+      "path": "",
+      "secrets": []
+    }
+  }
+}

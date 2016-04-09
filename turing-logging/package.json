@@ -1,0 +1,32 @@
+{
+  "name": "turing-logging",
+  "version": "0.0.1",
+  "description": "Uses winston to supply a logger and a middleware to express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "dependencies": {
+    "app-module-path": "1.0.5",
+    "continuation-local-storage": "3.1.6",
+    "deeply": "1.0.0",
+    "turing-config": "0.0.1",
+    "stack-trace": "0.0.9",
+    "uuid": "2.0.1",
+    "winston": "2.2.0"
+  },
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
+  "license": "MIT"
+}

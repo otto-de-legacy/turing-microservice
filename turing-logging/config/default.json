@@ -1,0 +1,9 @@
+{
+  "turing": {
+    "logging": {
+      "transports": [{
+        "type": "Console"
+      }]
+    }
+  }
+}

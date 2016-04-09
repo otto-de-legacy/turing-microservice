@@ -1,0 +1,7 @@
+{
+  "turing": {
+    "health": {
+      "route": "/health"
+    }
+  }
+}

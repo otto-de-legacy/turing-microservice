@@ -1,0 +1,29 @@
+{
+  "name": "turing-vault",
+  "version": "0.0.1",
+  "description": "Uses node-vault to read secrets from vault and inject them into the config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "dependencies": {
+    "turing-config": "0.0.1",
+    "turing-logging": "0.0.1",
+    "node-vault": "0.4.4",
+    "async": "1.5.2"
+  },
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
+  "license": "MIT"
+}

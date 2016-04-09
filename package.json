@@ -1,19 +1,21 @@
 {
   "name": "turing-microservice",
-  "description": "Node.js microservice template",
   "version": "0.5.0",
-  "private": false,
-  "author": {
-    "name": "Benedikt Stemmildt",
-    "email": "benedikt.stemmildt@otto.de",
-    "url": "https://github.com/benestem"
-  },
+  "description": "Node.js microservice template",
   "main": "bin/server.js",
   "scripts": {
     "build": "gulp build",
     "test": "NODE_CONFIG_DIR=./test-resources/server/config gulp test",
     "start": "NODE_CONFIG_DIR=./resources/server/config node bin/server.js",
     "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "babel": {
     "presets": [
@@ -75,16 +77,10 @@
     "supertest": "1.2.0",
     "webpack-stream": "3.1.0"
   },
-  "engines": {
-    "node": "5.4.1"
-  },
-  "homepage": "https://github.com/otto-de/turing-microservice#readme",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:otto-de/turing-microservice.git"
-  },
-  "bugs": {
-    "url": "https://github.com/otto-de/turing-microservice/issues"
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
   },
   "license": "MIT"
 }

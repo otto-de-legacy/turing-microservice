@@ -1,0 +1,23 @@
+body {
+
+}
+
+.status {
+  padding: 10px;
+  text-align: center;
+}
+
+.status--OK {
+  background-color: #E4ECB9;
+  color: #3E520B;
+}
+
+.status--WARNING {
+  background-color: #FFEFB0;
+  color: #222222;
+}
+
+.status--ERROR {
+  background-color: #FAD6D0;
+  color: #D4021D;
+}
