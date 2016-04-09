@@ -1,78 +1,67 @@
-"use strict";
+const config = require('turing-config');
+const winston = require('winston');
+const stackTrace = require('stack-trace');
+const path = require('path');
+const cls = require('continuation-local-storage');
+const extend = require('extend');
 
-var winston = require("winston");
-var extend = require("extend");
-var cls = require("continuation-local-storage");
-var config = require("turing-config");
-var stackTrace = require("stack-trace");
-var path = require("path");
+const transportModules = config.get('turing:logging:transports');
+const transports = [];
 
-// add root node_modules for local development with npm workspace/symlinks
-require('app-module-path').addPath(process.cwd() + '/node_modules');
-
-var transportModules = config.get("turing:logging:transports"),
-    transports = [];
-
-transportModules.forEach(function(transportModule) {
-    try {
-      var Transport;
-      if (transportModule.type) {
-        Transport = winston.transports[transportModule.type];
-      } else if(transportModule.module) {
-        Transport = require(transportModule.module)
-      }
-
-      if (Transport) {
-        transports.push(new (Transport)(transportModule.opts));
-      }
-    } catch (e) {
-        console.log(e);
+transportModules.forEach((transportModule) => {
+  try {
+    let Transport;
+    if (transportModule.type) {
+      Transport = winston.transports[transportModule.type];
+    } else if (transportModule.module) {
+      Transport = require(transportModule.module);
     }
+    if (Transport) {
+      transports.push(new Transport(transportModule.opts));
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
 
-var logger = new (winston.Logger)({
-    "exitOnError": false,
-    "transports": transports
+const logger = new winston.Logger({
+  exitOnError: false,
+  transports
 });
 
 function findCaller() {
-    // Achtung: die 6 ist hier hart drin, da 6 Aufrufe/Funktionen nach dem eigentlichen log call kommen
-    var caller = stackTrace.get()[6],
-        file = path.relative(process.cwd(), caller.getFileName()),
-        line = caller.getLineNumber(),
-        column = caller.getColumnNumber();
+  const caller = stackTrace.get()[6];
 
-    return `${file}#${line}:${column}`;
+  const file = path.relative(process.cwd(), caller.getFileName());
+  const line = caller.getLineNumber();
+  const column = caller.getColumnNumber();
+
+  return `${file}#${line}:${column}`;
 }
 
-logger.rewriters.push(function(level, msg, meta) {
-    var namespace = cls.getNamespace(config.get("turing:logging:namespace")),
-        req = namespace.get("req"),
-        res = namespace.get("res"),
-        uuid = namespace.get("uuid"),
-        metaFromConf = config.get("turing:logging:meta");
+logger.rewriters.push((level, msg, meta) => {
+  const namespace = cls.getNamespace(config.get('turing:logging:namespace'));
+  const request = namespace.get('request');
+  const uuid = namespace.get('uuid');
+  const metaFromConf = config.get('turing:logging:meta');
 
-    if (!!uuid) {
-        meta.uuid = uuid;
-    }
+  if (uuid) {
+    meta.uuid = uuid;
+  }
 
-    if (!!req) {
-        var headers = config.get("turing:logging:headers");
+  if (request) {
+    const headers = config.get('turing:logging:headers');
+    headers.forEach((header) => {
+      const value = request.headers[header];
+      if (value) {
+        meta[header] = value;
+      }
+    });
+  }
 
-        headers.forEach(function(header) {
-            var value = req.headers[header];
+  meta.caller = findCaller();
 
-            if (value) {
-                meta[header] = value;
-            }
-        });
-    }
-
-    meta = extend(meta, metaFromConf);
-
-    meta.caller = findCaller();
-
-    return meta;
+  return extend(meta, metaFromConf);
 });
 
 module.exports = logger;

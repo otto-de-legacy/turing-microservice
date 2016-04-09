@@ -1,62 +1,53 @@
-var config = require("turing-config");
-var express = require("express");
-var app = express();
-var getAggregatedStatus = require("./lib/aggregatedStatusHelper").getAggregatedStatus
-var os = require("os");
+const express = require('express');
+const app = express();
+const config = require('turing-config');
+const os = require('os');
+const getAggregatedStatus = require('./lib/aggregatedStatusHelper').getAggregatedStatus;
 
-var exphbs = require('express-handlebars');
+const exphbs = require('express-handlebars');
 app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
-app.set('views', __dirname + "/views");
-app.use('/status', express.static(__dirname + '/public'));
+app.set('views', `${__dirname}/views`);
+app.use('/turing-status-public', express.static(`${__dirname}/public`));
 
-var statusDetails = {};
+const statusDetails = {};
 
 function getStatusJson() {
   return {
-    "application": {
-      "name": config.get("appName"),
-      "status": getAggregatedStatus(statusDetails).status,
-      "message": getAggregatedStatus(statusDetails).message,
-      "statusDetails": statusDetails,
-      "config": config.get()
+    application: {
+      name: config.get('appName'),
+      status: getAggregatedStatus(statusDetails).status,
+      message: getAggregatedStatus(statusDetails).message,
+      statusDetails,
+      config: config.get()
     },
-    "system": {
-        "hostname": os.hostname(),
-        "port": config.get("turing:server:port"),
-        "platform": os.platform(),
-        "arch": os.arch(),
-        "release": os.release(),
-        "systemTime": new Date(),
-        "uptime": os.uptime()
+    system: {
+      hostname: os.hostname(),
+      port: config.get('turing:server:port'),
+      platform: os.platform(),
+      arch: os.arch(),
+      release: os.release(),
+      systemTime: new Date(),
+      uptime: os.uptime()
     }
   };
 }
 
-app.get(config.get("turing:server:routes:internal") + config.get("turing:status:route") , function (req, res) {
-  var status = getStatusJson();
-  res.format({
-    "application/vnd.otto.monitoring.status+json": function () {
-      res.send(status);
+app.get(config.get('turing:server:routes:internal') + config.get('turing:status:route'), (request, response) => {
+  const status = getStatusJson();
+  response.set('cache-control', 'public,max-age=20,s-maxage=20');
+  response.format({
+    'application/vnd.otto.monitoring.status+json': () => {
+      response.json(status);
     },
-    html: function () {
-      res.render("status", getStatusJson());
+    html: () => {
+      response.render('status', status);
     }
   });
 });
 
-/* Status Events ... */
-const EventEmitter = require('events');
-const util = require('util');
-util.inherits(app, EventEmitter);
-
-function setDetail(name, statusDetail) {
+app.setStatusDetail = (name, statusDetail) => {
   statusDetails[name] = statusDetail;
-}
-
-app.on("setStatusDetail", setDetail);
-
-/* ... oder als Funktion */
-app.setStatusDetail = setDetail;
+};
 
 module.exports = app;

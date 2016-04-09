@@ -1,68 +1,60 @@
-var nconf = require("nconf");
-var glob = require("glob");
-var path = require("path");
-var fs = require("fs");
-var template = require("string-template");
+const path = require('path');
+const nconf = require('nconf');
+const glob = require('glob');
+const fs = require('fs');
+const template = require('string-template');
 
-const configFolder = "config";
+const configFolder = process.env.TURING_CONFIG_DIR || 'config';
 
-function loadEnvSpecifigConfig(dir) {
-    var baseDir = path.join(process.cwd(), dir),
-        envFile = path.join(baseDir, nconf.get("NODE_ENV") + ".json"),
-        defaultFile = path.join(baseDir, "default.json");
+function loadEnvSpecificConfig(dir) {
+  const baseDir = path.join(process.cwd(), dir);
+  const envFile = path.join(baseDir, `${nconf.get('NODE_ENV')}.json`);
+  const defaultFile = path.join(baseDir, 'default.json');
 
-    nconf.file(envFile, envFile);
-    nconf.file(defaultFile, defaultFile);
-}
-
-function loadConfigFromProject() {
-    loadEnvSpecifigConfig(configFolder);
+  nconf.file(envFile, envFile);
+  nconf.file(defaultFile, defaultFile);
 }
 
 function loadConfigFromModules() {
-    var configDirs = glob.sync("**/*/turing-*/" + configFolder);
-
-    console.log(configDirs);
-
-    configDirs.forEach(loadEnvSpecifigConfig);
+  glob.sync('**/*/turing-*/config').forEach(loadEnvSpecificConfig);
 }
 
-/**
- * Delete all null (or undefined) properties from an object.
- * Set 'recurse' to true if you also want to delete properties in nested objects.
- */
-function delete_empty_properties(test, recurse) {
-    for (var i in test) {
-        if (!test[i]) {
-            delete test[i];
-        } else if (recurse && typeof test[i] === 'object') {
-            delete_empty_properties(test[i], recurse);
-        }
+function loadConfigFromProject() {
+  loadEnvSpecificConfig(configFolder);
+}
+
+function deleteEmptyPropertiesOf(object) {
+  for (const property in object) {
+    if (object.hasOwnProperty(property) && !object[property]) {
+      delete object[property];
+    } else if (typeof object[property] === 'object') {
+      deleteEmptyPropertiesOf(object[property]);
     }
+  }
 }
 
 function mapCustomEnvVariables() {
-    var customEnvFile = path.join(process.cwd(), configFolder, "custom_env.json");
+  const customEnvFile = path.join(process.cwd(), configFolder, 'custom_env.json');
 
-    if (fs.existsSync(customEnvFile)) {
-        var customEnvContent = fs.readFileSync(customEnvFile).toString(),
-            mappedConf = JSON.parse(template(customEnvContent, nconf.get()));
+  if (fs.existsSync(customEnvFile)) {
+    const customEnvContent = fs.readFileSync(customEnvFile).toString();
+    const mappedConf = JSON.parse(template(customEnvContent, nconf.get()));
 
-        delete_empty_properties(mappedConf, true);
-        nconf.defaults(mappedConf);
-    }
+    deleteEmptyPropertiesOf(mappedConf);
+    nconf.defaults(mappedConf);
+  }
 }
 
 function loadConfig(config) {
-    nconf.argv();
-    nconf.env("__");
-    if (config) {
-        nconf.defaults(config);
-    }
+  nconf.argv();
+  nconf.env('__');
+  if (config) {
+    nconf.defaults(config);
+  }
 
-    mapCustomEnvVariables();
-    loadConfigFromProject();
-    loadConfigFromModules();
+  mapCustomEnvVariables();
+  loadConfigFromProject();
+  loadConfigFromModules();
 }
 
 loadConfig();

@@ -1,30 +1,32 @@
-var express = require("express");
-var config = require("turing-config");
-var path = require("path");
-var pkg = require(path.join(process.cwd(), "package.json"));
-var logger = require("turing-logging").logger;
+const express = require('express');
+const config = require('turing-config');
+const logger = require('turing-logging').logger;
+const pkg = require(require('path').join(process.cwd(), 'package.json'));
 
-var app = express().enable("strict routing");
+const app = express().enable('strict routing');
 
-app.start = function() {
-    var port = config.get("turing:server:port");
+app.start = () => {
+  const port = config.get('turing:server:port');
 
-    app.listen(port, function() {
-        logger.info(`${pkg.name} microservice listening on port ${port}!`);
-    }).on("error", function(error) {
-        if (error.syscall !== "listen") {
-            throw error;
-        }
-
-        switch (error.code) {
-            case "EACCES":
-                throw new Error(`Port ${port} requires elevated privileges`);
-            case "EADDRINUSE":
-                throw new Error(`Port ${port} is already in use`);
-            default:
-                throw error;
-        }
-    });
+  app.listen(port, () => {
+    logger.info(`${pkg.name} microservice listening on port ${port}!`);
+  }).on('error', (error) => {
+    if (error.syscall !== 'listen') {
+      logger.error(error);
+      throw error;
+    }
+    switch (error.code) {
+      case 'EACCES':
+        logger.error(`Port ${port} requires elevated privileges`);
+        throw new Error(`Port ${port} requires elevated privileges`);
+      case 'EADDRINUSE':
+        logger.error(`Port ${port} is already in use`);
+        throw new Error(`Port ${port} is already in use`);
+      default:
+        logger.error(error);
+        throw error;
+    }
+  });
 };
 
 module.exports = app;

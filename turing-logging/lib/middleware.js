@@ -1,15 +1,15 @@
-var config = require("turing-config");
-var uuid = require("uuid");
-var cls = require("continuation-local-storage");
-var namespace = cls.createNamespace(config.get("turing:logging:namespace"));
+const cls = require('continuation-local-storage');
+const config = require('turing-config');
+const namespace = cls.createNamespace(config.get('turing:logging:namespace'));
+const uuid = require('uuid');
 
-module.exports = function(req, res, next) {
-    namespace.bindEmitter(req);
-    namespace.bindEmitter(res);
-    namespace.run(function() {
-        namespace.set("uuid", uuid.v4());
-        namespace.set("req", req);
-        namespace.set("res", res);
-        next();
-    });
+module.exports = (request, response, next) => {
+  namespace.bindEmitter(request);
+  namespace.bindEmitter(response);
+  namespace.run(() => {
+    namespace.set('request', request);
+    namespace.set('response', response);
+    namespace.set('uuid', uuid.v4());
+    next();
+  });
 };

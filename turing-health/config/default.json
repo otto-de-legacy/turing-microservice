@@ -1,5 +1,10 @@
 {
   "turing": {
+    "server": {
+      "routes": {
+        "internal": "/internal"
+      }
+    },
     "health": {
       "route": "/health"
     }

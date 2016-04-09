@@ -1,11 +1,7 @@
 {
   "turing": {
     "server": {
-      "port": 3000,
-      "routes": {
-        "internal": "/internal/",
-        "standard": "/"
-      }
+      "port": 3000
     }
   }
 }

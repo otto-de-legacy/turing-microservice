@@ -1,4 +1,7 @@
+const middleware = require('./lib/middleware');
+const logger = require('./lib/logger');
+
 module.exports = {
-    "middleware": require("./lib/middleware"),
-    "logger": require("./lib/logger")
+  middleware,
+  logger
 };

@@ -1,43 +1,40 @@
-var config = require("turing-config");
-var logger = require("turing-logging").logger;
-var async = require("async");
-var Vault = require("node-vault");
+const config = require('turing-config');
+const logger = require('turing-logging').logger;
+const async = require('async');
+const Vault = require('node-vault');
 
-module.exports = new Promise(function(resolve, reject) {
-    var vaultConfig = config.get("turing:vault");
+module.exports = new Promise((resolve) => {
+  const vaultConfig = config.get('turing:vault');
 
-    if (vaultConfig.token) {
-        var vault = Vault({
-            "endpoint": vaultConfig.endpoint,
-            "token": vaultConfig.token
-        });
+  let readFromVault;
+  if (vaultConfig.token) {
+    const vault = Vault({
+      endpoint: vaultConfig.endpoint,
+      token: vaultConfig.token
+    });
 
-        // Für local:
-        process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
-        function readFromVault(secrets, secret, cb) {
-            vault.read(vaultConfig.path + secret, function(err, data) {
-                if (err) {
-                    cb(err, secrets);
-                } else if (data && data.data) {
-                    secrets[secret] = data.data.value;
-                    cb(null, secrets);
-                }
-            });
+    readFromVault = (secrets, secret, done) => {
+      vault.read(vaultConfig.path + secret, (error, answer) => {
+        if (error) {
+          done(error, secrets);
+        } else if (answer && answer.data) {
+          secrets[secret] = answer.data.value;
+          done(null, secrets);
         }
+      });
+    };
 
-        async.reduce(vaultConfig.secrets, {}, readFromVault, function(err, result) {
-            if (err) {
-                logger.error("Vault: Cannot read secrets from vault", err);
-                throw new Error(err);
-            }
-
-            config.update(result);
-            logger.info("Vault: Read secrets from vault and injected them into the config");
-            resolve(result);
-        });
-    } else {
-      logger.warn("Vault: No token");
-      resolve([]);
-    }
+    async.reduce(vaultConfig.secrets, {}, readFromVault, (error, secrets) => {
+      if (error) {
+        logger.error('Vault: Cannot read secrets from vault', error);
+        throw new Error('Vault: Cannot read secrets from vault', error);
+      }
+      config.update(secrets);
+      logger.info('Vault: Read secrets from vault and injected them into the config');
+      resolve(secrets);
+    });
+  } else {
+    logger.warn('Vault: No token');
+    resolve([]);
+  }
 });

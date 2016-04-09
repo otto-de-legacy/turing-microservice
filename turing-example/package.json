@@ -5,8 +5,8 @@
   "main": "src/server/app.js",
   "scripts": {
     "build": "gulp build",
-    "test": "NODE_CONFIG_DIR=./test-resources/server/config gulp test",
-    "start": "NODE_CONFIG_DIR=./resources/server/config node bin/server.js",
+    "test": "TURING_CONFIG_DIR=./test-resources/server/config gulp test",
+    "start": "TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
     "watch": "gulp watch"
   },
   "repository": {
@@ -26,7 +26,12 @@
   "dependencies": {
     "body-parser": "1.15.0",
     "compression": "1.6.1",
-    "config": "1.19.0",
+    "turing-health": "0.0.6",
+    "turing-logging": "0.0.1",
+    "turing-server": "0.0.1",
+    "turing-status": "0.0.4",
+    "turing-vault": "0.0.1",
+    "winston-graylog2": "0.4.1",
     "consolidate": "0.14.0",
     "cookie-parser": "1.4.1",
     "debug": "2.2.0",

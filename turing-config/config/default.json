@@ -1,7 +1,0 @@
-{
-  "turing": {
-    "logging": {
-      "namespace": "turing.log"
-    }
-  }
-}

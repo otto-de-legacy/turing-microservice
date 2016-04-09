@@ -1,8 +1,13 @@
-var router = require("express").Router();
-var config = require("turing-config");
+const router = require('express').Router();
+const config = require('turing-config');
 
-router.get(config.get("turing:server:routes:internal") + config.get("turing:health:route"), function (req, res) {
-  res.send("OK");
+router.get(config.get('turing:server:routes:internal') + config.get('turing:health:route'), (request, response) => {
+  response.json({
+    status: 'UP',
+    application: {
+      status: 'UP'
+    }
+  });
 });
 
 module.exports = router;

@@ -22,7 +22,7 @@ gulp.task('eslint', () => {
 });
 
 gulp.task('testServer', () => {
-  process.env.NODE_CONFIG_DIR = './test-resources/server/config';
+  process.env.TURING_CONFIG_DIR = './test-resources/server/config';
 
   gulp.src('./src/server/**/*.js')
     .pipe(istanbul())

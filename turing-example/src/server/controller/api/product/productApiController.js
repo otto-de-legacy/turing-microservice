@@ -6,7 +6,7 @@ module.exports = (() => {
       if (error) {
         next(error);
       }
-      response.send(products);
+      response.json(products);
     });
   }
 
