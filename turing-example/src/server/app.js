@@ -1,9 +1,12 @@
-const config = require('config');
+const server = require('turing-server');
+const config = require('turing-config');
+const health = require('turing-health');
+const status = require('turing-status');
+const logging = require('turing-logging');
 const bodyParser = require('body-parser');
 const express = require('express');
 const compression = require('compression');
 const consolidate = require('consolidate');
-const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 
 const webpack = require('webpack');
@@ -11,24 +14,22 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackClientDevConfig = require('../../resources/client/webpack/webpack-client-dev.config.js');
 
-const app = express();
+server.disable('x-powered-by');
 
-app.disable('x-powered-by');
+server.locals.pretty = true;
 
-app.locals.pretty = true;
+server.locals.cache = 'memory';
 
-app.locals.cache = 'memory';
+server.use(compression({level: 9}));
 
-app.use(compression({level: 9}));
+server.engine('html', consolidate.swig);
+server.set('views', `${__dirname}/../../resources/server/view`);
+server.set('view engine', 'html');
 
-app.engine('html', consolidate.swig);
-app.set('views', `${__dirname}/../../resources/server/view`);
-app.set('view engine', 'html');
-
-app.use(morgan('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
+server.use(logging.middleware);
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({extended: false}));
+server.use(cookieParser());
 
 if (config.get('env') === 'local') {
   webpackClientDevConfig.output.publicPath = config.rootPath;
@@ -41,10 +42,10 @@ if (config.get('env') === 'local') {
     }
   });
 
-  app.use(publicWebpackDevMiddleware);
-  app.use(webpackHotMiddleware(compiler));
+  server.use(publicWebpackDevMiddleware);
+  server.use(webpackHotMiddleware(compiler));
 } else {
-  app.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
+  server.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
 }
 
 const dbUrl = config.get('db-url');
@@ -53,10 +54,12 @@ if (dbUrl) {
 }
 require('./model/productModel');
 
-app.use(config.rootPath, require('./routes/public/publicRoutes'));
-app.use(`${config.rootPath}/api`, require('./routes/api/apiRoutes'));
-app.use(`${config.rootPath}/internal`, require('./routes/internal/internalRoutes'));
+server.use(health);
+server.use(status);
 
-app.use(require('./routes/errorRoutes'));
+server.use(config.rootPath, require('./routes/public/publicRoutes'));
+server.use(`${config.rootPath}/api`, require('./routes/api/apiRoutes'));
 
-module.exports = app;
+server.use(require('./routes/errorRoutes'));
+
+module.exports = server;

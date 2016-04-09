@@ -1,7 +1,7 @@
 "use strict";
 
 var winston = require("winston");
-var merge = require("deeply");
+var extend = require("extend");
 var cls = require("continuation-local-storage");
 var config = require("turing-config");
 var stackTrace = require("stack-trace");
@@ -68,7 +68,7 @@ logger.rewriters.push(function(level, msg, meta) {
         });
     }
 
-    meta = merge(meta, metaFromConf);
+    meta = extend(meta, metaFromConf);
 
     meta.caller = findCaller();
 

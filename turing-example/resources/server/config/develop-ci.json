@@ -1,0 +1,14 @@
+{
+  "turing": {
+    "logging": {
+      "transports": [
+        {
+          "module": "winston-graylog2"
+        },
+        {
+          "type": "Console"
+        }
+      ]
+    }
+  }
+}

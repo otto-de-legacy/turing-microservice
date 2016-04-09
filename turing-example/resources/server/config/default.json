@@ -1,6 +1,38 @@
 {
-  "port": 8989,
-  "env": "local",
-  "rootPath": "/turing-microservice",
-  "db-url": "mongodb://localhost:27017/turing"
+  "appName": "turing-example",
+  "turing": {
+    "logging": {
+      "meta": {
+        "lhotse_vertical": "turing",
+        "type": "turing-example"
+      },
+      "headers": [
+        "x-origin"
+      ],
+      "transports": [
+        {
+          "module": "winston-graylog2"
+        },
+        {
+          "type": "Console",
+          "opts": {
+            "prettyPrint": true,
+            "colorize": true
+          }
+        }
+      ]
+    },
+    "server": {
+      "port": 8989,
+      "routes": {
+        "standard": "/turing-example",
+        "internal": "/turing-example/internal"
+      }
+    },
+    "vault": {
+      "secrets": [
+        "hallo"
+      ]
+    }
+  }
 }
