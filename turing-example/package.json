@@ -1,5 +1,5 @@
 {
-  "name": "turing-microservice",
+  "name": "turing-example",
   "version": "0.5.0",
   "description": "Node.js microservice template",
   "main": "src/server/app.js",
@@ -38,7 +38,6 @@
     "express": "4.13.4",
     "extract-text-webpack-plugin": "1.0.1",
     "mongoose": "4.4.6",
-    "morgan": "1.7.0",
     "swig": "1.4.2",
     "webpack": "1.12.14",
     "webpack-dev-middleware": "1.5.1",
@@ -66,6 +65,7 @@
     "karma-fixture": "0.2.6",
     "karma-html2js-preprocessor": "0.1.0",
     "karma-mocha": "0.2.2",
+    "karma-mocha-reporter": "1.1.6",
     "karma-phantomjs-launcher": "1.0.0",
     "karma-webpack": "1.7.0",
     "material-ui": "0.14.4",

@@ -31,8 +31,8 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(cookieParser());
 
-if (config.get('env') === 'local') {
-  webpackClientDevConfig.output.publicPath = config.rootPath;
+if (config.get('NODE_ENV') === 'local') {
+  webpackClientDevConfig.output.publicPath = config.get('turing-example:server:routes:root');
   const compiler = webpack(webpackClientDevConfig);
   const publicWebpackDevMiddleware = webpackDevMiddleware(compiler, {
     publicPath: webpackClientDevConfig.output.publicPath,
@@ -45,10 +45,10 @@ if (config.get('env') === 'local') {
   server.use(publicWebpackDevMiddleware);
   server.use(webpackHotMiddleware(compiler));
 } else {
-  server.use(config.rootPath, express.static(`${__dirname}/../../resources/server/public`));
+  server.use(config.get('turing-example:server:routes:root'), express.static(`${__dirname}/../../resources/server/public`));
 }
 
-const dbUrl = config.get('db-url');
+const dbUrl = config.get('turing-example:mongo:host');
 if (dbUrl) {
   require('mongoose').connect(dbUrl);
 }
@@ -57,8 +57,8 @@ require('./model/productModel');
 server.use(health);
 server.use(status);
 
-server.use(config.rootPath, require('./routes/public/publicRoutes'));
-server.use(`${config.rootPath}/api`, require('./routes/api/apiRoutes'));
+server.use(config.get('turing-example:server:routes:root'), require('./routes/public/publicRoutes'));
+server.use(`${config.get('turing-example:server:routes:root')}/api`, require('./routes/api/apiRoutes'));
 
 server.use(require('./routes/errorRoutes'));
 

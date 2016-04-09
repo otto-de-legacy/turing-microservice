@@ -25,50 +25,19 @@ _turing-microservice_ is used for a number of different services now. Still it i
 
 ## Setup
 
+Install global dependency:
+
+    $ npm -g install npm-workspace
+
 Install dependencies:
 
-    $ npm install
+    $ npm-workspace install
 
 ### Optional
 
 To make IntelliJ development features work properly. (You still have to configure them!)
 
     $ npm install -g eslint eslint-plugin-react gulp
-
-## Build
-
-For compiling the assets (js and css):
-
-    $ npm run build
-
-## Startup
-
-Start the server:
-
-    $ npm start
-
-For debug information add following environment parameter before the npm run command:
-
-    $ DEBUG=turing-microservice:*
-
-For starting the server with debug information in dev mode:
-
-    $ npm run watch
-
-Then open a browser and visit:
-
-* Demo Index Page - http://localhost:8080/turing-microservice/
-* Status Page - http://localhost:8080/turing-microservice/internal/status    
-* Health Check - http://localhost:8080/turing-microservice/internal/health
-    
-## Testing
-  
-    $ npm test
-
-This also:
-
-* runs eslint
-* creates coverage reports
 
 ## Initial Contributors
 

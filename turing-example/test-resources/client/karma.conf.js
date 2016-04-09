@@ -21,7 +21,7 @@ module.exports = (config) => {
       './fixture/**/*.html': ['html2js']
     },
     reporters: [
-      'progress',
+      'mocha',
       'coverage'
     ],
     coverageReporter: {

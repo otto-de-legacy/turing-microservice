@@ -2,17 +2,6 @@
   "turing": {
     "server": {
       "port": "{PORT}"
-    },
-    "logging": {
-      "meta": {
-        "lhotse_group": "{NODE_ENV}",
-        "hallo": "{hallo}"
-      }
-    },
-    "vault": {
-      "endpoint": "{VAULT_ADDR}",
-      "path": "/{NODE_ENV}/turing/example/",
-      "token": "{VAULT_TOKEN}"
     }
   }
 }

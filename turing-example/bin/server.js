@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-var vaulted = require("turing-vault");
+const vaulted = require('turing-vault');
+const logger = require('turing-logging').logger;
 
-vaulted.then(function () {
-  require("../src/server/app.js").start();
-}).catch(function (e) {
-  console.log(e);
-  process.exit();
+vaulted.then(() => {
+  require('../src/server/app.js').start();
+}).catch((error) => {
+  logger.error(error);
+  throw error;
 });

@@ -1,18 +1,11 @@
 {
-  "appName": "turing-example",
+  "appName": "turing-example-test",
   "turing": {
     "logging": {
       "meta": {
-        "lhotse_vertical": "turing",
-        "type": "turing-example"
+        "type": "turing-example-test"
       },
-      "headers": [
-        "x-origin"
-      ],
       "transports": [
-        {
-          "module": "winston-graylog2"
-        },
         {
           "type": "Console",
           "opts": {
@@ -23,16 +16,20 @@
       ]
     },
     "server": {
-      "port": 8989,
+      "port": 8080,
       "routes": {
-        "standard": "/turing-example",
         "internal": "/turing-example/internal"
       }
+    }
+  },
+  "turing-example": {
+    "server": {
+      "routes": {
+        "root": "/turing-example"
+      }
     },
-    "vault": {
-      "secrets": [
-        "hallo"
-      ]
+    "mongo": {
+      "host": "mongodb://localhost:27017/turing-test"
     }
   }
 }

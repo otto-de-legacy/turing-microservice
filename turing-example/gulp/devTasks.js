@@ -14,8 +14,8 @@ gulp.task('watch', () => {
     ],
     ext: 'js scss html json',
     env: {
-      TURING_CONFIG_DIR: './resources/server/config',
-      DEBUG: 'turing-microservice:*'
+      NODE_ENV: 'local',
+      TURING_CONFIG_DIR: './resources/server/config'
     },
     tasks: () => []
   });
