@@ -1,3 +1,5 @@
+'use strict';
+
 const Product = require('mongoose').model('Product');
 
 module.exports = (() => {

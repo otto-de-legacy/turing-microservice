@@ -1,3 +1,5 @@
+'use strict';
+
 const productApiController = require('../../../controller/api/product/productApiController');
 const router = require('express').Router();
 

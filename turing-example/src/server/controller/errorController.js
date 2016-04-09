@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = (() => {
   function notFound(request, response, next) {
     response.set('Surrogate-Control', 'max-age=60');

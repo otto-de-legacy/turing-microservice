@@ -1,3 +1,5 @@
+'use strict';
+
 const server = require('turing-server');
 const config = require('turing-config');
 const health = require('turing-health');

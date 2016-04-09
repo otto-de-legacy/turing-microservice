@@ -1,3 +1,5 @@
+'use strict';
+
 const router = require('express').Router();
 const config = require('turing-config');
 

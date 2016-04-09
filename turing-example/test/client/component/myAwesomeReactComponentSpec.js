@@ -1,4 +1,5 @@
-// its a demo for webpacked karma tests
+'use strict';
+
 require('../../../src/client/app');
 
 describe('myAwesomeReactComponent', () => {

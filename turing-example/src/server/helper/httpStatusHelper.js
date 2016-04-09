@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = (() => {
   const OK = 200;
   const NOT_FOUND = 404;

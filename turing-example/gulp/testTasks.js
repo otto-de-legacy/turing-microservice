@@ -1,3 +1,5 @@
+'use strict';
+
 const eslint = require('gulp-eslint');
 const gulp = require('gulp');
 const istanbul = require('gulp-istanbul');

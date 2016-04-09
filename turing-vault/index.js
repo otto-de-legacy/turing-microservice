@@ -1,3 +1,5 @@
+'use strict';
+
 const config = require('turing-config');
 const logger = require('turing-logging').logger;
 const async = require('async');

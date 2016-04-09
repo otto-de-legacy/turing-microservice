@@ -1,3 +1,5 @@
+'use strict';
+
 const cls = require('continuation-local-storage');
 const config = require('turing-config');
 const namespace = cls.createNamespace(config.get('turing:logging:namespace'));

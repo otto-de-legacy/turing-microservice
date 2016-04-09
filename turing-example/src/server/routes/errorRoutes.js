@@ -1,3 +1,5 @@
+'use strict';
+
 const errorController = require('../controller/errorController');
 const router = require('express').Router();
 

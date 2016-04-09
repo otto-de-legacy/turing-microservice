@@ -1,3 +1,5 @@
+'use strict';
+
 const config = require('turing-config');
 const winston = require('winston');
 const stackTrace = require('stack-trace');

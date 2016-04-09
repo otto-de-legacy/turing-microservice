@@ -1,3 +1,5 @@
+'use strict';
+
 require('./gulp/buildTasks');
 
 require('./gulp/devTasks');
