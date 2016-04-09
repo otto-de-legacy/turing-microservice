@@ -62,6 +62,11 @@ server.use(status);
 server.use(config.get('turing-example:server:routes:root'), require('./routes/public/publicRoutes'));
 server.use(`${config.get('turing-example:server:routes:root')}/api`, require('./routes/api/apiRoutes'));
 
+server.get(`${config.get('turing-example:server:routes:root')}/api/status/:status`, (reqest, response) => {
+  status.setStatusDetail('toll', {status: reqest.params.status});
+  response.end();
+});
+
 server.use(require('./routes/errorRoutes'));
 
 module.exports = server;

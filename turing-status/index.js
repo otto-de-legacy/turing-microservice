@@ -48,6 +48,7 @@ app.get(config.get('turing:server:routes:internal') + config.get('turing:status:
   });
 });
 
+// TODO: Add validation for status OK, WARNING, ERROR
 app.setStatusDetail = (name, statusDetail) => {
   statusDetails[name] = statusDetail;
 };
