@@ -11,11 +11,9 @@ gulp.task('eslint', () => {
   const jsFiles = [
     './**/*.js',
     './**/*.jsx',
-    '!./node_modules/**/*.js',
-    '!./out/**/*.js',
-    '!./out/**/*.jsx',
-    '!./resources/server/public/**/*.js',
-    '!./target/**/*.js'
+    '!node_modules/**',
+    '!./resources/server/public/**',
+    '!./target/**'
   ];
   return gulp.src(jsFiles)
     .pipe(eslint())

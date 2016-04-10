@@ -39,7 +39,7 @@ app.get(config.get('turing:server:routes:internal') + config.get('turing:status:
   const status = getStatusJson();
   response.set('cache-control', 'public,max-age=20,s-maxage=20');
   response.format({
-    'application/vnd.otto.monitoring.status+json': () => {
+    json: () => {
       response.json(status);
     },
     html: () => {
