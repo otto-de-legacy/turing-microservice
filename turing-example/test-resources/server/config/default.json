@@ -3,18 +3,7 @@
   "turing": {
     "logging": {
       "namespace": "turing-example-test",
-      "meta": {
-        "type": "turing-example-test"
-      },
-      "transports": [
-        {
-          "type": "Console",
-          "opts": {
-            "prettyPrint": true,
-            "colorize": true
-          }
-        }
-      ]
+      "transports": []
     },
     "server": {
       "port": 8080,
