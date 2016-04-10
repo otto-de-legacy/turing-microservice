@@ -1,6 +1,6 @@
 {
   "name": "turing-vault",
-  "version": "0.0.1",
+  "version": "0.6.0",
   "description": "Uses node-vault to read secrets from vault and inject them into the config",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,9 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "turing-config": "0.0.1",
-    "turing-logging": "0.0.1",
-    "node-vault": "0.4.4",
+    "turing-config": "0.6.0",
+    "turing-logging": "0.6.0",
+    "node-vault": "0.4.5",
     "async": "1.5.2"
   },
   "author": {

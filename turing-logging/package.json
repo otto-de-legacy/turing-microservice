@@ -1,6 +1,6 @@
 {
   "name": "turing-logging",
-  "version": "0.0.1",
+  "version": "0.6.0",
   "description": "Uses winston to supply a logger and a middleware to express",
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "continuation-local-storage": "3.1.6",
-    "extend": "1.0.0",
-    "turing-config": "0.0.1",
+    "extend": "3.0.0",
+    "turing-config": "0.6.0",
     "stack-trace": "0.0.9",
     "uuid": "2.0.1",
     "winston": "2.2.0"
