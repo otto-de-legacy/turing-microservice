@@ -23,7 +23,7 @@ class ProductList extends React.Component {
     this.loadProducts();
   }
 
-  createCard(product) {
+  static createCard(product) {
     return (
       <Card key={product.name}>
         <CardHeader
@@ -38,7 +38,7 @@ class ProductList extends React.Component {
   render() {
     return (
       <div>
-        {this.state.products.map(this.createCard)}
+        {this.state.products.map(ProductList.createCard)}
       </div>
     );
   }

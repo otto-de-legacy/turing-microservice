@@ -1,20 +1,20 @@
 'use strict';
+// TODO: Split this file into different setup files (assets, routes, etc...)
 
 const server = require('turing-server');
-const config = require('turing-config');
-const health = require('turing-health');
-const status = require('turing-status');
-const logging = require('turing-logging');
-const bodyParser = require('body-parser');
-const express = require('express');
 const compression = require('compression');
 const consolidate = require('consolidate');
+const logging = require('turing-logging');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const config = require('turing-config');
+const express = require('express');
+const status = require('turing-status');
 
+const webpackClientDevConfig = require('../../resources/client/webpack/webpack-client-dev.config.js');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackClientDevConfig = require('../../resources/client/webpack/webpack-client-dev.config.js');
 
 server.disable('x-powered-by');
 
@@ -53,7 +53,7 @@ if (config.get('NODE_ENV') === 'local') {
 require('mongoose').connect(config.get('turing-example:mongo:host'));
 require('./model/productModel');
 
-server.use(health);
+server.use(require('turing-health'));
 server.use(status);
 
 server.use(config.get('turing-example:server:routes:root'), require('./routes/public/publicRoutes'));

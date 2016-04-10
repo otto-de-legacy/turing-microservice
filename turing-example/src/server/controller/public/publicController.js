@@ -1,7 +1,7 @@
 'use strict';
 
-const config = require('turing-config');
 const logger = require('turing-logging').logger;
+const config = require('turing-config');
 
 module.exports = (() => {
   function index(request, response) {

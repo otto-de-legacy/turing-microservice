@@ -1,10 +1,10 @@
 'use strict';
 
-const eslint = require('gulp-eslint');
 const gulp = require('gulp');
+const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
-const KarmaServer = require('karma').Server;
 const mocha = require('gulp-mocha');
+const KarmaServer = require('karma').Server;
 const runSequence = require('run-sequence');
 
 gulp.task('eslint', () => {

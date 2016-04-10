@@ -1,7 +1,7 @@
 'use strict';
 
-const productApiController = require('../../../controller/api/product/productApiController');
 const router = require('express').Router();
+const productApiController = require('../../../controller/api/product/productApiController');
 
 router.get('/', productApiController.find);
 router.post('/', productApiController.save);

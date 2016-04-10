@@ -1,7 +1,7 @@
 'use strict';
 
-const publicController = require('../../controller/public/publicController');
 const router = require('express').Router();
+const publicController = require('../../controller/public/publicController');
 
 router.get('/', publicController.index);
 
