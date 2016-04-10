@@ -7,7 +7,8 @@ gulp.task('test', () => {
   const jsFiles = [
     './**/*.js',
     './**/*.jsx',
-    '!node_modules/**',
+    '!./node_modules/**',
+    '!./**/node_modules/**',
     '!./turing-example/resources/server/public/**',
     '!./turing-example/target/**'
   ];
