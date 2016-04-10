@@ -15,10 +15,10 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "turing-config": "0.6.0",
-    "turing-logging": "0.6.0",
+    "async": "1.5.2",
     "node-vault": "0.4.5",
-    "async": "1.5.2"
+    "turing-config": "0.6.0",
+    "turing-logging": "0.6.0"
   },
   "author": {
     "name": "Benedikt Stemmildt",
