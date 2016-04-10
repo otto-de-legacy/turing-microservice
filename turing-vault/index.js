@@ -1,9 +1,9 @@
 'use strict';
 
 const config = require('turing-config');
-const logger = require('turing-logging').logger;
-const async = require('async');
 const Vault = require('node-vault');
+const async = require('async');
+const logger = require('turing-logging').logger;
 
 module.exports = new Promise((resolve) => {
   const vaultConfig = config.get('turing:vault');

@@ -1,26 +1,9 @@
 {
   "env": {
-    "browser": true,
     "es6": true,
-    "mocha": true,
     "node": true
   },
-  "globals": {
-    "fixture": true,
-    "expect": true,
-    "sinon": true
-  },
-  "plugins": [
-    "react"
-  ],
   "rules": {
-    "react/prefer-stateless-function": "error",
-    "react/jsx-space-before-closing": "error",
-    "newline-before-return": "off",
-    "no-restricted-globals": [
-      "error",
-      "event"
-    ],
     "accessor-pairs": "error",
     "array-bracket-spacing": [
       "error",
@@ -42,8 +25,8 @@
         "allowSingleLine": true
       }
     ],
-    "callback-return": "off",
-    "camelcase": "off",
+    "callback-return": "error",
+    "camelcase": "error",
     "comma-dangle": [
       "error",
       "never"
@@ -90,7 +73,7 @@
       "declaration"
     ],
     "generator-star-spacing": "error",
-    "global-require": "warn",
+    "global-require": "error",
     "guard-for-in": "error",
     "handle-callback-err": "error",
     "id-blacklist": [
@@ -125,7 +108,7 @@
       }
     ],
     "init-declarations": [
-      "off",
+      "error",
       "always"
     ],
     "jsx-quotes": [
@@ -147,7 +130,7 @@
       }
     ],
     "linebreak-style": [
-      "off",
+      "error",
       "unix"
     ],
     "lines-around-comment": [
@@ -166,7 +149,7 @@
       4
     ],
     "max-len": [
-      "warn",
+      "error",
       130,
       4,
       {
@@ -185,6 +168,12 @@
     "max-statements": [
       "error",
       15
+    ],
+    "max-statements-per-line": [
+      "error",
+      {
+        "max": 1
+      }
     ],
     "new-cap": [
       "error",
@@ -206,7 +195,8 @@
       "off",
       "always"
     ],
-    "newline-per-chained-call": "off",
+    "newline-before-return": "off",
+    "newline-per-chained-call": "error",
     "no-alert": "error",
     "no-array-constructor": "error",
     "no-bitwise": "error",
@@ -219,7 +209,7 @@
       "always"
     ],
     "no-confusing-arrow": "error",
-    "no-console": "warn",
+    "no-console": "error",
     "no-const-assign": "error",
     "no-constant-condition": "error",
     "no-continue": "error",
@@ -231,6 +221,12 @@
     "no-dupe-class-members": "error",
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
+    "no-duplicate-imports": [
+      "error",
+      {
+        "includeExports": true
+      }
+    ],
     "no-else-return": "error",
     "no-empty": "error",
     "no-empty-character-class": "error",
@@ -271,7 +267,7 @@
     "no-lonely-if": "error",
     "no-loop-func": "error",
     "no-magic-numbers": [
-      "off",
+      "error",
       {
         "enforceConst": true,
         "ignoreArrayIndexes": true,
@@ -310,11 +306,15 @@
     "no-param-reassign": "error",
     "no-path-concat": "error",
     "no-plusplus": "off",
-    "no-process-env": "off",
+    "no-process-env": "error",
     "no-process-exit": "error",
     "no-proto": "error",
     "no-redeclare": "error",
     "no-regex-spaces": "error",
+    "no-restricted-globals": [
+      "error",
+      "event"
+    ],
     "no-restricted-imports": "off",
     "no-restricted-modules": "error",
     "no-restricted-syntax": "error",
@@ -327,7 +327,7 @@
     "no-shadow-restricted-names": "error",
     "no-spaced-func": "error",
     "no-sparse-arrays": "error",
-    "no-sync": "off",
+    "no-sync": "error",
     "no-ternary": "error",
     "no-this-before-super": "error",
     "no-throw-literal": "error",
@@ -399,7 +399,7 @@
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "prefer-reflect": "off",
-    "prefer-rest-params": "off",
+    "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
     "quote-props": [
@@ -415,63 +415,6 @@
       "error",
       "as-needed"
     ],
-    "react/display-name": [
-      "error",
-      {
-        "ignoreTranspilerName": false
-      }
-    ],
-    "react/forbid-prop-types": "error",
-    "react/jsx-boolean-value": "error",
-    "react/jsx-closing-bracket-location": "error",
-    "react/jsx-curly-spacing": [
-      "error",
-      "never"
-    ],
-    "react/jsx-equals-spacing": [
-      "error",
-      "never"
-    ],
-    "react/jsx-handler-names": "error",
-    "react/jsx-indent": [
-      "error",
-      2
-    ],
-    "react/jsx-indent-props": [
-      "error",
-      2
-    ],
-    "react/jsx-key": "error",
-    "react/jsx-max-props-per-line": "error",
-    "react/jsx-no-bind": "error",
-    "react/jsx-no-duplicate-props": "error",
-    "react/jsx-no-literals": "error",
-    "react/jsx-no-undef": "error",
-    "react/jsx-pascal-case": "error",
-    "react/jsx-sort-prop-types": "off",
-    "react/jsx-sort-props": "off",
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "react/no-danger": "error",
-    "react/no-deprecated": "error",
-    "react/no-did-mount-set-state": "error",
-    "react/no-did-update-set-state": "error",
-    "react/no-direct-mutation-state": "error",
-    "react/no-is-mounted": "error",
-    "react/no-multi-comp": "error",
-    "react/no-set-state": "off",
-    "react/no-string-refs": "error",
-    "react/no-unknown-property": "error",
-    "react/prefer-es6-class": [
-      "error",
-      "always"
-    ],
-    "react/prop-types": "error",
-    "react/react-in-jsx-scope": "error",
-    "react/require-extension": "error",
-    "react/self-closing-comp": "error",
-    "react/sort-comp": "off",
-    "react/wrap-multilines": "error",
     "require-jsdoc": "off",
     "require-yield": "error",
     "semi": [

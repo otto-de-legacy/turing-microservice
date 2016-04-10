@@ -7,6 +7,7 @@ const pkg = require(require('path').join(process.cwd(), 'package.json'));
 
 const app = express().enable('strict routing');
 
+// TODO: Have a look at previous server config and check if nothing went missing
 app.start = () => {
   const port = config.get('turing:server:port');
 

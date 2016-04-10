@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "callback-return": "off"
+  }
+}

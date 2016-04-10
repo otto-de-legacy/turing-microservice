@@ -6,7 +6,7 @@
 
 > "We can only see a short distance ahead, but we can see plenty there that needs to be done."<br/>- Alan Turing
 
-This is the common basis for some of otto.de's microservices. It is written in Node.js using the [express framework](https://github.com/strongloop/express).
+A common basis for Node.js microservices.
 
 ## Breaking changes
 

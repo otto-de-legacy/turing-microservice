@@ -1,7 +1,7 @@
 {
   "name": "turing-logging",
   "version": "0.6.0",
-  "description": "Uses winston to supply a logger and a middleware to express",
+  "description": "Provides a logger and a logging middleware.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

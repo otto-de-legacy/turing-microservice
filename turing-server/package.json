@@ -1,7 +1,7 @@
 {
   "name": "turing-server",
   "version": "0.6.0",
-  "description": "Uses express to supply a server",
+  "description": "Provides a server.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

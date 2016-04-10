@@ -50,10 +50,7 @@ if (config.get('NODE_ENV') === 'local') {
   server.use(config.get('turing-example:server:routes:root'), express.static(`${__dirname}/../../resources/server/public`));
 }
 
-const dbUrl = config.get('turing-example:mongo:host');
-if (dbUrl) {
-  require('mongoose').connect(dbUrl);
-}
+require('mongoose').connect(config.get('turing-example:mongo:host'));
 require('./model/productModel');
 
 server.use(health);

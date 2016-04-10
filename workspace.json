@@ -2,10 +2,10 @@
   "links": {
     "turing-config": "./turing-config",
     "turing-example": "./turing-example",
+    "turing-health": "./turing-health",
     "turing-logging": "./turing-logging",
     "turing-server": "./turing-server",
-    "turing-vault": "./turing-vault",
     "turing-status": "./turing-status",
-    "turing-health": "./turing-health"
+    "turing-vault": "./turing-vault"
   }
 }

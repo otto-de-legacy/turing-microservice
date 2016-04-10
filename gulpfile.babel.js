@@ -1,7 +1,7 @@
 'use strict';
 
-const eslint = require('gulp-eslint');
 const gulp = require('gulp');
+const eslint = require('gulp-eslint');
 
 gulp.task('test', () => {
   const jsFiles = [

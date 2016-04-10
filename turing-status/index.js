@@ -12,9 +12,12 @@ app.set('view engine', '.hbs');
 app.set('views', `${__dirname}/views`);
 app.use('/turing-status-public', express.static(`${__dirname}/public`));
 
+// TODO: Add compression and so on (look at turing-example app for inspiration)
+
 const statusDetails = {};
 
-function getStatusJson() {
+// TODO: Add more information (look at social microservice for inspiration)
+function getStatus() {
   return {
     application: {
       name: config.get('appName'),
@@ -36,12 +39,13 @@ function getStatusJson() {
 }
 
 app.get(config.get('turing:server:routes:internal') + config.get('turing:status:route'), (request, response) => {
-  const status = getStatusJson();
+  const status = getStatus();
   response.set('cache-control', 'public,max-age=20,s-maxage=20');
   response.format({
     json: () => {
       response.json(status);
     },
+    // TODO: Make page way more nicer (look at edison microservice status page for inspiration)
     html: () => {
       response.render('status', status);
     }

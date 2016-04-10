@@ -1,7 +1,7 @@
 {
   "name": "turing-config",
   "version": "0.6.0",
-  "description": "Uses nconf to manage config files.",
+  "description": "Provides managing config files.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

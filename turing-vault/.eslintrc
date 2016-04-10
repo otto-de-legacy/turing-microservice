@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "init-declarations": "off"
+  }
+}

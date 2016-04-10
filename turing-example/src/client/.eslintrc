@@ -1,8 +1,75 @@
 {
+  "env": {
+    "browser": true
+  },
   "parserOptions": {
-    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/display-name": [
+      "error",
+      {
+        "ignoreTranspilerName": false
+      }
+    ],
+    "react/forbid-prop-types": "error",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-closing-bracket-location": "error",
+    "react/jsx-curly-spacing": [
+      "error",
+      "never"
+    ],
+    "react/jsx-equals-spacing": [
+      "error",
+      "never"
+    ],
+    "react/jsx-handler-names": "error",
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ],
+    "react/jsx-key": "error",
+    "react/jsx-max-props-per-line": "error",
+    "react/jsx-no-bind": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-literals": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": "error",
+    "react/jsx-sort-prop-types": "off",
+    "react/jsx-sort-props": "off",
+    "react/jsx-space-before-closing": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-danger": "error",
+    "react/no-deprecated": "error",
+    "react/no-did-mount-set-state": "error",
+    "react/no-did-update-set-state": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-is-mounted": "error",
+    "react/no-multi-comp": "error",
+    "react/no-set-state": "off",
+    "react/no-string-refs": "error",
+    "react/no-unknown-property": "error",
+    "react/prefer-es6-class": [
+      "error",
+      "always"
+    ],
+    "react/prefer-stateless-function": "error",
+    "react/prop-types": "error",
+    "react/react-in-jsx-scope": "error",
+    "react/require-extension": "error",
+    "react/self-closing-comp": "error",
+    "react/sort-comp": "off",
+    "react/wrap-multilines": "error"
   }
 }
