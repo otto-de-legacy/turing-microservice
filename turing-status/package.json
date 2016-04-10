@@ -1,6 +1,6 @@
 {
   "name": "turing-status",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Provides a status route.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "dependencies": {
     "express": "4.13.4",
     "express-handlebars": "3.0.0",
-    "turing-config": "0.6.0"
+    "turing-config": "0.7.0"
   },
   "author": {
     "name": "Benedikt Stemmildt",

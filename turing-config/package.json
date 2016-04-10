@@ -1,6 +1,6 @@
 {
   "name": "turing-config",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Provides managing config files.",
   "main": "index.js",
   "scripts": {
