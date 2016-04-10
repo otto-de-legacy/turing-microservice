@@ -8,7 +8,7 @@ This is the common basis for some of otto.de's microservices. It is written in N
 
 ## Breaking changes
 
-_turing-microservice_ is used for a number of different services now. Still it is a work in progress. See [CHANGELOG.md](./CHANGELOG.md) for instructions on breaking changes.
+_turing-microservice_ is a work in progress. See [CHANGELOG.md](./CHANGELOG.md) for instructions on breaking changes.
 
 ## Features included
 
