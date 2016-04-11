@@ -1,6 +1,6 @@
 {
   "name": "turing-config",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Provides managing config files.",
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,11 @@
     "email": "benedikt.stemmildt@otto.de",
     "url": "https://github.com/benestem"
   },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
   "license": "MIT"
 }

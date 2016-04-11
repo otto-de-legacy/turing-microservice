@@ -1,6 +1,6 @@
 {
   "name": "turing-microservice",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A common basis for Node.js microservices.",
   "scripts": {
     "test": "gulp test"
@@ -30,5 +30,11 @@
     "email": "benedikt.stemmildt@otto.de",
     "url": "https://github.com/benestem"
   },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
   "license": "MIT"
 }

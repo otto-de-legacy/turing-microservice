@@ -1,6 +1,6 @@
 {
   "name": "turing-server",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Provides a server.",
   "main": "index.js",
   "scripts": {
@@ -16,13 +16,19 @@
   },
   "dependencies": {
     "express": "4.13.4",
-    "turing-config": "0.7.0",
-    "turing-logging": "0.7.0"
+    "turing-config": "0.7.1",
+    "turing-logging": "0.7.1"
   },
   "author": {
     "name": "Benedikt Stemmildt",
     "email": "benedikt.stemmildt@otto.de",
     "url": "https://github.com/benestem"
   },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
   "license": "MIT"
 }

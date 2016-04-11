@@ -41,9 +41,10 @@ To make IntelliJ development features work properly. (You still have to configur
 
     $ npm install -g eslint eslint-plugin-react gulp
 
-## Initial Contributors
+## Contributors
 
-Benedikt Stemmildt
+- Benedikt Stemmildt
+- Jonathan Meyer
 
 ## License
 

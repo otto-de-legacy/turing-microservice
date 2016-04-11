@@ -1,6 +1,6 @@
 {
   "name": "turing-status",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Provides a status route.",
   "main": "index.js",
   "scripts": {
@@ -17,12 +17,18 @@
   "dependencies": {
     "express": "4.13.4",
     "express-handlebars": "3.0.0",
-    "turing-config": "0.7.0"
+    "turing-config": "0.7.1"
   },
   "author": {
     "name": "Benedikt Stemmildt",
     "email": "benedikt.stemmildt@otto.de",
     "url": "https://github.com/benestem"
   },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
   "license": "MIT"
 }
