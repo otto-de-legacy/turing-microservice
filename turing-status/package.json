@@ -1,7 +1,7 @@
 {
   "name": "turing-status",
   "version": "0.7.3",
-  "description": "Provides a status route.",
+  "description": "Aggregation of sub-statuses and express routes for an html and json status report.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

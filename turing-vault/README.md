@@ -2,7 +2,7 @@
 
 Add some badges.
 
-Add a nice description.
+A promise for merging secrets from vault with config.
 
 ## Contributors
 

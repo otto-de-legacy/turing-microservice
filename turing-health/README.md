@@ -2,7 +2,7 @@
 
 Add some badges.
 
-Add a nice description.
+An express route for an health check.
 
 ## Contributors
 

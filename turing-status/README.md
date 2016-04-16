@@ -2,7 +2,7 @@
 
 Add some badges.
 
-Add a nice description.
+Aggregation of sub-statuses and express routes for an html and json status report.
 
 ## Contributors
 

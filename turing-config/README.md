@@ -2,7 +2,7 @@
 
 Add some badges.
 
-Add a nice description.
+Hierarchical configuration with files, environment variables and command-line arguments.
 
 ## Contributors
 

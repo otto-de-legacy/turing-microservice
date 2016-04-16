@@ -1,7 +1,7 @@
 {
   "name": "turing-health",
   "version": "0.7.3",
-  "description": "Provides a health route.",
+  "description": "An express route for an health check.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

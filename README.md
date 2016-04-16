@@ -14,16 +14,31 @@ _turing-microservice_ is a work in progress. See [CHANGELOG.md](./CHANGELOG.md) 
 
 ## Features included
 
-* Reply to a health check.
-* Aggregate a status.
-* Deliver a json status report.
-* Provide Gulp tasks for:
-    * Verifying code quality with eslint
-    * Execute server tests with mocha
-    * Execute public tests with karma
-    * Create coverage reports for server and public tests
-* Webpack configurations for production and development
-* Live reloading of code during development
+- config module: Adds hierarchical configuration with files, environment variables and command-line arguments.
+- health module: Adds an express route for an health check.
+- logging module: Adds multi-transport async logging.
+- server module: Adds an express server.
+- status module: Adds aggregation of sub-statuses and express routes for an html and json status report.
+- vault module: Adds a promise for merging secrets from vault with config.
+
+next up:
+- mongo module: Adds a port to mongodb.
+- toggles module: Adds feature-toggles support.
+  - toggles-mongo module: Adds toggle persistence to mongodb.
+- jobs module: Adds jobs support.
+  - jobs-mongo module: Adds jobs persistence to mongodb.
+- hmac module: Adds middleware for hmac authentication.
+- metrics module: Adds metrics support. (e.g. RAM, CPU,...)
+- cache module: Adds application cache support.
+
+### Example
+
+Contains gulp tasks for:
+- build: Provides webpack configurations for production and development.
+- eslint: Provides verification of code quality with eslint
+- testPublic: Provides testing client-side with karma and generate a coverage report.
+- testServer: Provides testing server-side with mocha and generate a coverage report.
+- watch: Provides live reloading of code during development.
 
 ## Setup
 

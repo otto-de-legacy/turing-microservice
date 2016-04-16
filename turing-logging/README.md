@@ -2,7 +2,7 @@
 
 Add some badges.
 
-Add a nice description.
+Multi-transport async logging.
 
 ## Contributors
 

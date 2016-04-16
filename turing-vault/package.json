@@ -1,7 +1,7 @@
 {
   "name": "turing-vault",
   "version": "0.7.3",
-  "description": "Provides reading secrets from vault and injecting them into the turing-config.",
+  "description": "A promise for merging secrets from vault with config.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

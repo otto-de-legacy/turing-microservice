@@ -1,7 +1,7 @@
 {
   "name": "turing-config",
   "version": "0.7.3",
-  "description": "Provides managing config files.",
+  "description": "Hierarchical configuration with files, environment variables and command-line arguments.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
