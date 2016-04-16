@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git@github.com:otto-de/turing-microservice.git"
   },
-  "homepage": "https://github.com/otto-de/turing-microservice/turing-example#readme",
+  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/turing-example#readme",
   "bugs": {
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },

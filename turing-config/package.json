@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git@github.com:otto-de/turing-microservice.git"
   },
-  "homepage": "https://github.com/otto-de/turing-microservice/turing-config#readme",
+  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/turing-config#readme",
   "bugs": {
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
