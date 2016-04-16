@@ -1,5 +1,9 @@
 # turing-example
 
+Add some badges.
+
+Add a nice description.
+
 ## Build
 
 For compiling the assets (js and css):
@@ -30,3 +34,12 @@ This also:
 
 * runs eslint
 * creates coverage reports
+
+## Contributors
+
+- Benedikt Stemmildt
+- Jonathan Meyer
+
+## License
+
+MIT
