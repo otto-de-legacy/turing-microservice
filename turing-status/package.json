@@ -1,6 +1,6 @@
 {
   "name": "turing-status",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Provides a status route.",
   "main": "index.js",
   "scripts": {
