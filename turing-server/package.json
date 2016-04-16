@@ -1,6 +1,6 @@
 {
   "name": "turing-server",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Provides a server.",
   "main": "index.js",
   "scripts": {
