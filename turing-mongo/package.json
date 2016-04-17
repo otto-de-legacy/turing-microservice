@@ -1,6 +1,6 @@
 {
   "name": "turing-mongo",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "A port to mongodb.",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,7 @@
   "bugs": {
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "author": {
     "name": "Benedikt Stemmildt",
     "email": "benedikt.stemmildt@otto.de",
