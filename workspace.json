@@ -1,11 +1,19 @@
 {
   "links": {
+    "turing-cache": "./turing-cache",
     "turing-config": "./turing-config",
     "turing-example": "./turing-example",
     "turing-health": "./turing-health",
+    "turing-hmac": "./turing-hmac",
+    "turing-jobs": "./turing-jobs",
+    "turing-jobs-mongo": "./turing-jobs-mongo",
     "turing-logging": "./turing-logging",
+    "turing-metrics": "./turing-metrics",
+    "turing-mongo": "./turing-mongo",
     "turing-server": "./turing-server",
     "turing-status": "./turing-status",
+    "turing-toggles": "./turing-toggles",
+    "turing-toggles-mongo": "./turing-toggles-mongo",
     "turing-vault": "./turing-vault"
   }
 }

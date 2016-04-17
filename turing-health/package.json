@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "express": "4.13.4",
-    "turing-config": "0.7.1"
+    "turing-config": "0.7.4"
   },
   "author": {
     "name": "Benedikt Stemmildt",
