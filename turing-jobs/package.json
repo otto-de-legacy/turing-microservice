@@ -1,0 +1,31 @@
+{
+  "name": "turing-jobs",
+  "version": "0.7.3",
+  "description": "Jobs support.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/turing-jobs#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "dependencies": {
+  },
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
+  "license": "MIT"
+}
