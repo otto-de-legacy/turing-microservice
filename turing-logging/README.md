@@ -12,7 +12,7 @@ If you use _turing-logging_ without _turing-server_ you have to add the logging 
 
     server.use(loggingMiddleware);
 
-To log something simple require the logger.
+To log something simply require the logger.
 
     const logger = require('turing-logging').logger;
 
