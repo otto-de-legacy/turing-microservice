@@ -4,3 +4,4 @@ node_modules/
 /turing-example/resources/server/public/js/
 /turing-example/target/
 /publish.sh
+/outdated.sh
