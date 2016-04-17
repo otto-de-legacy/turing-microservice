@@ -8,11 +8,11 @@
 
 A common basis for Node.js microservices.
 
-## Breaking changes
+## Breaking Changes
 
 _turing-microservice_ is a work in progress. See [CHANGELOG.md](./CHANGELOG.md) for instructions on breaking changes.
 
-## Features included
+## Features
 
 - config module: Adds hierarchical configuration with files, environment variables and command-line arguments.
 - health module: Adds an express route for an health check.
@@ -31,7 +31,7 @@ next up:
 - metrics module: Adds metrics support. (e.g. RAM, CPU,...)
 - cache module: Adds application cache support.
 
-### Example
+### Example: _turing-example_
 
 Contains gulp tasks for:
 - build: Provides webpack configurations for production and development.

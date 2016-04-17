@@ -1,8 +1,8 @@
 # turing-example
 
-Add some badges.
+[![version](https://img.shields.io/npm/v/turing-example.svg)](https://www.npmjs.com/package/turing-example) [![license](https://img.shields.io/npm/l/turing-example.svg)](./LICENSE)
 
-Add a nice description.
+An example of how the turing-microservice can be used.
 
 ## Build
 
