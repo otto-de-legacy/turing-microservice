@@ -38,7 +38,7 @@ To get a config value simple require _turing-config_ and call _get(configPath)_ 
 
     const config = require('turing-config');
 
-    const myConfigPathValue = config.get(my:config:path);
+    const myConfigPathValue = config.get('my:config:path');
 
 ## Contributors
 
