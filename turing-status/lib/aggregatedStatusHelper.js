@@ -8,18 +8,9 @@ module.exports = (() => {
   };
 
   const statuses = [
-    {
-      status: 'OK',
-      message: 'all ok'
-    },
-    {
-      status: 'WARNING',
-      message: 'at least one warning'
-    },
-    {
-      status: 'ERROR',
-      message: 'at least one error'
-    }
+    'OK',
+    'WARNING',
+    'ERROR'
   ];
 
   function getScore(status) {

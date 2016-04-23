@@ -13,7 +13,7 @@ Simply require _turing-status_ and add the router to your _turing-server_.
 
     const status = require('turing-status');
 
-    server.use(status);
+    app.use(status);
 
 To add a sub-status call _setStatusDetail(name, statusDetail)_ on you _turing-server_.
 
@@ -23,6 +23,27 @@ To add a sub-status call _setStatusDetail(name, statusDetail)_ on you _turing-se
 
 - turing:server:routes:internal - The base-url of internal endpoints like health or status.
 - turing:status:route - The relative url of the status endpoint behind the internal route.
+
+#### Status Information Config
+
+You can set additional status information by using the following configurations
+
+##### Inside package.json
+
+- name - The name of the application.
+- description - A short description of the application's purpose.
+- version - The version of the application.
+- commit - The current commit hash of the application.
+- repository.url - The repository url of the application
+- dependencies - A list of the application's dependencies.
+
+##### Inside Config
+
+- turing:status:application:group - The group of services, this application is part of.
+- turing:server:port - The server port.
+- turing:status:team:name - The name of the team.
+- turing:status:team:contact:technical - The technical contact.
+- turing:status:team:contact:business - The business contact.
 
 ## Contributors
 

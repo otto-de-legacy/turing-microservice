@@ -2,29 +2,51 @@
 
 const express = require('express');
 const app = express();
-const config = require('turing-config');
 const os = require('os');
+const pkg = require(require('path').join(process.cwd(), 'package.json'));
+const config = require('turing-config');
 const getAggregatedStatus = require('./lib/aggregatedStatusHelper').getAggregatedStatus;
 
-const exphbs = require('express-handlebars');
-app.engine('.hbs', exphbs({extname: '.hbs'}));
+const expressHandlebars = require('express-handlebars');
+app.engine('.hbs', expressHandlebars({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', `${__dirname}/views`);
 app.use('/turing-status-public', express.static(`${__dirname}/public`));
 
 // TODO: Add compression and so on (look at turing-example app for inspiration)
 
+function deleteEmptyPropertiesOf(object) {
+  for (const property in object) {
+    if (object.hasOwnProperty(property) && !object[property]) {
+      delete object[property];
+    } else if (typeof object[property] === 'object') {
+      deleteEmptyPropertiesOf(object[property]);
+    }
+  }
+}
+
 const statusDetails = {};
 
-// TODO: Add more information (look at social microservice for inspiration)
 function getStatus() {
-  return {
+  const now = new Date();
+  const uptime = os.uptime();
+  const status = {
     application: {
-      name: config.get('appName'),
-      status: getAggregatedStatus(statusDetails).status,
-      message: getAggregatedStatus(statusDetails).message,
+      name: pkg.name,
+      description: pkg.description,
+      group: config.get('turing:status:application:group'),
+      environment: process.env.NODE_ENV,
+      version: pkg.version,
+      commit: pkg.commit,
+      vcsUrl: pkg.repository.url,
+      status: getAggregatedStatus(statusDetails),
       statusDetails,
-      config: config.get()
+      dependencies: pkg.dependencies,
+      versions: process.versions,
+      pid: process.pid,
+      cwd: process.cwd(),
+      applicationUptime: process.uptime(),
+      memoryUsage: process.memoryUsage()
     },
     system: {
       hostname: os.hostname(),
@@ -32,10 +54,17 @@ function getStatus() {
       platform: os.platform(),
       arch: os.arch(),
       release: os.release(),
-      systemTime: new Date(),
-      uptime: os.uptime()
+      systemStartTime: now - uptime,
+      systemUpTime: uptime,
+      systemTime: now
+    },
+    team: {
+      name: config.get('turing:status:team:name'),
+      technicalContact: config.get('turing:status:team:contact:technical'),
+      businessContact: config.get('turing:status:team:contact:business')
     }
   };
+  return deleteEmptyPropertiesOf(status);
 }
 
 app.get(config.get('turing:server:routes:internal') + config.get('turing:status:route'), (request, response) => {
