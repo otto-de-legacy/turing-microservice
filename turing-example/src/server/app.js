@@ -58,7 +58,7 @@ app.use(config.get('turing-example:server:routes:root'), require('./routes/publi
 app.use(`${config.get('turing-example:server:routes:root')}/api`, require('./routes/api/apiRoutes'));
 
 app.get(`${config.get('turing-example:server:routes:root')}/api/status/:status`, (reqest, response) => {
-  status.setStatusDetail('toll', {status: reqest.params.status});
+  status.addStatusDetail('toll', {status: reqest.params.status});
   response.end();
 });
 
