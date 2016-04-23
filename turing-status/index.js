@@ -28,8 +28,6 @@ function deleteEmptyPropertiesOf(object) {
 const statusDetails = {};
 
 function getStatus() {
-  const now = new Date();
-  const uptime = os.uptime();
   const status = {
     application: {
       name: pkg.name,
@@ -54,9 +52,8 @@ function getStatus() {
       platform: os.platform(),
       arch: os.arch(),
       release: os.release(),
-      systemStartTime: now - uptime,
-      systemUpTime: uptime,
-      systemTime: now
+      systemUpTime: os.uptime(),
+      systemTime: new Date().toISOString()
     },
     team: {
       name: config.get('turing:status:team:name'),
@@ -64,7 +61,8 @@ function getStatus() {
       businessContact: config.get('turing:status:team:contact:business')
     }
   };
-  return deleteEmptyPropertiesOf(status);
+  deleteEmptyPropertiesOf(status);
+  return status;
 }
 
 app.get(config.get('turing:server:routes:internal') + config.get('turing:status:route'), (request, response) => {
