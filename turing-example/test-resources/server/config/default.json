@@ -1,5 +1,4 @@
 {
-  "appName": "turing-example-test",
   "turing": {
     "logging": {
       "namespace": "turing-example-test",
