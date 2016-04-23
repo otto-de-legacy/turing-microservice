@@ -10,7 +10,7 @@ Simply require _turing-health_ and add the router to your _turing-server_.
 
     const health = require('turing-health');
 
-    server.use(health);
+    app.use(health);
 
 ### Config
 
