@@ -7,9 +7,10 @@ const config = require('turing-config');
 const logger = require('turing-logging').logger;
 const pkg = require(require('path').join(process.cwd(), 'package.json'));
 
-const app = express().enable('strict routing');
+const app = express();
 
 app.disable('x-powered-by');
+app.enable('strict routing');
 
 app.use(favicon(`${__dirname}/public/favicon.ico`));
 

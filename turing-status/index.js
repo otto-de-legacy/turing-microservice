@@ -1,11 +1,12 @@
 'use strict';
 
 const express = require('express');
-const app = express().enable('strict routing');
+const app = express();
 const config = require('turing-config');
 const statusProvider = require('./lib/statusProvider');
 
 app.disable('x-powered-by');
+app.enable('strict routing');
 
 app.use(require('compression')({level: 9}));
 
