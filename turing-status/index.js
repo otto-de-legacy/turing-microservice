@@ -2,7 +2,6 @@
 
 const express = require('express');
 const app = express().enable('strict routing');
-const favicon = require('serve-favicon');
 const config = require('turing-config');
 const statusProvider = require('./lib/statusProvider');
 
@@ -13,8 +12,6 @@ app.use(require('compression')({level: 9}));
 app.engine('html', require('consolidate').swig);
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'html');
-
-app.use(favicon(`${__dirname}/public/favicon.ico`));
 
 app.use('/turing-status', express.static(`${__dirname}/public`));
 

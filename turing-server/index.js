@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const favicon = require('serve-favicon');
 const loggingMiddleware = require('turing-logging').middleware;
 const config = require('turing-config');
 const logger = require('turing-logging').logger;
@@ -9,6 +10,8 @@ const pkg = require(require('path').join(process.cwd(), 'package.json'));
 const app = express().enable('strict routing');
 
 app.disable('x-powered-by');
+
+app.use(favicon(`${__dirname}/public/favicon.ico`));
 
 app.use(loggingMiddleware);
 

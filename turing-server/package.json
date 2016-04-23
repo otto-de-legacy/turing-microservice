@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "4.13.4",
+    "serve-favicon": "2.3.0",
     "turing-config": "0.7.10",
     "turing-logging": "0.7.10"
   },
