@@ -10,7 +10,7 @@ const configFolder = process.env.TURING_CONFIG_DIR || 'config';
 
 function loadEnvSpecificConfig(dir) {
   const baseDir = path.join(process.cwd(), dir);
-  const envFile = path.join(baseDir, `${nconf.get('NODE_ENV')}.json`);
+  const envFile = path.join(baseDir, `${process.env.NODE_ENV}.json`);
   const defaultFile = path.join(baseDir, 'default.json');
 
   nconf.file(envFile, envFile);
@@ -40,7 +40,7 @@ function mapCustomEnvVariables() {
 
   if (fs.existsSync(customEnvFile)) {
     const customEnvContent = fs.readFileSync(customEnvFile).toString();
-    const mappedConf = JSON.parse(template(customEnvContent, nconf.get()));
+    const mappedConf = JSON.parse(template(customEnvContent, process.env));
 
     deleteEmptyPropertiesOf(mappedConf);
     nconf.defaults(mappedConf);
