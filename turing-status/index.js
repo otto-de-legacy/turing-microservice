@@ -15,20 +15,10 @@ app.use('/turing-status-public', express.static(`${__dirname}/public`));
 
 // TODO: Add compression and so on (look at turing-example app for inspiration)
 
-function deleteEmptyPropertiesOf(object) {
-  for (const property in object) {
-    if (object.hasOwnProperty(property) && !object[property]) {
-      delete object[property];
-    } else if (typeof object[property] === 'object') {
-      deleteEmptyPropertiesOf(object[property]);
-    }
-  }
-}
-
 const statusDetails = {};
 
 function getStatus() {
-  const status = {
+  return {
     application: {
       name: pkg.name,
       description: pkg.description,
@@ -61,8 +51,6 @@ function getStatus() {
       businessContact: config.get('turing:status:team:contact:business')
     }
   };
-  deleteEmptyPropertiesOf(status);
-  return status;
 }
 
 app.get(config.get('turing:server:routes:internal') + config.get('turing:status:route'), (request, response) => {
