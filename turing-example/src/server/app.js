@@ -4,7 +4,6 @@
 const app = require('turing-server');
 const compression = require('compression');
 const consolidate = require('consolidate');
-const loggingMiddleware = require('turing-logging').middleware;
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require('turing-config');
@@ -28,7 +27,6 @@ app.engine('html', consolidate.swig);
 app.set('views', `${__dirname}/../../resources/server/view`);
 app.set('view engine', 'html');
 
-app.use(loggingMiddleware);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
