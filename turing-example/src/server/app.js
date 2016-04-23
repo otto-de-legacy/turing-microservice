@@ -1,7 +1,7 @@
 'use strict';
 // TODO: Split this file into different setup files (assets, routes, etc...)
 
-const server = require('turing-server');
+const app = require('turing-server');
 const compression = require('compression');
 const consolidate = require('consolidate');
 const loggingMiddleware = require('turing-logging').middleware;
@@ -16,22 +16,22 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-server.disable('x-powered-by');
+app.disable('x-powered-by');
 
-server.locals.pretty = true;
+app.locals.pretty = true;
 
-server.locals.cache = 'memory';
+app.locals.cache = 'memory';
 
-server.use(compression({level: 9}));
+app.use(compression({level: 9}));
 
-server.engine('html', consolidate.swig);
-server.set('views', `${__dirname}/../../resources/server/view`);
-server.set('view engine', 'html');
+app.engine('html', consolidate.swig);
+app.set('views', `${__dirname}/../../resources/server/view`);
+app.set('view engine', 'html');
 
-server.use(loggingMiddleware);
-server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({extended: false}));
-server.use(cookieParser());
+app.use(loggingMiddleware);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 
 if (config.get('NODE_ENV') === 'local') {
   webpackClientDevConfig.output.publicPath = config.get('turing-example:server:routes:root');
@@ -44,26 +44,26 @@ if (config.get('NODE_ENV') === 'local') {
     }
   });
 
-  server.use(publicWebpackDevMiddleware);
-  server.use(webpackHotMiddleware(compiler));
+  app.use(publicWebpackDevMiddleware);
+  app.use(webpackHotMiddleware(compiler));
 } else {
-  server.use(config.get('turing-example:server:routes:root'), express.static(`${__dirname}/../../resources/server/public`));
+  app.use(config.get('turing-example:server:routes:root'), express.static(`${__dirname}/../../resources/server/public`));
 }
 
 require('mongoose').connect(config.get('turing-example:mongo:host'));
 require('./model/productModel');
 
-server.use(require('turing-health'));
-server.use(status);
+app.use(require('turing-health'));
+app.use(status);
 
-server.use(config.get('turing-example:server:routes:root'), require('./routes/public/publicRoutes'));
-server.use(`${config.get('turing-example:server:routes:root')}/api`, require('./routes/api/apiRoutes'));
+app.use(config.get('turing-example:server:routes:root'), require('./routes/public/publicRoutes'));
+app.use(`${config.get('turing-example:server:routes:root')}/api`, require('./routes/api/apiRoutes'));
 
-server.get(`${config.get('turing-example:server:routes:root')}/api/status/:status`, (reqest, response) => {
+app.get(`${config.get('turing-example:server:routes:root')}/api/status/:status`, (reqest, response) => {
   status.setStatusDetail('toll', {status: reqest.params.status});
   response.end();
 });
 
-server.use(require('./routes/errorRoutes'));
+app.use(require('./routes/errorRoutes'));
 
-module.exports = server;
+module.exports = app;

@@ -2,11 +2,11 @@
 'use strict';
 
 const vaulted = require('turing-vault');
-const server = require('../src/server/app.js');
+const app = require('../src/server/app.js');
 const logger = require('turing-logging').logger;
 
 vaulted.then(() => {
-  server.start();
+  app.start();
 }).catch((error) => {
   logger.error(error);
   throw error;
