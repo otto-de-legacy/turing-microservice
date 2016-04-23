@@ -3,5 +3,8 @@
     "server": {
       "port": "{PORT}"
     }
+  },
+  "turing-example": {
+    "env": "{NODE_ENV}"
   }
 }
