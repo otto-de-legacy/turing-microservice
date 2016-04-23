@@ -41,7 +41,6 @@ function findCaller() {
   return `${file}#${line}:${column}`;
 }
 
-// TODO: Add more information to meta?!
 logger.rewriters.push((level, msg, meta) => {
   const namespace = cls.getNamespace(config.get('turing:logging:namespace'));
   const request = namespace.get('request');
