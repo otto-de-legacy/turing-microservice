@@ -36,7 +36,7 @@ function deleteEmptyPropertiesOf(object) {
 }
 
 function mapCustomEnvVariables() {
-  const customEnvFile = path.join(process.cwd(), configFolder, 'custom_env.json');
+  const customEnvFile = path.join(process.cwd(), configFolder, 'custom-env.json');
 
   if (fs.existsSync(customEnvFile)) {
     const customEnvContent = fs.readFileSync(customEnvFile).toString();
