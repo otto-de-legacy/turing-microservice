@@ -14,8 +14,8 @@ Simply require _turing-health_ and add the router to your _turing-server_.
 
 ### Config
 
-- turing:server:routes:internal - The base-url of internal endpoints like health or status.
-- turing:health:route - The relative url of the health endpoint behind the internal route.
+- turing:server:routes:internal - The base-url of internal endpoints like health or status. (default: "/internal")
+- turing:health:route - The relative url of the health endpoint behind the internal route. (default: "/health")
 
 ## Contributors
 

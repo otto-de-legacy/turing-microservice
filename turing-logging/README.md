@@ -22,8 +22,8 @@ To log something simply require the logger.
 
 ### Config
 
-- turing:logging:namespace - You know what this is for.
-- turing:logging:transports - List of winston transports with their type and options.
+- turing:logging:namespace - You know what this is for. (default: "turing-logging")
+- turing:logging:transports - List of winston transports with their type and options. (default: "Console")
 - turing:logging:meta (optional) - Object of additional key-value pairs for each log entry.
 - turing:logging:headers (optional) - List of HTTP headers which values should be logged with each log entry.
 

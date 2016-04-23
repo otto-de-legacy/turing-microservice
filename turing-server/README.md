@@ -16,7 +16,7 @@ The _turing-server_ simply wraps an express app and provides a start method on i
 
 ### Config
 
-- turing:server:port - The server port.
+- turing:server:port - The server port. (default: "3000")
 
 ## Contributors
 

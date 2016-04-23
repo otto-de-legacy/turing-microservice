@@ -18,7 +18,7 @@ To enrich _turing-config_ with secrets from vault you simply have to require _tu
 
 ### Config
 
-- turing:vault:endpoint - Url of vault endpoint.
+- turing:vault:endpoint - Url of vault endpoint. (default: "localhost")
 - turing:vault:token -  Vault token.
 - turing:vault:path - Your applications path inside vault.
 - turing:vault:secrets - A list of secrets you want to import from vault.

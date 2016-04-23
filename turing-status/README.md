@@ -21,8 +21,8 @@ To add a sub-status call _setStatusDetail(name, statusDetail)_ on you _turing-se
 
 ### Config
 
-- turing:server:routes:internal - The base-url of internal endpoints like health or status.
-- turing:status:route - The relative url of the status endpoint behind the internal route.
+- turing:server:routes:internal - The base-url of internal endpoints like health or status. (default: "/internal")
+- turing:status:route - The relative url of the status endpoint behind the internal route. (default: "/status")
 
 #### Status Information Config
 

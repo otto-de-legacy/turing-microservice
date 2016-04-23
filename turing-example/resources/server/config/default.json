@@ -23,6 +23,18 @@
       "routes": {
         "internal": "/turing-example/internal"
       }
+    },
+    "status": {
+      "application": {
+        "group": "turing"
+      },
+      "team": {
+        "name": "turing",
+        "contact": {
+          "technical": "benedikt@stemmildt.com",
+          "business": "benedikt@stemmildt.com"
+        }
+      }
     }
   },
   "turing-example": {
