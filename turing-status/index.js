@@ -19,7 +19,7 @@ app.use('/turing-status', express.static(`${__dirname}/public`));
 // TODO: Make html page way more nicer (look at edison microservice status page for inspiration)
 app.get(`${config.get('turing:server:routes:internal')}${config.get('turing:status:route')}`, (request, response) => {
   const status = statusProvider.getStatus();
-  response.set('cache-control', 'public,max-age=20,s-maxage=20');
+  response.set('Cache-Control', 'public,max-age=20,s-maxage=20');
   response.format({
     json: () => {
       response.json(status);
