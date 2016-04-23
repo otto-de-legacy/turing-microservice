@@ -8,6 +8,8 @@ const pkg = require(require('path').join(process.cwd(), 'package.json'));
 
 const app = express().enable('strict routing');
 
+app.disable('x-powered-by');
+
 app.use(loggingMiddleware);
 
 app.start = () => {
