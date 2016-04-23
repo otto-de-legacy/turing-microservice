@@ -1,8 +1,10 @@
 'use strict';
 
+const httpHeaderHelper = require('../helper/httpHeaderHelper');
+
 module.exports = (() => {
   function notFound(request, response, next) {
-    response.set('Surrogate-Control', 'max-age=60');
+    response.set(httpHeaderHelper.SURROGATE_CONTROL, 'max-age=60');
     const error = new Error('Not Found');
     error.status = 404;
     next(error);

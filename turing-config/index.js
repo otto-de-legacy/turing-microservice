@@ -48,7 +48,6 @@ function mapCustomEnvVariables() {
 }
 
 // TODO: Do not add all ENV vars to config (they must be in custom_env)!!
-// TODO: Custom env variables must overrule all other
 function loadConfig(config) {
   nconf.argv();
   nconf.env('__');
