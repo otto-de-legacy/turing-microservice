@@ -3,16 +3,14 @@
 const request = require('supertest');
 
 const app = require('../../../../src/server/app');
-const config = require('turing-config');
 const httpStatusHelper = require('../../../../src/server/helper/httpStatusHelper');
 
 describe('publicController', () => {
-  it(`GET ${config.get('turing-example:server:routes:root')}/`, (done) => {
+  it('GET /turing-example/', (done) => {
     request(app)
-      .get(`${config.get('turing-example:server:routes:root')}/`)
-      .expect(`<html>\n<head>\n  <title>turing-example</title>\n  <link rel="stylesheet" href="${config.get(
-        'turing-example:server:routes:root')}/css/main.css"/>\n</head>\n<body>\n<div id="app"></div>\n<script type="text/javascript" src="${config.get(
-        'turing-example:server:routes:root')}/js/app.js"></script>\n</body>\n</html>`)
+      .get('/turing-example/')
+      .expect(
+        '<html>\n<head>\n  <title>turing-example</title>\n  <link rel="stylesheet" href="/turing-example/css/main.css"/>\n</head>\n<body>\n<div id="app"></div>\n<script type="text/javascript" src="/turing-example/js/app.js"></script>\n</body>\n</html>')
       .expect(httpStatusHelper.OK, done);
   });
 });
