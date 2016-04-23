@@ -29,6 +29,10 @@
       "error",
       "never"
     ],
+    "react/jsx-first-prop-new-line": [
+      "error",
+      "multiline"
+    ],
     "react/jsx-handler-names": "error",
     "react/jsx-indent": [
       "error",
@@ -68,6 +72,7 @@
     "react/prop-types": "error",
     "react/react-in-jsx-scope": "error",
     "react/require-extension": "error",
+    "react/require-render-return": "error",
     "react/self-closing-comp": "error",
     "react/sort-comp": "off",
     "react/wrap-multilines": "error"
