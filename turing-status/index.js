@@ -21,11 +21,11 @@ app.get(`${config.get('turing:server:routes:internal')}${config.get('turing:stat
   const status = statusProvider.getStatus();
   response.set('Cache-Control', 'public,max-age=20,s-maxage=20');
   response.format({
-    json: () => {
-      response.json(status);
-    },
     html: () => {
       response.render('status', status);
+    },
+    default: () => {
+      response.json(status);
     }
   });
 });
