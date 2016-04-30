@@ -26,11 +26,11 @@
   "dependencies": {
     "body-parser": "1.15.0",
     "compression": "1.6.1",
-    "consolidate": "0.14.0",
+    "consolidate": "0.14.1",
     "cookie-parser": "1.4.1",
     "express": "4.13.4",
     "extract-text-webpack-plugin": "1.0.1",
-    "mongoose": "4.4.13",
+    "mongoose": "4.4.14",
     "swig": "1.4.2",
     "turing-config": "0.8.2",
     "turing-health": "0.8.2",

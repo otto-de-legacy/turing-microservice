@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "compression": "1.6.1",
-    "consolidate": "0.14.0",
+    "consolidate": "0.14.1",
     "express": "4.13.4",
     "swig": "1.4.2",
     "turing-config": "0.8.2"
