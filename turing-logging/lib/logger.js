@@ -66,4 +66,10 @@ logger.rewriters.push((level, msg, meta) => {
   return extend(meta, metaFromConf);
 });
 
+logger.stream = {
+  write: (message) => {
+    logger.info(message);
+  }
+};
+
 module.exports = logger;

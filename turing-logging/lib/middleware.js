@@ -12,9 +12,6 @@ module.exports = (request, response, next) => {
     namespace.set('request', request);
     namespace.set('response', response);
     namespace.set('uuid', uuid.v4());
-
-    // TODO: Maybe log each request?!
-
     next();
   });
 };

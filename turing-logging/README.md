@@ -20,6 +20,13 @@ To log something simply require the logger.
     logger.warn('This is a warning.');
     logger.error('This is an error.');
 
+You can also use morgan as an accessLog. Simple set the morgan outputStream to our turing-logging.logger.stream.
+
+    const morgan = require('morgan');
+    const logger = require('turing-logging').logger;
+
+    app.use(morgan('combined', {stream: logger.stream}));
+
 ### Config
 
 - turing:logging:namespace - You know what this is for. (default: "turing-logging")
