@@ -2,9 +2,12 @@
   "turing": {
     "logging": {
       "namespace": "turing-logging",
-      "transports": [{
-        "type": "Console"
-      }]
+      "headers": [],
+      "transports": [
+        {
+          "type": "Console"
+        }
+      ]
     }
   }
 }
