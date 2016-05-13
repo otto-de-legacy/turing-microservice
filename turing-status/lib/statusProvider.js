@@ -9,6 +9,7 @@ module.exports = (() => {
   const statusDetails = {};
 
   // TODO: Add validation for status OK, WARNING, ERROR and having a message
+  // TODO: Switch to event based status updating
   function addStatusDetail(name, statusDetail) {
     statusDetails[name] = statusDetail;
   }
