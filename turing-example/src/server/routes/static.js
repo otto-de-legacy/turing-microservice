@@ -22,7 +22,8 @@ if (config.get('turing-example:env') === 'local') {
   router.use(publicWebpackDevMiddleware);
   router.use(webpackHotMiddleware(compiler));
 } else {
-  router.use(config.get('turing-example:server:routes:root'), express.static(`${__dirname}/../../resources/server/public`));
+  router.use(config.get('turing-example:server:routes:root'),
+    express.static(`${__dirname}/../../resources/server/public`, {maxAge: '1m'}));
 }
 
 module.exports = router;

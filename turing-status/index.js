@@ -14,7 +14,7 @@ app.engine('html', require('consolidate').swig);
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'html');
 
-app.use('/turing-status', express.static(`${__dirname}/public`));
+app.use('/turing-status', express.static(`${__dirname}/public`, {maxAge: '1m'}));
 
 // TODO: Make html page way more nicer (look at edison microservice status page for inspiration)
 app.get(`${config.get('turing:server:routes:internal')}${config.get('turing:status:route')}`, (request, response) => {
