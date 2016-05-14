@@ -379,6 +379,7 @@
       "error",
       "never"
     ],
+    "object-property-newline": "error",
     "object-shorthand": "error",
     "one-var": [
       "error",
