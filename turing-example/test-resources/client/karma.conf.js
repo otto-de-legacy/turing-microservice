@@ -35,19 +35,17 @@ module.exports = (config) => {
         loaders: [
           {
             test: /\.(js|jsx)$/,
+            loader: 'isparta-loader',
+            exclude: /(test|node_modules)\//
+          },
+          {
+            test: /\.(js|jsx)$/,
             loaders: ['babel-loader'],
             exclude: /node_modules\//
           },
           {
             test: /\.scss$/,
             loader: 'css-loader!sass-loader'
-          }
-        ],
-        postLoaders: [
-          {
-            test: /\.(js|jsx)$/,
-            loader: 'istanbul-instrumenter',
-            exclude: /(test|node_modules)\//
           }
         ]
       },
