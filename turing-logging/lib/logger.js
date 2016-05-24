@@ -66,6 +66,7 @@ logger.rewriters.push((level, msg, meta) => {
   return extend(meta, metaFromConf);
 });
 
+// TODO: make it possible to add different meta object to this log
 logger.stream = {
   write: (message) => {
     logger.info(message);
