@@ -19,9 +19,11 @@ app.use(loggingMiddleware);
 app.start = () => {
   const port = config.get('turing:server:port');
 
-  app.listen(port, () => {
+  const server = config.get('turing:server:onlyIPv4') ? app.listen(port, '127.0.0.1') : app.listen(port);
+  server.on('listening', () => {
     logger.info(`${pkg.name} microservice listening on port ${port}!`);
-  }).on('error', (error) => {
+  });
+  server.on('error', (error) => {
     if (error.syscall !== 'listen') {
       logger.error(error);
       throw error;

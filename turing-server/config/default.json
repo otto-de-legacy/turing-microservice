@@ -1,6 +1,7 @@
 {
   "turing": {
     "server": {
+      "onlyIPv4": false,
       "port": 3000
     }
   }

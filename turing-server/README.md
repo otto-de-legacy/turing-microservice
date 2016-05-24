@@ -16,6 +16,7 @@ The _turing-server_ simply wraps an express app and provides a start method on i
 
 ### Config
 
+- turing:server:onlyIPv4 - If set to true server will only serve ipv4 addresses and therefor not add _::ffff:_ prefix to ipv4 addresses. (default: "false")
 - turing:server:port - The server port. (default: "3000")
 
 ## Contributors
