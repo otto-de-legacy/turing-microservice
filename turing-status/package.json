@@ -1,6 +1,6 @@
 {
   "name": "turing-status",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Aggregation of sub-statuses and express routes for an html and json status report.",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "consolidate": "0.14.1",
     "express": "4.13.4",
     "swig": "1.4.2",
-    "turing-config": "0.9.2"
+    "turing-config": "0.9.3"
   },
   "author": {
     "name": "Benedikt Stemmildt",
