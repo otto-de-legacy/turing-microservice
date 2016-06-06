@@ -27,10 +27,10 @@
     "body-parser": "1.15.1",
     "compression": "1.6.2",
     "consolidate": "0.14.1",
-    "cookie-parser": "1.4.2",
+    "cookie-parser": "1.4.3",
     "express": "4.13.4",
     "extract-text-webpack-plugin": "1.0.1",
-    "mongoose": "4.4.19",
+    "mongoose": "4.4.20",
     "morgan": "1.7.0",
     "swig": "1.4.2",
     "turing-config": "0.9.4",
@@ -42,7 +42,7 @@
     "webpack": "1.13.1",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0",
-    "winston-graylog2": "0.4.3"
+    "winston-graylog2": "0.5.0"
   },
   "devDependencies": {
     "babel-loader": "6.2.4",
@@ -71,7 +71,7 @@
     "karma-phantomjs-launcher": "1.0.0",
     "karma-webpack": "1.7.0",
     "material-ui": "0.15.0",
-    "mocha": "2.5.1",
+    "mocha": "2.5.3",
     "node-sass": "3.7.0",
     "phantomjs-prebuilt": "2.1.7",
     "react": "15.1.0",
