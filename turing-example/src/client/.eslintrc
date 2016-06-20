@@ -33,6 +33,14 @@
       "error",
       "multiline"
     ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx"
+        ]
+      }
+    ],
     "react/jsx-handler-names": "error",
     "react/jsx-indent": [
       "error",
@@ -45,8 +53,10 @@
     "react/jsx-key": "error",
     "react/jsx-max-props-per-line": "error",
     "react/jsx-no-bind": "error",
+    "react/no-comment-textnodes": "error",
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-no-literals": "error",
+    "react/no-render-return-value": "error",
     "react/jsx-no-target-blank": "error",
     "react/jsx-no-undef": "error",
     "react/jsx-pascal-case": "error",
@@ -73,8 +83,15 @@
     "react/prop-types": "error",
     "react/react-in-jsx-scope": "error",
     "react/require-extension": "error",
+    "react/require-optimization": "error",
     "react/require-render-return": "error",
-    "react/self-closing-comp": "error",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
     "react/sort-comp": "off",
     "react/wrap-multilines": "error"
   }
