@@ -11,16 +11,19 @@ module.exports = new Promise((resolve) => {
   let readFromVault;
   if (vaultConfig.token) {
     const vault = Vault({
-      endpoint: vaultConfig.endpoint,
+      endpoint: vaultConfig.address,
       token: vaultConfig.token
     });
 
     readFromVault = (secrets, secret, done) => {
-      vault.read(vaultConfig.path + secret, (error, answer) => {
+      const path = secret.path;
+      vault.read(path, (error, answer) => {
         if (error) {
-          done(error, secrets);
+          done(error);
         } else if (answer && answer.data) {
-          secrets[secret] = answer.data.value;
+          const name = path.split('/').pop();
+          secrets[name] = secrets[name] || {};
+          secrets[name][secret.key] = answer.data[secret.key];
           done(null, secrets);
         }
       });
