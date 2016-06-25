@@ -15,7 +15,7 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "glob": "7.0.4",
+    "glob": "7.0.5",
     "nconf": "0.8.4",
     "string-template": "1.0.0"
   },
