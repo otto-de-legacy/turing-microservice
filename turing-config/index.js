@@ -49,7 +49,7 @@ function mapCustomEnvVariables() {
 
 function loadConfig(config) {
   if (config) {
-    nconf.defaults(config);
+    nconf.overrides(config);
   }
 
   mapCustomEnvVariables();
