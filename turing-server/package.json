@@ -1,6 +1,6 @@
 {
   "name": "turing-server",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "An express server.",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
   "dependencies": {
     "express": "4.14.0",
     "serve-favicon": "2.3.0",
-    "turing-config": "0.9.5",
-    "turing-logging": "0.9.5"
+    "turing-config": "0.9.6",
+    "turing-logging": "0.9.6"
   },
   "author": {
     "name": "Benedikt Stemmildt",
