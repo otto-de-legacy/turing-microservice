@@ -5,7 +5,6 @@ const winston = require('winston');
 const stackTrace = require('stack-trace');
 const path = require('path');
 const cls = require('continuation-local-storage');
-const extend = require('extend');
 
 const transportModules = config.get('turing:logging:transports');
 const transports = [];
@@ -63,14 +62,16 @@ logger.rewriters.push((level, msg, meta) => {
     });
   }
 
-  return extend(meta, metaFromConf);
+  return Object.assign(metaFromConf, meta);
 });
 
-// TODO: make it possible to add different meta object to this log
-logger.stream = {
-  write: (message) => {
-    logger.info(message);
-  }
+logger.stream = (meta) => {
+  const stream = {
+    write: (message) => {
+      logger.info(message, meta);
+    }
+  };
+  return stream;
 };
 
 module.exports = logger;

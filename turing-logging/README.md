@@ -21,11 +21,12 @@ To log something simply require the logger.
     logger.error('This is an error.');
 
 You can also use morgan as an accessLog. Simple set the morgan outputStream to our turing-logging.logger.stream.
+You can provide a meta object that will be logged with the accessLogMessage.
 
     const morgan = require('morgan');
     const logger = require('turing-logging').logger;
 
-    app.use(morgan('combined', {stream: logger.stream}));
+    app.use(morgan('combined', {stream: logger.stream([meta])}));
 
 ### Config
 
