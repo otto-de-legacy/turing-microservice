@@ -11,7 +11,12 @@ app.engine('html', require('consolidate').swig);
 app.set('views', `${__dirname}/../../resources/server/view`);
 app.set('view engine', 'html');
 
-app.use(morgan('combined', {stream: logger.stream}));
+app.use(morgan('combined', {
+  stream: logger.stream({
+    type: 'turing-example-accesslog',
+    logformat: 'COMBINEDAPACHELOG'
+  })
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(require('cookie-parser')());
