@@ -8,9 +8,9 @@ Hierarchical configuration with files, environment variables and command-line ar
 
 _turing-config_ will merge configs from several sources into one config.
 Therefore it will override configs from following sources from default (1) to strongest (3):
-1. default config
-2. NODE_ENV specific config
-3. env variables
+1. env variables
+2. default config
+3. NODE_ENV specific config
 
 The default config sets the base, NODE_ENV specific config overrules default config and env variable config overrules everything.
 
