@@ -36,10 +36,10 @@ module.exports = new Promise((resolve) => {
       }
       config.update(secrets);
       logger.info('Vault: Read secrets from vault and injected them into the config');
-      resolve(secrets);
+      resolve();
     });
   } else {
     logger.warn('Vault: No token');
-    resolve([]);
+    resolve();
   }
 });
