@@ -1,6 +1,6 @@
 {
   "name": "turing-toggles-mongo",
-  "version": "0.9.8",
+  "version": "0.10.0",
   "description": "Toggle persistence to mongodb.",
   "main": "index.js",
   "scripts": {
