@@ -2,6 +2,7 @@
   "turing": {
     "logging": {
       "namespace": "turing-logging",
+      "meta": {},
       "headers": [],
       "transports": [
         {
