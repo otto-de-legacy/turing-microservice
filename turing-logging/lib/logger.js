@@ -62,7 +62,7 @@ logger.rewriters.push((level, msg, meta) => {
     });
   }
 
-  return Object.assign(metaFromConf, meta);
+  return Object.assign(metaFromConf, meta || {});
 });
 
 logger.stream = (meta) => {
