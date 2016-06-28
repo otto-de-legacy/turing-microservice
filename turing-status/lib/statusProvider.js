@@ -23,7 +23,7 @@ module.exports = (() => {
         environment: process.env.NODE_ENV,
         version: pkg.version,
         commit: pkg.commit,
-        vcsUrl: pkg.repository.url,
+        vcsUrl: pkg.repository ? pkg.repository.url : '',
         status: getAggregatedStatus(statusDetails),
         statusDetails,
         dependencies: pkg.dependencies,
