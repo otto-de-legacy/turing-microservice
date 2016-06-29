@@ -1,7 +1,7 @@
 'use strict';
 
 const config = require('turing-config');
-const Vault = require('node-vault');
+const request = require('request');
 const async = require('async');
 const logger = require('turing-logging').logger;
 
@@ -10,20 +10,25 @@ module.exports = new Promise((resolve) => {
 
   let readFromVault;
   if (vaultConfig.token) {
-    const vault = Vault({
-      endpoint: vaultConfig.address,
-      token: vaultConfig.token
-    });
-
     readFromVault = (secrets, secret, done) => {
       const path = secret.path;
-      vault.read(path, {strictSSL: false}, (error, answer) => {
+      const requestOptions = {
+        url: `${vaultConfig.address}/v1/${path}`,
+        json: true,
+        headers: {
+          'X-Vault-Token': vaultConfig.token,
+          accept: 'application/json'
+        },
+        rejectUnauthorized: false
+      };
+
+      request.get(requestOptions, (error, response, body) => {
         if (error) {
           done(error);
-        } else if (answer && answer.data) {
+        } else if (body && body.data) {
           const name = path.split('/').pop();
           secrets[name] = secrets[name] || {};
-          secrets[name][secret.key] = answer.data[secret.key];
+          secrets[name][secret.key] = body.data[secret.key];
           done(null, secrets);
         }
       });
