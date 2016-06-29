@@ -17,7 +17,7 @@ module.exports = new Promise((resolve) => {
 
     readFromVault = (secrets, secret, done) => {
       const path = secret.path;
-      vault.read(path, (error, answer) => {
+      vault.read(path, {strictSSL: false}, (error, answer) => {
         if (error) {
           done(error);
         } else if (answer && answer.data) {
