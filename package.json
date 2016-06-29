@@ -1,6 +1,6 @@
 {
   "name": "turing-microservice",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "A common basis for Node.js microservices.",
   "scripts": {
     "test": "gulp test"
