@@ -4,6 +4,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ProductList from './component/ProductList';
 
 injectTapEventPlugin();
@@ -13,4 +14,4 @@ if (!root) {
   root = document.body;
 }
 
-ReactDOM.render(<ProductList />, root);
+ReactDOM.render(<MuiThemeProvider><ProductList /></MuiThemeProvider>, root);
