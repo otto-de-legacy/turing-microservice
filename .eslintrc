@@ -159,6 +159,10 @@
         "ignoreUrls": true
       }
     ],
+    "max-lines": [
+      "error",
+      150
+    ],
     "max-nested-callbacks": [
       "error",
       3
@@ -276,6 +280,7 @@
         "ignore": []
       }
     ],
+    "no-mixed-operators": "warn",
     "no-mixed-requires": [
       "error",
       false
@@ -360,6 +365,8 @@
     "no-useless-computed-key": "error",
     "no-useless-concat": "error",
     "no-useless-constructor": "error",
+    "no-useless-escape": "error",
+    "no-useless-rename": "error",
     "no-var": "error",
     "no-void": "error",
     "no-warning-comments": [
@@ -375,6 +382,10 @@
     ],
     "no-whitespace-before-property": "error",
     "no-with": "error",
+    "object-curly-newline": [
+      "off",
+      "always"
+    ],
     "object-curly-spacing": [
       "error",
       "never"
@@ -422,6 +433,10 @@
     ],
     "require-jsdoc": "off",
     "require-yield": "error",
+    "rest-spread-spacing": [
+      "error",
+      "never"
+    ],
     "semi": [
       "error",
       "always"
@@ -464,6 +479,10 @@
       "safe"
     ],
     "template-curly-spacing": [
+      "error",
+      "never"
+    ],
+    "unicode-bom": [
       "error",
       "never"
     ],
