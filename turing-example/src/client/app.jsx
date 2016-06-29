@@ -3,7 +3,7 @@ import './style/main.scss';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ProductList from './component/ProductList';
 
@@ -14,4 +14,4 @@ if (!root) {
   root = document.body;
 }
 
-ReactDOM.render(<MuiThemeProvider><ProductList /></MuiThemeProvider>, root);
+render(<MuiThemeProvider><ProductList /></MuiThemeProvider>, root);

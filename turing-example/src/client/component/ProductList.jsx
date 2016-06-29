@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 
-class ProductList extends React.Component {
+class ProductList extends Component {
 
   constructor() {
     super();
