@@ -1,6 +1,6 @@
 {
   "name": "turing-hmac",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Middleware for hmac authentication.",
   "main": "index.js",
   "scripts": {
