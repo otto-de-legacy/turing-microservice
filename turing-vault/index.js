@@ -2,7 +2,7 @@
 
 const config = require('turing-config');
 const Vault = require('node-vault');
-const async = require('async');
+const reduce = require('async/reduce');
 const logger = require('turing-logging').logger;
 
 module.exports = new Promise((resolve) => {
@@ -31,7 +31,7 @@ module.exports = new Promise((resolve) => {
         });
     };
 
-    async.reduce(vaultConfig.secrets, {}, readFromVault, (error, secrets) => {
+    reduce(vaultConfig.secrets, {}, readFromVault, (error, secrets) => {
       if (error) {
         logger.error('Vault: Cannot read secrets from vault', error);
         throw new Error('Vault: Cannot read secrets from vault', error);
