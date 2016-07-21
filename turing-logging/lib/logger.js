@@ -62,7 +62,24 @@ logger.rewriters.push((level, msg, meta) => {
     });
   }
 
+  if (meta.stack) {
+    meta.stacktrace = meta.stack;
+  }
+
   return Object.assign(metaFromConf, meta);
+});
+
+logger.filters.push((level, msg, meta) => {
+  const trace = meta.stacktrace;
+  if (trace) {
+    delete meta.code;
+    delete meta.stacktrace;
+    return {
+      msg: trace,
+      meta
+    };
+  }
+  return msg;
 });
 
 logger.stream = (meta) => {
