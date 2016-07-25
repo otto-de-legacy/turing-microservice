@@ -1,3 +1,5 @@
+// TODO (BS): integrate better than using a promise...
+
 'use strict';
 
 const config = require('turing-config');
@@ -8,14 +10,13 @@ const logger = require('turing-logging').logger;
 module.exports = new Promise((resolve) => {
   const vaultConfig = config.get('turing:vault');
 
-  let readFromVault;
   if (vaultConfig.token) {
     const vault = Vault({
       endpoint: vaultConfig.address,
       token: vaultConfig.token
     });
 
-    readFromVault = (secrets, secret, done) => {
+    reduce(vaultConfig.secrets, {}, (secrets, secret, done) => {
       const path = secret.path;
       vault.read(path, {rejectUnauthorized: false})
         .then((result) => {
@@ -29,13 +30,12 @@ module.exports = new Promise((resolve) => {
         .catch((error) => {
           done(error);
         });
-    };
-
-    reduce(vaultConfig.secrets, {}, readFromVault, (error, secrets) => {
+    }, (error, secrets) => {
       if (error) {
         logger.error('Vault: Cannot read secrets from vault', error);
         throw new Error('Vault: Cannot read secrets from vault', error);
       }
+      // TODO (BS): integrate better to config module
       config.update(secrets);
       logger.info('Vault: Read secrets from vault and injected them into the config');
       resolve();
