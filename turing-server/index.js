@@ -7,6 +7,20 @@ const config = require('turing-config');
 const logger = require('turing-logging').logger;
 const pkg = require(require('path').join(process.cwd(), 'package.json'));
 
+function getSpecific(error, port) {
+  if (error.syscall !== 'listen') {
+    return error;
+  }
+  switch (error.code) {
+    case 'EACCES':
+      return new Error(`Port ${port} requires elevated privileges`);
+    case 'EADDRINUSE':
+      return new Error(`Port ${port} is already in use`);
+    default:
+      return error;
+  }
+}
+
 const app = express();
 
 app.disable('x-powered-by');
@@ -24,21 +38,9 @@ app.start = () => {
     logger.info(`${pkg.name} microservice listening on port ${port}!`);
   });
   server.on('error', (error) => {
-    if (error.syscall !== 'listen') {
-      logger.error(error);
-      throw error;
-    }
-    switch (error.code) {
-      case 'EACCES':
-        logger.error(`Port ${port} requires elevated privileges`);
-        throw new Error(`Port ${port} requires elevated privileges`);
-      case 'EADDRINUSE':
-        logger.error(`Port ${port} is already in use`);
-        throw new Error(`Port ${port} is already in use`);
-      default:
-        logger.error(error);
-        throw error;
-    }
+    const specificError = getSpecific(error, port);
+    logger.error(specificError);
+    throw specificError;
   });
 };
 

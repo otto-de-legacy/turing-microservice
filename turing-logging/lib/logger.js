@@ -72,7 +72,6 @@ logger.rewriters.push((level, msg, meta) => {
 logger.filters.push((level, msg, meta) => {
   const trace = meta.stacktrace;
   if (trace) {
-    delete meta.code;
     delete meta.stacktrace;
     return {
       msg: trace,
