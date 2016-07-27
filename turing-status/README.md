@@ -15,9 +15,9 @@ Simply require _turing-status_ and add the router to your _turing-server_.
 
     app.use(status);
 
-To add a sub-status call _addStatusDetail(name, statusDetail)_ on you _turing-server_.
+To add a sub-status call _addStatusDetail(name, status, message)_ on you _turing-server_.
 
-    server.addStatusDetail('my-status-detail', {status: OK, message: 'Everything is fine.'});
+    server.addStatusDetail('my-status-detail', 'OK', 'Everything is fine.');
 
 ### Config
 

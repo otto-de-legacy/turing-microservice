@@ -9,8 +9,8 @@ router.use(`${config.get('turing-example:server:routes:root')}/api`, require('./
 router.use(require('turing-health'));
 router.use(status);
 
-router.get(`${config.get('turing-example:server:routes:root')}/api/status/:status`, (reqest, response) => {
-  status.addStatusDetail('toll', {status: reqest.params.status});
+router.get(`${config.get('turing-example:server:routes:root')}/api/status/:status/:message`, (reqest, response) => {
+  status.addStatusDetail('toll', reqest.params.status, reqest.params.message);
   response.end();
 });
 

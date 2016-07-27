@@ -30,8 +30,8 @@ app.get(`${config.get('turing:server:routes:internal')}${config.get('turing:stat
   });
 });
 
-app.addStatusDetail = (name, statusDetail) => {
-  statusProvider.addStatusDetail(name, statusDetail);
+app.addStatusDetail = (name, status, message) => {
+  statusProvider.addStatusDetail(name, status, message);
 };
 
 module.exports = app;

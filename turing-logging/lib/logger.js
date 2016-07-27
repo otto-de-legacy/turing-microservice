@@ -92,5 +92,3 @@ logger.stream = (meta) => {
 };
 
 module.exports = logger;
-
-// TODO: Do not log with logger - use eventBus for logging
