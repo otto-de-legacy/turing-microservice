@@ -3,7 +3,6 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
-const isparta = require('isparta');
 const mocha = require('gulp-mocha');
 const KarmaServer = require('karma').Server;
 const runSequence = require('run-sequence');
@@ -23,9 +22,7 @@ gulp.task('eslint', () =>
 
 gulp.task('istanbul', () =>
   gulp.src('./src/server/**/*.js')
-    .pipe(istanbul({
-      instrumenter: isparta.Instrumenter
-    }))
+    .pipe(istanbul())
     .pipe(istanbul.hookRequire())
 );
 
