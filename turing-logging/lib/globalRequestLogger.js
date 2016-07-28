@@ -6,13 +6,11 @@ const logger = require('./logger');
 module.exports = (() => {
   function initialize() {
     globalRequestLogger.initialize();
-    globalRequestLogger.on('success', (request, response) => {
+    globalRequestLogger.on('success', (request) => {
       logger.info('Request', request);
-      logger.info('Response', response);
     });
-    globalRequestLogger.on('error', (request, response) => {
+    globalRequestLogger.on('error', (request) => {
       logger.info('Request', request);
-      logger.info('Response', response);
     });
   }
 
