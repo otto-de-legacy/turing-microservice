@@ -1,6 +1,6 @@
 {
   "name": "turing-metrics",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "Metrics support.",
   "main": "index.js",
   "scripts": {
