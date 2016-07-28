@@ -1,9 +1,10 @@
 'use strict';
 
 const globalRequestLogger = require('global-request-logger');
+const logger = require('./logger');
 
 module.exports = (() => {
-  function initialize(logger) {
+  function initialize() {
     globalRequestLogger.initialize();
     globalRequestLogger.on('success', (request, response) => {
       logger.info('Request', request);
