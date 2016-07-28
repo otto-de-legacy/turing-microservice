@@ -1,3 +1,5 @@
+// TODO (BS): switch to https://www.npmjs.com/package/sync-request - makes creating config blocking.
+
 'use strict';
 
 const config = require('turing-config');
