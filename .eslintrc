@@ -12,7 +12,7 @@
     "array-callback-return": "error",
     "arrow-body-style": [
       "error",
-      "as-needed"
+      "always"
     ],
     "arrow-parens": "error",
     "arrow-spacing": "error",

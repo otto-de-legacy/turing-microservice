@@ -7,8 +7,8 @@ const mocha = require('gulp-mocha');
 const KarmaServer = require('karma').Server;
 const runSequence = require('run-sequence');
 
-gulp.task('eslint', () =>
-  gulp.src([
+gulp.task('eslint', () => {
+  return gulp.src([
     './**/*.js',
     './**/*.jsx',
     '!./node_modules/**',
@@ -17,23 +17,23 @@ gulp.task('eslint', () =>
     '!./target/**'
   ]).pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-);
+    .pipe(eslint.failAfterError());
+});
 
-gulp.task('istanbul', () =>
-  gulp.src('./src/server/**/*.js')
+gulp.task('istanbul', () => {
+  return gulp.src('./src/server/**/*.js')
     .pipe(istanbul())
-    .pipe(istanbul.hookRequire())
-);
+    .pipe(istanbul.hookRequire());
+});
 
-gulp.task('testServer', ['istanbul'], () =>
-  gulp.src('./test/server/**/*Spec.js')
+gulp.task('testServer', ['istanbul'], () => {
+  return gulp.src('./test/server/**/*Spec.js')
     .pipe(mocha({reporter: 'spec'}))
     .pipe(istanbul.writeReports({
       dir: './target/coverage/server',
       reporters: ['lcov']
-    }))
-);
+    }));
+});
 
 gulp.task('testPublic', (done) => {
   new KarmaServer({

@@ -18,6 +18,8 @@ gulp.task('watch', () => {
       NODE_ENV: 'local',
       TURING_CONFIG_DIR: './resources/server/config'
     },
-    tasks: () => []
+    tasks: () => {
+      return [];
+    }
   });
 });
