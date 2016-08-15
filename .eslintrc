@@ -25,8 +25,8 @@
         "allowSingleLine": true
       }
     ],
-    "callback-return": "error",
-    "camelcase": "error",
+    "callback-return": "off",
+    "camelcase": "off",
     "comma-dangle": [
       "error",
       "never"
@@ -67,6 +67,10 @@
     ],
     "eol-last": "error",
     "eqeqeq": "error",
+    "func-call-spacing": [
+      "error",
+      "never"
+    ],
     "func-names": "error",
     "func-style": [
       "error",
@@ -78,7 +82,6 @@
     "handle-callback-err": "error",
     "id-blacklist": [
       "error",
-      "data",
       "err",
       "e",
       "req",
@@ -151,7 +154,7 @@
       4
     ],
     "max-len": [
-      "error",
+      "warn",
       130,
       4,
       {
@@ -161,7 +164,7 @@
     ],
     "max-lines": [
       "error",
-      150
+      130
     ],
     "max-nested-callbacks": [
       "error",
@@ -249,7 +252,15 @@
     "no-fallthrough": "error",
     "no-floating-decimal": "error",
     "no-func-assign": "error",
-    "no-implicit-coercion": "error",
+    "no-global-assign": "error",
+    "no-implicit-coercion": [
+      "error",
+      {
+        "allow": [
+          "!!"
+        ]
+      }
+    ],
     "no-implicit-globals": "error",
     "no-implied-eval": "error",
     "no-inline-comments": "error",
@@ -273,14 +284,14 @@
     "no-lonely-if": "error",
     "no-loop-func": "error",
     "no-magic-numbers": [
-      "error",
+      "off",
       {
         "enforceConst": true,
         "ignoreArrayIndexes": true,
         "ignore": []
       }
     ],
-    "no-mixed-operators": "warn",
+    "no-mixed-operators": "off",
     "no-mixed-requires": [
       "error",
       false
@@ -332,10 +343,10 @@
     "no-sequences": "error",
     "no-shadow": "error",
     "no-shadow-restricted-names": "error",
-    "no-spaced-func": "error",
     "no-sparse-arrays": "error",
     "no-sync": "error",
     "no-tabs": "error",
+    "no-template-curly-in-string": "off",
     "no-ternary": "off",
     "no-this-before-super": "error",
     "no-throw-literal": "error",
@@ -349,6 +360,7 @@
     "no-unneeded-ternary": "error",
     "no-unreachable": "error",
     "no-unsafe-finally": "error",
+    "no-unsafe-negation": "error",
     "no-unused-expressions": "error",
     "no-unused-labels": "error",
     "no-unused-vars": [
@@ -450,6 +462,7 @@
       }
     ],
     "sort-imports": "off",
+    "sort-keys": "off",
     "sort-vars": "off",
     "space-before-blocks": [
       "error",

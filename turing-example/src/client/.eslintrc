@@ -18,6 +18,19 @@
         "ignoreTranspilerName": false
       }
     ],
+//    "react/extensions": [
+//      "error",
+//      "never"
+//    ],
+    "react/forbid-component-props": [
+      "error",
+      {
+        "forbid": [
+          "className",
+          "style"
+        ]
+      }
+    ],
     "react/forbid-prop-types": "error",
     "react/jsx-boolean-value": "error",
     "react/jsx-closing-bracket-location": "error",
@@ -53,10 +66,9 @@
     "react/jsx-key": "error",
     "react/jsx-max-props-per-line": "error",
     "react/jsx-no-bind": "error",
-    "react/no-comment-textnodes": "error",
+    "react/jsx-no-comment-textnodes": "error",
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-no-literals": "error",
-    "react/no-render-return-value": "error",
     "react/jsx-no-target-blank": "error",
     "react/jsx-no-undef": "error",
     "react/jsx-pascal-case": "error",
@@ -65,7 +77,9 @@
     "react/jsx-space-before-closing": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "react/jsx-wrap-multilines": "error",
     "react/no-danger": "error",
+    "react/no-danger-with-children": "error",
     "react/no-deprecated": "error",
     "react/no-did-mount-set-state": "error",
     "react/no-did-update-set-state": "error",
@@ -73,6 +87,7 @@
     "react/no-find-dom-node": "error",
     "react/no-is-mounted": "error",
     "react/no-multi-comp": "error",
+    "react/no-render-return-value": "error",
     "react/no-set-state": "off",
     "react/no-string-refs": "error",
     "react/no-unknown-property": "error",
@@ -83,7 +98,6 @@
     "react/prefer-stateless-function": "error",
     "react/prop-types": "error",
     "react/react-in-jsx-scope": "error",
-    "react/require-extension": "error",
     "react/require-optimization": "error",
     "react/require-render-return": "error",
     "react/self-closing-comp": [
@@ -93,7 +107,6 @@
         "html": true
       }
     ],
-    "react/sort-comp": "off",
-    "react/wrap-multilines": "error"
+    "react/sort-comp": "off"
   }
 }
