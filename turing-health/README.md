@@ -8,9 +8,9 @@ An express route for an health check.
 
 Simply require _turing-health_ and add the router to your _turing-server_.
 
-    const health = require('turing-health');
+    const TuringHealth = require('turing-health');
 
-    app.use(health);
+    app.use(new TuringHealth());
 
 ### Config
 

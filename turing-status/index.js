@@ -1,36 +1,42 @@
 'use strict';
 
-const express = require('express');
-const app = express();
+const Express = require('express');
+const compression = require('compression');
+const consolidate = require('consolidate');
 const config = require('turing-config');
-const statusProvider = require('./lib/statusProvider');
+const StatusProvider = require('./lib/statusProvider');
 
-app.disable('x-powered-by');
-app.enable('strict routing');
+module.exports = class TuringStatus extends Express {
+  constructor() {
+    super();
+    this.statusProvider = new StatusProvider();
 
-app.use(require('compression')({level: 9}));
+    this.disable('x-powered-by');
+    this.enable('strict routing');
 
-app.engine('html', require('consolidate').swig);
-app.set('views', `${__dirname}/views`);
-app.set('view engine', 'html');
+    this.use(compression({level: 9}));
 
-app.use('/turing-status', express.static(`${__dirname}/public`, {maxAge: '1m'}));
+    this.engine('html', consolidate.swig);
+    this.set('views', `${__dirname}/views`);
+    this.set('view engine', 'html');
 
-app.get(`${config.get('turing:server:routes:internal')}${config.get('turing:status:route')}`, (request, response) => {
-  const status = statusProvider.getStatus();
-  response.set('Cache-Control', 'public,max-age=20,s-maxage=20');
-  response.format({
-    html: () => {
-      response.render('status', status);
-    },
-    default: () => {
-      response.json(status);
-    }
-  });
-});
+    this.use('/turing-status', Express.static(`${__dirname}/public`, {maxAge: '1m'}));
 
-app.addStatusDetail = (name, status, message) => {
-  statusProvider.addStatusDetail(name, status, message);
+    this.get(`${config.get('turing:server:routes:internal')}${config.get('turing:status:route')}`, (request, response) => {
+      const status = this.statusProvider.status;
+      response.set('Cache-Control', 'public,max-age=20,s-maxage=20');
+      response.format({
+        html: () => {
+          response.render('status', status);
+        },
+        default: () => {
+          response.json(status);
+        }
+      });
+    });
+
+    this.addStatusDetail = (name, status, message) => {
+      this.statusProvider.addStatusDetail(name, status, message);
+    };
+  }
 };
-
-module.exports = app;

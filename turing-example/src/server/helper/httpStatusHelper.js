@@ -1,13 +1,15 @@
 'use strict';
 
-module.exports = (() => {
-  const OK = 200;
-  const NO_CONTENT = 204;
-  const NOT_FOUND = 404;
+module.exports = class HttpStatusHelper {
+  static get OK() {
+    return 200;
+  }
 
-  return {
-    OK,
-    NO_CONTENT,
-    NOT_FOUND
-  };
-})();
+  static get NO_CONTENT() {
+    return 204;
+  }
+
+  static get NOT_FOUND() {
+    return 404;
+  }
+};

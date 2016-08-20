@@ -22,7 +22,7 @@ _turing-microservice_ is a work in progress. See [CHANGELOG.md](./CHANGELOG.md) 
 - vault module: Adds a promise for merging secrets from vault with config.
 
 next up:
-- mongo module: Adds a port to mongodb.
+- mongo module: Adds a port to mongodb. (BS: do it now!)
 - toggles module: Adds feature-toggles support.
   - toggles-mongo module: Adds toggle persistence to mongodb.
 - jobs module: Adds jobs support.

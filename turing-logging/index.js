@@ -1,11 +1,11 @@
 'use strict';
 
-const globalRequestLogger = require('./lib/globalRequestLogger');
-const logger = require('./lib/logger');
-const middleware = require('./lib/middleware');
+const GlobalRequestLogger = require('./lib/globalRequestLogger');
+const Logger = require('./lib/logger');
+const Middleware = require('./lib/middleware');
 
 module.exports = {
-  globalRequestLogger,
-  logger,
-  middleware
+  GlobalRequestLogger,
+  logger: new Logger(),
+  Middleware
 };

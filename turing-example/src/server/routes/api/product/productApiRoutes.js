@@ -1,9 +1,12 @@
 'use strict';
 
-const router = require('express').Router();
-const productApiController = require('../../../controller/api/product/productApiController');
+const Express = require('express');
+const ProductApiController = require('../../../controller/api/product/productApiController');
 
-router.get('/', productApiController.find);
-router.post('/', productApiController.save);
-
-module.exports = router;
+module.exports = class ProductApiRoutes extends Express.Router {
+  constructor() {
+    super();
+    this.get('/', ProductApiController.find);
+    this.post('/', ProductApiController.save);
+  }
+};

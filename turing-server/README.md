@@ -8,11 +8,15 @@ An express server.
 
 The _turing-server_ simply wraps an express app and provides a start method on it for easily starting the server.
 
-    const app = require('turing-server');
+    const TuringServer = require('turing-server');
 
-    // do your express stuff here - config, routing, middleware, ...
+    class MyApp extends TuringServer {
+      constructor() {
+        // do your express stuff here - config, routing, middleware, ...
+      }
+    }
 
-    app.start();
+    new MyApp().start();
 
 ### Config
 

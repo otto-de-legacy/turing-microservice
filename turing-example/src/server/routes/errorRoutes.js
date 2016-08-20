@@ -1,8 +1,11 @@
 'use strict';
 
-const router = require('express').Router();
-const errorController = require('../controller/errorController');
+const Express = require('express');
+const ErrorController = require('../controller/errorController');
 
-router.use(errorController.notFound);
-
-module.exports = router;
+module.exports = class ErrorRoutes extends Express.Router {
+  constructor() {
+    super();
+    this.use(ErrorController.notFound);
+  }
+};

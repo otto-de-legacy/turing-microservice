@@ -2,24 +2,18 @@
 
 const pkg = require(require('path').join(process.cwd(), 'package.json'));
 const config = require('turing-config');
-const getAggregatedStatus = require('./statusHelper').getAggregatedStatus;
-const validator = require('./validator');
+const Status = require('./status');
+const StatusHelper = require('./statusHelper');
+const StatusValidator = require('./statusValidator');
 const os = require('os');
 
-module.exports = (() => {
-  const statusDetails = {};
-
-  function addStatusDetail(name, status, message) {
-    const statusDetail = {
-      status,
-      message
-    };
-    validator.assertValidName(name);
-    validator.assertValidStatusDetail(statusDetail);
-    statusDetails[name] = statusDetail;
+module.exports = class StatusProvider {
+  constructor() {
+    this.statusDetails = {};
+    this._status = new Status();
   }
 
-  function getStatus() {
+  get status() {
     return {
       application: {
         name: pkg.name,
@@ -29,8 +23,8 @@ module.exports = (() => {
         version: pkg.version,
         commit: pkg.commit,
         vcsUrl: pkg.repository ? pkg.repository.url : '',
-        status: getAggregatedStatus(statusDetails),
-        statusDetails,
+        status: new StatusHelper().getAggregatedStatus(this.statusDetails),
+        statusDetails: this.statusDetails,
         dependencies: pkg.dependencies,
         versions: process.versions,
         pid: process.pid,
@@ -55,8 +49,13 @@ module.exports = (() => {
     };
   }
 
-  return {
-    addStatusDetail,
-    getStatus
-  };
-})();
+  addStatusDetail(name, status, message) {
+    const statusDetail = {
+      status,
+      message
+    };
+    StatusValidator.assertValidName(name);
+    StatusValidator.assertValidStatusDetail(statusDetail, this._status.statuses);
+    this.statusDetails[name] = statusDetail;
+  }
+};

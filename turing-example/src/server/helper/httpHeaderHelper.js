@@ -1,17 +1,23 @@
 'use strict';
 
-module.exports = (() => {
-  const CACHE_CONTROL = 'Cache-Control';
-  const CONTENT_TYPE = 'Content-Type';
-  const CROSS_ORIGN = 'Access-Control-Allow-Origin';
-  const SURROGATE_CONTROL = 'Surrogate-Control';
-  const X_TRACKABLE = 'X-Trackable';
+module.exports = class HttpHeaderHelper {
+  static get CACHE_CONTROL() {
+    return 'Cache-Control';
+  }
 
-  return {
-    CACHE_CONTROL,
-    CONTENT_TYPE,
-    CROSS_ORIGN,
-    SURROGATE_CONTROL,
-    X_TRACKABLE
-  };
-})();
+  static get CONTENT_TYPE() {
+    return 'Content-Type';
+  }
+
+  static get CROSS_ORIGN() {
+    return 'Access-Control-Allow-Origin';
+  }
+
+  static get SURROGATE_CONTROL() {
+    return 'Surrogate-Control';
+  }
+
+  static get X_TRACKABLE() {
+    return 'X-Trackable';
+  }
+};

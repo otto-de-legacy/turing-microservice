@@ -2,8 +2,8 @@
 
 const Product = require('mongoose').model('Product');
 
-module.exports = (() => {
-  function find(request, response, next) {
+module.exports = class ProductApiController {
+  static find(request, response, next) {
     Product.find().exec((error, products) => {
       if (error) {
         next(error);
@@ -12,7 +12,7 @@ module.exports = (() => {
     });
   }
 
-  function save(request, response, next) {
+  static save(request, response, next) {
     const product = new Product(request.body);
     product.save((error) => {
       if (error) {
@@ -22,9 +22,4 @@ module.exports = (() => {
       }
     });
   }
-
-  return {
-    find,
-    save
-  };
-})();
+};

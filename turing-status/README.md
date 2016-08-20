@@ -11,9 +11,9 @@ _HTTP GET_ with _Accept_ header _text/html_ will yield to an html response.
 
 Simply require _turing-status_ and add the router to your _turing-server_.
 
-    const status = require('turing-status');
+    const TuringStatus = require('turing-status');
 
-    app.use(status);
+    app.use(new TuringStatus());
 
 To add a sub-status call _addStatusDetail(name, status, message)_ on you _turing-server_.
 

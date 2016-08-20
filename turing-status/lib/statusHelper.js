@@ -1,25 +1,25 @@
 'use strict';
 
-const statusObject = require('./statusObject');
+const Status = require('./status');
 
-module.exports = (() => {
-  function getScore(status) {
-    return statusObject.scoring[status.toUpperCase()];
+function score(scoring, status) {
+  return scoring[status.toUpperCase()];
+}
+
+function reduceToWorstScore(reducedScore, scoring, statusDetail) {
+  return Math.max(reducedScore, score(scoring, statusDetail.status));
+}
+
+module.exports = class StatusHelper {
+  constructor() {
+    this.status = new Status();
   }
 
-  function reduceToWorstScore(reducedScore, statusDetail) {
-    return Math.max(reducedScore, getScore(statusDetail.status));
-  }
-
-  function getAggregatedStatus(statusDetails) {
+  getAggregatedStatus(statusDetails) {
     const worstScore = Object.keys(statusDetails)
       .reduce((reducedScore, statusDetailKey) => {
-        return reduceToWorstScore(reducedScore, statusDetails[statusDetailKey]);
+        return reduceToWorstScore(reducedScore, this.status.scoring, statusDetails[statusDetailKey]);
       }, 0);
-    return statusObject.statuses[worstScore];
+    return this.status.statuses[worstScore];
   }
-
-  return {
-    getAggregatedStatus
-  };
-})();
+};

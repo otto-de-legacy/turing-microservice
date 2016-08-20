@@ -3,7 +3,6 @@ import $ from 'jquery';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 
 class ProductList extends Component {
-
   constructor() {
     super();
     this.state = {products: []};

@@ -6,29 +6,18 @@ const stackTrace = require('stack-trace');
 const path = require('path');
 const cls = require('continuation-local-storage');
 
-const transportModules = config.get('turing:logging:transports');
-const transports = [];
-
-transportModules.forEach((transportModule) => {
-  try {
+function getTransports() {
+  const transportModules = config.get('turing:logging:transports');
+  return transportModules.map((transportModule) => {
     let Transport;
     if (transportModule.type) {
       Transport = winston.transports[transportModule.type];
     } else if (transportModule.module) {
       Transport = require(transportModule.module);
     }
-    if (Transport) {
-      transports.push(new Transport(transportModule.opts));
-    }
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-const logger = new winston.Logger({
-  exitOnError: false,
-  transports
-});
+    return new Transport(transportModule.opts);
+  });
+}
 
 function findCaller() {
   const caller = stackTrace.get()[6];
@@ -40,54 +29,60 @@ function findCaller() {
   return `${file}#${line}:${column}`;
 }
 
-logger.rewriters.push((level, msg, meta) => {
-  const namespace = cls.getNamespace(config.get('turing:logging:namespace'));
-  const request = namespace.get('request');
-  const uuid = namespace.get('uuid');
-  const metaFromConf = config.get('turing:logging:meta');
+module.exports = class TuringLogger extends winston.Logger {
+  constructor() {
+    super({
+      exitOnError: false,
+      transports: getTransports()
+    });
 
-  if (uuid) {
-    meta.uuid = uuid;
-  }
+    this.rewriters.push((level, msg, meta) => {
+      const namespace = cls.getNamespace(config.get('turing:logging:namespace'));
+      const request = namespace.get('request');
+      const uuid = namespace.get('uuid');
+      const metaFromConf = config.get('turing:logging:meta');
 
-  meta.caller = findCaller();
-
-  if (request) {
-    const headers = config.get('turing:logging:headers');
-    headers.forEach((header) => {
-      const value = request.headers[header];
-      if (value) {
-        meta[header] = value;
+      if (uuid) {
+        meta.uuid = uuid;
       }
+
+      meta.caller = findCaller();
+
+      if (request) {
+        const headers = config.get('turing:logging:headers');
+        headers.forEach((header) => {
+          const value = request.headers[header];
+          if (value) {
+            meta[header] = value;
+          }
+        });
+      }
+
+      if (meta.stack) {
+        meta.stacktrace = meta.stack;
+      }
+
+      return Object.assign(metaFromConf, meta);
+    });
+
+    this.filters.push((level, msg, meta) => {
+      const trace = meta.stacktrace;
+      if (trace) {
+        delete meta.stacktrace;
+        return {
+          msg: trace,
+          meta
+        };
+      }
+      return msg;
     });
   }
 
-  if (meta.stack) {
-    meta.stacktrace = meta.stack;
-  }
-
-  return Object.assign(metaFromConf, meta);
-});
-
-logger.filters.push((level, msg, meta) => {
-  const trace = meta.stacktrace;
-  if (trace) {
-    delete meta.stacktrace;
+  stream(meta) {
     return {
-      msg: trace,
-      meta
+      write: (message) => {
+        this.info(message, meta);
+      }
     };
   }
-  return msg;
-});
-
-logger.stream = (meta) => {
-  const stream = {
-    write: (message) => {
-      logger.info(message, meta);
-    }
-  };
-  return stream;
 };
-
-module.exports = logger;

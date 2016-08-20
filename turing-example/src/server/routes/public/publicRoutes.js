@@ -1,8 +1,11 @@
 'use strict';
 
-const router = require('express').Router();
-const publicController = require('../../controller/public/publicController');
+const Express = require('express');
+const PublicController = require('../../controller/public/publicController');
 
-router.get('/', publicController.index);
-
-module.exports = router;
+module.exports = class PublicRoutes extends Express.Router {
+  constructor() {
+    super();
+    this.get('/', PublicController.index);
+  }
+};

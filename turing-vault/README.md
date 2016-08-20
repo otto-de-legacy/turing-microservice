@@ -8,9 +8,9 @@ A promise for merging secrets from vault with config.
 
 To enrich _turing-config_ with secrets from vault you simply have to require _turing-vault_. It will return a promise which makes it easy to react to success and error.
 
-    const vaulted = require('turing-vault');
+    const TuringVault = require('turing-vault');
 
-    vaulted.then(() => {
+    new TuringVault().then(() => {
       // do sth
     }).catch((error) => {
       throw error;

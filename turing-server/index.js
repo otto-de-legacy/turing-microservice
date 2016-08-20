@@ -1,11 +1,11 @@
 'use strict';
 
-const express = require('express');
+const Express = require('express');
 const favicon = require('serve-favicon');
-const loggingMiddleware = require('turing-logging').middleware;
+const LoggingMiddleware = require('turing-logging').Middleware;
 const config = require('turing-config');
 const logger = require('turing-logging').logger;
-const pkg = require(require('path').join(process.cwd(), 'package.json'));
+const pkg = require(`${__dirname}/package.json`);
 
 function getSpecific(error, port) {
   if (error.syscall !== 'listen') {
@@ -21,27 +21,27 @@ function getSpecific(error, port) {
   }
 }
 
-const app = express();
+module.exports = class TuringServer extends Express {
+  constructor() {
+    super();
+    this.disable('x-powered-by');
+    this.enable('strict routing');
 
-app.disable('x-powered-by');
-app.enable('strict routing');
+    this.use(favicon(`${__dirname}/public/favicon.ico`));
 
-app.use(favicon(`${__dirname}/public/favicon.ico`));
+    this.use(new LoggingMiddleware().spy);
 
-app.use(loggingMiddleware);
-
-app.start = () => {
-  const port = config.get('turing:server:port');
-
-  const server = config.get('turing:server:onlyIPv4') ? app.listen(port, '0.0.0.0') : app.listen(port);
-  server.on('listening', () => {
-    logger.info(`${pkg.name} microservice listening on port ${port}!`);
-  });
-  server.on('error', (error) => {
-    const specificError = getSpecific(error, port);
-    logger.error(specificError);
-    throw specificError;
-  });
+    this.start = () => {
+      const port = config.get('turing:server:port');
+      const server = config.get('turing:server:onlyIPv4') ? this.listen(port, '0.0.0.0') : this.listen(port);
+      server.on('listening', () => {
+        logger.info(`${pkg.name} microservice listening on port ${port}!`);
+      });
+      server.on('error', (error) => {
+        const specificError = getSpecific(error, port);
+        logger.error(specificError);
+        throw specificError;
+      });
+    };
+  }
 };
-
-module.exports = app;

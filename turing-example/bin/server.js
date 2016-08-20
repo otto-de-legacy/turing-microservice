@@ -1,12 +1,17 @@
 #!/usr/bin/env node
+/* eslint-disable global-require */
 'use strict';
 
-const vaulted = require('turing-vault');
-const app = require('../src/server/app.js');
+const TuringVault = require('turing-vault');
+const TuringMongo = require('../src/server/mongo');
+const TuringExampleApp = require('../src/server/app');
 const logger = require('turing-logging').logger;
 
-vaulted.then(() => {
-  app.start();
+const turingVault = new TuringVault();
+turingVault.then(() => {
+  new TuringMongo().then(() => {
+    new TuringExampleApp().start();
+  });
 }).catch((error) => {
   logger.error(error);
   throw error;

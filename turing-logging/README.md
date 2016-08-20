@@ -8,9 +8,9 @@ Multi-transport async logging.
 
 If you use _turing-logging_ without _turing-server_ you have to add the logging middleware to your express app on you own.
 
-    const loggingMiddleware = require('turing-logging').middleware;
+    const LoggingMiddleware = require('turing-logging').Middleware;
 
-    app.use(loggingMiddleware);
+    app.use(new LoggingMiddleware().spy);
 
 To log something simply require the logger.
 

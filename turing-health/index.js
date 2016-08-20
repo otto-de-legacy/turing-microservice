@@ -1,15 +1,18 @@
 'use strict';
 
-const router = require('express').Router();
+const Express = require('express');
 const config = require('turing-config');
 
-router.get(`${config.get('turing:server:routes:internal')}${config.get('turing:health:route')}`, (request, response) => {
-  response.json({
-    status: 'UP',
-    application: {
-      status: 'UP'
-    }
-  });
-});
-
-module.exports = router;
+module.exports = class TuringHealth extends Express.Router {
+  constructor() {
+    super();
+    this.get(`${config.get('turing:server:routes:internal')}${config.get('turing:health:route')}`, (request, response) => {
+      response.json({
+        status: 'UP',
+        application: {
+          status: 'UP'
+        }
+      });
+    });
+  }
+};

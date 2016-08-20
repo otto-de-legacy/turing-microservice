@@ -1,19 +1,27 @@
 'use strict';
 
-const router = require('express').Router();
+const Express = require('express');
 const config = require('turing-config');
-const status = require('turing-status');
+const PublicRoutes = require('./public/publicRoutes');
+const ApiRoutes = require('./api/apiRoutes');
+const TuringHealth = require('turing-health');
+const TuringStatus = require('turing-status');
+const turingStatus = new TuringStatus();
+const ErrorRoutes = require('./errorRoutes');
 
-router.use(config.get('turing-example:server:routes:root'), require('./public/publicRoutes'));
-router.use(`${config.get('turing-example:server:routes:root')}/api`, require('./api/apiRoutes'));
-router.use(require('turing-health'));
-router.use(status);
+module.exports = class Routes extends Express.Router {
+  constructor() {
+    super();
+    this.use(config.get('turing-example:server:routes:root'), new PublicRoutes());
+    this.use(`${config.get('turing-example:server:routes:root')}/api`, new ApiRoutes());
+    this.use(new TuringHealth());
+    this.use(turingStatus);
 
-router.get(`${config.get('turing-example:server:routes:root')}/api/status/:status/:message`, (reqest, response) => {
-  status.addStatusDetail('toll', reqest.params.status, reqest.params.message);
-  response.end();
-});
+    this.get(`${config.get('turing-example:server:routes:root')}/api/status/:status/:message`, (reqest, response) => {
+      turingStatus.addStatusDetail('toll', reqest.params.status, reqest.params.message);
+      response.end();
+    });
 
-router.use(require('./errorRoutes'));
-
-module.exports = router;
+    this.use(new ErrorRoutes());
+  }
+};

@@ -1,30 +1,39 @@
 'use strict';
 
-const app = require('turing-server');
+require('./model/models');
+
+const TuringServer = require('turing-server');
+const compression = require('compression');
+const consolidate = require('consolidate');
 const morgan = require('morgan');
 const logger = require('turing-logging').logger;
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const StaticRoutes = require('./routes/static');
+const Routes = require('./routes/routes');
 
-app.use(require('compression')({level: 9}));
+module.exports = class TuringExampleApp extends TuringServer {
+  constructor() {
+    super();
 
-app.engine('html', require('consolidate').swig);
-app.set('views', `${__dirname}/../../resources/server/view`);
-app.set('view engine', 'html');
+    this.use(compression({level: 9}));
 
-app.use(morgan('combined', {
-  stream: logger.stream({
-    type: 'turing-example-accesslog',
-    logformat: 'COMBINEDAPACHELOG'
-  })
-}));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(require('cookie-parser')());
+    this.engine('html', consolidate.swig);
+    this.set('views', `${__dirname}/../../resources/server/view`);
+    this.set('view engine', 'html');
 
-app.use(require('./routes/static'));
+    this.use(morgan('combined', {
+      stream: logger.stream({
+        type: 'turing-example-accesslog',
+        logformat: 'COMBINEDAPACHELOG'
+      })
+    }));
+    this.use(bodyParser.json());
+    this.use(bodyParser.urlencoded({extended: false}));
+    this.use(cookieParser());
 
-require('./model/models');
+    this.use(new StaticRoutes());
 
-app.use(require('./routes/routes'));
-
-module.exports = app;
+    this.use(new Routes());
+  }
+};
