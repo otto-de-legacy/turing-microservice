@@ -10,7 +10,7 @@ class ProductList extends Component {
   }
 
   loadProducts() {
-    $.getJSON('turing-example/api/products/', (products) => {
+    $.getJSON('api/products/', (products) => {
       this.setState({
         products
       });
