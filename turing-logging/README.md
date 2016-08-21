@@ -42,4 +42,4 @@ You can provide a meta object that will be logged with the accessLogMessage.
 
 ## License
 
-MIT
+Apache-2.0

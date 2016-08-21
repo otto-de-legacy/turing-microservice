@@ -30,4 +30,4 @@ The _turing-server_ simply wraps an express app and provides a start method on i
 
 ## License
 
-MIT
+Apache-2.0

@@ -41,4 +41,4 @@ Get the secret with
 
 ## License
 
-MIT
+Apache-2.0

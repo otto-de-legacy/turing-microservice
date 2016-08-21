@@ -47,4 +47,4 @@ To get a config value simple require _turing-config_ and call _get(configPath)_ 
 
 ## License
 
-MIT
+Apache-2.0

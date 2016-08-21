@@ -24,4 +24,4 @@ Simply require _turing-health_ and add the router to your _turing-server_.
 
 ## License
 
-MIT
+Apache-2.0

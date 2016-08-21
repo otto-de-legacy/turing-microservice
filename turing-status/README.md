@@ -52,4 +52,4 @@ You can set additional status information by using the following configurations
 
 ## License
 
-MIT
+Apache-2.0

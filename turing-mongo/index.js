@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 module.exports = class TuringMongo extends Promise {
   constructor() {
     super((resolve, reject) => {
-      const url = config.get('turing-example:mongo:host');
+      const url = config.get('turing:mongo:url');
 
       logger.info(`Mongoose connecting to ${url}`);
       mongoose.connect(url);

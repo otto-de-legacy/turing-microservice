@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-/* eslint-disable global-require */
 'use strict';
 
 const TuringVault = require('turing-vault');
-const TuringMongo = require('../src/server/mongo');
+const TuringMongo = require('turing-mongo');
 const TuringExampleApp = require('../src/server/app');
 const logger = require('turing-logging').logger;
 

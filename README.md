@@ -17,12 +17,12 @@ _turing-microservice_ is a work in progress. See [CHANGELOG.md](./CHANGELOG.md) 
 - config module: Adds hierarchical configuration with files, environment variables and command-line arguments.
 - health module: Adds an express route for an health check.
 - logging module: Adds multi-transport async logging.
+- mongo module: Adds a port to mongodb.
 - server module: Adds an express server.
 - status module: Adds aggregation of sub-statuses and express routes for an html and json status report.
 - vault module: Adds a promise for merging secrets from vault with config.
 
 next up:
-- mongo module: Adds a port to mongodb. (BS: do it now!)
 - toggles module: Adds feature-toggles support.
   - toggles-mongo module: Adds toggle persistence to mongodb.
 - jobs module: Adds jobs support.
@@ -63,4 +63,4 @@ To make IntelliJ development features work properly. (You still have to configur
 
 ## License
 
-MIT
+Apache-2.0
