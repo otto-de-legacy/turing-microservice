@@ -1,7 +1,8 @@
 {
   "turing": {
     "mongo": {
-      "uri": "mongodb://localhost:27017/turing"
+      "host": "mongodb://localhost:27017",
+      "db": "turing"
     }
   }
 }

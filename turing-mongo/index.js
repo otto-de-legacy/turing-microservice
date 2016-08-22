@@ -7,13 +7,19 @@ const logger = require('turing-logging').logger;
 class TuringMongo extends mongoose.Mongoose {
   setupConnection() {
     return new Promise((resolve, reject) => {
-      const uri = config.get('turing:mongo:uri');
+      const host = config.get('turing:mongo:host');
+      const db = config.get('turing:mongo:db');
+      const user = config.get('turing:mongo:user');
+      const password = config.get('turing:mongo:password');
 
-      logger.info(`Mongoose connecting to ${uri}`);
-      this.connect(uri);
+      const userAndPassword = user && password ? `${user}:${password}@` : '';
+      const uri = `mongodb://${userAndPassword}${host}/${db}`;
+
+      logger.info(`Mongoose connecting to ${host}`);
+      mongoose.connect(uri);
 
       this.connection.on('connected', () => {
-        logger.info(`Mongoose default connection open to ${uri}`);
+        logger.info(`Mongoose default connection open to ${host}`);
         resolve();
       });
 
