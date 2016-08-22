@@ -2,13 +2,13 @@
 'use strict';
 
 const TuringVault = require('turing-vault');
-const TuringMongo = require('turing-mongo');
+const turingMongo = require('turing-mongo');
 const TuringExampleApp = require('../src/server/app');
 const logger = require('turing-logging').logger;
 
 const turingVault = new TuringVault();
 turingVault.then(() => {
-  new TuringMongo().then(() => {
+  turingMongo.setupConnection().then(() => {
     new TuringExampleApp().start();
   });
 }).catch((error) => {

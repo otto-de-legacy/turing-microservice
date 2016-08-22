@@ -1,6 +1,6 @@
 'use strict';
 
-const Product = require('mongoose').model('Product');
+const Product = require('turing-mongo').model('Product');
 
 module.exports = class ProductApiController {
   static find(request, response, next) {

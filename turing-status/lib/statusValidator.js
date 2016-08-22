@@ -13,7 +13,6 @@ function assert(value, schema) {
 }
 
 module.exports = class StatusValidator {
-
   static assertValidStatusDetail(statusDetail, statuses) {
     assert(statusDetail, {
       status: Joi.string()

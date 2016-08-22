@@ -1,8 +1,8 @@
 'use strict';
 
-const mongoose = require('mongoose');
+const turingMongo = require('turing-mongo');
 
-class ProductSchema extends mongoose.Schema {
+class ProductSchema extends turingMongo.Schema {
   constructor() {
     super({
       name: {
@@ -21,4 +21,4 @@ class ProductSchema extends mongoose.Schema {
   }
 }
 
-mongoose.model('Product', new ProductSchema());
+turingMongo.model('Product', new ProductSchema());
