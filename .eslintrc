@@ -188,15 +188,9 @@
       "error",
       {
         "newIsCap": true,
-        "newIsCapExceptions": [
-          "layerBuilder"
-        ],
+        "newIsCapExceptions": [],
         "capIsNew": true,
-        "capIsNewExceptions": [
-          "Router",
-          "Schema",
-          "Vault"
-        ]
+        "capIsNewExceptions": []
       }
     ],
     "new-parens": "error",

@@ -1,5 +1,16 @@
 {
   "rules": {
-    "init-declarations": "off"
+    "init-declarations": "off",
+    "new-cap": [
+      "error",
+      {
+        "newIsCap": true,
+        "newIsCapExceptions": [],
+        "capIsNew": true,
+        "capIsNewExceptions": [
+          "Vault"
+        ]
+      }
+    ]
   }
 }
