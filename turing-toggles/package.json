@@ -1,6 +1,6 @@
 {
   "name": "turing-toggles",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "description": "Feature-toggles support.",
   "main": "index.js",
   "scripts": {
