@@ -26,7 +26,10 @@ Secret Format
 
     {
       path: "/a/path/to/the/secretConfig",
-      key: "keyForTheValue"
+      key: {
+        name: "theNameOfTheSecret",
+        alias: "the:turing:config:path:to:the:value's:key"
+      }
     }
 
 Get the secret with
