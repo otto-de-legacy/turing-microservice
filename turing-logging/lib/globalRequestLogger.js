@@ -6,7 +6,7 @@ const globalRequestLogger = require('global-request-logger');
 const logger = require('./logger');
 
 module.exports = class GlobalRequestLogger {
-  constructor() {
+  static initialize() {
     globalRequestLogger.initialize();
     globalRequestLogger.on('success', (request) => {
       logger.info('Request', request);
