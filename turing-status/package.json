@@ -21,7 +21,8 @@
     "joi": "9.0.4",
     "swig": "1.4.2",
     "turing-config": "0.21.0",
-    "turing-logging": "0.21.0"
+    "turing-logging": "0.21.0",
+    "turing-server": "0.21.0"
   },
   "author": {
     "name": "Benedikt Stemmildt",

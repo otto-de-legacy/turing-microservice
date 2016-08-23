@@ -1,18 +1,16 @@
 'use strict';
 
-const Express = require('express');
+const TuringServer = require('turing-server');
 const compression = require('compression');
 const consolidate = require('consolidate');
+const Express = require('express');
 const config = require('turing-config');
 const StatusProvider = require('./lib/statusProvider');
 
-module.exports = class TuringStatus extends Express {
+module.exports = class TuringStatus extends TuringServer {
   constructor() {
     super();
     this.statusProvider = new StatusProvider();
-
-    this.disable('x-powered-by');
-    this.enable('strict routing');
 
     this.use(compression({level: 9}));
 
