@@ -1,6 +1,6 @@
 {
   "name": "turing-mongo",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "A port to mongodb.",
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "mongoose": "4.5.9",
-    "turing-config": "0.21.0",
-    "turing-logging": "0.21.0"
+    "turing-config": "0.22.0",
+    "turing-logging": "0.22.0"
   },
   "author": {
     "name": "Benedikt Stemmildt",
