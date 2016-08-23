@@ -1,6 +1,6 @@
 {
   "name": "turing-server",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "An express server.",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,8 @@
     "express": "4.14.0",
     "morgan": "1.7.0",
     "serve-favicon": "2.3.0",
-    "turing-config": "0.22.0",
-    "turing-logging": "0.22.0"
+    "turing-config": "0.23.0",
+    "turing-logging": "0.23.0"
   },
   "author": {
     "name": "Benedikt Stemmildt",
