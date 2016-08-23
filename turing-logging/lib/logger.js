@@ -29,7 +29,7 @@ function findCaller() {
   return `${file}#${line}:${column}`;
 }
 
-module.exports = class TuringLogger extends winston.Logger {
+class TuringLogger extends winston.Logger {
   constructor() {
     super({
       exitOnError: false,
@@ -85,4 +85,6 @@ module.exports = class TuringLogger extends winston.Logger {
       }
     };
   }
-};
+}
+
+module.exports = new TuringLogger();
