@@ -16,7 +16,7 @@ class TuringMongo extends mongoose.Mongoose {
       const uri = `mongodb://${userAndPassword}${host}/${db}`;
 
       logger.info(`Mongoose connecting to ${host}`);
-      mongoose.connect(uri);
+      this.connect(uri);
 
       this.connection.on('connected', () => {
         logger.info(`Mongoose default connection open to ${host}`);

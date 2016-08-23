@@ -18,7 +18,7 @@ To connect to a mongodb you simply have to require _turing-mongo_. It will retur
 
 ### Config
 
-- turing:mongo:host - The mongodb host(s) to connect to. (default: "localhost:27017")
+- turing:mongo:host - The mongodb host(s) to connect to. (default: "localhost")
 - turing:mongo:db - The mongodb db to connect to. (default: "turing")
 - turing:mongo:user - The mongodb's user.
 - turing:mongo:password - The mongodb user's password.
