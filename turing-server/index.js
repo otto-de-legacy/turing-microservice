@@ -32,13 +32,15 @@ module.exports = class TuringServer extends Express {
 
     this.use(new LoggingMiddleware().spy);
 
-    const format = config.get('turing:logging:accesslog:format');
-    this.use(morgan(format, {
-      stream: logger.stream({
-        type: 'sharing-accesslog',
-        logformat: 'COMBINEDAPACHELOG'
-      })
-    }));
+    if (config.get('turing:logging:accesslog:enabled')) {
+      const format = config.get('turing:logging:accesslog:format');
+      this.use(morgan(format, {
+        stream: logger.stream({
+          type: 'sharing-accesslog',
+          logformat: 'COMBINEDAPACHELOG'
+        })
+      }));
+    }
 
     this.start = () => {
       const port = config.get('turing:server:port');

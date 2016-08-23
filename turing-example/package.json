@@ -30,7 +30,6 @@
     "cookie-parser": "1.4.3",
     "express": "4.14.0",
     "extract-text-webpack-plugin": "1.0.1",
-    "morgan": "1.7.0",
     "swig": "1.4.2",
     "turing-config": "0.26.0",
     "turing-health": "0.26.0",
