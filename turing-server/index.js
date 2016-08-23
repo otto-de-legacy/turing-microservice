@@ -4,6 +4,7 @@ const Express = require('express');
 const favicon = require('serve-favicon');
 const LoggingMiddleware = require('turing-logging').Middleware;
 const config = require('turing-config');
+const morgan = require('morgan');
 const logger = require('turing-logging').logger;
 const pkg = require(`${__dirname}/package.json`);
 
@@ -30,6 +31,14 @@ module.exports = class TuringServer extends Express {
     this.use(favicon(`${__dirname}/public/favicon.ico`));
 
     this.use(new LoggingMiddleware().spy);
+
+    const format = config.get('turing:logging:accesslog:format');
+    this.use(morgan(format, {
+      stream: logger.stream({
+        type: 'sharing-accesslog',
+        logformat: 'COMBINEDAPACHELOG'
+      })
+    }));
 
     this.start = () => {
       const port = config.get('turing:server:port');
