@@ -18,10 +18,10 @@
         "ignoreTranspilerName": false
       }
     ],
-//    "react/extensions": [
-//      "error",
-//      "never"
-//    ],
+    //    "react/extensions": [
+    //      "error",
+    //      "never"
+    //    ],
     "react/forbid-component-props": [
       "error",
       {
@@ -91,6 +91,7 @@
     "react/no-set-state": "off",
     "react/no-string-refs": "error",
     "react/no-unknown-property": "error",
+    "react/no-unused-prop-types": "error",
     "react/prefer-es6-class": [
       "error",
       "always"
@@ -107,6 +108,7 @@
         "html": true
       }
     ],
-    "react/sort-comp": "off"
+    "react/sort-comp": "off",
+    "react/style-prop-object": "error"
   }
 }

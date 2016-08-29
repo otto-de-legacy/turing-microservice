@@ -30,7 +30,7 @@ module.exports = class TuringServer extends Express {
 
     this.use(favicon(`${__dirname}/public/favicon.ico`));
 
-    this.use(new LoggingMiddleware().spy);
+    this.use(LoggingMiddleware.spy);
 
     if (config.get('turing:logging:accesslog:enabled')) {
       const format = config.get('turing:logging:accesslog:format');

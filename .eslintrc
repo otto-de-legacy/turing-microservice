@@ -26,6 +26,7 @@
       }
     ],
     "callback-return": "off",
+    "class-methods-use-this": "error",
     "camelcase": "off",
     "comma-dangle": [
       "error",
@@ -491,6 +492,7 @@
       "error",
       "safe"
     ],
+    "symbol-description": "error",
     "template-curly-spacing": [
       "error",
       "never"
