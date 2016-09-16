@@ -15,7 +15,7 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "continuation-local-storage": "3.1.7",
+    "continuation-local-storage": "3.2.0",
     "global-request-logger": "0.1.0",
     "stack-trace": "0.0.9",
     "turing-config": "0.26.2",

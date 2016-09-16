@@ -139,6 +139,12 @@
       "error",
       "unix"
     ],
+    "line-comment-position": [
+      "error",
+      {
+        "position": "above"
+      }
+    ],
     "lines-around-comment": [
       "error",
       {
@@ -150,17 +156,23 @@
         "allowBlockEnd": false
       }
     ],
+    "lines-around-directive": [
+      "error",
+      "always"
+    ],
     "max-depth": [
       "error",
       4
     ],
     "max-len": [
-      "warn",
+      "error",
       130,
       4,
       {
         "ignoreComments": true,
-        "ignoreUrls": true
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
       }
     ],
     "max-lines": [
@@ -330,6 +342,7 @@
     ],
     "no-restricted-imports": "off",
     "no-restricted-modules": "error",
+    "no-restricted-properties": "error",
     "no-restricted-syntax": "error",
     "no-return-assign": "error",
     "no-script-url": "error",
@@ -427,6 +440,7 @@
     ],
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
+    "prefer-numeric-literals": "error",
     "prefer-reflect": "off",
     "prefer-rest-params": "error",
     "prefer-spread": "error",

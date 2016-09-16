@@ -1,6 +1,5 @@
 {
   "rules": {
-    "init-declarations": "off",
     "new-cap": [
       "error",
       {

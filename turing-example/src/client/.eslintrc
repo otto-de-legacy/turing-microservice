@@ -9,19 +9,47 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react"
+    "react",
+    "import"
   ],
   "rules": {
+    "import/default": "error",
+    "import/export": "error",
+    "import/extensions": [
+      "error",
+      "never"
+    ],
+    "import/imports-first": "error",
+    "import/max-dependencies": [
+      "error",
+      {
+        "max": 10
+      }
+    ],
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/newline-after-import": "error",
+    "import/no-absolute-path": "error",
+    "import/no-amd": "error",
+    "import/no-commonjs": "error",
+    "import/no-deprecated": "off",
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-named-as-default-member": "error",
+    "import/no-named-as-default": "error",
+    "import/no-namespace": "error",
+    "import/no-nodejs-modules": "error",
+    "import/no-restricted-paths": "error",
+    "import/no-unresolved": "off",
+    "import/order": "error",
+    "import/prefer-default-export": "error",
     "react/display-name": [
       "error",
       {
         "ignoreTranspilerName": false
       }
     ],
-    //    "react/extensions": [
-    //      "error",
-    //      "never"
-    //    ],
     "react/forbid-component-props": [
       "error",
       {

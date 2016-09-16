@@ -1,7 +1,6 @@
 {
   "rules": {
     "global-require": "off",
-    "init-declarations": "off",
-    "no-console": "off"
+    "init-declarations": "off"
   }
 }

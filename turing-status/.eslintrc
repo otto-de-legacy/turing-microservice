@@ -1,6 +1,5 @@
 {
   "rules": {
-    "no-magic-numbers": "off",
     "no-process-env": "off"
   }
 }
