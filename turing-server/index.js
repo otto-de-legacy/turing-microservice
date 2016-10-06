@@ -36,7 +36,7 @@ module.exports = class TuringServer extends Express {
       const format = config.get('turing:logging:accesslog:format');
       this.use(morgan(format, {
         stream: logger.stream({
-          type: 'sharing-accesslog',
+          type: `${config.get('turing:logging:namespace')}-accesslog`,
           logformat: 'COMBINEDAPACHELOG'
         })
       }));
