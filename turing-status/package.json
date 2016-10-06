@@ -18,7 +18,7 @@
     "compression": "1.6.2",
     "consolidate": "0.14.1",
     "express": "4.14.0",
-    "joi": "9.0.4",
+    "joi": "9.1.0",
     "swig": "1.4.2",
     "turing-config": "0.27.0",
     "turing-logging": "0.27.0",
