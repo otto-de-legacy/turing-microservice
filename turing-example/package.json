@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "test": "gulp test",
-    "start": "TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
+    "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
     "watch": "gulp watch"
   },
   "repository": {

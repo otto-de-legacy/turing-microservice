@@ -10,7 +10,7 @@ const Express = require('express');
 module.exports = class StaticRoutes extends Express.Router {
   constructor() {
     super();
-    if (config.get('turing-example:env') === 'local') {
+    if (config.get('turing-example:activeProfile') === 'local') {
       webpackClientDevConfig.output.publicPath = config.get('turing-example:server:routes:root');
       const compiler = webpack(webpackClientDevConfig);
       const publicWebpackDevMiddleware = webpackDevMiddleware(compiler, {

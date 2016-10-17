@@ -5,6 +5,6 @@
     }
   },
   "turing-example": {
-    "env": "{NODE_ENV}"
+    "activeProfile": "{ACTIVE_PROFILE}"
   }
 }

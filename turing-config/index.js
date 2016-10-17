@@ -10,7 +10,7 @@ const configFolder = process.env.TURING_CONFIG_DIR || 'config';
 
 function loadEnvSpecificConfig(dir) {
   const baseDir = path.join(process.cwd(), dir);
-  const envFile = path.join(baseDir, `${process.env.NODE_ENV}.json`);
+  const envFile = path.join(baseDir, `${process.env.ACTIVE_PROFILE}.json`);
   const defaultFile = path.join(baseDir, 'default.json');
 
   nconf.file(envFile, envFile);

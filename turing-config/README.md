@@ -10,9 +10,9 @@ _turing-config_ will merge configs from several sources into one config.
 Therefore it will override configs from following sources from default (1) to strongest (3):
 1. env variables
 2. default config
-3. NODE_ENV specific config
+3. process.env.ACTIVE_PROFILE specific config
 
-The default config sets the base, NODE_ENV specific config overrules default config and env variable config overrules everything.
+The default config sets the base, ACTIVE_PROFILE specific config overrules default config and env variable config overrules everything.
 
 Only the env variables specified in _custom_env_ file will be merged into config.
 
@@ -24,9 +24,9 @@ The default config dir will be <project-root>/config. To change that set the TUR
 
 Default configs are stored in a _default.json_ file inside your config dir.
 
-### NODE_ENV specific config
+### ACTIVE_PROFILE specific config
 
-To add NODE_ENV specific configs add a config file called _{NODE_ENV}.json_ to the config dir.
+To add ACTIVE_PROFILE specific configs add a config file called _{ACTIVE_PROFILE}.json_ to the config dir.
 
 ### Env Variables
 
