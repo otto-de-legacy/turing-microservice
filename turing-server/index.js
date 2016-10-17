@@ -28,7 +28,7 @@ module.exports = class TuringServer extends Express {
     this.disable('x-powered-by');
     this.enable('strict routing');
 
-    this.set('view engine', 'ejs');
+    this.set('view engine', 'pug');
 
     this.use(favicon(`${__dirname}/public/favicon.ico`));
 

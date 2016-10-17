@@ -1,0 +1,9 @@
+html
+  head
+    title status of #{application.name}
+    link(rel='stylesheet' href='/turing-status/css/status.css')
+  body
+    div(class='status status--' + application.status)
+      b= application.name
+      br
+      | status: #{application.status}
