@@ -39,8 +39,8 @@
     "turing-status": "0.28.0",
     "turing-vault": "0.28.0",
     "webpack": "1.13.2",
-    "webpack-dev-middleware": "1.8.3",
-    "webpack-hot-middleware": "2.12.2",
+    "webpack-dev-middleware": "1.8.4",
+    "webpack-hot-middleware": "2.13.0",
     "winston-graylog2": "0.5.1"
   },
   "devDependencies": {
@@ -50,8 +50,8 @@
     "babel-preset-react-hmre": "1.1.1",
     "chai": "3.5.0",
     "css-loader": "0.25.0",
-    "eslint-plugin-import": "2.0.0",
-    "eslint-plugin-react": "6.3.0",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-plugin-react": "6.4.1",
     "gulp": "3.9.1",
     "gulp-eslint": "3.0.1",
     "gulp-istanbul": "1.1.1",

@@ -73,6 +73,12 @@
       "never"
     ],
     "func-names": "error",
+    "func-name-matching": [
+      "error",
+      {
+        "includeCommonJSModuleExports": true
+      }
+    ],
     "func-style": [
       "error",
       "declaration"
