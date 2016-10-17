@@ -16,10 +16,8 @@
   },
   "dependencies": {
     "compression": "1.6.2",
-    "consolidate": "0.14.1",
     "express": "4.14.0",
     "joi": "9.1.1",
-    "swig": "1.4.2",
     "turing-config": "0.28.0",
     "turing-logging": "0.28.0",
     "turing-server": "0.28.0"

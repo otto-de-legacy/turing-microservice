@@ -5,7 +5,7 @@
   "main": "src/server/app.js",
   "scripts": {
     "build": "gulp build",
-    "test": "TURING_CONFIG_DIR=./test-resources/server/config gulp test",
+    "test": "gulp test",
     "start": "TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
     "watch": "gulp watch"
   },
@@ -26,11 +26,9 @@
   "dependencies": {
     "body-parser": "1.15.2",
     "compression": "1.6.2",
-    "consolidate": "0.14.1",
     "cookie-parser": "1.4.3",
     "express": "4.14.0",
     "extract-text-webpack-plugin": "1.0.1",
-    "swig": "1.4.2",
     "turing-config": "0.28.0",
     "turing-health": "0.28.0",
     "turing-logging": "0.28.0",

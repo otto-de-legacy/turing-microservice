@@ -28,6 +28,8 @@ module.exports = class TuringServer extends Express {
     this.disable('x-powered-by');
     this.enable('strict routing');
 
+    this.set('view engine', 'ejs');
+
     this.use(favicon(`${__dirname}/public/favicon.ico`));
 
     this.use(LoggingMiddleware.spy);

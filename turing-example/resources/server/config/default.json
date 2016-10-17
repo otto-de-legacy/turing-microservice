@@ -16,7 +16,13 @@
             "colorize": true
           }
         }
-      ]
+      ],
+      "accesslog": {
+        "meta": {
+          "type": "turing-example-accesslog",
+          "logformat": "COMBINEDAPACHELOG"
+        }
+      }
     },
     "server": {
       "port": 8080,

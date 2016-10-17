@@ -5,6 +5,7 @@ const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
 const mocha = require('gulp-mocha');
 const KarmaServer = require('karma').Server;
+const webdriver = require('gulp-webdriver');
 const runSequence = require('run-sequence');
 
 gulp.task('eslint', () => {
@@ -26,7 +27,8 @@ gulp.task('istanbul', () => {
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task('testServer', ['istanbul'], () => {
+gulp.task('test:server', ['istanbul'], () => {
+  process.env.TURING_CONFIG_DIR = './test-resources/server/config';
   return gulp.src('./test/server/**/*Spec.js')
     .pipe(mocha({reporter: 'spec'}))
     .pipe(istanbul.writeReports({
@@ -35,13 +37,17 @@ gulp.task('testServer', ['istanbul'], () => {
     }));
 });
 
-gulp.task('testPublic', (done) => {
+gulp.task('test:public', (done) => {
   new KarmaServer({
     configFile: `${__dirname}/../test-resources/client/karma.conf.js`,
     singleRun: true
   }, done).start();
 });
 
+gulp.task('test:e2e', () => {
+  return gulp.src(`${__dirname}/../test-resources/e2e/wdio.conf.js`).pipe(webdriver());
+});
+
 gulp.task('test', (done) => {
-  runSequence('eslint', 'testServer', 'testPublic', done);
+  runSequence('eslint', 'test:server', 'test:public', done);
 });

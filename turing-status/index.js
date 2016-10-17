@@ -2,7 +2,6 @@
 
 const TuringServer = require('turing-server');
 const compression = require('compression');
-const consolidate = require('consolidate');
 const Express = require('express');
 const config = require('turing-config');
 const StatusProvider = require('./lib/statusProvider');
@@ -14,9 +13,7 @@ module.exports = class TuringStatus extends TuringServer {
 
     this.use(compression({level: 9}));
 
-    this.engine('html', consolidate.swig);
     this.set('views', `${__dirname}/views`);
-    this.set('view engine', 'html');
 
     this.use('/turing-status', Express.static(`${__dirname}/public`, {maxAge: '1m'}));
 
