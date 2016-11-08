@@ -19,9 +19,9 @@
     ]
   },
   "devDependencies": {
-    "babel-preset-es2015": "6.16.0",
-    "eslint-plugin-import": "2.0.1",
-    "eslint-plugin-react": "6.4.1",
+    "babel-preset-es2015": "6.18.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-react": "6.6.0",
     "gulp": "3.9.1",
     "gulp-eslint": "3.0.1",
     "npm-workspace": "0.7.0"

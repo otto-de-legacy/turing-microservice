@@ -15,7 +15,7 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "mongoose": "4.6.4",
+    "mongoose": "4.6.6",
     "turing-config": "0.31.0",
     "turing-logging": "0.31.0"
   },
