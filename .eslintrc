@@ -27,7 +27,13 @@
     ],
     "callback-return": "off",
     "camelcase": "off",
-    "capitalized-comments": "error",
+    "capitalized-comments": [
+      "error",
+      "never",
+      {
+        "ignorePattern": "TODO"
+      }
+    ],
     "class-methods-use-this": "error",
     "comma-dangle": [
       "error",
