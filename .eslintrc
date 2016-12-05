@@ -26,8 +26,9 @@
       }
     ],
     "callback-return": "off",
-    "class-methods-use-this": "error",
     "camelcase": "off",
+    "capitalized-comments": "error",
+    "class-methods-use-this": "error",
     "comma-dangle": [
       "error",
       "never"
@@ -351,6 +352,7 @@
     "no-restricted-properties": "error",
     "no-restricted-syntax": "error",
     "no-return-assign": "error",
+    "no-return-await": "error",
     "no-script-url": "error",
     "no-self-assign": "error",
     "no-self-compare": "error",
@@ -464,6 +466,7 @@
       "error",
       "as-needed"
     ],
+    "require-await": "error",
     "require-jsdoc": "off",
     "require-yield": "error",
     "rest-spread-spacing": [
