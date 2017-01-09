@@ -1,6 +1,6 @@
 'use strict';
 
-const log = require('turing-logging').logger;
+const {logger: log} = require('turing-logging');
 const config = require('turing-config');
 
 module.exports = class PublicController {

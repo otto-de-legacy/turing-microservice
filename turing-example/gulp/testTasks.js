@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
 const mocha = require('gulp-mocha');
-const KarmaServer = require('karma').Server;
+const {Server: KarmaServer} = require('karma');
 const webdriver = require('gulp-webdriver');
 const runSequence = require('run-sequence');
 

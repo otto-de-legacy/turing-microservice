@@ -67,11 +67,11 @@ class TuringLogger extends winston.Logger {
     });
 
     this.filters.push((level, msg, meta) => {
-      const trace = meta.stacktrace;
-      if (trace) {
+      const {stacktrace} = meta;
+      if (stacktrace) {
         delete meta.stacktrace;
         return {
-          msg: trace,
+          msg: stacktrace,
           meta
         };
       }

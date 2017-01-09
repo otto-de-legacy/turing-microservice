@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 const config = require('turing-config');
-const log = require('turing-logging').logger;
+const {logger: log} = require('turing-logging');
 
 class TuringMongo extends mongoose.Mongoose {
   setupConnection() {

@@ -1,7 +1,7 @@
 'use strict';
 
 const Joi = require('joi');
-const log = require('turing-logging').logger;
+const {logger: log} = require('turing-logging');
 
 function assert(value, schema) {
   Joi.validate(value, schema, (error) => {

@@ -3,7 +3,7 @@
 const config = require('turing-config');
 const Vault = require('node-vault');
 const reduce = require('async/reduce');
-const log = require('turing-logging').logger;
+const {logger: log} = require('turing-logging');
 
 function addSecretTo(configWithSecrets, configPath, value) {
   configPath.reduce((configToEnhance, key, index) => {

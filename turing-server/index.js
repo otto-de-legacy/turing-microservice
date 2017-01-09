@@ -2,10 +2,10 @@
 
 const Express = require('express');
 const favicon = require('serve-favicon');
-const LoggingMiddleware = require('turing-logging').Middleware;
+const {Middleware: LoggingMiddleware} = require('turing-logging');
 const config = require('turing-config');
 const morgan = require('morgan');
-const log = require('turing-logging').logger;
+const {logger: log} = require('turing-logging');
 const pkg = require(`${__dirname}/package.json`);
 
 function getSpecific(error, port) {
