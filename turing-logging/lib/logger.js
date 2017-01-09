@@ -20,7 +20,8 @@ function getTransports() {
 }
 
 function findCaller() {
-  const caller = stackTrace.get()[6];
+  const positionOfActualLogFunctionCall = 6;
+  const caller = stackTrace.get()[positionOfActualLogFunctionCall];
 
   const file = path.relative(process.cwd(), caller.getFileName());
   const line = caller.getLineNumber();

@@ -18,7 +18,7 @@ module.exports = class TuringStatus extends TuringServer {
     this.use('/turing-status', Express.static(`${__dirname}/public`, {maxAge: '1m'}));
 
     this.get(`${config.get('turing:server:routes:internal')}${config.get('turing:status:route')}`, (request, response) => {
-      const status = this.statusProvider.status;
+      const {status} = this.statusProvider;
       response.set('Cache-Control', 'public,max-age=20,s-maxage=20');
       response.format({
         html: () => {

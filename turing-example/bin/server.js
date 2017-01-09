@@ -3,7 +3,7 @@
 const TuringVault = require('turing-vault');
 const turingMongo = require('turing-mongo');
 const TuringExampleApp = require('../src/server/app');
-const logger = require('turing-logging').logger;
+const log = require('turing-logging').logger;
 
 const turingVault = new TuringVault();
 turingVault.then(() => {
@@ -11,6 +11,6 @@ turingVault.then(() => {
     new TuringExampleApp().start();
   });
 }).catch((error) => {
-  logger.error(error);
+  log.error(error);
   throw error;
 });

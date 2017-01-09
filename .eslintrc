@@ -228,6 +228,7 @@
     "newline-per-chained-call": "error",
     "no-alert": "error",
     "no-array-constructor": "error",
+    "no-await-in-loop": "error",
     "no-bitwise": "error",
     "no-caller": "error",
     "no-case-declarations": "error",
@@ -454,6 +455,16 @@
     ],
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": true,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
     "prefer-numeric-literals": "error",
     "prefer-reflect": "off",
     "prefer-rest-params": "error",
