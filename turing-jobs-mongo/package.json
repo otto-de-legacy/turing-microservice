@@ -1,6 +1,6 @@
 {
   "name": "turing-jobs-mongo",
-  "version": "0.33.5",
+  "version": "0.33.6",
   "description": "Jobs persistence to mongodb.",
   "main": "index.js",
   "scripts": {
