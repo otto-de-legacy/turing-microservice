@@ -1,6 +1,6 @@
 'use strict';
 
-const {expect} = require('chai');
+const expect = require('chai').expect;
 
 describe('example', () => {
   it('expect to have correct title', () => {

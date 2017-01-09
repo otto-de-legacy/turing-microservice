@@ -50,6 +50,7 @@
     "import/order": "error",
     "import/prefer-default-export": "error",
     "import/unambiguous": "error",
+    "prefer-destructuring": "off",
     "react/display-name": [
       "error",
       {

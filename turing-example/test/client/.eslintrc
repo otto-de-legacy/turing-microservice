@@ -1,5 +1,8 @@
 {
   "env": {
     "browser": true
+  },
+  "rules": {
+    "prefer-destructuring": "off"
   }
 }
