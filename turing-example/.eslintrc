@@ -320,6 +320,7 @@
       "error",
       false
     ],
+    "no-multi-assign": "error",
     "no-multi-spaces": "error",
     "no-multi-str": "error",
     "no-multiple-empty-lines": [
@@ -455,6 +456,7 @@
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "prefer-numeric-literals": "error",
+    "prefer-promise-reject-errors": "error",
     "prefer-reflect": "off",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
