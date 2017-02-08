@@ -1,8 +1,17 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "commonjs": true,
+    "node": false
+  },
+  "globals": {
+    "expect": false,
+    "fixture": false,
+    "sandbox": false,
+    "sinon": false
   },
   "rules": {
-    "prefer-destructuring": "off"
+    "init-declarations": "off",
+    "max-len": "off"
   }
 }

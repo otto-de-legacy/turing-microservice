@@ -1,6 +1,7 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "node": false
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -13,6 +14,15 @@
     "import"
   ],
   "rules": {
+    "id-length": [
+      "error",
+      {
+        "min": 2,
+        "exceptions": [
+          "$"
+        ]
+      }
+    ],
     "import/default": "error",
     "import/export": "error",
     "import/extensions": [
@@ -50,7 +60,6 @@
     "import/order": "error",
     "import/prefer-default-export": "error",
     "import/unambiguous": "error",
-    "prefer-destructuring": "off",
     "react/display-name": [
       "error",
       {

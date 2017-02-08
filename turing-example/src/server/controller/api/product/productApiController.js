@@ -6,9 +6,9 @@ module.exports = class ProductApiController {
   static find(request, response, next) {
     Product.find().exec((error, products) => {
       if (error) {
-        next(error);
+        return next(error);
       }
-      response.json(products);
+      return response.json(products);
     });
   }
 
@@ -16,10 +16,9 @@ module.exports = class ProductApiController {
     const product = new Product(request.body);
     product.save((error) => {
       if (error) {
-        next(error);
-      } else {
-        response.end();
+        return next(error);
       }
+      return response.end();
     });
   }
 };
