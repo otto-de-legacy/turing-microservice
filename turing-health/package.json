@@ -1,6 +1,6 @@
 {
   "name": "turing-health",
-  "version": "0.33.7",
+  "version": "0.33.8",
   "description": "An express route for an health check.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "express": "4.14.1",
-    "turing-config": "0.33.7"
+    "turing-config": "0.33.8"
   },
   "author": {
     "name": "Benedikt Stemmildt",
