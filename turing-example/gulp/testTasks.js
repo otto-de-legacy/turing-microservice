@@ -1,12 +1,25 @@
 'use strict';
 
 const gulp = require('gulp');
+const sassLint = require('gulp-sass-lint');
 const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
 const mocha = require('gulp-mocha');
 const {Server: KarmaServer} = require('karma');
 const webdriver = require('gulp-webdriver');
 const runSequence = require('run-sequence');
+
+gulp.task('sasslint', () => {
+  return gulp.src([
+    './**/*.scss',
+    '!./node_modules/**/*.scss',
+    '!./out/**/*.scss',
+    '!./target/**/*.scss'
+  ])
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError());
+});
 
 gulp.task('eslint', () => {
   return gulp.src([
@@ -49,5 +62,5 @@ gulp.task('test:e2e', () => {
 });
 
 gulp.task('test', (done) => {
-  runSequence('eslint', 'test:server', 'test:public', done);
+  runSequence('sasslint', 'eslint', 'test:server', 'test:public', done);
 });
