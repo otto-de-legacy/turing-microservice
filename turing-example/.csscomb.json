@@ -9,8 +9,10 @@
     "build/**",
     "classes/**",
     "node_modules/**",
+    "**/node_modules/**",
     "out/**",
-    "target/**"
+    "target/**",
+    "resources/**"
   ],
   "leading-zero": true,
   "quotes": "single",
