@@ -39,8 +39,8 @@ rules:
     - 2
     - include: true
   force-attribute-nesting: 2
-  force-element-nesting: 2
-  force-pseudo-nesting: 2
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
   function-name-format:
     - 2
     - allow-leading-underscore: true

@@ -4,16 +4,16 @@
 }
 
 .status--OK {
-  background-color: #E4ECB9;
-  color: #3E520B;
+  background-color: rgb(228, 236, 185);
+  color: rgb(62, 82, 11);
 }
 
 .status--WARNING {
-  background-color: #FFEFB0;
-  color: #222222;
+  background-color: rgb(255, 239, 176);
+  color: rgb(34, 34, 34);
 }
 
 .status--ERROR {
-  background-color: #FAD6D0;
-  color: #D4021D;
+  background-color: rgb(250, 214, 208);
+  color: rgb(212, 2, 29);
 }
