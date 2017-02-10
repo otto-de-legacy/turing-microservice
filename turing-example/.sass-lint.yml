@@ -38,7 +38,7 @@ rules:
   final-newline:
     - 2
     - include: true
-  force-attribute-nesting: 2
+  force-attribute-nesting: 0
   force-element-nesting: 0
   force-pseudo-nesting: 0
   function-name-format:
