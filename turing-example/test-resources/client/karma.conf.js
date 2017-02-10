@@ -5,6 +5,7 @@ module.exports = (config) => {
     basePath: '',
     frameworks: [
       'mocha',
+      'chai-dom',
       'chai-sinon',
       'fixture'
     ],

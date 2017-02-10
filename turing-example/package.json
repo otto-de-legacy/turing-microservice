@@ -61,6 +61,7 @@
     "jquery": "3.1.1",
     "karma": "1.4.1",
     "karma-babel-preprocessor": "6.0.1",
+    "karma-chai-dom": "1.1.0",
     "karma-chai-sinon": "0.1.5",
     "karma-coverage": "1.1.1",
     "karma-fixture": "0.2.6",
