@@ -26,7 +26,7 @@
   "space-before-selector-delimiter": 0,
   "space-between-declarations": "\n",
   "block-indent": 2,
-  "sort-order-fallback": "abc",
+  "sort-order-fallback": "",
   "sort-order": [
     [
       "$import"
