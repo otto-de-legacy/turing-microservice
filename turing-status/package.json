@@ -17,7 +17,7 @@
   "dependencies": {
     "compression": "1.6.2",
     "express": "4.14.1",
-    "joi": "10.2.1",
+    "joi": "10.2.2",
     "turing-config": "0.33.8",
     "turing-logging": "0.33.8",
     "turing-server": "0.33.8"
