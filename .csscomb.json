@@ -341,5 +341,5 @@
   "unitless-zero": true,
   "tab-size": 2,
   "vendor-prefix-align": false,
-  "lines-between-rulesets": 1
+  "lines-between-rulesets": "off" 
 }
