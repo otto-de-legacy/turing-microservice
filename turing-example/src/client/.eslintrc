@@ -75,6 +75,8 @@
         ]
       }
     ],
+    "react/forbid-elements": "off",
+    "react/forbid-foreign-prop-types": "error",
     "react/forbid-prop-types": "error",
     "react/jsx-boolean-value": "error",
     "react/jsx-closing-bracket-location": "error",
@@ -158,6 +160,7 @@
       }
     ],
     "react/sort-comp": "off",
-    "react/style-prop-object": "error"
+    "react/style-prop-object": "error",
+    "react/void-dom-elements-no-children": "error"
   }
 }
