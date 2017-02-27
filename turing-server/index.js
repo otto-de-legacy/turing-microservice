@@ -36,7 +36,17 @@ module.exports = class TuringServer extends Express {
 
     if (config.get('turing:logging:accesslog:enabled')) {
       const format = config.get('turing:logging:accesslog:format');
-      this.use(morgan(format, {stream: log.stream(config.get('turing:logging:accesslog:meta'))}));
+      const skipHealthUrl = config.get('turing:logging:accesslog:skipHealthUrl');
+      const healthUrl = `${config.get('turing:server:routes:internal')}${config.get('turing:health:route')}`;
+      const skipStatusUrl = config.get('turing:logging:accesslog:skipStatusUrl');
+      const statusUrl = `${config.get('turing:server:routes:internal')}${config.get('turing:status:route')}`;
+      this.use(morgan(format, {
+        stream: log.stream(config.get('turing:logging:accesslog:meta')),
+        skip: (request) => {
+          const pathname = request.originalUrl;
+          return skipHealthUrl && pathname.endsWith(healthUrl) || skipStatusUrl && pathname.endsWith(statusUrl);
+        }
+      }));
     }
 
     this.start = () => {
