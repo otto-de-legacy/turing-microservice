@@ -7,43 +7,43 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   target: 'web',
   cache: true,
-  debug: true,
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.resolve(__dirname, '../../../src/client/app.jsx')
+    path.resolve(__dirname, '../../../src/client/app.js')
   ],
   output: {
     path: path.resolve(__dirname, '../../server/public'),
     filename: 'js/app.js'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin('css/main.css')
   ],
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx$/,
-        loaders: ['babel-loader?cacheDirectory&presets[]=react-hmre'],
+        test: /\.js$/,
+        use: 'babel-loader?cacheDirectory&presets[]=react-hmre',
         exclude: /node_modules\//
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+        use: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {outputStyle: 'compressed'}
+            }
+          ]
+        })
       }
-    ]
-  },
-  sassLoader: {
-    outputStyle: 'compressed'
-  },
-  resolve: {
-    extensions: [
-      '',
-      '.js',
-      '.jsx'
     ]
   }
 };

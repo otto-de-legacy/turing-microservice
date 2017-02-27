@@ -33,31 +33,27 @@ module.exports = (config) => {
     },
     webpack: {
       module: {
-        loaders: [
+        rules: [
           {
-            test: /\.(js|jsx)$/,
-            loader: 'isparta-loader',
+            test: /\.js$/,
+            use: 'isparta-loader',
             exclude: /(test|node_modules)\//
           },
           {
-            test: /\.(js|jsx)$/,
-            loaders: ['babel-loader'],
+            test: /\.js$/,
+            use: 'babel-loader',
             exclude: /node_modules\//
           },
           {
             test: /\.scss$/,
-            loader: 'css-loader!sass-loader'
+            use: [
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                options: {outputStyle: 'compressed'}
+              }
+            ]
           }
-        ]
-      },
-      sassLoader: {
-        outputStyle: 'compressed'
-      },
-      resolve: {
-        extensions: [
-          '',
-          '.js',
-          '.jsx'
         ]
       }
     },

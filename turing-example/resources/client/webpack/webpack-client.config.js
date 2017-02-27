@@ -7,40 +7,36 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   target: 'web',
   cache: false,
-  debug: false,
   devtool: false,
-  entry: path.resolve(__dirname, '../../../src/client/app.jsx'),
+  entry: path.resolve(__dirname, '../../../src/client/app.js'),
   output: {
     path: path.resolve(__dirname, '../../server/public'),
     filename: 'js/app.js'
   },
   plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
     new ExtractTextPlugin('css/main.css')
   ],
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx$/,
-        loaders: ['babel-loader'],
+        test: /\.js$/,
+        use: 'babel-loader',
         exclude: /node_modules\//
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+        use: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {outputStyle: 'compressed'}
+            }
+          ]
+        })
       }
-    ]
-  },
-  sassLoader: {
-    outputStyle: 'compressed'
-  },
-  resolve: {
-    extensions: [
-      '',
-      '.js',
-      '.jsx'
     ]
   }
 };

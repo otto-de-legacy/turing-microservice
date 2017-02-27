@@ -96,7 +96,7 @@
       "error",
       {
         "extensions": [
-          ".jsx"
+          ".js"
         ]
       }
     ],

@@ -20,7 +20,6 @@ gulp.task('sasslint', () => {
 gulp.task('eslint', () => {
   return gulp.src([
     './**/*.js',
-    './**/*.jsx',
     '!./node_modules/**',
     '!./**/node_modules/**',
     '!./turing-example/resources/server/public/**',

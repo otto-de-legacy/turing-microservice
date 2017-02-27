@@ -28,7 +28,7 @@
     "compression": "1.6.2",
     "cookie-parser": "1.4.3",
     "express": "4.14.1",
-    "extract-text-webpack-plugin": "1.0.1",
+    "extract-text-webpack-plugin": "2.0.0",
     "turing-config": "0.34.0",
     "turing-health": "0.34.0",
     "turing-logging": "0.34.0",
@@ -36,7 +36,7 @@
     "turing-server": "0.34.0",
     "turing-status": "0.34.0",
     "turing-vault": "0.34.0",
-    "webpack": "1.14.0",
+    "webpack": "2.2.1",
     "webpack-dev-middleware": "1.10.1",
     "webpack-hot-middleware": "2.17.1",
     "winston-graylog2": "0.6.0"
@@ -47,7 +47,7 @@
     "babel-preset-react": "6.23.0",
     "babel-preset-react-hmre": "1.1.1",
     "chai": "3.5.0",
-    "css-loader": "0.26.1",
+    "css-loader": "0.26.2",
     "eslint": "3.16.1",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-react": "6.10.0",
@@ -84,8 +84,7 @@
     "supertest": "3.0.0",
     "wdio-mocha-framework": "0.5.8",
     "wdio-spec-reporter": "0.0.5",
-    "webdriverio": "4.6.2",
-    "webpack-stream": "3.2.0"
+    "webdriverio": "4.6.2"
   },
   "author": {
     "name": "Benedikt Stemmildt",
