@@ -24,10 +24,10 @@
     ]
   },
   "dependencies": {
-    "body-parser": "1.16.1",
+    "body-parser": "1.17.0",
     "compression": "1.6.2",
     "cookie-parser": "1.4.3",
-    "express": "4.14.1",
+    "express": "4.15.0",
     "extract-text-webpack-plugin": "2.0.0",
     "turing-config": "0.35.0",
     "turing-health": "0.35.0",
