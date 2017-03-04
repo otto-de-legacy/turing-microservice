@@ -251,6 +251,7 @@
     "no-case-declarations": "error",
     "no-catch-shadow": "error",
     "no-class-assign": "error",
+    "no-compare-neg-zero": "error",
     "no-cond-assign": [
       "error",
       "always"
@@ -456,6 +457,7 @@
     ],
     "no-whitespace-before-property": "error",
     "no-with": "error",
+    "nonblock-statement-body-position": "off",
     "object-curly-newline": [
       "off",
       "always"

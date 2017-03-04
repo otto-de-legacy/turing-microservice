@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class HttpHeaderHelper {
+module.exports = class HttpHeader {
   static get CACHE_CONTROL() {
     return 'Cache-Control';
   }
