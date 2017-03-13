@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class HttpHeader {
+class HttpHeader {
   static get CACHE_CONTROL() {
     return 'Cache-Control';
   }
@@ -20,4 +20,6 @@ module.exports = class HttpHeader {
   static get X_TRACKABLE() {
     return 'X-Trackable';
   }
-};
+}
+
+module.exports = HttpHeader;

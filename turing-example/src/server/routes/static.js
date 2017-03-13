@@ -7,7 +7,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const Express = require('express');
 
-module.exports = class StaticRoutes extends Express.Router {
+class StaticRoutes extends Express.Router {
   constructor() {
     super();
     if (config.get('turing-example:activeProfile') === 'local') {
@@ -28,4 +28,6 @@ module.exports = class StaticRoutes extends Express.Router {
         Express.static(`${__dirname}/../../../resources/server/public`, {maxAge: '1m'}));
     }
   }
-};
+}
+
+module.exports = StaticRoutes;

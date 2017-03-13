@@ -5,7 +5,7 @@ const config = require('turing-config');
 const namespace = cls.createNamespace(config.get('turing:logging:namespace'));
 const uuid = require('uuid');
 
-module.exports = class Middleware {
+class Middleware {
   static spy(request, response, next) {
     namespace.bindEmitter(request);
     namespace.bindEmitter(response);
@@ -16,4 +16,6 @@ module.exports = class Middleware {
       next();
     });
   }
-};
+}
+
+module.exports = Middleware;

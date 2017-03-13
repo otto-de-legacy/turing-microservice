@@ -12,7 +12,7 @@ function assert(value, schema) {
   });
 }
 
-module.exports = class StatusValidator {
+class StatusValidator {
   static assertValidStatusDetail(statusDetail, statuses) {
     assert(statusDetail, {
       status: Joi.string()
@@ -28,4 +28,6 @@ module.exports = class StatusValidator {
       .label('name')
       .required());
   }
-};
+}
+
+module.exports = StatusValidator;

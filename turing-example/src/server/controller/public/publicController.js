@@ -3,7 +3,7 @@
 const {logger: log} = require('turing-logging');
 const config = require('turing-config');
 
-module.exports = class PublicController {
+class PublicController {
   static index(request, response) {
     log.info('Hallo Welt!');
     log.warn('Die Apokalypse ist nah...');
@@ -13,4 +13,6 @@ module.exports = class PublicController {
       rootPath: config.get('turing-example:server:routes:root')
     });
   }
-};
+}
+
+module.exports = PublicController;

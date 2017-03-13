@@ -6,7 +6,7 @@ const Express = require('express');
 const config = require('turing-config');
 const StatusProvider = require('./lib/statusProvider');
 
-module.exports = class TuringStatus extends TuringServer {
+class TuringStatus extends TuringServer {
   constructor() {
     super();
     this.statusProvider = new StatusProvider();
@@ -34,4 +34,6 @@ module.exports = class TuringStatus extends TuringServer {
       this.statusProvider.addStatusDetail(name, status, message);
     };
   }
-};
+}
+
+module.exports = TuringStatus;

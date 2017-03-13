@@ -22,7 +22,7 @@ function getSpecific(error, port) {
   }
 }
 
-module.exports = class TuringServer extends Express {
+class TuringServer extends Express {
   constructor() {
     super();
     this.disable('x-powered-by');
@@ -62,4 +62,6 @@ module.exports = class TuringServer extends Express {
       });
     };
   }
-};
+}
+
+module.exports = TuringServer;

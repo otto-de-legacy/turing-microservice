@@ -5,7 +5,7 @@
 const globalRequestLogger = require('global-request-logger');
 const logger = require('./logger');
 
-module.exports = class GlobalRequestLogger {
+class GlobalRequestLogger {
   static initialize() {
     globalRequestLogger.initialize();
     globalRequestLogger.on('success', (request) => {
@@ -15,4 +15,6 @@ module.exports = class GlobalRequestLogger {
       logger.info('Request', request);
     });
   }
-};
+}
+
+module.exports = GlobalRequestLogger;

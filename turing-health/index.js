@@ -3,7 +3,7 @@
 const Express = require('express');
 const config = require('turing-config');
 
-module.exports = class TuringHealth extends Express.Router {
+class TuringHealth extends Express.Router {
   constructor() {
     super();
     this.get(`${config.get('turing:server:routes:internal')}${config.get('turing:health:route')}`, (request, response) => {
@@ -15,4 +15,6 @@ module.exports = class TuringHealth extends Express.Router {
       });
     });
   }
-};
+}
+
+module.exports = TuringHealth;

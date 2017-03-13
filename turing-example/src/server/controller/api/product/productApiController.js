@@ -2,7 +2,7 @@
 
 const Product = require('turing-mongo').model('Product');
 
-module.exports = class ProductApiController {
+class ProductApiController {
   static find(request, response, next) {
     Product.find().exec((error, products) => {
       if (error) {
@@ -21,4 +21,6 @@ module.exports = class ProductApiController {
       return response.end();
     });
   }
-};
+}
+
+module.exports = ProductApiController;

@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 const StaticRoutes = require('./routes/static');
 const Routes = require('./routes/routes');
 
-module.exports = class TuringExampleApp extends TuringServer {
+class TuringExampleApp extends TuringServer {
   constructor() {
     super();
     this.use(compression({level: 9}));
@@ -24,4 +24,6 @@ module.exports = class TuringExampleApp extends TuringServer {
 
     this.use(new Routes());
   }
-};
+}
+
+module.exports = TuringExampleApp;

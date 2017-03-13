@@ -9,7 +9,7 @@ const TuringStatus = require('turing-status');
 const turingStatus = new TuringStatus();
 const ErrorRoutes = require('./errorRoutes');
 
-module.exports = class Routes extends Express.Router {
+class Routes extends Express.Router {
   constructor() {
     super();
     this.use(config.get('turing-example:server:routes:root'), new PublicRoutes());
@@ -24,4 +24,6 @@ module.exports = class Routes extends Express.Router {
 
     this.use(new ErrorRoutes());
   }
-};
+}
+
+module.exports = Routes;

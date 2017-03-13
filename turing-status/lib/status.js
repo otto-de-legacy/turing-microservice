@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class Status {
+class Status {
   constructor() {
     this._scoring = {
       OK: 0,
@@ -21,4 +21,6 @@ module.exports = class Status {
   get statuses() {
     return this._statuses;
   }
-};
+}
+
+module.exports = Status;

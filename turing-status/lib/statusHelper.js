@@ -10,7 +10,7 @@ function reduceToWorstScore(reducedScore, scoring, statusDetail) {
   return Math.max(reducedScore, score(scoring, statusDetail.status));
 }
 
-module.exports = class StatusHelper {
+class StatusHelper {
   constructor() {
     this.status = new Status();
   }
@@ -22,4 +22,6 @@ module.exports = class StatusHelper {
       }, 0);
     return this.status.statuses[worstScore];
   }
-};
+}
+
+module.exports = StatusHelper;

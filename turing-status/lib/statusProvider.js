@@ -7,7 +7,7 @@ const StatusHelper = require('./statusHelper');
 const StatusValidator = require('./statusValidator');
 const os = require('os');
 
-module.exports = class StatusProvider {
+class StatusProvider {
   constructor() {
     this.statusDetails = {};
     this._status = new Status();
@@ -59,4 +59,6 @@ module.exports = class StatusProvider {
     StatusValidator.assertValidStatusDetail(statusDetail, this._status.statuses);
     this.statusDetails[name] = statusDetail;
   }
-};
+}
+
+module.exports = StatusProvider;
