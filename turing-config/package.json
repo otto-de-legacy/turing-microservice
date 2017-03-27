@@ -1,6 +1,6 @@
 {
   "name": "turing-config",
-  "version": "0.35.1",
+  "version": "0.35.2",
   "description": "Hierarchical configuration with files, environment variables and command-line arguments.",
   "main": "index.js",
   "scripts": {
