@@ -10,6 +10,11 @@ module.exports = (config) => {
       'fixture'
     ],
     files: [
+      // static files which are not included, only served -> will be accessible by `/base/fixture/static/..`
+      {
+        pattern: './fixture/static/**/*',
+        included: false
+      },
       // fixtures
       './fixture/**/*.html',
       // testHelper
@@ -60,6 +65,10 @@ module.exports = (config) => {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
+    browserConsoleLogOptions: {
+      level: 'log',
+      terminal: true
+    },
     autoWatch: false,
     browsers: ['PhantomJS'],
     singleRun: false
