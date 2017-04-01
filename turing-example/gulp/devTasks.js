@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
+const {Server: KarmaServer} = require('karma');
 
 gulp.task('watch', () => {
   nodemon({
@@ -22,4 +23,17 @@ gulp.task('watch', () => {
       return [];
     }
   });
+});
+
+gulp.task('watch:test', (done) => {
+  const karmaOptions = {
+    configFile: `${__dirname}/../test-resources/client/karma.conf.js`
+  };
+
+  new KarmaServer(karmaOptions, (exitCode) => {
+    if (exitCode === 0) {
+      done();
+    }
+    process.exit(exitCode);
+  }).start();
 });

@@ -23,6 +23,6 @@ module.exports.config = {
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
-  framework: 'mocha',
+  framework: 'jasmine',
   reporters: ['spec']
 };

@@ -4,7 +4,8 @@ const gulp = require('gulp');
 const sassLint = require('gulp-sass-lint');
 const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
-const mocha = require('gulp-mocha');
+const jasmine = require('gulp-jasmine');
+const {SpecReporter} = require('jasmine-spec-reporter');
 const {Server: KarmaServer} = require('karma');
 const webdriver = require('gulp-webdriver');
 const runSequence = require('run-sequence');
@@ -42,18 +43,32 @@ gulp.task('istanbul', () => {
 gulp.task('test:server', ['istanbul'], () => {
   process.env.TURING_CONFIG_DIR = './test-resources/server/config';
   return gulp.src('./test/server/**/*Spec.js')
-    .pipe(mocha({reporter: 'spec'}))
+    .pipe(jasmine({
+      reporter: new SpecReporter({
+        summary: {
+          displayStacktrace: true
+        }
+      })
+    }))
     .pipe(istanbul.writeReports({
       dir: './target/coverage/server',
       reporters: ['lcov']
     }));
 });
 
-gulp.task('test:public', (done) => {
-  new KarmaServer({
+gulp.task('test:client', (done) => {
+  const karmaOptions = {
     configFile: `${__dirname}/../test-resources/client/karma.conf.js`,
+    autoWatch: false,
     singleRun: true
-  }, done).start();
+  };
+
+  new KarmaServer(karmaOptions, (exitCode) => {
+    if (exitCode === 0) {
+      done();
+    }
+    process.exit(exitCode);
+  }).start();
 });
 
 gulp.task('test:e2e', () => {
@@ -61,5 +76,5 @@ gulp.task('test:e2e', () => {
 });
 
 gulp.task('test', (done) => {
-  runSequence('sasslint', 'eslint', 'test:server', 'test:public', done);
+  runSequence('sasslint', 'eslint', 'test:server', 'test:client', done);
 });

@@ -1,34 +1,31 @@
 'use strict';
 
+const os = require('os');
+
 module.exports = (config) => {
   config.set({
     basePath: '',
     frameworks: [
-      'mocha',
-      'chai-dom',
-      'chai-sinon',
-      'fixture'
+      'jasmine-jquery',
+      'jasmine'
     ],
     files: [
-      // static files which are not included, only served -> will be accessible by `/base/fixture/static/..`
+      // fixtures
       {
-        pattern: './fixture/static/**/*',
+        pattern: './fixture/**/*',
         included: false
       },
-      // fixtures
-      './fixture/**/*.html',
       // testHelper
-      '../../test/client/testHelper.js',
+      '../../test/client/initHelper.js',
       // specs
       '../../test/client/specsContext.js'
     ],
     exclude: [],
     preprocessors: {
-      '../../test/client/testHelper.js': ['babel'],
-      '../../test/client/specsContext.js': ['webpack'],
-      './fixture/**/*.html': ['html2js']
+      '../../test/client/specsContext.js': ['webpack']
     },
     reporters: [
+      'kjhtml',
       'mocha',
       'coverage'
     ],
@@ -69,8 +66,9 @@ module.exports = (config) => {
       level: 'log',
       terminal: true
     },
-    autoWatch: false,
-    browsers: ['PhantomJS'],
-    singleRun: false
+    autoWatch: true,
+    browsers: ['Chrome'],
+    singleRun: false,
+    concurrency: os.cpus().length
   });
 };

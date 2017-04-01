@@ -5,10 +5,7 @@
     "node": false
   },
   "globals": {
-    "expect": false,
-    "fixture": false,
-    "sandbox": false,
-    "sinon": false
+    "loadFixtures": false
   },
   "rules": {
     "init-declarations": "off",

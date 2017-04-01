@@ -7,6 +7,6 @@ describe('example', () => {
     browser.url('http://www.google.com');
 
     const title = browser.getTitle();
-    expect(title).to.equal('Google');
+    expect(title).toBe('Google');
   });
 });

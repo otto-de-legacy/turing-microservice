@@ -11,6 +11,8 @@ describe('app', () => {
     request(new TuringExampleApp())
       .get('/turing-example/img/turing.jpg')
       .expect(HttpHeader.CONTENT_TYPE, 'image/jpeg')
-      .expect(HttpStatus.OK, done);
+      .expect(HttpStatus.OK, (error) => {
+        return error ? done.fail(error) : done();
+      });
   });
 });

@@ -11,6 +11,8 @@ describe('errorController', () => {
     request(new TuringExampleApp())
       .get('/turing-example/internal/not-found')
       .expect(HttpHeader.SURROGATE_CONTROL, 'max-age=60')
-      .expect(HttpStatus.NOT_FOUND, done);
+      .expect(HttpStatus.NOT_FOUND, (error) => {
+        return error ? done.fail(error) : done();
+      });
   });
 });
