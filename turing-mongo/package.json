@@ -1,6 +1,6 @@
 {
   "name": "turing-mongo",
-  "version": "0.35.9",
+  "version": "0.36.0",
   "description": "A port to mongodb.",
   "main": "index.js",
   "scripts": {
