@@ -1,6 +1,6 @@
 {
   "name": "turing-status",
-  "version": "0.35.9",
+  "version": "0.36.0",
   "description": "Aggregation of sub-statuses and express routes for an html and json status report.",
   "main": "index.js",
   "scripts": {
