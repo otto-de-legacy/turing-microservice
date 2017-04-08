@@ -50,17 +50,11 @@ Contains gulp tasks for:
 
 Install global dependency:
 
-    $ npm -g install npm-workspace
+    $ yarn global install yarn-workspace
 
 Install dependencies:
 
-    $ npm-workspace install
-
-### Optional
-
-To make IntelliJ development features work properly. (You still have to configure them!)
-
-    $ npm install -g eslint eslint-plugin-react gulp
+    $ yarn-workspace install
 
 ## Contributors
 
