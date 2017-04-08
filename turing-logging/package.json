@@ -1,6 +1,6 @@
 {
   "name": "turing-logging",
-  "version": "0.35.5",
+  "version": "0.35.6",
   "description": "Multi-transport async logging.",
   "main": "index.js",
   "scripts": {
