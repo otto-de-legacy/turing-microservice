@@ -1,6 +1,6 @@
 {
   "name": "turing-vault",
-  "version": "0.35.3",
+  "version": "0.35.5",
   "description": "A promise for merging secrets from vault with config.",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
   "dependencies": {
     "async": "^2.3.0",
     "node-vault": "0.5.6",
-    "turing-config": "0.35.3",
-    "turing-logging": "0.35.3"
+    "turing-config": "0.35.5",
+    "turing-logging": "0.35.5"
   },
   "author": {
     "name": "Benedikt Stemmildt",

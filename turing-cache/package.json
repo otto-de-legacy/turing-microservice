@@ -1,6 +1,6 @@
 {
   "name": "turing-cache",
-  "version": "0.35.4",
+  "version": "0.35.5",
   "description": "Application cache support.",
   "main": "index.js",
   "scripts": {
