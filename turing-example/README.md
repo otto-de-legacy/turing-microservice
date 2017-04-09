@@ -8,17 +8,17 @@ An example of how the turing-microservice can be used.
 
 For compiling the assets (js and css):
 
-    $ yarn run build
+    $ npm run build
 
 ## Startup
 
 Start the server:
 
-    $ yarn start
+    $ npm start
 
 For starting the server in dev mode:
 
-    $ yarn run watch
+    $ npm run watch
 
 Then open a browser and visit:
 
@@ -28,7 +28,7 @@ Then open a browser and visit:
     
 ## Testing
   
-    $ yarn test
+    $ npm test
 
 This also:
 

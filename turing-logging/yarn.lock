@@ -214,9 +214,9 @@ strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   dependencies:
     ansi-regex "^2.0.0"
 
-turing-config@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.35.2.tgz#91ccd9cdda0b36fe60659728d29b2cebf6821997"
+turing-config@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.37.0.tgz#5712863900f604926eabb90ce686cadf6843eb11"
   dependencies:
     glob "7.1.1"
     nconf "0.8.4"

@@ -286,9 +286,9 @@ async-listener@^0.6.0:
     semver "^5.3.0"
     shimmer "^1.1.0"
 
-async@1.x, async@^1.4.0, async@^1.5.0:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
+async@1.x, async@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/async/-/async-1.0.0.tgz#f8fc04ca3a13784ade9e1641af98578cfbd647a9"
 
 async@2.1.4:
   version "2.1.4"
@@ -296,17 +296,15 @@ async@2.1.4:
   dependencies:
     lodash "^4.14.0"
 
-async@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.2.0.tgz#c324eba010a237e4fbd55a12dee86367d5c0ef32"
-  dependencies:
-    lodash "^4.14.0"
-
 async@^0.9.0, async@~0.9.0:
   version "0.9.2"
   resolved "https://registry.yarnpkg.com/async/-/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
 
-async@^2.1.2, async@^2.1.5:
+async@^1.4.0, async@^1.5.0:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
+
+async@^2.1.2, async@^2.1.5, async@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/async/-/async-2.3.0.tgz#1013d1051047dd320fe24e494d5c66ecaf6147d9"
   dependencies:
@@ -315,10 +313,6 @@ async@^2.1.2, async@^2.1.5:
 async@~0.2.6, async@~0.2.8, async@~0.2.9:
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
-
-async@~1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-1.0.0.tgz#f8fc04ca3a13784ade9e1641af98578cfbd647a9"
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -4099,9 +4093,9 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
-joi@10.3.1:
-  version "10.3.1"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-10.3.1.tgz#2d22cab6eea650f02601144e51c35e2ba5ec497a"
+joi@^10.4.1:
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-10.4.1.tgz#a2fca1f0d603d1b843f2c1e086b52461f6be1f36"
   dependencies:
     hoek "4.x.x"
     isemail "2.x.x"
@@ -4971,9 +4965,9 @@ mongodb@2.2.25:
     mongodb-core "2.1.9"
     readable-stream "2.1.5"
 
-mongoose@4.9.2:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.9.2.tgz#df137675eed76a14dc1e6952ede54497c7547926"
+mongoose@^4.9.3:
+  version "4.9.3"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.9.3.tgz#7e3ea176ed7d3d23940368704834890595aea040"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
@@ -6713,15 +6707,15 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.2.8, rimraf@~2.2.0:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
-
-rimraf@^2.5.1, rimraf@^2.6.0, rimraf@^2.6.1:
+rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.0, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
     glob "^7.0.5"
+
+rimraf@~2.2.0:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
 
 ripemd160@^1.0.0:
   version "1.0.1"
@@ -7543,70 +7537,70 @@ tunnel-agent@~0.4.0, tunnel-agent@~0.4.1:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.4.3.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
 
-turing-config@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.35.2.tgz#91ccd9cdda0b36fe60659728d29b2cebf6821997"
+turing-config@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.37.0.tgz#5712863900f604926eabb90ce686cadf6843eb11"
   dependencies:
     glob "7.1.1"
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-health@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-health/-/turing-health-0.35.2.tgz#830f3d6311c746da615b930a9a856f883ba12133"
+turing-health@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-health/-/turing-health-0.37.0.tgz#67d0b4edbb523a4e2e59b6f162976b4dd9388922"
   dependencies:
     express "4.15.2"
-    turing-config "0.35.2"
+    turing-config "0.37.0"
 
-turing-logging@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.35.2.tgz#5fc8c24ede27adaf7123bd3fdfd5d58f6f095272"
+turing-logging@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.37.0.tgz#9daa5d12345824e24b05b6f6cfc6c2194ec61a16"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
     stack-trace "0.0.9"
-    turing-config "0.35.2"
+    turing-config "0.37.0"
     uuid "3.0.1"
     winston "2.3.1"
 
-turing-mongo@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-mongo/-/turing-mongo-0.35.2.tgz#1fbf7a87349d0309f789dd8c038c3448c8bf1465"
+turing-mongo@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-mongo/-/turing-mongo-0.37.0.tgz#708f986f25adc25b979dc608d461ecb41111e399"
   dependencies:
-    mongoose "4.9.2"
-    turing-config "0.35.2"
-    turing-logging "0.35.2"
+    mongoose "^4.9.3"
+    turing-config "0.37.0"
+    turing-logging "0.37.0"
 
-turing-server@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.35.2.tgz#218029d0bee3f2e8ffae0c96d92256d3cc316c87"
+turing-server@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.37.0.tgz#08e08316adf8d129598339d38a9626dda4400515"
   dependencies:
     express "4.15.2"
     morgan "1.8.1"
     pug "2.0.0-beta6"
     serve-favicon "2.4.2"
-    turing-config "0.35.2"
-    turing-logging "0.35.2"
+    turing-config "0.37.0"
+    turing-logging "0.37.0"
 
-turing-status@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-status/-/turing-status-0.35.2.tgz#70c7ebabdbd4c7e79c40255ee7393d6ce2defeeb"
+turing-status@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-status/-/turing-status-0.37.0.tgz#c0a3d80f8f6aabcd74090075c9b6480db241ef15"
   dependencies:
     compression "1.6.2"
     express "4.15.2"
-    joi "10.3.1"
-    turing-config "0.35.2"
-    turing-logging "0.35.2"
-    turing-server "0.35.2"
+    joi "^10.4.1"
+    turing-config "0.37.0"
+    turing-logging "0.37.0"
+    turing-server "0.37.0"
 
-turing-vault@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-vault/-/turing-vault-0.35.2.tgz#b9126c1240d678394f38e193438a79e2964a2a19"
+turing-vault@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-vault/-/turing-vault-0.37.0.tgz#171f6f8cacb873e564b99cabe73a10afaf2f03a3"
   dependencies:
-    async "2.2.0"
+    async "^2.3.0"
     node-vault "0.5.6"
-    turing-config "0.35.2"
-    turing-logging "0.35.2"
+    turing-config "0.37.0"
+    turing-logging "0.37.0"
 
 tv4@^1.2.7:
   version "1.3.0"

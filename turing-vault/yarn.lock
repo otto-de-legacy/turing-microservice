@@ -536,22 +536,22 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-turing-config@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.35.2.tgz#91ccd9cdda0b36fe60659728d29b2cebf6821997"
+turing-config@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.37.0.tgz#5712863900f604926eabb90ce686cadf6843eb11"
   dependencies:
     glob "7.1.1"
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@0.35.2:
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.35.2.tgz#5fc8c24ede27adaf7123bd3fdfd5d58f6f095272"
+turing-logging@0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.37.0.tgz#9daa5d12345824e24b05b6f6cfc6c2194ec61a16"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
     stack-trace "0.0.9"
-    turing-config "0.35.2"
+    turing-config "0.37.0"
     uuid "3.0.1"
     winston "2.3.1"
 
