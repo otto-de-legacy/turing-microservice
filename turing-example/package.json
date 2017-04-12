@@ -6,7 +6,9 @@
   "scripts": {
     "build": "gulp build",
     "test": "gulp test",
-    "test:e2e": "gulp test:e2e",
+    "test:e2e": "BASE_DOMAIN=http://localhost:8080/ protractor test-resources/e2e/protractor.conf.js",
+    "webdriver:install": "webdriver-manager update",
+    "webdriver:start": "webdriver-manager start",
     "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
     "watch": "gulp watch",
     "watch:test": "gulp watch:test"
@@ -59,7 +61,6 @@
     "gulp-jasmine": "2.4.2",
     "gulp-nodemon": "2.2.1",
     "gulp-sass-lint": "1.3.2",
-    "gulp-webdriver": "2.0.3",
     "isparta-loader": "2.0.0",
     "jasmine-spec-reporter": "3.2.0",
     "jquery": "3.2.1",
@@ -74,15 +75,13 @@
     "karma-webpack": "2.0.3",
     "material-ui": "0.17.1",
     "node-sass": "4.5.2",
+    "protractor": "^5.1.1",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
     "react-tap-event-plugin": "2.0.1",
     "run-sequence": "1.2.2",
     "sass-loader": "6.0.3",
-    "supertest": "3.0.0",
-    "wdio-jasmine-framework": "0.3.0",
-    "wdio-spec-reporter": "0.1.0",
-    "webdriverio": "4.6.2"
+    "supertest": "3.0.0"
   },
   "author": {
     "name": "Benedikt Stemmildt",

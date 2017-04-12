@@ -7,7 +7,6 @@ const istanbul = require('gulp-istanbul');
 const jasmine = require('gulp-jasmine');
 const {SpecReporter} = require('jasmine-spec-reporter');
 const {Server: KarmaServer} = require('karma');
-const webdriver = require('gulp-webdriver');
 const runSequence = require('run-sequence');
 
 gulp.task('sasslint', () => {
@@ -69,10 +68,6 @@ gulp.task('test:client', (done) => {
     }
     process.exit(exitCode);
   }).start();
-});
-
-gulp.task('test:e2e', () => {
-  return gulp.src(`${__dirname}/../test-resources/e2e/wdio.conf.js`).pipe(webdriver());
 });
 
 gulp.task('test', (done) => {

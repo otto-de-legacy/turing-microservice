@@ -1,0 +1,10 @@
+{
+  "env": {
+    "jasmine": true,
+    "protractor": true
+  },
+  "rules": {
+    "no-process-env": "off",
+    "no-sync": "off"
+  }
+}
