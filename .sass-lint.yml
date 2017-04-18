@@ -71,7 +71,7 @@ rules:
     - allow-leading-underscore: true
       convention: hyphenatedbem
   mixins-before-declarations:
-    - 2
+    - 0
     - exclude: []
   nesting-depth:
     - 2

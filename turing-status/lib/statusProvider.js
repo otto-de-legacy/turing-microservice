@@ -23,7 +23,7 @@ class StatusProvider {
         nodeEnv: process.env.NODE_ENV,
         version: pkg.version,
         commit: pkg.commit,
-        vcsUrl: pkg.repository ? pkg.repository.url : '',
+        vcsUrl: `${pkg.repository ? pkg.repository.url : ''}`,
         status: new StatusHelper().getAggregatedStatus(this.statusDetails),
         statusDetails: this.statusDetails,
         dependencies: pkg.dependencies,
