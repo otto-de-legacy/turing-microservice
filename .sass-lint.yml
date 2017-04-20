@@ -44,7 +44,7 @@ rules:
   function-name-format:
     - 2
     - allow-leading-underscore: true
-      convention: hyphenatedbem
+      convention: snakecase
   hex-length:
     - 2
     - style: long
@@ -69,7 +69,7 @@ rules:
   mixin-name-format:
     - 2
     - allow-leading-underscore: true
-      convention: hyphenatedbem
+      convention: snakecase
   mixins-before-declarations:
     - 0
     - exclude: []
@@ -114,7 +114,7 @@ rules:
   placeholder-in-extend: 2
   placeholder-name-format:
     - 2
-    - convention: hyphenatedbem
+    - convention: snakecase
   property-sort-order:
     - 2
     - order: 'alphabetical'
@@ -191,5 +191,5 @@ rules:
   variable-name-format:
     - 2
     - allow-leading-underscore: true
-      convention: hyphenatedbem
+      convention: snakecase
   zero-unit: 2
