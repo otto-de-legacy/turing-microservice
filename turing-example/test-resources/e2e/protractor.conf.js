@@ -1,19 +1,7 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
 const process = require('process');
 const {SpecReporter} = require('jasmine-spec-reporter');
-const screenshotDir = `${__dirname}/../../target/errorShots/e2e/`;
-
-screenshotDir.split('/').forEach((dir, index, splits) => {
-  const parent = splits.slice(0, index).join('/');
-  const dirPath = path.resolve(parent, dir);
-
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath);
-  }
-});
 
 exports.config = {
   framework: 'jasmine',
@@ -36,17 +24,6 @@ exports.config = {
         displayStacktrace: true
       }
     }));
-    jasmine.getEnv().addReporter(new function screenshotReporter() {
-      screenshotReporter.specDone = (result) => {
-        if (result.failedExpectations.length > 0) {
-          browser.takeScreenshot().then((png) => {
-            const stream = fs.createWriteStream(`${screenshotDir}${new Date().getTime()}.png`);
-            stream.write(new Buffer(png, 'base64'));
-            stream.end();
-          });
-        }
-      };
-    }());
   },
   jasmineNodeOpts: {
     print: () => {
