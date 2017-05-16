@@ -7374,7 +7374,7 @@ tunnel-agent@~0.4.0:
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.4.3.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
 
 turing-config@0.37.0:
-  version "0.38.0"
+  version "0.38.1"
   resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.37.0.tgz#5712863900f604926eabb90ce686cadf6843eb11"
   dependencies:
     glob "7.1.1"
@@ -7382,61 +7382,61 @@ turing-config@0.37.0:
     string-template "1.0.0"
 
 turing-health@0.37.0:
-  version "0.38.0"
+  version "0.38.1"
   resolved "https://registry.yarnpkg.com/turing-health/-/turing-health-0.37.0.tgz#67d0b4edbb523a4e2e59b6f162976b4dd9388922"
   dependencies:
     express "4.15.2"
-    turing-config "0.38.0"
+    turing-config "0.38.1"
 
 turing-logging@0.37.0:
-  version "0.38.0"
+  version "0.38.1"
   resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.37.0.tgz#9daa5d12345824e24b05b6f6cfc6c2194ec61a16"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
     stack-trace "0.0.9"
-    turing-config "0.38.0"
+    turing-config "0.38.1"
     uuid "3.0.1"
     winston "2.3.1"
 
 turing-mongo@0.37.0:
-  version "0.38.0"
+  version "0.38.1"
   resolved "https://registry.yarnpkg.com/turing-mongo/-/turing-mongo-0.37.0.tgz#708f986f25adc25b979dc608d461ecb41111e399"
   dependencies:
     mongoose "^4.9.3"
-    turing-config "0.38.0"
-    turing-logging "0.38.0"
+    turing-config "0.38.1"
+    turing-logging "0.38.1"
 
 turing-server@0.37.0:
-  version "0.38.0"
+  version "0.38.1"
   resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.37.0.tgz#08e08316adf8d129598339d38a9626dda4400515"
   dependencies:
     express "4.15.2"
     morgan "1.8.1"
     pug "2.0.0-beta6"
     serve-favicon "2.4.2"
-    turing-config "0.38.0"
-    turing-logging "0.38.0"
+    turing-config "0.38.1"
+    turing-logging "0.38.1"
 
 turing-status@0.37.0:
-  version "0.38.0"
+  version "0.38.1"
   resolved "https://registry.yarnpkg.com/turing-status/-/turing-status-0.37.0.tgz#c0a3d80f8f6aabcd74090075c9b6480db241ef15"
   dependencies:
     compression "1.6.2"
     express "4.15.2"
     joi "^10.4.1"
-    turing-config "0.38.0"
-    turing-logging "0.38.0"
-    turing-server "0.38.0"
+    turing-config "0.38.1"
+    turing-logging "0.38.1"
+    turing-server "0.38.1"
 
 turing-vault@0.37.0:
-  version "0.38.0"
+  version "0.38.1"
   resolved "https://registry.yarnpkg.com/turing-vault/-/turing-vault-0.37.0.tgz#171f6f8cacb873e564b99cabe73a10afaf2f03a3"
   dependencies:
     async "^2.3.0"
     node-vault "0.5.6"
-    turing-config "0.38.0"
-    turing-logging "0.38.0"
+    turing-config "0.38.1"
+    turing-logging "0.38.1"
 
 tv4@^1.2.7:
   version "1.3.0"
