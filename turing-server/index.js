@@ -44,7 +44,7 @@ class TuringServer extends Express {
         stream: log.stream(config.get('turing:logging:accesslog:meta')),
         skip: (request) => {
           const url = request.originalUrl;
-          return skipHealthUrl && url.contains(healthUrl) || skipStatusUrl && url.contains(statusUrl);
+          return skipHealthUrl && url && url.indexOf(healthUrl) > -1 || skipStatusUrl && url && url.indexOf(statusUrl) > -1;
         }
       }));
     }
