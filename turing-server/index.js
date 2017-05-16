@@ -43,8 +43,8 @@ class TuringServer extends Express {
       this.use(morgan(format, {
         stream: log.stream(config.get('turing:logging:accesslog:meta')),
         skip: (request) => {
-          const pathname = request.originalUrl;
-          return skipHealthUrl && pathname.endsWith(healthUrl) || skipStatusUrl && pathname.endsWith(statusUrl);
+          const url = request.originalUrl;
+          return skipHealthUrl && url.contains(healthUrl) || skipStatusUrl && url.contains(statusUrl);
         }
       }));
     }
