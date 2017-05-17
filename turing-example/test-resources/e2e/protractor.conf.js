@@ -1,7 +1,13 @@
 'use strict';
 
 const process = require('process');
+const fs = require('fs');
 const {SpecReporter} = require('jasmine-spec-reporter');
+
+function encode(file) {
+  const stream = fs.readFileSync(file);
+  return new Buffer(stream).toString('base64');
+}
 
 exports.config = {
   framework: 'jasmine',
@@ -14,6 +20,9 @@ exports.config = {
   useBlockingProxy: false,
   capabilities: {
     browserName: 'chrome',
+    chromeOptions: {
+      extensions: [encode('./test-resources/e2e/ublock-origin.crx')]
+    },
     // dont shard when on local to be able to attach to process
     shardTestFiles: !!process.env.SELENIUM_HOST,
     maxInstances: 10
@@ -29,7 +38,10 @@ exports.config = {
     print: () => {
       return null;
     },
-    defaultTimeoutInterval: 20001
+    showColors: true,
+    defaultTimeoutInterval: 30001,
+    isVerbose: true,
+    includeStackTrace: true
   },
   sync: true,
   logLevel: 'verbose',
