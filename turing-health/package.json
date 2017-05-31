@@ -15,7 +15,7 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "express": "4.15.2",
+    "express": "^4.15.3",
     "turing-config": "0.38.2"
   },
   "author": {

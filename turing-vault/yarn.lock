@@ -37,8 +37,8 @@ async@^1.4.0:
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
 async@^2.3.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.4.0.tgz#4990200f18ea5b837c2cc4f8c031a6985c385611"
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.4.1.tgz#62a56b279c98a11d0987096a01cc3eeb8eb7bbd7"
   dependencies:
     lodash "^4.14.0"
 
@@ -151,10 +151,10 @@ dashdash@^1.12.0:
     assert-plus "^1.0.0"
 
 debug@^2.1.3:
-  version "2.6.6"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.6.tgz#a9fa6fbe9ca43cf1e79f73b75c0189cbb7d6db5a"
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
-    ms "0.7.3"
+    ms "2.0.0"
 
 decamelize@^1.1.1:
   version "1.2.0"
@@ -359,9 +359,9 @@ minimatch@^3.0.2:
   dependencies:
     brace-expansion "^1.1.7"
 
-ms@0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.3.tgz#708155a5e44e33f5fd0fc53e81d0d40a91be1fff"
+ms@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 mustache@^2.2.1:
   version "2.3.0"
@@ -498,9 +498,9 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
-stack-trace@0.0.9, stack-trace@0.0.x:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.9.tgz#a8f6eaeca90674c333e7c43953f275b451510695"
+stack-trace@0.0.x, stack-trace@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
 
 string-template@1.0.0:
   version "1.0.0"
@@ -536,21 +536,21 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-turing-config@0.37.0:
+turing-config@0.38.2:
   version "0.38.2"
-  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.37.0.tgz#5712863900f604926eabb90ce686cadf6843eb11"
+  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.38.2.tgz#9231cd72b23ea7f6d85d1f3ad9ccf64205c29414"
   dependencies:
     glob "7.1.1"
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@0.37.0:
+turing-logging@0.38.2:
   version "0.38.2"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.37.0.tgz#9daa5d12345824e24b05b6f6cfc6c2194ec61a16"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.38.2.tgz#1d144e114caed9d1cc91eb7bcaa7f3aa670aae53"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
-    stack-trace "0.0.9"
+    stack-trace "^0.0.10"
     turing-config "0.38.2"
     uuid "3.0.1"
     winston "2.3.1"
