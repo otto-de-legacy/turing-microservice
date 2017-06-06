@@ -67,7 +67,7 @@ module.exports = (config) => {
       terminal: true
     },
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     singleRun: false,
     concurrency: os.cpus().length
   });
