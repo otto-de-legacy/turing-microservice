@@ -50,11 +50,11 @@ Contains gulp tasks for:
 
 Install global dependency:
 
-    $ yarn global install yarn-workspace
+    $ yarn global install lerna
 
 Install dependencies:
 
-    $ yarn-workspace install
+    $ lerna bootstrap
 
 ## Contributors
 

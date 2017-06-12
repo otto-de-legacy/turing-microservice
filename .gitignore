@@ -1,7 +1,5 @@
 /.idea/
 node_modules/
-/turing-example/resources/server/public/css/
-/turing-example/resources/server/public/js/
-/turing-example/target/
-/publish.sh
-/outdated.sh
+/packages/turing-example/resources/server/public/css/
+/packages/turing-example/resources/server/public/js/
+/packages/turing-example/target/

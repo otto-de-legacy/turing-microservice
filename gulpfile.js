@@ -10,7 +10,7 @@ gulp.task('sasslint', () => {
     './**/*.scss',
     '!./node_modules/**/*.scss',
     '!./**/node_modules/**/*.scss',
-    '!./turing-example/target/**/*.scss'
+    '!./packages/turing-example/target/**/*.scss'
   ])
     .pipe(sassLint())
     .pipe(sassLint.format())
@@ -22,8 +22,8 @@ gulp.task('eslint', () => {
     './**/*.js',
     '!./node_modules/**',
     '!./**/node_modules/**',
-    '!./turing-example/resources/server/public/**',
-    '!./turing-example/target/**'
+    '!./packages/turing-example/resources/server/public/**',
+    '!./packages/turing-example/target/**'
   ])
     .pipe(eslint())
     .pipe(eslint.format())
