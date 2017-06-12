@@ -1,0 +1,101 @@
+{
+  "name": "turing-example",
+  "version": "0.39.0",
+  "description": "An example of how the turing-microservice can be used.",
+  "main": "src/server/app.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp test",
+    "test:e2e": "BASE_DOMAIN=http://localhost:8080/ protractor test-resources/e2e/protractor.conf.js",
+    "webdriver:install": "webdriver-manager update",
+    "webdriver:start": "webdriver-manager start",
+    "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
+    "watch": "gulp watch",
+    "watch:test": "gulp watch:test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/packages/turing-example#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "compression": "1.6.2",
+    "cookie-parser": "1.4.3",
+    "express": "^4.15.3",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "http-status": "1.0.1",
+    "turing-config": "^0.39.0",
+    "turing-health": "^0.39.0",
+    "turing-logging": "^0.39.0",
+    "turing-mongo": "^0.39.0",
+    "turing-server": "^0.39.0",
+    "turing-status": "^0.39.0",
+    "turing-vault": "^0.39.0",
+    "webpack": "^2.3.3",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "2.18.0",
+    "winston-graylog2": "0.6.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "1.1.1",
+    "css-loader": "^0.28.1",
+    "eslint": "^4.0.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-react": "^7.0.1",
+    "gulp": "3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-istanbul": "^1.1.2",
+    "gulp-jasmine": "2.4.2",
+    "gulp-nodemon": "2.2.1",
+    "gulp-sass-lint": "1.3.2",
+    "isparta-loader": "2.0.0",
+    "jasmine-spec-reporter": "^4.1.0",
+    "jquery": "3.2.1",
+    "karma": "^1.6.0",
+    "karma-babel-preprocessor": "6.0.1",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "1.1.0",
+    "karma-jasmine-html-reporter": "0.2.2",
+    "karma-jasmine-jquery": "0.1.1",
+    "karma-mocha-reporter": "2.2.3",
+    "karma-webpack": "2.0.3",
+    "material-ui": "^0.18.1",
+    "node-sass": "^4.5.3",
+    "protractor": "^5.1.1",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-tap-event-plugin": "2.0.1",
+    "run-sequence": "1.2.2",
+    "sass-loader": "^6.0.5",
+    "supertest": "3.0.0"
+  },
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bin": {
+    "turing-example": "bin/server.js"
+  }
+}

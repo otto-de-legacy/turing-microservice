@@ -1,0 +1,29 @@
+{
+  "name": "turing-metrics",
+  "version": "0.39.0",
+  "description": "Metrics support.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/packages/turing-metrics#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
+  "license": "Apache-2.0"
+}

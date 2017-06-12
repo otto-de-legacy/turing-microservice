@@ -1,0 +1,34 @@
+{
+  "name": "turing-config",
+  "version": "0.39.0",
+  "description": "Hierarchical configuration with files, environment variables and command-line arguments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/packages/turing-config#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "dependencies": {
+    "glob": "^7.1.2",
+    "nconf": "0.8.4",
+    "string-template": "1.0.0"
+  },
+  "author": {
+    "name": "Benedikt Stemmildt",
+    "email": "benedikt.stemmildt@otto.de",
+    "url": "https://github.com/benestem"
+  },
+  "contributors": [
+    {
+      "name": "Jonathan Meyer",
+      "url": "https://github.com/JonathanMey3r"
+    }
+  ],
+  "license": "Apache-2.0"
+}
