@@ -1,20 +1,26 @@
 'use strict';
 
 const gulp = require('gulp');
-const sassLint = require('gulp-sass-lint');
+const gulpStylelint = require('gulp-stylelint');
 const eslint = require('gulp-eslint');
 const runSequence = require('run-sequence');
 
-gulp.task('sasslint', () => {
+gulp.task('stylelint', () => {
   return gulp.src([
     './**/*.scss',
     '!./node_modules/**/*.scss',
     '!./**/node_modules/**/*.scss',
     '!./packages/turing-example/target/**/*.scss'
   ])
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError());
+    .pipe(gulpStylelint({
+      reporters: [
+        {
+          formatter: 'string',
+          console: true
+        }
+      ],
+      failAfterError: true
+    }));
 });
 
 gulp.task('eslint', () => {
@@ -31,5 +37,5 @@ gulp.task('eslint', () => {
 });
 
 gulp.task('test', (done) => {
-  runSequence('sasslint', 'eslint', done);
+  runSequence('stylelint', 'eslint', done);
 });

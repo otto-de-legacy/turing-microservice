@@ -1,7 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
-const sassLint = require('gulp-sass-lint');
+const gulpStylelint = require('gulp-stylelint');
 const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
 const jasmine = require('gulp-jasmine');
@@ -9,16 +9,22 @@ const {SpecReporter} = require('jasmine-spec-reporter');
 const {Server: KarmaServer} = require('karma');
 const runSequence = require('run-sequence');
 
-gulp.task('sasslint', () => {
+gulp.task('stylelint', () => {
   return gulp.src([
     './**/*.scss',
     '!./node_modules/**/*.scss',
     '!./out/**/*.scss',
     '!./target/**/*.scss'
   ])
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError());
+    .pipe(gulpStylelint({
+      reporters: [
+        {
+          formatter: 'string',
+          console: true
+        }
+      ],
+      failAfterError: true
+    }));
 });
 
 gulp.task('eslint', () => {
@@ -75,5 +81,5 @@ gulp.task('test:client', (done) => {
 });
 
 gulp.task('test', (done) => {
-  runSequence('sasslint', 'eslint', 'test:server', 'test:client', done);
+  runSequence('stylelint', 'eslint', 'test:server', 'test:client', done);
 });

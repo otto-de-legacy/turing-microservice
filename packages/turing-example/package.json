@@ -11,7 +11,32 @@
     "webdriver:start": "webdriver-manager start",
     "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
     "watch": "gulp watch",
-    "watch:test": "gulp watch:test"
+    "watch:test": "gulp watch:test",
+    "precommit": "lint-staged",
+    "cz": "git-cz",
+    "commitmsg": "validate-commit-msg",
+    "prepush": "yarn test"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "prettier --single-quote --printWidth 130 --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.scss": [
+      "prettier --single-quote --printWidth 130 --write",
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": "conventional-commit-types",
+      "helpMessage": "If you need help writing a valid commit message run \"yarn cz\"."
+    }
   },
   "repository": {
     "type": "git",
@@ -61,7 +86,9 @@
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "1.1.1",
+    "commitizen": "^2.9.6",
     "css-loader": "^0.28.1",
+    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.0.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-react": "^7.0.1",
@@ -70,7 +97,8 @@
     "gulp-istanbul": "^1.1.2",
     "gulp-jasmine": "2.4.2",
     "gulp-nodemon": "2.2.1",
-    "gulp-sass-lint": "1.3.2",
+    "gulp-stylelint": "^3.9.0",
+    "husky": "^0.13.4",
     "isparta-loader": "2.0.0",
     "jasmine-spec-reporter": "^4.1.0",
     "jquery": "3.2.1",
@@ -83,15 +111,18 @@
     "karma-jasmine-jquery": "0.1.1",
     "karma-mocha-reporter": "2.2.3",
     "karma-webpack": "2.0.3",
+    "lint-staged": "^3.6.1",
     "material-ui": "^0.18.1",
     "node-sass": "^4.5.3",
+    "prettier": "^1.4.4",
     "protractor": "^5.1.1",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
     "react-tap-event-plugin": "2.0.1",
     "run-sequence": "1.2.2",
     "sass-loader": "^6.0.5",
-    "supertest": "3.0.0"
+    "supertest": "3.0.0",
+    "validate-commit-msg": "^2.12.2"
   },
   "author": {
     "name": "Benedikt Stemmildt",
