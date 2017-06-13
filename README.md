@@ -48,13 +48,9 @@ Contains gulp tasks for:
 
 ## Setup
 
-Install global dependency:
-
-    $ yarn global install lerna
-
 Install dependencies:
 
-    $ lerna bootstrap
+    $ yarn bootstrap
 
 ## Testing
 

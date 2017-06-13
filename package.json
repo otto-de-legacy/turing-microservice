@@ -4,7 +4,8 @@
   "description": "A common basis for Node.js microservices.",
   "scripts": {
     "test": "gulp test && lerna run test --scope turing-example",
-    "dependency-update": "lerna exec -- yarn upgrade && yarn upgrade-interactive"
+    "dependency-update": "lerna exec -- yarn upgrade && yarn upgrade-interactive",
+    "bootstrap": "lerna bootstrap"
   },
   "repository": {
     "type": "git",
