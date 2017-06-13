@@ -756,22 +756,22 @@ token-stream@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/token-stream/-/token-stream-0.0.1.tgz#ceeefc717a76c4316f126d0b9dbaa55d7e7df01a"
 
-turing-config@0.38.3:
-  version "0.38.3"
-  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.38.3.tgz#3726c201d6e9e61c337d950d7bbfb79b85b9a15e"
+turing-config@^0.39.1:
+  version "0.39.1"
+  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.39.1.tgz#e90eb569f3d79d4e50154d38ec39d88f3198e1b7"
   dependencies:
     glob "^7.1.2"
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@0.38.3:
-  version "0.38.3"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.38.3.tgz#edb4e93fa2048709e7bca46d82435e5f1321b994"
+turing-logging@^0.39.1:
+  version "0.39.1"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.39.1.tgz#fbb15f1468947bb1801564dbc4516a649fc0b2d0"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
     stack-trace "^0.0.10"
-    turing-config "0.38.3"
+    turing-config "^0.39.1"
     uuid "3.0.1"
     winston "2.3.1"
 

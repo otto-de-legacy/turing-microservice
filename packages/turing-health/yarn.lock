@@ -369,9 +369,9 @@ strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   dependencies:
     ansi-regex "^2.0.0"
 
-turing-config@0.38.3:
-  version "0.38.3"
-  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.38.3.tgz#3726c201d6e9e61c337d950d7bbfb79b85b9a15e"
+turing-config@^0.39.1:
+  version "0.39.1"
+  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.39.1.tgz#e90eb569f3d79d4e50154d38ec39d88f3198e1b7"
   dependencies:
     glob "^7.1.2"
     nconf "0.8.4"

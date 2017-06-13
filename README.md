@@ -56,6 +56,16 @@ Install dependencies:
 
     $ lerna bootstrap
 
+## Testing
+
+    $ yarn test
+
+## Dependency Update
+
+Client dependencies:
+
+    $ yarn dependency-update
+
 ## Contributors
 
 - Benedikt Stemmildt
