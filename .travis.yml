@@ -8,6 +8,9 @@ addons:
 
 env:
   - CHROME_BIN=/usr/bin/google-chrome
+  - DISPLAY=:99.0
 
 before_script:
   - yarn bootstrap
+  - sh -e /etc/init.d/xvfb start 
+  - sleep 3
