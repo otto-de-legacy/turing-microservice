@@ -12,7 +12,7 @@ function encode(file) {
 exports.config = {
   framework: 'jasmine',
   suites: {
-    parallel: `${__dirname}/../../test/e2e/*Spec.js`
+    parallel: `${__dirname}/../../test/e2e/*.test.js`
   },
   suite: 'parallel',
   seleniumAddress: process.env.SELENIUM_HOST,
