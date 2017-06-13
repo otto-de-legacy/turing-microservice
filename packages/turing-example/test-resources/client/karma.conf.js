@@ -16,13 +16,13 @@ module.exports = (config) => {
         included: false
       },
       // testHelper
-      '../../test/client/initHelper.js',
+      '../../test/client/initUtil.js',
       // specs
-      '../../test/client/specsContext.js'
+      '../../test/client/testsContext.js'
     ],
     exclude: [],
     preprocessors: {
-      '../../test/client/specsContext.js': ['webpack']
+      '../../test/client/testsContext.js': ['webpack']
     },
     reporters: [
       'kjhtml',

@@ -1,6 +1,6 @@
 'use strict';
 
-const status = require('./steps/internalStatus');
+const status = require('./steps/internalStatusStep');
 
 describe('internal sites', () => {
   beforeAll(() => {

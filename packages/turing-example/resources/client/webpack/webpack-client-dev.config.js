@@ -10,11 +10,11 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.resolve(__dirname, '../../../src/client/app.js')
+    path.resolve(__dirname, '../../../src/client/index.js')
   ],
   output: {
     path: path.resolve(__dirname, '../../server/public'),
-    filename: 'js/app.js'
+    filename: 'js/[name].js'
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({

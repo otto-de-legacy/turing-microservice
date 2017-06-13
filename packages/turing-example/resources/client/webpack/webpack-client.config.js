@@ -8,10 +8,10 @@ module.exports = {
   target: 'web',
   cache: false,
   devtool: false,
-  entry: path.resolve(__dirname, '../../../src/client/app.js'),
+  entry: path.resolve(__dirname, '../../../src/client/index.js'),
   output: {
     path: path.resolve(__dirname, '../../server/public'),
-    filename: 'js/app.js'
+    filename: 'js/[name].js'
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),

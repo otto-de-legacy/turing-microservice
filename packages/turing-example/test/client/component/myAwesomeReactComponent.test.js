@@ -1,6 +1,6 @@
 'use strict';
 
-require('../../../src/client/app');
+require('../../../src/client/index');
 
 describe('myAwesomeReactComponent', () => {
   it('expect to convert a given string to a url', () => {

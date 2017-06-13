@@ -41,7 +41,7 @@ gulp.task('istanbul', () => {
 
 gulp.task('test:server', ['istanbul'], () => {
   process.env.TURING_CONFIG_DIR = './test-resources/server/config';
-  return gulp.src('./test/server/**/*Spec.js')
+  return gulp.src('./test/server/**/*.test.js')
     .pipe(jasmine({
       reporter: new SpecReporter({
         summary: {
@@ -59,7 +59,11 @@ gulp.task('test:client', (done) => {
   const karmaOptions = {
     configFile: `${__dirname}/../test-resources/client/karma.conf.js`,
     autoWatch: false,
-    singleRun: true
+    singleRun: true,
+    reporters: [
+      'mocha',
+      'coverage'
+    ]
   };
 
   new KarmaServer(karmaOptions, (exitCode) => {
