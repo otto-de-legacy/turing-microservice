@@ -50,7 +50,7 @@ Contains gulp tasks for:
 
 Install dependencies:
 
-    $ yarn bootstrap
+    $ yarn install && yarn bootstrap
 
 ## Testing
 
