@@ -19,12 +19,10 @@
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
-      "prettier --single-quote --printWidth 130 --write",
       "eslint --fix",
       "git add"
     ],
     "**/*.scss": [
-      "prettier --single-quote --printWidth 130 --write",
       "stylelint --fix",
       "git add"
     ]
@@ -114,7 +112,6 @@
     "lint-staged": "^3.6.1",
     "material-ui": "^0.18.1",
     "node-sass": "^4.5.3",
-    "prettier": "^1.4.4",
     "protractor": "^5.1.1",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",

@@ -13,12 +13,10 @@
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
-      "prettier --single-quote --printWidth 130 --write",
       "eslint --fix",
       "git add"
     ],
     "**/*.css": [
-      "prettier --single-quote --printWidth 130 --write",
       "stylelint --fix",
       "git add"
     ]
@@ -52,7 +50,6 @@
     "husky": "^0.13.4",
     "lerna": "^2.0.0-rc.5",
     "lint-staged": "^3.6.1",
-    "prettier": "^1.4.4",
     "run-sequence": "1.2.2",
     "validate-commit-msg": "^2.12.2"
   },
