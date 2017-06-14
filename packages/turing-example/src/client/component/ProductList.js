@@ -8,18 +8,6 @@ class ProductList extends Component {
     this.state = {products: []};
   }
 
-  loadProducts() {
-    $.getJSON('/turing-example/api/products/', (products) => {
-      this.setState({
-        products
-      });
-    });
-  }
-
-  componentDidMount() {
-    this.loadProducts();
-  }
-
   static createCard(product) {
     return (
       <Card key={product.name}>
@@ -30,6 +18,18 @@ class ProductList extends Component {
         <CardText>{product.description}</CardText>
       </Card>
     );
+  }
+
+  loadProducts() {
+    $.getJSON('/turing-example/api/products/', (products) => {
+      this.setState({
+        products
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.loadProducts();
   }
 
   render() {
