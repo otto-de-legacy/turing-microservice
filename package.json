@@ -43,7 +43,7 @@
     "cz-lerna-changelog": "^1.2.1",
     "eslint": "^4.0.0",
     "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-react": "^7.1.0",
     "gulp": "3.9.1",
     "gulp-eslint": "^4.0.0",
     "gulp-stylelint": "^3.9.0",

@@ -60,6 +60,7 @@
     "import/order": "error",
     "import/prefer-default-export": "error",
     "import/unambiguous": "error",
+    "react/default-props-match-prop-types": "error",
     "react/display-name": [
       "error",
       {
@@ -80,6 +81,7 @@
     "react/forbid-prop-types": "error",
     "react/jsx-boolean-value": "error",
     "react/jsx-closing-bracket-location": "error",
+    "react/jsx-closing-tag-location": "error",
     "react/jsx-curly-spacing": [
       "error",
       "never"
@@ -136,6 +138,7 @@
     "react/no-find-dom-node": "error",
     "react/no-is-mounted": "error",
     "react/no-multi-comp": "error",
+    "react/no-redundant-should-component-update": "error",
     "react/no-render-return-value": "error",
     "react/no-set-state": "off",
     "react/no-string-refs": "error",
