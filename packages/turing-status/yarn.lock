@@ -818,35 +818,35 @@ topo@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-turing-config@0.38.3:
-  version "0.38.3"
-  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.38.3.tgz#3726c201d6e9e61c337d950d7bbfb79b85b9a15e"
+turing-config@^0.39.1:
+  version "0.39.1"
+  resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.39.1.tgz#e90eb569f3d79d4e50154d38ec39d88f3198e1b7"
   dependencies:
     glob "^7.1.2"
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@0.38.3:
-  version "0.38.3"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.38.3.tgz#edb4e93fa2048709e7bca46d82435e5f1321b994"
+turing-logging@^0.39.2:
+  version "0.39.2"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.39.2.tgz#caac6837a99526244a62b5729bfa9ab85fcea4e8"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
     stack-trace "^0.0.10"
-    turing-config "0.38.3"
+    turing-config "^0.39.1"
     uuid "3.0.1"
     winston "2.3.1"
 
-turing-server@0.38.3:
-  version "0.38.3"
-  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.38.3.tgz#b4d23299f7ff275c352de3e474527c80b50c6f1d"
+turing-server@^0.39.2:
+  version "0.39.2"
+  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.39.2.tgz#ffdf085c9136ac1e38f8704b79e5d0a592906dbb"
   dependencies:
     express "^4.15.3"
     morgan "^1.8.2"
     pug "^2.0.0-rc.1"
     serve-favicon "^2.4.3"
-    turing-config "0.38.3"
-    turing-logging "0.38.3"
+    turing-config "^0.39.1"
+    turing-logging "^0.39.2"
 
 type-is@~1.6.15:
   version "1.6.15"
@@ -856,8 +856,8 @@ type-is@~1.6.15:
     mime-types "~2.1.15"
 
 uglify-js@^2.6.1:
-  version "2.8.28"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.28.tgz#e335032df9bb20dcb918f164589d5af47f38834a"
+  version "2.8.29"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
   dependencies:
     source-map "~0.5.1"
     yargs "~3.10.0"

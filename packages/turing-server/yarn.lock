@@ -764,9 +764,9 @@ turing-config@^0.39.1:
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@^0.39.1:
-  version "0.39.1"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.39.1.tgz#fbb15f1468947bb1801564dbc4516a649fc0b2d0"
+turing-logging@^0.39.2:
+  version "0.39.2"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.39.2.tgz#caac6837a99526244a62b5729bfa9ab85fcea4e8"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
@@ -783,8 +783,8 @@ type-is@~1.6.15:
     mime-types "~2.1.15"
 
 uglify-js@^2.6.1:
-  version "2.8.28"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.28.tgz#e335032df9bb20dcb918f164589d5af47f38834a"
+  version "2.8.29"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
   dependencies:
     source-map "~0.5.1"
     yargs "~3.10.0"
