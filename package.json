@@ -5,18 +5,18 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "dependency-update": "lerna exec -- yarn upgrade && yarn upgrade-interactive",
-    "test": "gulp test && lerna run test --scope turing-example",
+    "test": "stylelint '{**/,}*.{css,scss}' && eslint '{**/,}*.{js,jsx}' && lerna run test --scope turing-example",
     "precommit": "lint-staged",
     "cz": "git-cz",
     "commitmsg": "validate-commit-msg",
     "prepush": "yarn test"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
+    "{**/,}*.{js,jsx}": [
       "eslint --fix",
       "git add"
     ],
-    "**/*.css": [
+    "{**/,}*.{css,scss}": [
       "stylelint --fix",
       "git add"
     ]
@@ -44,13 +44,10 @@
     "eslint": "^4.0.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-react": "^7.1.0",
-    "gulp": "3.9.1",
-    "gulp-eslint": "^4.0.0",
-    "gulp-stylelint": "^3.9.0",
     "husky": "^0.13.4",
     "lerna": "^2.0.0-rc.5",
     "lint-staged": "^3.6.1",
-    "run-sequence": "1.2.2",
+    "stylelint": "^7.11.1",
     "validate-commit-msg": "^2.12.2"
   },
   "author": {

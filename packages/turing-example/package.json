@@ -18,11 +18,11 @@
     "prepush": "yarn test"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
+    "{**/,}*.{js,jsx}": [
       "eslint --fix",
       "git add"
     ],
-    "**/*.scss": [
+    "{**/,}*.scss": [
       "stylelint --fix",
       "git add"
     ]
