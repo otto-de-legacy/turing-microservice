@@ -1,0 +1,25 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node"
+  },
+  "watch": [
+    "bin",
+    "resources/client",
+    "resources/server/config",
+    "resources/server/public/img",
+    "resources/server/view",
+    "src/server"
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "ACTIVE_PROFILE": "development",
+    "TURING_CONFIG_DIR": "./resources/server/config"
+  },
+  "ext": "js pug json"
+}

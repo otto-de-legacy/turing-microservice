@@ -2,49 +2,64 @@
   "name": "turing-example",
   "version": "0.39.2",
   "description": "An example of how the turing-microservice can be used.",
-  "main": "src/server/app.js",
+  "main": "src/server/App.js",
   "scripts": {
-    "build": "gulp build",
-    "test": "gulp test",
-    "test:e2e": "BASE_DOMAIN=http://localhost:8080/ protractor test-resources/e2e/protractor.conf.js",
+    "build": "rm -rf resources/server/public && NODE_ENV=production webpack --progress --config ./resources/client/webpack/webpack.config.prod.js",
+    "test": "stylelint '{**/,}*.{css,scss}' && eslint '{**/,}*.{js,jsx}' && tslint -p ./tsconfig.json --type-check 'src/client/{**/,}*.{ts,tsx}' && NODE_ENV=test ACTIVE_PROFILE=test TURING_CONFIG_DIR=./resources/server/config jest",
+    "test:e2e": "BASE_DOMAIN=http://localhost:8080/ protractor ./test-resources/e2e/protractor.conf.js",
     "webdriver:install": "webdriver-manager update",
     "webdriver:start": "webdriver-manager start",
-    "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/server.js",
-    "watch": "gulp watch",
-    "watch:test": "gulp watch:test",
-    "precommit": "lint-staged",
-    "cz": "git-cz",
-    "commitmsg": "validate-commit-msg",
-    "prepush": "yarn test"
+    "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/Server.js",
+    "watch": "nodemon bin/Server.js"
   },
-  "lint-staged": {
-    "{**/,}*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
+  "jest": {
+    "globals": {
+      "__TS_CONFIG__": "jest-tsconfig.json"
+    },
+    "collectCoverageFrom": [
+      "<rootDir>/src/{client,server}/{**/,}*.{js,jsx,ts,tsx}"
     ],
-    "{**/,}*.scss": [
-      "stylelint --fix",
-      "git add"
+    "setupFiles": [
+      "<rootDir>/node_modules/whatwg-fetch/fetch.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "testMatch": [
+      "<rootDir>/src/{client,server}/{**/,}*.test.{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleNameMapper": {
+      "^.+\\.css$": "identity-obj-proxy",
+      "^(?!.*\\.(css|json)$)": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "modulePathIgnorePatterns": [
+      "(.idea|target|coverage|node_modules)"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    },
-    "validate-commit-msg": {
-      "types": "conventional-commit-types",
-      "helpMessage": "If you need help writing a valid commit message run \"yarn cz\"."
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:otto-de/turing-microservice.git"
-  },
-  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/packages/turing-example#readme",
-  "bugs": {
-    "url": "https://github.com/otto-de/turing-microservice/issues"
-  },
   "babel": {
+    "env": {
+      "development": {
+        "plugins": [
+          "react-hot-loader/babel"
+        ]
+      }
+    },
+    "plugins": [
+      [
+        "react-css-modules",
+        {
+          "generateScopedName": "[name]__[local]___[hash:base64:5]"
+        }
+      ]
+    ],
     "presets": [
       [
         "env",
@@ -54,18 +69,27 @@
               "last 2 version",
               "ie 9"
             ]
-          }
+          },
+          "modules": false,
+          "useBuiltIns": true
         }
       ],
       "react"
     ]
+  },
+  "homepage": "https://github.com/otto-de/turing-microservice/tree/master/packages/turing-example#readme",
+  "bugs": {
+    "url": "https://github.com/otto-de/turing-microservice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otto-de/turing-microservice.git"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
     "compression": "1.6.2",
     "cookie-parser": "1.4.3",
     "express": "^4.15.3",
-    "extract-text-webpack-plugin": "^2.1.2",
     "http-status": "1.0.1",
     "turing-config": "^0.39.1",
     "turing-health": "^0.39.2",
@@ -74,66 +98,80 @@
     "turing-server": "^0.39.2",
     "turing-status": "^0.39.2",
     "turing-vault": "^0.39.2",
-    "webpack": "^2.3.3",
-    "webpack-dev-middleware": "^1.10.2",
-    "webpack-hot-middleware": "2.18.0",
     "winston-graylog2": "0.6.0"
   },
   "devDependencies": {
-    "babel-loader": "^7.0.0",
+    "@types/enzyme": "^2.8.0",
+    "@types/jest": "^20.0.0",
+    "@types/material-ui": "^0.17.11",
+    "@types/react": "^15.0.29",
+    "@types/react-css-modules": "^4.2.0",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-hot-loader": "^3.0.1",
+    "@types/react-redux": "^4.4.43",
+    "@types/react-tap-event-plugin": "^0.0.30",
+    "@types/redux": "^3.6.0",
+    "awesome-typescript-loader": "^3.1.3",
+    "babel-plugin-react-css-modules": "^3.0.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-react-hmre": "1.1.1",
-    "commitizen": "^2.9.6",
-    "css-loader": "^0.28.1",
-    "cz-conventional-changelog": "^2.0.0",
+    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "compression-webpack-plugin": "^0.4.0",
+    "css-loader": "^0.28.4",
+    "cssnano": "^3.10.0",
+    "enzyme": "^2.8.2",
     "eslint": "^4.0.0",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-react": "^7.1.0",
-    "gulp": "3.9.1",
-    "gulp-eslint": "^4.0.0",
-    "gulp-istanbul": "^1.1.2",
-    "gulp-jasmine": "2.4.2",
-    "gulp-nodemon": "2.2.1",
-    "gulp-stylelint": "^3.9.0",
-    "husky": "^0.13.4",
-    "isparta-loader": "2.0.0",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "favicons-webpack-plugin": "^0.0.7",
+    "file-loader": "^0.11.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.28.0",
+    "identity-obj-proxy": "^3.0.0",
+    "image-webpack-loader": "^3.3.1",
     "jasmine-spec-reporter": "^4.1.0",
-    "jquery": "3.2.1",
-    "karma": "^1.6.0",
-    "karma-babel-preprocessor": "6.0.1",
-    "karma-chrome-launcher": "^2.1.1",
-    "karma-coverage": "1.1.1",
-    "karma-jasmine": "1.1.0",
-    "karma-jasmine-html-reporter": "0.2.2",
-    "karma-jasmine-jquery": "0.1.1",
-    "karma-mocha-reporter": "2.2.3",
-    "karma-webpack": "2.0.3",
-    "lint-staged": "^3.6.1",
-    "material-ui": "^0.18.1",
-    "node-sass": "^4.5.3",
+    "jest": "^20.0.4",
+    "jest-enzyme": "^3.2.0",
+    "material-ui": "^0.18.3",
+    "nodemon": "^1.11.0",
+    "offline-plugin": "^4.8.1",
+    "optimize-css-assets-webpack-plugin": "^2.0.0",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-flexbugs-fixes": "^3.0.0",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.6",
     "protractor": "^5.1.1",
-    "react": "^15.6.0",
-    "react-dom": "^15.6.0",
-    "react-tap-event-plugin": "2.0.1",
-    "run-sequence": "1.2.2",
-    "sass-loader": "^6.0.5",
+    "react": "^15.6.1",
+    "react-dev-utils": "^3.0.0",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-redux": "^5.0.5",
+    "react-tap-event-plugin": "^2.0.1",
+    "react-test-renderer": "^15.6.1",
+    "redux": "^3.7.0",
+    "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
+    "stylelint": "^7.11.1",
     "supertest": "3.0.0",
-    "validate-commit-msg": "^2.12.2"
+    "ts-jest": "^20.0.6",
+    "tslint": "^5.4.3",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-language-service": "^0.9.6",
+    "tslint-react": "^3.0.0",
+    "typescript": "^2.3.4",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.6.1",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "2.18.0",
+    "webpack-manifest-plugin": "^1.1.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "author": {
     "name": "Benedikt Stemmildt",
     "email": "benedikt.stemmildt@otto.de",
     "url": "https://github.com/benestem"
   },
-  "contributors": [
-    {
-      "name": "Jonathan Meyer",
-      "url": "https://github.com/JonathanMey3r"
-    }
-  ],
   "license": "Apache-2.0",
   "bin": {
-    "turing-example": "bin/server.js"
+    "turing-example": "bin/Server.js"
   }
 }

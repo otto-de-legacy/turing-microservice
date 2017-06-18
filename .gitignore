@@ -1,5 +1,4 @@
 /.idea/
 node_modules/
-/packages/turing-example/resources/server/public/css/
-/packages/turing-example/resources/server/public/js/
+/packages/turing-example/resources/server/public/
 /packages/turing-example/target/

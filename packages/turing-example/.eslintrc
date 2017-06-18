@@ -1,8 +1,11 @@
 {
   "env": {
-    "browser": false,
+    "browser": true,
     "es6": true,
-    "node": true
+    "jasmine": true,
+    "jest": true,
+    "node": true,
+    "protractor": true
   },
   "rules": {
     "accessor-pairs": "error",
@@ -17,7 +20,10 @@
         "multiline": true
       }
     ],
-    "array-element-newline": ["error", "always"],
+    "array-element-newline": [
+      "error",
+      "always"
+    ],
     "arrow-body-style": [
       "error",
       "always"

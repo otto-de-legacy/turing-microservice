@@ -1,4 +1,4 @@
-![turing-microservice](doc/img/turing-logo.png)
+![turing-microservice](doc/img/logo.png)
 
 # turing-microservice
 
@@ -39,12 +39,11 @@ next up:
 
 ### Example: _turing-example_
 
-Contains gulp tasks for:
-- build: Provides webpack configurations for production and development.
-- eslint: Provides verification of code quality with eslint
-- testPublic: Provides testing client-side with karma and generate a coverage report.
-- testServer: Provides testing server-side with mocha and generate a coverage report.
+Contains tasks for:
 - watch: Provides live reloading of code during development.
+- test: Test server and client side.
+- build: Build production assets with service-worker caching and offline support.
+- start: Start the server in production mode.
 
 ## Setup
 
@@ -65,7 +64,6 @@ Client dependencies:
 ## Contributors
 
 - Benedikt Stemmildt
-- Jonathan Meyer
 
 ## License
 

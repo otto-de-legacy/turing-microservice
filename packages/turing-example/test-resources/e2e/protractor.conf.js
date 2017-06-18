@@ -5,7 +5,7 @@ const fs = require('fs');
 const {SpecReporter} = require('jasmine-spec-reporter');
 
 function encode(file) {
-  const stream = fs.readFileSync(file);
+  const stream = fs.readFileSync(file); // eslint-disable-line no-sync
   return Buffer.from(stream).toString('base64');
 }
 
@@ -15,7 +15,7 @@ exports.config = {
     parallel: `${__dirname}/../../test/e2e/*.test.js`
   },
   suite: 'parallel',
-  seleniumAddress: process.env.SELENIUM_HOST,
+  seleniumAddress: process.env.SELENIUM_HOST, // eslint-disable-line no-process-env
   maxInstances: 10,
   useBlockingProxy: false,
   capabilities: {
@@ -24,7 +24,7 @@ exports.config = {
       extensions: [encode('./test-resources/e2e/ublock-origin.crx')]
     },
     // dont shard when on local to be able to attach to process
-    shardTestFiles: !!process.env.SELENIUM_HOST,
+    shardTestFiles: !!process.env.SELENIUM_HOST, // eslint-disable-line no-process-env
     maxInstances: 10
   },
   onPrepare() {
@@ -46,7 +46,7 @@ exports.config = {
   sync: true,
   logLevel: 'verbose',
   coloredLogs: true,
-  baseUrl: process.env.BASE_DOMAIN,
+  baseUrl: process.env.BASE_DOMAIN, // eslint-disable-line no-process-env
   waitforTimeout: 20001,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3

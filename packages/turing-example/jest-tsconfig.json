@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitUseStrict": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "src/main/resources/static",
+    "plugins": [
+      {
+        "name": "tslint-language-service"
+      }
+    ],
+    "removeComments": true,
+    "rootDir": "src/client",
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es2015"
+  },
+  "types": [
+    "typePatches"
+  ]
+}

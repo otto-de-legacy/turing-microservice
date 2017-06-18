@@ -12,19 +12,19 @@ Install dependencies:
 
 ## Build
 
-For compiling the assets (js and css):
+For compiling the assets:
 
-    $ npm run build
+    $ yarn build
 
 ## Startup
 
 Start the server:
 
-    $ npm start
+    $ yarn start
 
-For starting the server in dev mode:
+For starting the server in dev mode with hot reloading:
 
-    $ npm run watch
+    $ yarn watch
 
 Then open a browser and visit:
 
@@ -36,12 +36,14 @@ Then open a browser and visit:
 
 ### Test server and client
 
-    $ npm test
+    $ yarn test
 
 This also:
 
-* runs eslint & sasslint
-* creates coverage reports for server and public
+* runs eslint, tslint & stylelint
+* creates coverage reports when called with:
+
+    $ yarn test -- --coverage
 
 ### Test e2e
 
@@ -49,21 +51,21 @@ Start your Application as usual.
 
 Install local webdriver tools.
 
-    $ npm run webdriver:install
+    $ yarn webdriver:install
 
 Start your local webdriver:
 
-    $ npm run webdriver:start
+    $ yarn webdriver:start
 
 Test:
 
-    $ npm run test:e2e:local
+    $ yarn test:e2e
 
 ## Dependency Update
 
 Use yarn's interactive update.
 
-    $ yarn upgrade-interactive
+    $ yarn upgrade && yarn upgrade-interactive
 
 ## Contributors
 
