@@ -9,7 +9,7 @@
     "precommit": "lint-staged",
     "cz": "git-cz",
     "commitmsg": "validate-commit-msg",
-    "prepush": "yarn test"
+    "prepush": "git stash && yarn test; git stash pop"
   },
   "lint-staged": {
     "{**/,}*.{ts,tsx}": [
