@@ -195,7 +195,7 @@
     "no-invalid-template-strings": true,
     "no-invalid-this": true,
     "no-irregular-whitespace": true,
-    "no-magic-numbers": true,
+    "no-magic-numbers": false,
     "no-mergeable-namespace": true,
     "no-misused-new": true,
     "no-multi-spaces": true,
@@ -314,7 +314,6 @@
       "parameter",
       "arrow-parameter",
       "property-declaration",
-      "variable-declaration",
       "member-variable-declaration",
       "object-destructuring",
       "array-destructuring"

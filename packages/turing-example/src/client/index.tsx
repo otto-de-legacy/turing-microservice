@@ -6,8 +6,13 @@ import {AppContainer} from 'react-hot-loader';
 import App from './App';
 import './index.css';
 
-const render: (Component: any) => void = (Component: any): void => {
-  ReactDOM.render(<AppContainer><Component /></AppContainer>, document.getElementById('root'));
+const render = (Component: any): void => {
+  const root = (
+    <AppContainer>
+      <Component />
+    </AppContainer>
+  );
+  ReactDOM.render(root, document.getElementById('root'));
 };
 
 injectTapEventPlugin();

@@ -8,8 +8,7 @@
     "test": "lerna run test --scope turing-example",
     "precommit": "lint-staged",
     "cz": "git-cz",
-    "commitmsg": "validate-commit-msg",
-    "prepush": "git stash && yarn test; git stash pop"
+    "commitmsg": "validate-commit-msg"
   },
   "lint-staged": {
     "{**/,}*.{ts,tsx}": [
@@ -48,7 +47,7 @@
     "eslint": "^4.0.0",
     "husky": "^0.13.4",
     "lerna": "^2.0.0-rc.5",
-    "lint-staged": "^3.6.1",
+    "lint-staged": "^4.0.0",
     "stylelint": "^7.11.1",
     "tslint": "^5.4.3",
     "typescript": "^2.3.4",

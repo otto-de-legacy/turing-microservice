@@ -36,6 +36,8 @@ module.exports = {
       'react',
       'react-dom',
       'react-tap-event-plugin',
+      'react-hot-loader',
+      'material-ui/styles/MuiThemeProvider',
       'offline-plugin/runtime'
     ]
   },
@@ -194,6 +196,7 @@ module.exports = {
     }),
     new CheckerPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
+    // new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,

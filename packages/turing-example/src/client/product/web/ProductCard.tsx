@@ -5,7 +5,7 @@ interface ProductCardProps {
   product: Product;
 }
 
-const ProductCard: (props: ProductCardProps) => JSX.Element = (props: ProductCardProps): JSX.Element => (
+const ProductCard = (props: ProductCardProps): JSX.Element => (
   <Card key={props.product.name}>
     <CardHeader
       title={props.product.name}

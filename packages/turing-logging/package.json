@@ -19,7 +19,7 @@
     "global-request-logger": "0.1.1",
     "stack-trace": "^0.0.10",
     "turing-config": "^0.39.1",
-    "uuid": "3.0.1",
+    "uuid": "^3.1.0",
     "winston": "2.3.1"
   },
   "author": {

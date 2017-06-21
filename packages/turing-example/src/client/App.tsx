@@ -1,9 +1,9 @@
 import * as React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ProductList from './components/product/web/ProductList';
+import ProductList from './product/web/ProductList';
 import './App.css';
 
-const App: () => JSX.Element = (): JSX.Element => (
+const App = (): JSX.Element => (
   <div>
     <div styleName="app">
       <div styleName="header">
