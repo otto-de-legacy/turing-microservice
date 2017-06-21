@@ -32,7 +32,7 @@ module.exports = {
       'react-dom',
       'react-tap-event-plugin',
       'react-hot-loader',
-      'material-ui/styles/MuiThemeProvider',
+      'material-ui/styles/MuiThemeProvider'
     ]
   },
   output: {
