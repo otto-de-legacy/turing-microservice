@@ -1,6 +1,6 @@
 {
   "name": "turing-health",
-  "version": "0.39.2",
+  "version": "0.40.0",
   "description": "An express route for an health check.",
   "main": "index.js",
   "scripts": {

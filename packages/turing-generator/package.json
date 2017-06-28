@@ -1,6 +1,6 @@
 {
   "name": "turing-generator",
-  "version": "0.39.2",
+  "version": "0.40.0",
   "description": "A generator for the turing-microservice.",
   "main": "index.js",
   "scripts": {
