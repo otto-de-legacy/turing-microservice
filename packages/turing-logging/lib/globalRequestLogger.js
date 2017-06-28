@@ -8,11 +8,13 @@ const logger = require('./logger');
 class GlobalRequestLogger {
   static initialize() {
     globalRequestLogger.initialize();
-    globalRequestLogger.on('success', (request) => {
-      logger.info('Request', request);
+    globalRequestLogger.on('success', (request, response) => {
+      logger.info(`Request: ${JSON.stringify(request)}`);
+      logger.info(`Response: ${JSON.stringify(response)}`);
     });
-    globalRequestLogger.on('error', (request) => {
-      logger.info('Request', request);
+    globalRequestLogger.on('error', (request, response) => {
+      logger.info(`Request: ${JSON.stringify(request)}`);
+      logger.info(`Response: ${JSON.stringify(response)}`);
     });
   }
 }
