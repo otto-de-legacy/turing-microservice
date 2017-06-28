@@ -10,10 +10,14 @@ class GlobalRequestLogger {
     globalRequestLogger.initialize();
     globalRequestLogger.on('success', (request, response) => {
       logger.info(`Request: ${JSON.stringify(request)}`);
+
+      delete response.body;
       logger.info(`Response: ${JSON.stringify(response)}`);
     });
     globalRequestLogger.on('error', (request, response) => {
       logger.info(`Request: ${JSON.stringify(request)}`);
+
+      delete response.body;
       logger.info(`Response: ${JSON.stringify(response)}`);
     });
   }
