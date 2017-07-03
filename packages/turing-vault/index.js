@@ -36,7 +36,7 @@ function getUpdateConfigFunction(resolve) {
   return (error, configWithSecrets) => {
     if (error) {
       const vaultError = new Error('Vault: Cannot read secrets from vault', error);
-      log.error(vaultError);
+      log.error(`${vaultError} ${error}`);
       throw vaultError;
     }
     config.update(configWithSecrets);
