@@ -10,6 +10,7 @@
           "Vault"
         ]
       }
-    ]
+    ],
+    "no-process-env": "off"
   }
 }
