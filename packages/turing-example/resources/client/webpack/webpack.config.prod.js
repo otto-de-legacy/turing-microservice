@@ -182,7 +182,7 @@ module.exports = {
               }
             }
           ]
-        }, {publicPath: Array(cssFilename.split('/').length).join('../')}))
+        }, {publicPath: new Array(cssFilename.split('/').length).join('../')}))
       }
     ]
   },
@@ -196,7 +196,7 @@ module.exports = {
     }),
     new CheckerPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-    // new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,

@@ -1,4 +1,4 @@
-/* stylelint-disable-next-line selector-no-type */
+/* stylelint-disable-next-line selector-no-type,selector-max-type */
 body {
   font-family: Roboto, sans-serif;
   margin: 0;

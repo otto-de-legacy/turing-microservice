@@ -48,8 +48,8 @@ asap@~2.0.3:
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.5.tgz#522765b50c3510490e52d7dcfe085ef9ba96958f"
 
 async-listener@^0.6.0:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/async-listener/-/async-listener-0.6.5.tgz#2c899d49a5e8a2dea10b9473915b4149206a1d68"
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/async-listener/-/async-listener-0.6.7.tgz#793971ce6f431e41f75cef6c0a1706b9053e4d5b"
   dependencies:
     semver "^5.3.0"
     shimmer "^1.1.0"
@@ -203,8 +203,6 @@ debug@2.6.7:
 debug@2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
-  dependencies:
-    ms "2.0.0"
 
 debug@~2.2.0:
   version "2.2.0"
@@ -826,27 +824,27 @@ turing-config@^0.39.1:
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@^0.39.2:
-  version "0.39.2"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.39.2.tgz#caac6837a99526244a62b5729bfa9ab85fcea4e8"
+turing-logging@^0.40.1:
+  version "0.40.1"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.40.1.tgz#82b43bb81c799c057084370fbe9a8c5b8c48f3ee"
   dependencies:
     continuation-local-storage "3.2.0"
     global-request-logger "0.1.1"
     stack-trace "^0.0.10"
     turing-config "^0.39.1"
-    uuid "3.0.1"
+    uuid "^3.1.0"
     winston "2.3.1"
 
-turing-server@^0.39.2:
-  version "0.39.2"
-  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.39.2.tgz#ffdf085c9136ac1e38f8704b79e5d0a592906dbb"
+turing-server@^0.40.1:
+  version "0.40.1"
+  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.40.1.tgz#762cb3b2ea3151c9d4ead6af7abfa09604c27cd6"
   dependencies:
     express "^4.15.3"
     morgan "^1.8.2"
     pug "^2.0.0-rc.1"
     serve-favicon "^2.4.3"
     turing-config "^0.39.1"
-    turing-logging "^0.39.2"
+    turing-logging "^0.40.1"
 
 type-is@~1.6.15:
   version "1.6.15"
@@ -876,9 +874,9 @@ utils-merge@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
 
-uuid@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
+uuid@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
 vary@~1.1.0, vary@~1.1.1:
   version "1.1.1"

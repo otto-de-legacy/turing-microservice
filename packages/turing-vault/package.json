@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "async": "^2.3.0",
-    "node-vault": "0.5.6",
+    "node-vault": "^0.5.9",
     "turing-config": "^0.39.1",
     "turing-logging": "^0.40.1"
   },
