@@ -17,7 +17,8 @@ function addSecretTo(configWithSecrets, configPath, value) {
 function getReadSecretFunction(vault) {
   return (configWithSecrets, secret, done) => {
     const {path} = secret;
-    vault.read(path)
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+    vault.read(path, {rejectUnauthorized: false})
       .then((result) => {
         if (result && result.data) {
           const configPath = secret.key.alias.split(':');
