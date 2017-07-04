@@ -17,8 +17,7 @@ function addSecretTo(configWithSecrets, configPath, value) {
 function getReadSecretFunction(vault) {
   return (configWithSecrets, secret, done) => {
     const {path} = secret;
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-    vault.read(path, {rejectUnauthorized: false})
+    vault.read(path)
       .then((result) => {
         if (result && result.data) {
           const configPath = secret.key.alias.split(':');
@@ -51,13 +50,9 @@ class TuringVault extends Promise {
     super((resolve) => {
       const vaultConfig = config.get('turing:vault');
       if (vaultConfig.token) {
-        process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
         const vault = Vault({
           endpoint: vaultConfig.address,
-          token: vaultConfig.token,
-          requestOptions: {
-            rejectUnauthorized: false
-          }
+          token: vaultConfig.token
         });
         reduce(vaultConfig.secrets, {}, getReadSecretFunction(vault), getUpdateConfigFunction(resolve));
       } else {
