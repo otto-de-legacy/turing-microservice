@@ -92,6 +92,8 @@ cycle@1.0.x:
 debug@2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
+  dependencies:
+    ms "2.0.0"
 
 decamelize@^1.1.1:
   version "1.2.0"
@@ -369,21 +371,10 @@ strip-ansi@^3.0.0, strip-ansi@^3.0.1:
 turing-config@^0.39.1:
   version "0.39.1"
   resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.39.1.tgz#e90eb569f3d79d4e50154d38ec39d88f3198e1b7"
-  dependencies:
-    glob "^7.1.2"
-    nconf "0.8.4"
-    string-template "1.0.0"
 
-turing-logging@^0.40.1:
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.40.1.tgz#82b43bb81c799c057084370fbe9a8c5b8c48f3ee"
-  dependencies:
-    continuation-local-storage "3.2.0"
-    global-request-logger "0.1.1"
-    stack-trace "^0.0.10"
-    turing-config "^0.39.1"
-    uuid "^3.1.0"
-    winston "2.3.1"
+turing-logging@^0.40.2:
+  version "0.40.2"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.40.2.tgz#80565f83e562c437789e9a5054e5685bf885713e"
 
 util-deprecate@~1.0.1:
   version "1.0.2"

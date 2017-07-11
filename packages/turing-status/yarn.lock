@@ -44,8 +44,8 @@ array-flatten@1.1.1:
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
 
 asap@~2.0.3:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.5.tgz#522765b50c3510490e52d7dcfe085ef9ba96958f"
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
 async-listener@^0.6.0:
   version "0.6.7"
@@ -203,6 +203,8 @@ debug@2.6.7:
 debug@2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
+  dependencies:
+    ms "2.0.0"
 
 debug@~2.2.0:
   version "2.2.0"
@@ -479,8 +481,8 @@ methods@~1.1.2:
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
 "mime-db@>= 1.27.0 < 2":
-  version "1.28.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.28.0.tgz#fedd349be06d2865b7fc57d837c6de4f17d7ac3c"
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.29.0.tgz#48d26d235589651704ac5916ca06001914266878"
 
 mime-db@~1.27.0:
   version "1.27.0"
@@ -819,32 +821,21 @@ topo@2.x.x:
 turing-config@^0.39.1:
   version "0.39.1"
   resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.39.1.tgz#e90eb569f3d79d4e50154d38ec39d88f3198e1b7"
-  dependencies:
-    glob "^7.1.2"
-    nconf "0.8.4"
-    string-template "1.0.0"
 
-turing-logging@^0.40.1:
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.40.1.tgz#82b43bb81c799c057084370fbe9a8c5b8c48f3ee"
-  dependencies:
-    continuation-local-storage "3.2.0"
-    global-request-logger "0.1.1"
-    stack-trace "^0.0.10"
-    turing-config "^0.39.1"
-    uuid "^3.1.0"
-    winston "2.3.1"
+turing-logging@^0.40.2:
+  version "0.40.2"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.40.2.tgz#80565f83e562c437789e9a5054e5685bf885713e"
 
-turing-server@^0.40.1:
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.40.1.tgz#762cb3b2ea3151c9d4ead6af7abfa09604c27cd6"
+turing-server@^0.40.2:
+  version "0.40.2"
+  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.40.2.tgz#fc55a423e870d2197a5c8229b0620c9520756e8d"
   dependencies:
     express "^4.15.3"
     morgan "^1.8.2"
     pug "^2.0.0-rc.1"
     serve-favicon "^2.4.3"
     turing-config "^0.39.1"
-    turing-logging "^0.40.1"
+    turing-logging "^0.40.2"
 
 type-is@~1.6.15:
   version "1.6.15"
