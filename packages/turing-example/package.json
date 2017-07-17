@@ -14,7 +14,9 @@
   },
   "jest": {
     "globals": {
-      "__TS_CONFIG__": "jest-tsconfig.json"
+      "ts-jest": {
+        "tsConfigFile": "jest-tsconfig.json"
+      }
     },
     "collectCoverageFrom": [
       "<rootDir>/src/{client,server}/{**/,}*.{js,jsx,ts,tsx}"
