@@ -113,6 +113,7 @@
       "declaration"
     ],
     "generator-star-spacing": "error",
+    "getter-return": "error",
     "global-require": "error",
     "guard-for-in": "error",
     "handle-callback-err": "error",
