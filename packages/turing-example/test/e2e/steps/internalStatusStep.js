@@ -4,7 +4,7 @@ const page = require('../pageObjects/interalStatusPage');
 
 class InternalStatusStep {
   static statusIsOk() {
-    page.get();
+    page.visit();
 
     expect(page.getText()).toContain('status: OK');
   }

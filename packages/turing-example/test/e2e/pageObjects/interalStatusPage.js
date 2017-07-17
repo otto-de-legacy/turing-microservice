@@ -4,7 +4,7 @@ const url = '/turing-example/internal/status';
 const statusElement = '.status';
 
 class InternalStatusPage {
-  static get() {
+  static visit() {
     browser.get(url);
   }
 

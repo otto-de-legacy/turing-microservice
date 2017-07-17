@@ -171,9 +171,9 @@ isstream@0.1.x:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-kareem@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.4.1.tgz#ed76200044fa041ef32b4da8261e2553f1173531"
+kareem@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.4.2.tgz#3b4af5dbfaf3ac1c08b8e5518fdd81ba90c2ab72"
 
 lcid@^1.0.0:
   version "1.0.0"
@@ -211,19 +211,19 @@ mongodb@2.2.27:
     readable-stream "2.2.7"
 
 mongoose@^4.9.3:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.1.tgz#2560b6d89e744b05857d024cab8b316066716e3e"
+  version "4.11.3"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.3.tgz#f93d427b282c2e798b0fe1532fb41a7dde6e98d3"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
     hooks-fixed "2.0.0"
-    kareem "1.4.1"
+    kareem "1.4.2"
     mongodb "2.2.27"
     mpath "0.3.0"
     mpromise "0.5.5"
     mquery "2.3.1"
     ms "2.0.0"
-    muri "1.2.1"
+    muri "1.2.2"
     regexp-clone "0.0.1"
     sliced "1.0.1"
 
@@ -248,9 +248,9 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-muri@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/muri/-/muri-1.2.1.tgz#ec7ea5ce6ca6a523eb1ab35bacda5fa816c9aa3c"
+muri@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/muri/-/muri-1.2.2.tgz#63198132650db08a04cc79ccd00dd389afd2631c"
 
 nconf@0.8.4:
   version "0.8.4"
@@ -371,10 +371,21 @@ strip-ansi@^3.0.0, strip-ansi@^3.0.1:
 turing-config@^0.39.1:
   version "0.39.1"
   resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.39.1.tgz#e90eb569f3d79d4e50154d38ec39d88f3198e1b7"
+  dependencies:
+    glob "^7.1.2"
+    nconf "0.8.4"
+    string-template "1.0.0"
 
-turing-logging@^0.40.2:
-  version "0.40.2"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.40.2.tgz#80565f83e562c437789e9a5054e5685bf885713e"
+turing-logging@^0.43.0:
+  version "0.43.0"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.43.0.tgz#bddcb886f8090e5a35a172d4f6c56e0510e78afe"
+  dependencies:
+    continuation-local-storage "3.2.0"
+    global-request-logger "0.1.1"
+    stack-trace "^0.0.10"
+    turing-config "^0.39.1"
+    uuid "^3.1.0"
+    winston "2.3.1"
 
 util-deprecate@~1.0.1:
   version "1.0.2"

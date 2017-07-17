@@ -99,8 +99,8 @@ character-parser@^2.1.1:
     is-regex "^1.0.3"
 
 clean-css@^3.3.0:
-  version "3.4.27"
-  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-3.4.27.tgz#adef75b31c160ffa5d72f4de67966e2660c1a255"
+  version "3.4.28"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-3.4.28.tgz#bf1945e82fc808f55695e6ddeaec01400efd03ff"
   dependencies:
     commander "2.8.x"
     source-map "0.4.x"
@@ -759,10 +759,21 @@ token-stream@0.0.1:
 turing-config@^0.39.1:
   version "0.39.1"
   resolved "https://registry.yarnpkg.com/turing-config/-/turing-config-0.39.1.tgz#e90eb569f3d79d4e50154d38ec39d88f3198e1b7"
+  dependencies:
+    glob "^7.1.2"
+    nconf "0.8.4"
+    string-template "1.0.0"
 
-turing-logging@^0.40.2:
-  version "0.40.2"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.40.2.tgz#80565f83e562c437789e9a5054e5685bf885713e"
+turing-logging@^0.43.0:
+  version "0.43.0"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.43.0.tgz#bddcb886f8090e5a35a172d4f6c56e0510e78afe"
+  dependencies:
+    continuation-local-storage "3.2.0"
+    global-request-logger "0.1.1"
+    stack-trace "^0.0.10"
+    turing-config "^0.39.1"
+    uuid "^3.1.0"
+    winston "2.3.1"
 
 type-is@~1.6.15:
   version "1.6.15"
