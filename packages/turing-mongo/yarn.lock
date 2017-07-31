@@ -171,9 +171,9 @@ isstream@0.1.x:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-kareem@1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.4.2.tgz#3b4af5dbfaf3ac1c08b8e5518fdd81ba90c2ab72"
+kareem@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.5.0.tgz#e3e4101d9dcfde299769daf4b4db64d895d17448"
 
 lcid@^1.0.0:
   version "1.0.0"
@@ -211,13 +211,13 @@ mongodb@2.2.27:
     readable-stream "2.2.7"
 
 mongoose@^4.9.3:
-  version "4.11.3"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.3.tgz#f93d427b282c2e798b0fe1532fb41a7dde6e98d3"
+  version "4.11.5"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.5.tgz#59e4a1d84dcd36cc51f3e639b771cb8359f539aa"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
     hooks-fixed "2.0.0"
-    kareem "1.4.2"
+    kareem "1.5.0"
     mongodb "2.2.27"
     mpath "0.3.0"
     mpromise "0.5.5"
@@ -321,8 +321,8 @@ secure-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/secure-keys/-/secure-keys-1.0.0.tgz#f0c82d98a3b139a8776a8808050b824431087fca"
 
 semver@^5.1.0, semver@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
 shimmer@1.0.0:
   version "1.0.0"
@@ -376,16 +376,9 @@ turing-config@^0.39.1:
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@^0.43.0:
-  version "0.43.0"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.43.0.tgz#bddcb886f8090e5a35a172d4f6c56e0510e78afe"
-  dependencies:
-    continuation-local-storage "3.2.0"
-    global-request-logger "0.1.1"
-    stack-trace "^0.0.10"
-    turing-config "^0.39.1"
-    uuid "^3.1.0"
-    winston "2.3.1"
+turing-logging@^0.44.0:
+  version "0.44.0"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.44.0.tgz#70b28af35a398d793047e5c45d8c199b88778412"
 
 util-deprecate@~1.0.1:
   version "1.0.2"
