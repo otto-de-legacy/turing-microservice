@@ -1,6 +1,6 @@
 {
   "name": "turing-example",
-  "version": "0.44.3",
+  "version": "0.45.0",
   "description": "An example of how the turing-microservice can be used.",
   "main": "src/server/App.js",
   "scripts": {
