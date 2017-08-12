@@ -59,9 +59,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@^4.4.45":
-  version "4.4.47"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-4.4.47.tgz#12af1677116e08d413fe2620d0a85560c8a0536e"
+"@types/react-redux@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-5.0.1.tgz#7fb482e44645b650e335afa633d0f1349e124002"
   dependencies:
     "@types/react" "*"
     redux "^3.6.0"
@@ -70,11 +70,11 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/react-tap-event-plugin/-/react-tap-event-plugin-0.0.30.tgz#123f35080412f489b6770c5a65c159ff96654cb5"
 
-"@types/react@*":
+"@types/react@*", "@types/react@^16.0.2":
   version "16.0.2"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.2.tgz#0b31a73cdde6272b719e5b05a7df6d1e2654a804"
 
-"@types/react@^15.0.22", "@types/react@^15.0.34":
+"@types/react@^15.0.22":
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.6.1.tgz#497f7228762da4432e335957cb34fe9b40f150ae"
 
@@ -2101,7 +2101,7 @@ cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
 
-"cssnano@>=2.6.1 <4", cssnano@^3.10.0:
+"cssnano@>=2.6.1 <4", cssnano@^3.10.0, cssnano@^3.4.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-3.10.0.tgz#4f38f6cea2b9b17fa01490f23f1dc68ea65c1c38"
   dependencies:
@@ -5116,6 +5116,13 @@ known-css-properties@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.2.0.tgz#899c94be368e55b42d7db8d5be7d73a4a4a41454"
 
+last-call-webpack-plugin@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/last-call-webpack-plugin/-/last-call-webpack-plugin-2.0.1.tgz#4fd10d3afe79d2fad45dc873928980cbe799f1a7"
+  dependencies:
+    lodash "^4.17.4"
+    webpack-sources "^1.0.1"
+
 latest-version@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/latest-version/-/latest-version-1.0.1.tgz#72cfc46e3e8d1be651e1ebb54ea9f6ea96f374bb"
@@ -6279,12 +6286,12 @@ optimist@^0.6.1, optimist@~0.6.0:
     minimist "~0.0.1"
     wordwrap "~0.0.2"
 
-optimize-css-assets-webpack-plugin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-2.0.0.tgz#51cae71230ec91a4c157649715e47498e0cb460b"
+optimize-css-assets-webpack-plugin@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-3.0.0.tgz#03d4ce02e91ba3f2a7905507dc6be5f90b4158fd"
   dependencies:
-    underscore "^1.8.3"
-    webpack-sources "^0.1.0"
+    cssnano "^3.4.0"
+    last-call-webpack-plugin "^2.0.1"
 
 optionator@^0.8.1, optionator@^0.8.2:
   version "0.8.2"
@@ -9167,9 +9174,9 @@ turing-config@^0.39.1:
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-health@^0.44.1:
-  version "0.44.1"
-  resolved "https://registry.yarnpkg.com/turing-health/-/turing-health-0.44.1.tgz#15e69e90b96290ebab9335b7656e8389df127506"
+turing-health@^0.44.2:
+  version "0.44.2"
+  resolved "https://registry.yarnpkg.com/turing-health/-/turing-health-0.44.2.tgz#eb63ce936c494a7c4e9c0e82c0a999a6ef55aa39"
   dependencies:
     express "^4.15.3"
     turing-config "^0.39.1"
@@ -9185,17 +9192,17 @@ turing-logging@^0.44.1:
     uuid "^3.1.0"
     winston "2.3.1"
 
-turing-mongo@^0.44.1:
-  version "0.44.1"
-  resolved "https://registry.yarnpkg.com/turing-mongo/-/turing-mongo-0.44.1.tgz#03ca086c193854ebe60520b44a6a054482b2f40c"
+turing-mongo@^0.44.2:
+  version "0.44.2"
+  resolved "https://registry.yarnpkg.com/turing-mongo/-/turing-mongo-0.44.2.tgz#8fa98db2ce353f82cf4dda8120ee4bb35235e410"
   dependencies:
     mongoose "^4.9.3"
     turing-config "^0.39.1"
     turing-logging "^0.44.1"
 
-turing-server@^0.44.1:
-  version "0.44.1"
-  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.44.1.tgz#f59f8893449a2dd5fdc5ccb16b940460f3917b65"
+turing-server@^0.44.2:
+  version "0.44.2"
+  resolved "https://registry.yarnpkg.com/turing-server/-/turing-server-0.44.2.tgz#5e988b9e3cdb91b97fa67a8e48d558af1bf48e71"
   dependencies:
     express "^4.15.3"
     morgan "^1.8.2"
@@ -9204,20 +9211,20 @@ turing-server@^0.44.1:
     turing-config "^0.39.1"
     turing-logging "^0.44.1"
 
-turing-status@^0.44.1:
-  version "0.44.1"
-  resolved "https://registry.yarnpkg.com/turing-status/-/turing-status-0.44.1.tgz#cf9393a279fc73d940640c01e990380b61c66e66"
+turing-status@^0.44.2:
+  version "0.44.2"
+  resolved "https://registry.yarnpkg.com/turing-status/-/turing-status-0.44.2.tgz#8e45b08357a10bf84093879985be1819369d42f3"
   dependencies:
     compression "^1.7.0"
     express "^4.15.3"
     joi "^10.4.1"
     turing-config "^0.39.1"
     turing-logging "^0.44.1"
-    turing-server "^0.44.1"
+    turing-server "^0.44.2"
 
-turing-vault@^0.44.1:
-  version "0.44.1"
-  resolved "https://registry.yarnpkg.com/turing-vault/-/turing-vault-0.44.1.tgz#f2d2272fb1110314a68c85c6a6feeb04f21c0882"
+turing-vault@^0.44.2:
+  version "0.44.2"
+  resolved "https://registry.yarnpkg.com/turing-vault/-/turing-vault-0.44.2.tgz#56039ddc2876f1fcaf91cb745a177c01db942879"
   dependencies:
     async "^2.3.0"
     node-vault "^0.5.9"
@@ -9659,13 +9666,6 @@ webpack-manifest-plugin@^1.1.0:
     fs-extra "^0.30.0"
     lodash ">=3.5 <5"
     mutexify "^1.1.0"
-
-webpack-sources@^0.1.0:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
-  dependencies:
-    source-list-map "~0.1.7"
-    source-map "~0.5.3"
 
 webpack-sources@^1.0.1:
   version "1.0.1"
