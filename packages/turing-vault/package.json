@@ -1,6 +1,6 @@
 {
   "name": "turing-vault",
-  "version": "0.44.1",
+  "version": "0.44.2",
   "description": "A promise for merging secrets from vault with config.",
   "main": "index.js",
   "scripts": {
