@@ -133,6 +133,7 @@
     "jasmine-spec-reporter": "^4.1.0",
     "jest": "^20.0.4",
     "jest-enzyme": "^3.4.0",
+    "lodash._baseuniq": "^4.6.0",
     "material-ui": "^0.18.5",
     "nodemon": "^1.11.0",
     "offline-plugin": "^4.8.1",
