@@ -195,30 +195,30 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-mongodb-core@2.1.11:
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.11.tgz#1c38776ceb174997a99c28860eed9028da9b3e1a"
+mongodb-core@2.1.14:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.14.tgz#13cba2764226b5be3d18992af0c963ce5ea0f0fd"
   dependencies:
     bson "~1.0.4"
     require_optional "~1.0.0"
 
-mongodb@2.2.27:
-  version "2.2.27"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.27.tgz#34122034db66d983bcf6ab5adb26a24a70fef6e6"
+mongodb@2.2.30:
+  version "2.2.30"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.30.tgz#8ccd801f676c8172040c2f2b47e9602a0d5634ab"
   dependencies:
     es6-promise "3.2.1"
-    mongodb-core "2.1.11"
+    mongodb-core "2.1.14"
     readable-stream "2.2.7"
 
 mongoose@^4.9.3:
-  version "4.11.5"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.5.tgz#59e4a1d84dcd36cc51f3e639b771cb8359f539aa"
+  version "4.11.6"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.6.tgz#d0ebdd5f5f34fca9b0f1b86e13cf7e532e939a09"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
     hooks-fixed "2.0.0"
     kareem "1.5.0"
-    mongodb "2.2.27"
+    mongodb "2.2.30"
     mpath "0.3.0"
     mpromise "0.5.5"
     mquery "2.3.1"
@@ -376,9 +376,16 @@ turing-config@^0.39.1:
     nconf "0.8.4"
     string-template "1.0.0"
 
-turing-logging@^0.44.0:
-  version "0.44.0"
-  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.44.0.tgz#70b28af35a398d793047e5c45d8c199b88778412"
+turing-logging@^0.44.1:
+  version "0.44.1"
+  resolved "https://registry.yarnpkg.com/turing-logging/-/turing-logging-0.44.1.tgz#0a1b4f1732ec254acc40d468b0db1878940ca56d"
+  dependencies:
+    continuation-local-storage "3.2.0"
+    global-request-logger "0.1.1"
+    stack-trace "^0.0.10"
+    turing-config "^0.39.1"
+    uuid "^3.1.0"
+    winston "2.3.1"
 
 util-deprecate@~1.0.1:
   version "1.0.2"
