@@ -195,30 +195,30 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-mongodb-core@2.1.14:
-  version "2.1.14"
-  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.14.tgz#13cba2764226b5be3d18992af0c963ce5ea0f0fd"
+mongodb-core@2.1.15:
+  version "2.1.15"
+  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.15.tgz#841f53b87ffff4c7458189c35c8ae827e1169764"
   dependencies:
     bson "~1.0.4"
     require_optional "~1.0.0"
 
-mongodb@2.2.30:
-  version "2.2.30"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.30.tgz#8ccd801f676c8172040c2f2b47e9602a0d5634ab"
+mongodb@2.2.31:
+  version "2.2.31"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.31.tgz#1940445c661e19217bb3bf8245d9854aaef548db"
   dependencies:
     es6-promise "3.2.1"
-    mongodb-core "2.1.14"
+    mongodb-core "2.1.15"
     readable-stream "2.2.7"
 
 mongoose@^4.9.3:
-  version "4.11.6"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.6.tgz#d0ebdd5f5f34fca9b0f1b86e13cf7e532e939a09"
+  version "4.11.9"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.9.tgz#58f89a72e75674d9bcdfa4e65ebe1b49b4477637"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
     hooks-fixed "2.0.0"
     kareem "1.5.0"
-    mongodb "2.2.30"
+    mongodb "2.2.31"
     mpath "0.3.0"
     mpromise "0.5.5"
     mquery "2.3.1"
