@@ -17,7 +17,10 @@
         "multiline": true
       }
     ],
-    "array-element-newline": ["error", "always"],
+    "array-element-newline": [
+      "error",
+      "always"
+    ],
     "arrow-body-style": [
       "error",
       "always"
@@ -111,6 +114,10 @@
     "func-style": [
       "error",
       "declaration"
+    ],
+    "function-paren-newline": [
+      "error",
+      "never"
     ],
     "generator-star-spacing": "error",
     "getter-return": "error",
@@ -384,7 +391,12 @@
     "no-octal-escape": "error",
     "no-param-reassign": "error",
     "no-path-concat": "error",
-    "no-plusplus": "off",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
     "no-process-env": "error",
     "no-process-exit": "error",
     "no-proto": "error",

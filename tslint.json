@@ -128,7 +128,7 @@
     ],
     "max-line-length": [
       true,
-      120
+      130
     ],
     "member-access": [
       true,
@@ -161,6 +161,7 @@
     "no-debugger": true,
     "no-default-export": false,
     "no-duplicate-case": true,
+    "no-duplicate-imports": true,
     "no-duplicate-super": true,
     "no-duplicate-variable": [
       true,
@@ -204,6 +205,7 @@
     "no-null-keyword": true,
     "no-object-literal-type-assertion": true,
     "no-parameter-properties": true,
+    "no-parameter-reassignment": true,
     "no-reference": true,
     "no-reference-import": true,
     "no-regex-spaces": true,
@@ -212,6 +214,7 @@
     "no-sparse-arrays": true,
     "no-string-literal": true,
     "no-string-throw": true,
+    "no-submodule-imports": false,
     "no-switch-case-fall-through": true,
     "no-this-assignment": true,
     "no-trailing-whitespace": true,
@@ -295,6 +298,7 @@
       true,
       "never"
     ],
+    "space-within-parens": true,
     "strict-boolean-expressions": true,
     "strict-type-predicates": true,
     "switch-default": true,
@@ -352,7 +356,6 @@
       "check-branch",
       "check-decl",
       "check-operator",
-      "check-module",
       "check-separator",
       "check-type",
       "check-typecast",
