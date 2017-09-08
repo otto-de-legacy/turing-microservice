@@ -1,6 +1,6 @@
 {
   "name": "turing-example",
-  "version": "0.45.1",
+  "version": "0.45.2",
   "description": "An example of how the turing-microservice can be used.",
   "main": "src/server/App.js",
   "scripts": {
@@ -93,13 +93,13 @@
     "cookie-parser": "1.4.3",
     "express": "^4.15.3",
     "http-status": "1.0.1",
-    "turing-config": "^0.39.1",
-    "turing-health": "^0.45.1",
-    "turing-logging": "^0.44.1",
-    "turing-mongo": "^0.45.1",
-    "turing-server": "^0.45.1",
-    "turing-status": "^0.45.1",
-    "turing-vault": "^0.44.2",
+    "turing-config": "^0.45.2",
+    "turing-health": "^0.45.2",
+    "turing-logging": "^0.45.2",
+    "turing-mongo": "^0.45.2",
+    "turing-server": "^0.45.2",
+    "turing-status": "^0.45.2",
+    "turing-vault": "^0.45.2",
     "winston-graylog2": "0.6.0"
   },
   "devDependencies": {

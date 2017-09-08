@@ -1,6 +1,6 @@
 {
   "name": "turing-jobs",
-  "version": "0.39.0",
+  "version": "0.45.2",
   "description": "Jobs support.",
   "main": "index.js",
   "scripts": {
