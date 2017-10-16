@@ -8,23 +8,23 @@ An example of how the turing-microservice can be used.
 
 Install dependencies:
 
-    $ yarn install
+    $ npm install
 
 ## Build
 
 For compiling the assets:
 
-    $ yarn build
+    $ npm run build
 
 ## Startup
 
 Start the server:
 
-    $ yarn start
+    $ npm run start
 
 For starting the server in dev mode with hot reloading:
 
-    $ yarn watch
+    $ npm run watch
 
 Then open a browser and visit:
 
@@ -36,14 +36,14 @@ Then open a browser and visit:
 
 ### Test server and client
 
-    $ yarn test
+    $ npm test
 
 This also:
 
 * runs eslint, tslint & stylelint
 * creates coverage reports when called with:
 
-    $ yarn test -- --coverage
+    $ npm test -- --coverage
 
 ### Test e2e
 
@@ -51,21 +51,21 @@ Start your Application as usual.
 
 Install local webdriver tools.
 
-    $ yarn webdriver:install
+    $ npm run webdriver:install
 
 Start your local webdriver:
 
-    $ yarn webdriver:start
+    $ npm run webdriver:start
 
 Test:
 
-    $ yarn test:e2e
+    $ npm run test:e2e
 
 ## Dependency Update
 
-Use yarn's interactive update.
+Use npm-check's interactive update.
 
-    $ yarn upgrade && yarn upgrade-interactive
+    $ npm-check -E -u
 
 ## Contributors
 

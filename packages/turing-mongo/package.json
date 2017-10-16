@@ -15,9 +15,9 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "mongoose": "^4.9.3",
-    "turing-config": "^0.45.2",
-    "turing-logging": "^0.45.3"
+    "mongoose": "4.12.2",
+    "turing-config": "0.45.2",
+    "turing-logging": "0.45.3"
   },
   "author": {
     "name": "Benedikt Stemmildt",

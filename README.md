@@ -49,17 +49,17 @@ Contains tasks for:
 
 Install dependencies:
 
-    $ yarn install && yarn bootstrap
+    $ npm install && npm run bootstrap
 
 ## Testing
 
-    $ yarn test
+    $ npm test
 
 ## Dependency Update
 
 Client dependencies:
 
-    $ yarn dependency-update
+    $ npm-check -E -u
 
 ## Contributors
 
