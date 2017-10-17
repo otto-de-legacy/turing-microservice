@@ -45,9 +45,9 @@ function getUpdateConfigFunction(resolve) {
   };
 }
 
-class TuringVault extends Promise {
-  constructor() {
-    super((resolve) => {
+class TuringVault {
+  static setup() {
+    return new Promise((resolve) => {
       const vaultConfig = config.get('turing:vault');
       if (vaultConfig.token) {
         const vault = Vault({
