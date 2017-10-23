@@ -4,16 +4,17 @@
   "description": "An example of how the turing-microservice can be used.",
   "main": "src/server/App.js",
   "scripts": {
-    "build": "rm -rf resources/server/public && NODE_ENV=production webpack --progress --config ./resources/client/webpack/webpack.config.prod.js",
+    "watch": "nodemon bin/Server.js",
     "test": "stylelint '{**/,}*.{css,scss}' && eslint '{**/,}*.{js,jsx}' && tslint -p ./tsconfig.json --type-check 'src/client/{**/,}*.{ts,tsx}' && NODE_ENV=test ACTIVE_PROFILE=test TURING_CONFIG_DIR=./resources/server/config jest",
     "test:e2e": "BASE_DOMAIN=http://localhost:8080/ protractor ./test-resources/e2e/protractor.conf.js",
     "webdriver:install": "webdriver-manager update",
     "webdriver:start": "webdriver-manager start",
-    "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/Server.js",
-    "watch": "nodemon bin/Server.js",
+    "build": "rm -rf resources/server/public && NODE_ENV=production webpack --progress --config ./resources/client/webpack/webpack.config.prod.js",
+    "dependency-update": "npm-check -E -u",
     "precommit": "lint-staged",
     "cz": "git-cz",
-    "commitmsg": "commitlint -e"
+    "commitmsg": "commitlint -e",
+    "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/Server.js"
   },
   "lint-staged": {
     "gitDir": "../../",
@@ -167,6 +168,7 @@
     "lodash._baseuniq": "4.6.0",
     "material-ui": "0.19.4",
     "nodemon": "1.12.1",
+    "npm-check": "5.4.5",
     "offline-plugin": "4.8.4",
     "optimize-css-assets-webpack-plugin": "3.2.0",
     "postcss": "6.0.13",
