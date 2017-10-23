@@ -54,7 +54,7 @@ module.exports = {
       0
     ],
     lang: [
-      2,
+      0,
       'always',
       'eng'
     ],
