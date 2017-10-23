@@ -8,7 +8,7 @@
     "test": "lerna run test --scope turing-example",
     "precommit": "lint-staged",
     "cz": "git-cz",
-    "commitmsg": "validate-commit-msg"
+    "commitmsg": "commitlint -e"
   },
   "lint-staged": {
     "{**/,}*.{ts,tsx}": [
@@ -27,10 +27,6 @@
   "config": {
     "commitizen": {
       "path": "cz-lerna-changelog"
-    },
-    "validate-commit-msg": {
-      "types": "conventional-commit-types",
-      "helpMessage": "If you need help writing a valid commit message run \"npm run cz\"."
     }
   },
   "repository": {
@@ -42,16 +38,18 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "devDependencies": {
+    "@commitlint/cli": "4.2.1",
+    "@commitlint/config-angular": "4.2.1",
+    "@commitlint/config-lerna-scopes": "4.2.1",
     "commitizen": "2.9.6",
     "cz-lerna-changelog": "1.2.1",
     "eslint": "4.9.0",
     "husky": "0.14.3",
     "lerna": "2.4.0",
-    "lint-staged": "4.2.3",
+    "lint-staged": "4.3.0",
     "stylelint": "8.2.0",
-    "tslint": "5.7.0",
-    "typescript": "2.5.3",
-    "validate-commit-msg": "2.14.0"
+    "tslint": "5.8.0",
+    "typescript": "2.5.3"
   },
   "author": {
     "name": "Benedikt Stemmildt",
