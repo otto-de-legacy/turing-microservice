@@ -10,7 +10,32 @@
     "webdriver:install": "webdriver-manager update",
     "webdriver:start": "webdriver-manager start",
     "start": "NODE_ENV=production ACTIVE_PROFILE=production TURING_CONFIG_DIR=./resources/server/config node bin/Server.js",
-    "watch": "nodemon bin/Server.js"
+    "watch": "nodemon bin/Server.js",
+    "precommit": "lint-staged",
+    "cz": "git-cz",
+    "commitmsg": "commitlint -e"
+  },
+  "lint-staged": {
+    "gitDir": "../../",
+    "linters": {
+      "{**/,}*.{ts,tsx}": [
+        "tslint --fix",
+        "git add"
+      ],
+      "{**/,}*.{js,jsx}": [
+        "eslint --fix",
+        "git add"
+      ],
+      "{**/,}*.{css,scss}": [
+        "stylelint --fix",
+        "git add"
+      ]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "jest": {
     "globals": {
@@ -102,38 +127,43 @@
     "winston-graylog2": "0.7.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "4.2.1",
+    "@commitlint/config-angular": "4.2.1",
     "@types/enzyme": "3.1.0",
     "@types/enzyme-adapter-react-16": "1.0.0",
-    "@types/jest": "21.1.2",
+    "@types/jest": "21.1.4",
     "@types/material-ui": "0.18.3",
-    "@types/react": "16.0.11",
+    "@types/react": "16.0.18",
     "@types/react-css-modules": "4.2.1",
-    "@types/react-dom": "16.0.1",
+    "@types/react-dom": "16.0.2",
     "@types/react-hot-loader": "3.0.4",
     "@types/react-redux": "5.0.10",
     "@types/react-tap-event-plugin": "0.0.30",
     "awesome-typescript-loader": "3.2.3",
-    "babel-plugin-react-css-modules": "3.3.1",
-    "babel-preset-env": "1.6.0",
+    "babel-plugin-react-css-modules": "3.3.2",
+    "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
-    "caniuse-lite": "1.0.30000746",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
+    "commitizen": "2.9.6",
     "compression-webpack-plugin": "1.0.1",
     "css-loader": "0.28.7",
     "cssnano": "3.10.0",
+    "cz-lerna-changelog": "1.2.1",
     "enzyme": "3.1.0",
-    "enzyme-adapter-react-16": "1.0.1",
+    "enzyme-adapter-react-16": "1.0.2",
     "eslint": "4.9.0",
     "extract-text-webpack-plugin": "3.0.1",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "1.1.5",
     "friendly-errors-webpack-plugin": "1.6.1",
     "html-webpack-plugin": "2.30.1",
+    "husky": "0.14.3",
     "identity-obj-proxy": "3.0.0",
     "image-webpack-loader": "3.4.2",
     "jasmine-spec-reporter": "4.2.1",
     "jest": "21.2.1",
     "jest-enzyme": "4.0.1",
+    "lint-staged": "4.3.0",
     "lodash._baseuniq": "4.6.0",
     "material-ui": "0.19.4",
     "nodemon": "1.12.1",
@@ -144,7 +174,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-import": "11.0.0",
     "postcss-loader": "2.0.8",
-    "protractor": "5.1.2",
+    "protractor": "5.2.0",
     "react": "16.0.0",
     "react-dev-utils": "4.1.0",
     "react-dom": "16.0.0",
@@ -157,14 +187,14 @@
     "style-loader": "0.19.0",
     "stylelint": "8.2.0",
     "supertest": "3.0.0",
-    "ts-jest": "21.1.2",
-    "tslint": "5.7.0",
+    "ts-jest": "21.1.3",
+    "tslint": "5.8.0",
     "tslint-eslint-rules": "4.1.1",
     "tslint-language-service": "0.9.6",
     "tslint-react": "3.2.0",
     "typescript": "2.5.3",
     "url-loader": "0.6.2",
-    "webpack": "3.7.1",
+    "webpack": "3.8.1",
     "webpack-dev-middleware": "1.12.0",
     "webpack-hot-middleware": "2.20.0",
     "webpack-manifest-plugin": "1.3.2",
