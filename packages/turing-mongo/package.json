@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "mongoose": "4.12.4",
-    "turing-config": "^0.45.4",
-    "turing-logging": "^0.45.4"
+    "turing-config": "0.45.4",
+    "turing-logging": "0.45.4"
   },
   "author": {
     "name": "Benedikt Stemmildt",

@@ -19,8 +19,8 @@
     "morgan": "1.9.0",
     "pug": "2.0.0-rc.1",
     "serve-favicon": "2.4.5",
-    "turing-config": "^0.45.4",
-    "turing-logging": "^0.45.4"
+    "turing-config": "0.45.4",
+    "turing-logging": "0.45.4"
   },
   "author": {
     "name": "Benedikt Stemmildt",
