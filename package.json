@@ -2,6 +2,7 @@
   "name": "turing-microservice",
   "version": "0.38.3",
   "description": "A common basis for Node.js microservices.",
+  "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "dependency-update": "lerna exec -- npm-check -E -u",
