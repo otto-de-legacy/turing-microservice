@@ -5,7 +5,7 @@
   "main": "src/server/App.js",
   "scripts": {
     "watch": "nodemon bin/Server.js",
-    "test": "stylelint '{**/,}*.{css,scss}' && eslint '{**/,}*.{js,jsx}' && tslint -p ./tsconfig.json --type-check 'src/client/{**/,}*.{ts,tsx}' && NODE_ENV=test ACTIVE_PROFILE=test TURING_CONFIG_DIR=./resources/server/config jest",
+    "test": "stylelint '{**/,}*.{css,scss}' && eslint '{**/,}*.{js,jsx}' && tslint -p ./tsconfig.json 'src/client/{**/,}*.{ts,tsx}' && NODE_ENV=test ACTIVE_PROFILE=test TURING_CONFIG_DIR=./resources/server/config jest",
     "test:e2e": "BASE_DOMAIN=http://localhost:8080/ protractor ./test-resources/e2e/protractor.conf.js",
     "webdriver:install": "webdriver-manager update",
     "webdriver:start": "webdriver-manager start",
