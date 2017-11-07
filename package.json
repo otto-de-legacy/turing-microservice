@@ -39,18 +39,18 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "devDependencies": {
-    "@commitlint/cli": "4.2.1",
+    "@commitlint/cli": "4.2.2",
     "@commitlint/config-lerna-scopes": "4.2.1",
     "commitizen": "2.9.6",
     "cz-lerna-changelog": "1.2.1",
-    "eslint": "4.9.0",
+    "eslint": "4.10.0",
     "husky": "0.14.3",
-    "lerna": "2.4.0",
+    "lerna": "2.5.1",
     "lint-staged": "4.3.0",
-    "npm-check": "5.4.5",
+    "npm-check": "5.5.2",
     "stylelint": "8.2.0",
     "tslint": "5.8.0",
-    "typescript": "2.5.3"
+    "typescript": "2.6.1"
   },
   "author": {
     "name": "Benedikt Stemmildt",

@@ -15,8 +15,8 @@
     "url": "https://github.com/otto-de/turing-microservice/issues"
   },
   "dependencies": {
-    "async": "2.5.0",
-    "node-vault": "0.6.1",
+    "async": "2.6.0",
+    "node-vault": "0.7.1",
     "turing-config": "0.45.4",
     "turing-logging": "0.45.4"
   },
