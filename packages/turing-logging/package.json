@@ -1,6 +1,6 @@
 {
   "name": "turing-logging",
-  "version": "0.45.4",
+  "version": "0.46.2",
   "description": "Multi-transport async logging.",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "continuation-local-storage": "3.2.0",
     "global-request-logger": "0.1.1",
     "stack-trace": "0.0.10",
-    "turing-config": "0.45.4",
+    "turing-config": "^0.46.2",
     "uuid": "3.1.0",
     "winston": "2.4.0"
   },
