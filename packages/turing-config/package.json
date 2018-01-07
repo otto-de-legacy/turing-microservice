@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "glob": "7.1.2",
-    "nconf": "0.9.1",
+    "nconf": "0.10.0",
     "string-template": "1.0.0"
   },
   "author": {

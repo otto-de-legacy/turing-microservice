@@ -4,6 +4,6 @@
     ".",
     "packages/*"
   ],
-  "npmClient": "npm",
+  "npmClient": "yarn",
   "version": "0.46.2"
 }

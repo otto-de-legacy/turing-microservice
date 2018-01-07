@@ -6,8 +6,8 @@ interface ProductListState {
 }
 
 class ProductList extends React.Component<{}, ProductListState> {
-  public constructor() {
-    super();
+  public constructor(props: {}, context: {}) {
+    super(props, context);
     this.state = {products: []};
   }
 

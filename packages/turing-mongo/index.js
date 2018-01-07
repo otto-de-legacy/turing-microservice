@@ -16,7 +16,9 @@ class TuringMongo extends mongoose.Mongoose {
       const uri = `mongodb://${userAndPassword}${host}/${db}`;
 
       log.info(`Mongoose connecting to ${host}`);
-      this.connect(uri);
+      this.connect(uri, {
+        useMongoClient: true
+      });
 
       this.connection.on('connected', () => {
         log.info(`Mongoose default connection open to ${host}`);
@@ -37,7 +39,9 @@ class TuringMongo extends mongoose.Mongoose {
           process.exit(0); // eslint-disable-line no-process-exit
         });
       };
-      process.on('SIGINT', gracefulExit).on('SIGTERM', gracefulExit);
+      process
+        .on('SIGINT', gracefulExit)
+        .on('SIGTERM', gracefulExit);
     });
   }
 }
